@@ -453,8 +453,12 @@ a:hover {
   padding: 25px 0;
 }
 
-.meta {;
+.meta {
   color: #999;
   font-size: .85em;
   margin: 0;
+}
+
+.meta a {
+  color: #999;
 }

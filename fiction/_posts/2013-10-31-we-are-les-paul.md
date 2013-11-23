@@ -1,7 +1,7 @@
 ---
 layout: fiction
 title: "We are Les Paul"
-excerpt: "Thad flew in from Los Angeles the day before the wedding. He hugged his mom and dad when they greeted him on the porch with big smiles. When it came time to hug his brother Les, they shook hands. Les had held his hand out. Thad had his arms open. Like bird wings."
+excerpt: "Thad flew in from Los Angeles the day before the wedding"
 ---
 
 
