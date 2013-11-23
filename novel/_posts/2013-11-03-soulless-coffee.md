@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: fiction
 title: "Soulless coffee"
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: fiction
 title:  "The shape of stone"
 ---
 

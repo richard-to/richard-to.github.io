@@ -410,11 +410,12 @@ table {
    ========================================================================== */
 
 body {
-  background: #fdfdfd;
+  background: #fcfcfc;
   color: #666;
   font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
   font-size: 20px;
+  line-height: 1.45;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -427,19 +428,33 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 .site {
   width: 800px;
   margin: auto;
 }
 
 .title {
-  color: #aaa;
-  border-bottom: 1px dashed #dfdfdf;
-  padding-bottom: 15px;
-  text-align: center;
+  color: #888;
 }
 
 .title a {
   color: #b4b4b4;
   text-decoration: none;
+}
+
+#home {
+  border-bottom: 1px dashed #dfdfdf;
+  border-top: 1px dashed #dfdfdf;
+  margin: 50px 0;
+  padding: 25px 0;
+}
+
+.meta {;
+  color: #999;
+  font-size: .85em;
+  margin: 0;
 }

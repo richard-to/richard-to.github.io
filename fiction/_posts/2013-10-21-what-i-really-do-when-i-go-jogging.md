@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: fiction
 title: "What I really do when I go jogging"
 ---
 
