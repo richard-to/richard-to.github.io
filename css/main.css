@@ -425,7 +425,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: #666;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -444,6 +444,15 @@ a:hover {
 .title a {
   color: #b4b4b4;
   text-decoration: none;
+}
+
+h2 a {
+  text-decoration: none;
+}
+
+pre {
+  font-size: 14px;
+
 }
 
 #home {
