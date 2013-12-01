@@ -38,6 +38,7 @@ Player 1 now selects pit 1 since their final seed will land in pit 4. Since pit 
 ![Owari board after player 1 moves](/images/owari_capture_s2.png)
 
 Here is what the board looks like after player 1 distributes player 2's seeds into his goal pit.
+
 ![Owari board after captured seeds moved to player 1 goal pit](/images/owari_capture_s3.png)
 
 The game ends when one player has no more seeds on their side of the board. Whoever owns the most seeds wins.
