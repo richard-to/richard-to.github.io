@@ -21,9 +21,33 @@ For the sprite sheet I'm using [TexturePacker Lite](http://www.codeandweb.com/te
 
 ![RPG Sprite sheet](/images/rpg_sprites.png)
 
+As you can see from the screenshots, the tiles are very square and don't look great when tiled. It definitely doesn't create the illusion that the character is in a free-flowing world. The grid is fairly blatant. Luckily one of the tutorials I'm working on off explains how to make the world less grid-like. Just haven't gotten to it since I'd need to redraw the background tiles in Pixen. If you look carefully, the background tiles are higher resolution (64x64) than the character sprite (32x48) which is scaled 2x currrently.
+
+{% highlight json linenos=table %}
+[
+    [2, 2, 2, 1, 2, 2, 0, 2, 2, 1, 2, 0],
+    [0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0],
+    [0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0],
+    [2, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0],
+    [2, 2, 0, 1, 0, 0, 0, 2, 2, 0, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    [2, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0],
+    [2, 2, 0, 1, 0, 0, 2, 0, 0, 1, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 2, 2],
+    [2, 0, 0, 0, 0, 2, 0, 0, 1, 1, 2, 2],
+    [2, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0],
+    [2, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+]
+{% endhighlight %}
+
+
 Here are some pixel art tutorials that I found helpful:
 
 - [Lotusware's Pixel Art Tutorial](http://rpgtoolkit.net/tutorials/graphics/lotuswares-pixel-art-tutorial/)
 - [Final Boss Blues: Pixel Tutorials](http://finalbossblues.com/pixel-tutorials/)
 - [FF6 Style Sprite Tutorial](http://ghost0311.deviantart.com/art/Sprite-Tutorial-30322970)
 - [RPG Sprite Tutorial](http://kevinvanderven.deviantart.com/art/rpg-sprite-tutorial-152649865)
+
+I also experimented with the combat engine. I'll probably write about that next week. Until then here's a quick screenshot.
+
+![RPG combat engine](/images/rpg_combat_engine.png)
