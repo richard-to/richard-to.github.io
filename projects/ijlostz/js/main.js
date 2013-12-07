@@ -41,7 +41,7 @@
             },
         },
         workers: {
-            script: "static/js/worker.js",
+            script: "js/worker.js",
             num: 8
         },
         id: {
