@@ -47,25 +47,25 @@ That looks fairly clean, but unfortunately my use cases are more complicated. He
 
 {% highlight javascript linenos=table %}
 forEach(DataHeroes)
-     if (DataEnemies.Alive()) {
-          Animation.queue(Hero.attack,  DataHero.attack(DataEnemy));
-     } else {
-          break;
-     }
+    if (DataEnemies.Alive()) {
+        Animation.queue(Hero.attack,  DataHero.attack(DataEnemy));
+    } else {
+        break;
+    }
 }
 
 forEach(DataEnemies)
-     if (DataHeroes.Alive()) {
-           Animation.queue(DataEnemy.attack,  DataEnemy.attack(DataHero));
+    if (DataHeroes.Alive()) {
+        Animation.queue(DataEnemy.attack,  DataEnemy.attack(DataHero));
      }
 }
 
 Animation.run(function() {
-     if (DataEnemies.Alive()) {
-          ContinueBattle();
-      } else {
-          RunEndSequence();
-     }
+    if (DataEnemies.Alive()) {
+        ContinueBattle();
+    } else {
+        RunEndSequence();
+    }
 });
 {% endhighlight %}
 
