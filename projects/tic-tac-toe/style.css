@@ -1,0 +1,65 @@
+body {
+    color: #555;
+    font-family: monospace;
+}
+
+.hidden {
+    display: none;
+}
+
+#status {
+    border: 3px solid #49842f;
+    background: #dff0d8;
+    color: #49842f;
+    font-size: 20px;
+    margin-bottom: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+#board {
+    border-collapse: collapse;
+    width: 300px;
+}
+
+#board td {
+    border: 5px solid #444;
+}
+
+#board div {
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+}
+
+#board div {
+    font-size: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+#board div:hover {
+    background: #ececec;
+}
+
+#player1-label,
+#player2-label {
+    border: 3px solid #444;
+    box-sizing: border-box;
+    float: left;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    padding:3px;
+    width:155px;
+}
+
+#player1-label {
+    margin-right: 15px;
+}
+
+#player2-label.selected,
+#player1-label.selected {
+    background: #dff0d8;
+}

@@ -1,0 +1,97 @@
+body {
+    background: #000;
+}
+
+#game-container {
+    position: relative;
+    margin: 40px auto;
+    width: 640px;
+}
+
+.party-wrap {
+    background: rgba(50, 50, 50, .8);
+    border: 1px solid #ececec;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: monospace;
+    width: 260px;
+
+    position: absolute;
+    bottom: 35px;
+    left: 355px;
+}
+
+.enemy-wrap {
+    background: rgba(50, 50, 50, .8);
+    border: 1px solid #ececec;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: monospace;
+    width: 125px;
+
+    position: absolute;
+    bottom: 35px;
+    left: 225px;
+}
+
+.action-wrap {
+    background: rgba(50, 50, 50, .8);
+    border: 1px solid #ececec;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: monospace;
+    width: 75px;
+
+    position: absolute;
+    bottom: 35px;
+    left: 275px;
+}
+
+.hide-menu {
+    display: none;
+}
+
+.entity-status {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+}
+
+.entity-status .selected {
+    color: #ffe500;
+}
+
+.entity-status .name {
+    width: 45%;
+}
+
+.entity-status .mp {
+    width: 25%;
+}
+
+.entity-status .hp {
+    width: 30%;
+}
+
+.action-status td,
+.entity-status td {
+    padding: 3px;
+}
+
+.action-status {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.action-status td {
+    width: 50%;
+}
+
+.enemy-wrap .entity-status tr:hover,
+.action-status tr:hover {
+    background: rgba(30, 30, 30, .75);
+    color: #ffe500;
+    cursor: pointer;
+}
