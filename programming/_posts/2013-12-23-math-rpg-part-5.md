@@ -20,13 +20,13 @@ Here is a screenshot of the improved background tiles and the new character Corr
 
 Here is a screenshot of the new enemies: Eyeball Scout and Evil Bear.
 
-![Combat View](/images/p6_combat.png)
+![Combat View](/images/p6_battle.png)
 
 These new sprites poked a number holes in my code. For example when I added new sprites, the system no longer handled walkable tiles correctly. This is because I was originally checking for my single grass tile. Now I have multiple grass tiles to account for. In the short term, I had planned to keep the maps simple by using numbers to represent tiles. This would allow me to create maps in JSON and avoid a map editor utility. Unfortunately this means that I map metadata cannot be added to the map file. Right now I'm trying to figure how to handle map metadata better. I'm worried that my quick fix will lead to more issues down the road.
 
 Here is a screenshot of the new spritesheet:
 
-![Sprite sheet](/images/rpg_spritesheet_v2.png)
+![Sprite sheet](/images/rpg_sprites_2.png)
 
 I find myself refactoring a lot code as new issues arise. My code at each step so far has been just good enough for the feature I worked on, but then once I move on to a new feature, the code is suddenly inadequate. I'm not sure if this is the best approach. I keep wondering if I should do more planning and try to look further into the future.
 
