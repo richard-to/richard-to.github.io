@@ -22,7 +22,7 @@ Here is a screenshot of the new enemies: Eyeball Scout and Evil Bear.
 
 ![Combat View](/images/p6_battle.png)
 
-These new sprites poked a number holes in my code. For example when I added new sprites, the system no longer handled walkable tiles correctly. This is because I was originally checking for my single grass tile. Now I have multiple grass tiles to account for. In the short term, I had planned to keep the maps simple by using numbers to represent tiles. This would allow me to create maps in JSON and avoid a map editor utility. Unfortunately this means that I map metadata cannot be added to the map file. Right now I'm trying to figure how to handle map metadata better. I'm worried that my quick fix will lead to more issues down the road.
+These new sprites poked a number holes in my code. For example when I added new sprites, the system no longer handled walkable tiles correctly. This is because I was checking for a single grass tile. Now I have multiple grass tiles to account for. In the short term, I plan to continue to keep the maps simple by using numbers to represent tiles. This  allows me to create maps in JSON and avoid the need for a map editor utility. Right now I'm trying to figure how to handle map metadata better. I'm worried that any quick fix will lead to more issues down the road.
 
 Here is a screenshot of the new spritesheet:
 
@@ -30,6 +30,6 @@ Here is a screenshot of the new spritesheet:
 
 I find myself refactoring a lot code as new issues arise. My code at each step so far has been just good enough for the feature I worked on, but then once I move on to a new feature, the code is suddenly inadequate. I'm not sure if this is the best approach. I keep wondering if I should do more planning and try to look further into the future.
 
-For next week, I just want to complete my first milestone. I think it's important that I stay on track and restrain  from over-abstracting the code and doing more sprite improvements.
+For next week, I just want to complete my first milestone. I think it's important that I stay on track and refrain from over-abstracting the code and working on more sprite improvements.
 
-Here is a demo with the new sprites, enemies, and characters. You can also enter combat mode. Just know that the only option is to attack and the characters/enemies never die. You can [view the demo here](/projects/rpg/demo-2/).
+Here is a demo with the new sprites, enemies, and characters. You can also enter combat mode now. Just know that the only option is to attack and the characters/enemies never die. You can [view the demo here](/projects/rpg/demo-2/).
