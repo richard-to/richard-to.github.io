@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Math RPG - Part 4"
+title: "Math RPG - Part 5"
 ---
 
 I made good progress on the combat system, I still got a ways to go before the game can be considered fun. As usual I would've liked to have done more. To help keep me on track I started using the Github issue tracker - normally I use Trello, but thought it would be best to keep my efforts public. My [first milestone](https://github.com/richard-to/rpg/issues?state=open) was to finish parts of the combat system this week. Unfortunately I didn't complete the milestone. I went off track and spent a few days on sprite work instead of the combat system.
