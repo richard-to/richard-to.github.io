@@ -1,0 +1,230 @@
+body {
+    background: #20242d;
+    padding: 20px;
+}
+
+#game-container {
+    position: relative;
+    overflow: hidden;
+}
+
+#canvas-container {
+    float: left;
+}
+
+/* = Menu Styles
+-------------------------------------------------------------- */
+#menu-container {
+    float: left;
+}
+
+.menu-wrap {
+    background: #f6f6f6;
+    box-sizing: border-box;
+    color: #616466;
+    font-family: helvetica;
+    font-size: 14px;
+    height: 448px;
+    width: 540px;
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-list li {
+    cursor: pointer;
+    margin: 0;
+    padding: 15px;
+}
+
+.menu-list p {
+    margin: 0;
+}
+
+.menu-list .selected {
+    background: #1570a6;
+    color: #fff;
+}
+
+.skill-name {
+    font-size: 28px;
+    font-weight: normal;
+    margin: 0 0 5px 0;
+}
+
+
+/* = Menu Tabs
+-------------------------------------------------------------- */
+.menu-tabs {
+    background: #ececec;
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-tabs li {
+    display: inline-block;
+    font-size: 18px;
+    padding: 15px;
+}
+
+.menu-tabs .menu-tab-selected {
+    background: #dadada;
+}
+
+
+/* = Power Meter Styles
+-------------------------------------------------------------- */
+.meter-wrap {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.meter-wrap table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.meter-wrap td {
+    background: #eaeaea;
+    height: 18px;
+}
+
+.meter-wrap .meter-fill {
+    background: rgb(232, 191, 118);
+}
+
+/* = Math Problem Menu Styles
+-------------------------------------------------------------- */
+.skill-header {
+    background: #1570a6;
+    color: #fff;
+    margin: 0;
+    padding: 15px;
+}
+
+.step-tabs {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+}
+
+.step-tabs td {
+    background: #ececec;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.step-tabs .step-current {
+    background: #dadada;
+}
+
+.step-description {
+    background: #dadada;
+    font-size: 16px;
+    margin: 0;
+    padding: 15px;
+}
+
+.problem-space {
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.problem-display {
+    margin: 0;
+}
+
+.problem-header {
+    font-size: 18px;
+}
+
+.problem-text {
+    font-size: 22px;
+    line-height: 40px;
+}
+
+.problem-space input[type="text"] {
+    border: 1px solid #616466;
+    color: #616466;
+    font-size: 22px;
+    line-height: 1;
+    padding: 5px;
+    margin: 0 5px 0 0;
+    width: 75px;
+    vertical-align: bottom;
+}
+
+.problem-space input[type="submit"] {
+    background: #4e8036;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    margin: 0;
+    padding: 10px;
+    vertical-align: bottom;
+}
+
+.problem-space input[type="submit"]:hover {
+    background: #385b2a;
+}
+
+/* = Overlay Menu Styles
+-------------------------------------------------------------- */
+.overlay-wrap {
+    background: rgba(50, 50, 50, .8);
+    border: 1px solid #ececec;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: monospace;
+}
+
+.battle-result-wrap {
+    padding: 10px;
+    width: 400px;
+
+    position: absolute;
+    bottom: 35px;
+    left: 120px;
+}
+
+.party-wrap {
+    width: 260px;
+
+    position: absolute;
+    bottom: 35px;
+    left: 355px;
+}
+
+.entity-status {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+}
+
+.entity-status .selected {
+    color: #ffe500;
+}
+
+.entity-status .name {
+    width: 45%;
+}
+
+.entity-status .mp {
+    width: 25%;
+}
+
+.entity-status .hp {
+    width: 30%;
+}
+
+.entity-status td {
+    padding: 3px;
+}
