@@ -28,4 +28,4 @@ The Kaggle competitions for beginners sound like a good way to learn, but I have
 
 Still not exactly sure what my approach will be, but I will probably focus on working through the AI for Game Development books.
 
-Also here is a demo with the minesweeper simulation. You can [view the demo here](/projects/minesweeper/).
+Also here is a demo of the minesweeper simulation. You can [view the demo here](/projects/minesweeper/).
