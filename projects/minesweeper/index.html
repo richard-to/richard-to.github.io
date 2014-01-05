@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Minesweeper Neural Network with Genetic Algorithm</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body {
+                background: #1d2028;
+                font-family: monospace;
+                font-size: 14px;
+                padding: 20px;
+            }
+
+            a {
+                color: rgb(140, 177, 120);
+            }
+
+            canvas {
+                border: 1px solid #ddd;
+            }
+
+            #game-container {
+                width: 750px;
+                margin: auto;
+            }
+
+            #stats-container {
+                color: #ddd;
+                float: right;
+                width: 315px;
+            }
+
+            #stats-table {
+                border: 1px solid #ddd;
+                border-collapse: collapse;
+                color: #ddd;
+                width: 100%;
+            }
+
+            #stats-table th {
+                border: 1px solid #ddd;
+                padding: 5px;
+                text-align: left;
+            }
+
+            #stats-table td {
+                border: 1px solid #ddd;
+                padding: 5px;
+            }
+
+            #stats-container p:first-child {
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body
+        <div id="game-container">
+        <div id="stats-container">
+            <p>Minesweeper simulation using neural network and genetic algorithm.</p>
+            <p>C++ code ported from <a href="http://ai-junkie.com/ann/evolved/nnt1.html">AI Junkie neural network tutorial</a>.</p>
+
+            <table id="stats-table">
+                <tr>
+                    <th>Generation</th>
+                    <th>Best</th>
+                    <th>Average</th>
+                </tr>
+            </table>
+        </div>
+        <canvas id="game-canvas" width="400" height="400"></canvas>
+        </div>
+
+        <script src="params.js"></script>
+        <script src="vector2d.js"></script>
+        <script src="matrix2d.js"></script>
+        <script src="nn.js"></script>
+        <script src="ga.js"></script>
+        <script src="minesweeper.js"></script>
+        <script src="controller.js"></script>
+        <script src="main.js"></script>
+  </body>
+</html>
