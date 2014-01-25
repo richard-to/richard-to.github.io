@@ -47,7 +47,7 @@ For now I'm just passing a callback to the child component and triggering it whe
 
 Here is an untested example:
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 var ChildMenu = React.createClass({
     handleClick: function(event) {
         this.props.onClickChild(event);

@@ -14,7 +14,7 @@ Turns out that it is fairly simple to set up using Jasmine 2.0 since its syntax 
 
 Here is an annotated example the modified SpecRunner.html that comes with Jasmine 2.0 standalone.
 
-{% highlight html linenos=table %}
+{% highlight html linenos %}
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -74,7 +74,7 @@ Here is an annotated example the modified SpecRunner.html that comes with Jasmin
 
 Here is an example of a spec file and you can use Require JS to load assets using Jasmine 2.0 async support.
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 describe("Circular List Operation", function() {
     // The CircularList object needs to be loaded by RequireJs
     // before we can use it.

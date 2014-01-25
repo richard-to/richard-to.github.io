@@ -17,7 +17,7 @@ You can [view the Tic-Tac-Toe demo here](/projects/tic-tac-toe/). See if you can
 
 Here is my annotated implementation of minimax for Tic-Tac-Toe. I should probably refactor this algorithm to make it less specific to one game. Good practice though having to write the minimax algorithm so many times. I'm also wondering if should just post these as gists in the future.
 
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos %}
 
 var TicTacToeMiniMax = function() {
     this.minPlayer = 1;
