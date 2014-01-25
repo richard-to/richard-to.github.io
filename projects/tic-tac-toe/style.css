@@ -1,16 +1,22 @@
 body {
-    color: #555;
+    background: #1d2028;
+    color: #ddd;
     font-family: monospace;
+    margin-top: 40px;
 }
 
+#container {
+    width: 350px;
+    margin: auto;
+}
 .hidden {
     display: none;
 }
 
 #status {
-    border: 3px solid #49842f;
-    background: #dff0d8;
-    color: #49842f;
+    border: 3px solid #435139;
+    background: rgb(140, 177, 120);
+    color: #435139;
     font-size: 20px;
     margin-bottom: 5px;
     padding: 10px;
@@ -24,13 +30,20 @@ body {
 }
 
 #board td {
-    border: 5px solid #444;
+    border: 5px solid #ddd;
 }
 
 #board div {
     cursor: pointer;
     height: 100px;
     width: 100px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #board div {
@@ -41,11 +54,12 @@ body {
 
 #board div:hover {
     background: #ececec;
+    color: #1d2028;
 }
 
 #player1-label,
 #player2-label {
-    border: 3px solid #444;
+    border: 3px solid #ddd;
     box-sizing: border-box;
     float: left;
     font-weight: bold;
@@ -61,5 +75,7 @@ body {
 
 #player2-label.selected,
 #player1-label.selected {
-    background: #dff0d8;
+    border: 3px solid #435139;
+    background: rgb(140, 177, 120);
+    color: #435139;
 }
