@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Image Filters</title>
+    </head>
+    <body>
+        <p>
+            "<a href="http://www.flickr.com/photos/bcnbits/2084104463/in/photolist-4bazDz-4ehCWB-4h4SGR-4ipxpv-4iBbSm-4jUcFo-4nWQ1A-4p3Tfn-4p9fSL-4pfCBV-4sxVtK-4sC8Cn-4unDHj-4AsBqv-4EdWHN-4HeNrk-4HvASy-4KkwTd-4PjFyv-4XwKRT-5bB6YV-5fiwSC-5hPu1F-5jKjYS-5pwydh-5viWhE-5E6icm-5G88Xk-5LTorw-5MVHEh-5NDJ5A-5P7HUY-5T5aPt-5TDiXS-5WH9Ab-5YKenC-5ZWuCJ-61d5uJ-68LQFK-6byEEn-6kxcJj-6tabW1-6zL5hW-6KASpf-6KTsNB-6LGQam-6YkK6P-71vnM5-72Mz5G-78kQ8k-7bnRoh/">Plaça Rius i Taulet</a>" by
+            <a href="http://www.flickr.com/photos/bcnbits/">MorBCN</a> is used under
+            <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>.
+        </p>
+        <div>
+            <img id="image" src="images/trees.jpg" width="640" height="440" />
+        </div>
+
+        <p>
+            This work, "Random Image Transforms", is a derivative of "<a href="http://www.flickr.com/photos/bcnbits/2084104463/in/photolist-4bazDz-4ehCWB-4h4SGR-4ipxpv-4iBbSm-4jUcFo-4nWQ1A-4p3Tfn-4p9fSL-4pfCBV-4sxVtK-4sC8Cn-4unDHj-4AsBqv-4EdWHN-4HeNrk-4HvASy-4KkwTd-4PjFyv-4XwKRT-5bB6YV-5fiwSC-5hPu1F-5jKjYS-5pwydh-5viWhE-5E6icm-5G88Xk-5LTorw-5MVHEh-5NDJ5A-5P7HUY-5T5aPt-5TDiXS-5WH9Ab-5YKenC-5ZWuCJ-61d5uJ-68LQFK-6byEEn-6kxcJj-6tabW1-6zL5hW-6KASpf-6KTsNB-6LGQam-6YkK6P-71vnM5-72Mz5G-78kQ8k-7bnRoh/">Plaça Rius i Taulet</a>" by
+            <a href="http://www.flickr.com/photos/bcnbits/">MorBCN</a>, used under
+            <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>.
+        </p>
+
+        <p>
+            "Random Image Transforms" is licensed under  <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a> by Richard To.
+        </p>
+
+        <div id="image-results"></div>
+
+        <script>
+
+        var copyImageContext = function(image, ctx) {
+            var canvas = document.createElement('canvas');
+            canvas.width = image.width;
+            canvas.height = image.height;
+
+            var copyCtx = canvas.getContext('2d');
+            copyCtx.putImageData(ctx.getImageData(0, 0, image.width, image.height), 0, 0);
+            return copyCtx;
+        };
+
+        var imageToCanvas = function(el, image, filter) {
+            var canvas = document.createElement('canvas');
+            canvas.width = image.width;
+            canvas.height = image.height;
+
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(image, 0, 0, image.width, image.height);
+
+            filter(image, ctx);
+
+            el.appendChild(canvas);
+        };
+
+        var thresholdImage = function(image, ctx) {
+            imageToGrayScale(image, ctx);
+
+            var maxAlpha = 255;
+
+            var threshold = 100;
+            var black = 0;
+            var white = 255;
+
+            var color;
+
+            var masterData = ctx.getImageData(0, 0, image.width, image.height);
+            var imageData = ctx.createImageData(image.width, image.height);
+
+            var rgbaWidth = image.width * 4;
+            for (var row = 0; row < image.height; ++row) {
+                var fauxRow = row * rgbaWidth;
+                var fauxWidth = fauxRow + rgbaWidth;
+                for (var col = fauxRow; col < fauxWidth; col += 4) {
+                    color = black;
+                    if (masterData.data[col] > threshold) {
+                        color = white;
+                    }
+                    imageData.data[col] = color;
+                    imageData.data[col + 1] = color;
+                    imageData.data[col + 2] = color;
+                    imageData.data[col + 2] = color;
+                    imageData.data[col + 3] = maxAlpha;
+                }
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var imageToGrayScale = function(image, ctx) {
+            var maxAlpha = 255;
+            var rWeight = 0.21;
+            var gWeight = 0.71;
+            var bWeight = 0.07;
+
+            var r, g, b, gray;
+
+            var masterData = ctx.getImageData(0, 0, image.width, image.height);
+            var imageData = ctx.createImageData(image.width, image.height);
+
+            var rgbaWidth = image.width * 4;
+            for (var row = 0; row < image.height; ++row) {
+                var fauxRow = row * rgbaWidth;
+                var fauxWidth = fauxRow + rgbaWidth;
+                for (var col = fauxRow; col < fauxWidth; col += 4) {
+                    r = masterData.data[col];
+                    g = masterData.data[col + 1];
+                    b = masterData.data[col + 2];
+                    gray = rWeight * r + gWeight * g + bWeight * b;
+                    imageData.data[col] = gray;
+                    imageData.data[col + 1] = gray;
+                    imageData.data[col + 2] = gray;
+                    imageData.data[col + 3] = maxAlpha;
+                }
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var shuffle = function(list_in) {
+            var pick, temp;
+            var list = list_in.slice(0);
+            var i = list.length;
+            while (--i > 0) {
+                pick = Math.floor(Math.random() * i);
+                temp = list[i];
+                list[i] = list[pick];
+                list[pick] = temp;
+            }
+            return list;
+        };
+
+        var scramble = function(image, ctx) {
+            var missingBlock = Math.floor(Math.random() * 16);
+
+            var size = 4;
+            var blockX = Math.floor(image.width/4);
+            var blockY = Math.floor(image.height/4);
+            var blocks = [];
+
+            for (var x = 0; x < size; ++x) {
+                for (var y = 0; y < size; ++y) {
+                    blocks.push(ctx.getImageData(x * blockX, y * blockY, blockX, blockY));
+                }
+            }
+            blocks = shuffle(blocks);
+
+
+            for (var x = 0; x < size; ++x) {
+                for (var y = 0; y < size; ++y) {
+                    ctx.putImageData(blocks.shift(), x * blockX, y * blockY);
+                }
+            }
+
+            var missingBlock = Math.floor(Math.random() * 16);
+            var x = Math.floor(missingBlock / size);
+            var y = missingBlock % size;
+            ctx.rect(x * blockX, y * blockY, blockX, blockY);
+            ctx.fillStyle = 'black';
+            ctx.fill();
+        };
+
+        var sobel = function(image, ctx) {
+            imageToGrayScale(image, ctx);
+            gaussianBlur(image, ctx);
+
+            ctxX = copyImageContext(image, ctx);
+            sobelX(image, ctxX);
+
+            ctxY = copyImageContext(image, ctx);
+            sobelY(image, ctxY);
+
+            var gradXData = ctxX.getImageData(0, 0, image.width, image.height);
+            var gradYData = ctxY.getImageData(0, 0, image.width, image.height);
+
+            var imageData = ctx.createImageData(image.width, image.height);
+
+            var maxAlpha = 255;
+            var rx, gx, bx, ry, gy, by;
+
+            var rgbaWidth = image.width * 4;
+            for (var row = 0; row < image.height; ++row) {
+                var fauxRow = row * rgbaWidth;
+                var fauxWidth = fauxRow + rgbaWidth;
+                for (var col = fauxRow; col < fauxWidth; col += 4) {
+                    rx = gradXData.data[col];
+                    gx = gradXData.data[col + 1];
+                    bx = gradXData.data[col + 2];
+
+                    ry = gradYData.data[col];
+                    gy = gradYData.data[col + 1];
+                    by = gradYData.data[col + 2];
+
+                    imageData.data[col] = Math.sqrt(rx * rx + ry * ry);
+                    imageData.data[col + 1] = Math.sqrt(gx * gx + gy * gy);
+                    imageData.data[col + 2] = Math.sqrt(bx * bx + by * by);
+                    imageData.data[col + 3] = maxAlpha;
+                }
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var sobelX = function(image, ctx) {
+            var kernel = [
+                1, 0, -1,
+                2, 0, -2,
+                1, 0, -1
+            ];
+            psf(image, ctx, kernel);
+        };
+
+        var sobelY = function(image, ctx) {
+            var kernel = [
+                1, 2, 1,
+                0, 0, 0,
+                -1, -2, -1
+            ];
+            psf(image, ctx, kernel);
+        };
+
+        var sharpen = function(image, ctx) {
+            var k = 3.0;
+            var n = -k/8.0;
+            var c = k + 1.0;
+
+            var kernel = [
+                n, n, n,
+                n, c, n,
+                n, n, n
+            ];
+            psf(image, ctx, kernel);
+        };
+
+        var gaussianBlur = function(image, ctx) {
+            var o16 = 1/16;
+            var o8 = 1/8;
+            var o4 = 1/4;
+
+            var kernel = [
+                o16, o8, o16,
+                o8, o4, o8,
+                o16, o8, o16,
+            ];
+            psf(image, ctx, kernel);
+        };
+
+        var psf = function(image, ctx, kernel) {
+            var maxAlpha = 255;
+
+            var masterData = ctx.getImageData(0, 0, image.width, image.height);
+            var imageData = ctx.createImageData(image.width, image.height);
+
+            var rgbaWidth = image.width * 4;
+            for (var row = 1; row < image.height - 1; ++row) {
+                var fauxRow = row * rgbaWidth + 4;
+                var fauxWidth = fauxRow + rgbaWidth - 8;
+                for (var col = fauxRow; col < fauxWidth; ++col) {
+                    if ((col + 1) % 4 == 0) {
+                        imageData.data[col] = maxAlpha;
+                    } else {
+                        var value = kernel[0] * masterData.data[(col - 4) - rgbaWidth];
+                        value += kernel[1] * masterData.data[col -  rgbaWidth];
+                        value += kernel[2] * masterData.data[(col + 4) - rgbaWidth];
+
+                        value += kernel[3] * masterData.data[col - 4];
+                        value += kernel[4] * masterData.data[col];
+                        value += kernel[5] * masterData.data[col + 4];
+
+                        value += kernel[6] * masterData.data[(col - 4) + rgbaWidth];
+                        value += kernel[7] * masterData.data[col +  rgbaWidth];
+                        value += kernel[8] * masterData.data[(col + 4) + rgbaWidth];
+
+                        if (value < 0) {
+                            value = 0;
+                        }
+
+                        if (value > 255) {
+                            value = 255;
+                        }
+
+                        imageData.data[col] = value;
+                    }
+                }
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        window.onload = function() {
+            var resultsEl = document.getElementById('image-results');
+            var image = document.getElementById('image');
+            imageToCanvas(resultsEl, image, scramble);
+            imageToCanvas(resultsEl, image, gaussianBlur);
+            imageToCanvas(resultsEl, image, sharpen);
+            imageToCanvas(resultsEl, image, sobel);
+            imageToCanvas(resultsEl, image, imageToGrayScale);
+            imageToCanvas(resultsEl, image, thresholdImage);
+        };
+        </script>
+
+    </body>
+</html>
+
