@@ -50,6 +50,7 @@ function createConnection() {
 }
 
 function sendData() {
+  trace("Sending data");
   sendButton.disabled = true;
   var canvas = document.createElement('canvas');
   canvas.width = startimage.width;
@@ -72,6 +73,7 @@ function sendData() {
     sendChannel.send(data.slice(dataSent, slideEndIndex));
     dataSent = slideEndIndex;
     if (dataSent + 1 >= data.length) {
+      trace("All data chunks sent.");
       sendChannel.send("\n");
       clearInterval(intervalID);
     }
@@ -133,8 +135,10 @@ function gotReceiveChannel(event) {
 function handleMessage(event) {
   if (event.data == "\n") {
     endimage.src = imageData;
+    trace("Received all data. Setting image.");
   } else {
     imageData += event.data;
+    //trace("Data chunk received");
   }
 }
 
