@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<title>WebRTC Data Channel Demo - Sending an Image over Data Channels</title>
+</head>
+<body>
+  <h1>WebRTC Data Channel Demo - Sending an Image over Data Channels</h1>
+
+  <p>Notes:</p>
+  <ul>
+    <li>This demo uses local channels and is based off this <a href="http://simpl.info/rtcdatachannel/">demo</a></li>
+    <li>This version is designed to work for Chrome (Version 32?). Ie. using webkit prefixes</li>
+    <li>"<a href="http://www.flickr.com/photos/bcnbits/2084104463/in/photolist-4bazDz-4ehCWB-4h4SGR-4ipxpv-4iBbSm-4jUcFo-4nWQ1A-4p3Tfn-4p9fSL-4pfCBV-4sxVtK-4sC8Cn-4unDHj-4AsBqv-4EdWHN-4HeNrk-4HvASy-4KkwTd-4PjFyv-4XwKRT-5bB6YV-5fiwSC-5hPu1F-5jKjYS-5pwydh-5viWhE-5E6icm-5G88Xk-5LTorw-5MVHEh-5NDJ5A-5P7HUY-5T5aPt-5TDiXS-5WH9Ab-5YKenC-5ZWuCJ-61d5uJ-68LQFK-6byEEn-6kxcJj-6tabW1-6zL5hW-6KASpf-6KTsNB-6LGQam-6YkK6P-71vnM5-72Mz5G-78kQ8k-7bnRoh/">Plaça Rius i Taulet</a>" by
+            <a href="http://www.flickr.com/photos/bcnbits/">MorBCN</a> is used under
+            <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>.</li>
+  </ul>
+
+  <button id="startButton">Start Connection</button> <button id="sendButton">Send Image</button>
+
+  <h2>Start Image</h2>
+  <img id="startimage" width="640" height="440" src="trees.jpg" />
+
+  <h2>Received Image Image</h2>
+  <img id="endimage" width="640" height="440"  src="" />
+
+  <script src="main.js"></script>
+</body>
+</html>
