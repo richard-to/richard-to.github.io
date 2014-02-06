@@ -26,13 +26,10 @@ function createConnection() {
   trace('Created local peer connection object localPeerConnection');
 
   try {
-    // Reliable Data Channels not yet supported in Chrome
     sendChannel = localPeerConnection.createDataChannel("sendDataChannel",
-      {reliable: false});
+      {reliable: true});
     trace('Created send data channel');
   } catch (e) {
-    alert('Failed to create data channel. ' +
-          'You need Chrome M25 or later with RtpDataChannel enabled');
     trace('createDataChannel() failed with exception: ' + e.message);
   }
   localPeerConnection.onicecandidate = gotLocalCandidate;
