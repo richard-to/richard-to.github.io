@@ -6,424 +6,107 @@
         <title>8 Puzzle</title>
     </head>
     <body>
-        <canvas id="puzzle"></puzzle>
+        <div>
+            <button id="scramble-button">Scramble</button>
+            <button id="solve-button">Solve</button>
+            Moves: <span id="move-counter">0</span>
+        </div>
 
-        <script>
+        <canvas id="puzzle"></canvas>
+        <p>
+            "<a href="http://www.flickr.com/photos/bcnbits/2084104463/in/photolist-4bazDz-4ehCWB-4h4SGR-4ipxpv-4iBbSm-4jUcFo-4nWQ1A-4p3Tfn-4p9fSL-4pfCBV-4sxVtK-4sC8Cn-4unDHj-4AsBqv-4EdWHN-4HeNrk-4HvASy-4KkwTd-4PjFyv-4XwKRT-5bB6YV-5fiwSC-5hPu1F-5jKjYS-5pwydh-5viWhE-5E6icm-5G88Xk-5LTorw-5MVHEh-5NDJ5A-5P7HUY-5T5aPt-5TDiXS-5WH9Ab-5YKenC-5ZWuCJ-61d5uJ-68LQFK-6byEEn-6kxcJj-6tabW1-6zL5hW-6KASpf-6KTsNB-6LGQam-6YkK6P-71vnM5-72Mz5G-78kQ8k-7bnRoh/">Plaça Rius i Taulet</a>" by
+            <a href="http://www.flickr.com/photos/bcnbits/">MorBCN</a> is used under
+            <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>.
+        </p>
 
-        var Heap = function(compare) {
-            this._compare = compare;
-            this._heap = [];
-        };
+        <script type="text/javascript" src="js/eight-puzzle.js"></script>
+        <script type="text/javascript">
+        var last = null;
+        var updateCanvas = function(puzzle, blocks, image, ctx) {
+            var state = puzzle.state;
+            var side = puzzle.sideLen;
+            var blankColor = 'black';
+            var blockX = Math.floor(image.height/side);
+            var blockY = Math.floor(image.width/side);
 
-        Heap.prototype.empty = function() {
-            return this._heap.length == 0;
-        };
-
-        Heap.prototype.count = function() {
-            return this._heap.length;
-        };
-
-        Heap.prototype.insert = function(obj) {
-            this._heap.push(obj);
-            this._percolateUp(this._heap.length - 1);
-            return this;
-        };
-
-        Heap.prototype.min = function() {
-            return this._heap[0];
-        };
-
-        Heap.prototype.pop = function() {
-            if (this.empty()) {
-                return null;
-            } else if (this._heap.length == 1) {
-                return this._heap.pop();
-            } else {
-                var min = this._heap[0];
-                this._heap[0] = this._heap.pop();
-                this._percolateDown(0);
-                return min;
-            }
-        };
-
-        Heap.prototype._percolateUp = function(hole) {
-            if (hole > 0) {
-                var parent = null;
-                parent = Math.floor((hole - 1) / 2);
-                if (this._compare(this._heap[hole], this._heap[parent]) < 0)  {
-                    var temp = this._heap[parent];
-                    this._heap[parent] = this._heap[hole];
-                    this._heap[hole] = temp;
-                    this._percolateUp(parent);
-                }
-            }
-        };
-
-        Heap.prototype._percolateDown = function(hole) {
-            parent = this._heap[hole];
-            child1 = 2 * hole + 1;
-            child2 = child1 + 1;
-            if (child1 < this._heap.length &&
-                (child2 >= this._heap.length || this._compare(this._heap[child1], this._heap[child2]) < 0)) {
-                if (this._compare(parent, this._heap[child1]) > 0) {
-                    this._heap[hole] = this._heap[child1];
-                    this._heap[child1] = parent;
-                    this._percolateDown(child1);
-                }
-            } else if (child2 < this._heap.length) {
-                if (this._compare(parent, this._heap[child2]) > 0) {
-                    this._heap[hole] = this._heap[child2];
-                    this._heap[child2] = parent;
-                    this._percolateDown(child2);
-                }
-            }
-        };
-
-
-        var PuzzleState = function(state, last, goal, cost) {
-            this.state = state;
-            this.last = last || null;
-            this.goal = goal || null;
-            this.cost = cost || 1;
-            this.blank = 0;
-            this.stepCost = null;
-
-            this.sideLen = this.state.length;
-            this.sides = range(this.sideLen);
-            this.blankPos = this.findBlankPos();
-            this.pathCost = this.calcPathCost();
-        };
-
-        PuzzleState.prototype.slideUp = function() {
-            return this.swap(this.blankPos[0], this.blankPos[1] - 1);
-        };
-
-        PuzzleState.prototype.slideDown = function() {
-            return this.swap(this.blankPos[0], this.blankPos[1] + 1)
-        };
-
-        PuzzleState.prototype.slideLeft = function() {
-            return this.swap(this.blankPos[0] - 1, this.blankPos[1])
-        };
-
-        PuzzleState.prototype.slideRight = function() {
-            return this.swap(this.blankPos[0] + 1, this.blankPos[1])
-        };
-
-        PuzzleState.prototype.validPos = function(col, row) {
-            return (col >= 0 && col < this.sideLen && row >= 0 && row < this.sideLen);
-        };
-
-        PuzzleState.prototype.swap = function(col, row) {
-            if (!this.validPos(col, row)) {
-                return null;
-            }
-
-            var currentState = this.state;
-            var newState = clone2d(currentState);
-            newState[this.blankPos[0]][this.blankPos[1]] = newState[col][row]
-            newState[col][row] = this.blank
-
-            var nextPuzzleState = new PuzzleState(newState, this, this.goal);
-            return nextPuzzleState;
-        };
-
-        // TODO(richard-to): This probably doesn't work
-        PuzzleState.prototype.isGoal = function() {
-            return this. == this.goal;
-        };
-
-        PuzzleState.prototype.predictedCost = function() {
-            return this.pathCost + this.calcStepCost();
-        };
-
-        PuzzleState.prototype.heuristic = function() {
-            return 0;
-        };
-
-        PuzzleState.prototype.calcStepCost = function() {
-            if (!this.stepCost) {
-                this.stepCost = this.heuristic();
-            }
-            return this.stepCost;
-        };
-
-        PuzzleState.prototype.calcPathCost = function() {
-            var pathCost = 0;
-            if (this.last) {
-                pathCost = this.cost + this.last.pathCost;
-            }
-            return pathCost;
-        };
-
-        PuzzleState.prototype.hasLast = function() {
-            return this.last != null;
-        };
-
-        PuzzleState.prototype.printState = function() {
-            for (var x = 0; x < this.state.length; ++x) {
-                console.log(this.state[x]);
-            }
-        };
-
-        PuzzleState.prototype.parity = function() {
-            var parity = 0;
-            var stateList = to1d(this.state);
-            stateList.splice(stateList.indexOf(this.blank, 1));
-            while (stateList.length > 0) {
-                state = stateList.shift();
-                for (var i = 0; i < stateList.length; ++i) {
-                    if (state > state[i]) {
-                        parity += 1;
-                    }
-                }
-            }
-            return (parity % 2 == 0) ? false : true;
-        };
-
-        PuzzleState.prototype.findBlankPos = function() {
-            var state = this.state;
-            var sides = this.sides;
-            var blank = this.blank;
-            for (var x = 0; x < sides; ++x) {
-                for (var y = 0; y < sides; ++y) {
-                    if (state[x][y] == blank {
-                        return [x, y];
-                    }
-                }
-            }
-        };
-
-        PuzzleState.prototype.equals = function(other) {
-            return this.statesAreEqual(other.state);
-        };
-
-        PuzzleState.prototype.notEquals = function(other) {
-            return !this.equals(other);
-        };
-
-        PuzzleState.prototype.statesAreEqual = function(otherState) {
-            var a = this.state;
-            var b = other.state;
-
-            if (a === b) {
-                return true;
-            }
-
-            if (a == null || b == null) {
-                return false;
-            }
-
-            if (a.length != b.length) {
-                return false;
-            }
-
-            for (var i = 0; i < a.length; ++i) {
-                if (a[i] !== b[i]) return false;
-            }
-            return true;
-        };
-
-        function PuzzleStateQueue = function() {
-            this.counter = 0;
-            var this.heap = new Heap(function(a, b) {
-                if (a[0].predictedCost() < b[0].predictedCost()) {
-                    return 1;
-                } else if (a[0].predictedCost() > b[0].predictedCost()) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            });
-        };
-
-        PuzzleStateQueue.prototype.size = function() {
-            return this.heap.count();
-        };
-
-        PuzzleStateQueue.prototype.empty = function() {
-            return this.heap.empty();
-        };
-
-        PuzzleStateQueue.prototype.add(state) {
-            this.counter += 1;
-            this.heap.insert([state, this.counter]);
-        };
-
-        PuzzleStateQueue.prototype.next = function() {
-            return this.heap.min();
-        };
-
-        var genRandPuzzle = function(side) {
-            var size = side * side;
-            while (true) {
-                start = range(size);
-                startState = to2d(start);
-                startState = new PuzzleState(startState)
-
-                goal = range(size);
-                random.shuffle(goal);
-                goalState = to2d(goal);
-                goalState = PuzzleState(goalState)
-
-                if (startState.parity() == goalState.parity()) {
-                    startState.goal = goalState;
-                    return startState;
-                }
-            }
-        };
-
-        var noHeuristic = function():
-            return 0;
-        };
-
-        var manhattanHeuristic = function() {
-            var count = 0;
-            var startState = this.state;
-            var goalState = this.goal.state;
-            var sides = this.sides;
-
-            var sideCount = len(sides);
-            var goalY = range(sideCount * sideCount);
-            var goalX = range(sideCount * sideCount);
-            for (var x = 0; x < sides; ++x) {
-                for (var y = 0; y < sides; ++y) {
-                    goalY[goalState[x][y]] = y;
-                    goalX[goalState[x][y]] = x;
-                };
-            }
-
-            for (var x = 0; x < sides; ++x) {
-                for (var y = 0; y < sides; ++y) {
-                    var tile = startState[x][y];
-                    if (tile != 0 and tile != goalState[x][y]) {
-                        count += Math.abs(goalX[tile] - x) + Math.abs(goalY[tile] - y);
-                    }
-                }
-            }
-
-            return count;
-        };
-
-        var misplacedTilesHeuristic = function() {
-            var count = 0;
-            var startState = this.state;
-            var goalState = this.goal.state;
-            var sides = this.sides;
-            for (var x = 0; x < sides; ++x) {
-                for (var y = 0; y < sides; ++y) {
-                    var tile = startState[x][y];
-                    if (tile != 0 and tile != goalState[x][y]) {
-                        count += 1;
-                    }
-                }
-            }
-            return count;
-        };
-
-        var uniformCost = function() {
-            return this.pathCost + this.calcStepCost();
-        };
-
-
-        var greedyCost = function() {
-            return this.calcStepCost();
-        };
-
-        var clone2d = function(list2d) {
-            var list2dClone = [];
-            for (var x = 0; x < list2d.length; ++x) {
-                list2dClone[x] = list2d[x].slice(0);
-            }
-            return list2dClone;
-        };
-
-        var to1d = function(list) {
-            var list1d = [];
-            for (var x = 0; x < list.length; ++x) {
-                for (var y = 0; y < list[x].length; ++y) {
-                    list1d.push(list[x][y]);
-                }
-            }
-            return list1d;
-        };
-
-        var to2d = function(list, side) {
-            var list2d = [];
-            for (var x = 0; x < side; ++i) {
-                list2d[x] = [];
+            for (var x = 0; x < side; ++x) {
                 for (var y = 0; y < side; ++y) {
-                    list2d[x][y] = list[x * side + y];
+                    var index = state[x][y];
+                    var xCanvas = x * blockX;
+                    var yCanvas = y * blockY;
+                    if (index == 0) {
+                        ctx.beginPath();
+                        ctx.rect(yCanvas, xCanvas, blockY, blockX);
+                        ctx.fillStyle = blankColor;
+                        ctx.fill();
+                    } else {
+                        ctx.putImageData(blocks[index], yCanvas, xCanvas);
+                    }
                 }
             }
-            return list2d;
         };
 
-        var range = function(n) {
-            var a = [];
-            while (n) {
-                a.push(--n);
-            }
-            return a;
-        };
-
-        var shuffle = function(list_in) {
-            var pick, temp;
-            var list = list_in.slice(0);
-            var i = list.length;
-            while (--i > 0) {
-                pick = Math.floor(Math.random() * i);
-                temp = list[i];
-                list[i] = list[pick];
-                list[pick] = temp;
-            }
-            return list;
-        };
-
-        var scramble = function(image, ctx) {
-            var missingBlock = Math.floor(Math.random() * 16);
-
-            var size = 4;
-            var blockX = Math.floor(image.width/4);
-            var blockY = Math.floor(image.height/4);
+        var getImageBlocks = function(image, ctx, size) {
+            var blockX = Math.floor(image.height/size);
+            var blockY = Math.floor(image.width/size);
             var blocks = [];
 
             for (var x = 0; x < size; ++x) {
                 for (var y = 0; y < size; ++y) {
-                    blocks.push(ctx.getImageData(x * blockX, y * blockY, blockX, blockY));
+                    blocks.push(ctx.getImageData(y * blockY, x * blockX, blockY, blockX));
                 }
             }
-            blocks = shuffle(blocks);
-
-            for (var x = 0; x < size; ++x) {
-                for (var y = 0; y < size; ++y) {
-                    ctx.putImageData(blocks.shift(), x * blockX, y * blockY);
-                }
-            }
-
-            var missingBlock = Math.floor(Math.random() * 16);
-            var x = Math.floor(missingBlock / size);
-            var y = missingBlock % size;
-            ctx.rect(x * blockX, y * blockY, blockX, blockY);
-            ctx.fillStyle = 'black';
-            ctx.fill();
+            return blocks;
         };
 
         var size = 3;
-        var order =
-        var canvas = document.getElementById('puzzle');
-        var ctx = canvas.getContext('2d');
+        var puzzle = eightPuzzle.genRandPuzzle(size);
+        var solution = eightPuzzle.solve(
+            puzzle,
+            eightPuzzle.manhattanHeuristic,
+            eightPuzzle.uniformCost);
 
+        var canvas = document.getElementById('puzzle');
+        var scrambleButton = document.getElementById('scramble-button');
+        var solveButton = document.getElementById('solve-button');
+        var moveCounter = document.getElementById('move-counter');
+
+        scrambleButton.disabled = true;
+        solveButton.disabled = true;
+
+        var ctx = canvas.getContext('2d');
+        var blocks = [];
         var image = new Image();
         image.onload = function() {
             canvas.width = image.width;
             canvas.height = image.height;
             ctx.drawImage(image, 0, 0, image.width, image.height);
-            scramble(image, ctx);
+            blocks = getImageBlocks(image, ctx, size);
+            scrambleButton.disabled = false;
+            scrambleButton.addEventListener('click', function() {
+                scrambleButton.disabled = true;
+                solveButton.disabled = false;
+                updateCanvas(puzzle, blocks, image, ctx);
+            });
+
+            solveButton.addEventListener('click', function() {
+                solveButton.disabled = true;
+                var intervalId = null;
+                var delay = 1000;
+                var step = 0;
+                intervalId = setInterval(function() {
+                    if (step < solution[1].length) {
+                        updateCanvas(solution[1][step], blocks, image, ctx);
+                        ++step;
+                        moveCounter.innerHTML = step;
+                    } else {
+                        ctx.drawImage(image, 0, 0, image.width, image.height);
+                        clearInterval(intervalId);
+                    }
+                }, delay);
+            });
         };
         image.src = "images/trees.jpg";
         </script>
-
     </body>
 </html>
-
