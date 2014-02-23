@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sending Images with WebRTC Data Channels"
+title: "Sending images with WebRTC data channels"
 ---
 
 
