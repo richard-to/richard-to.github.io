@@ -7,7 +7,7 @@ Since the semester started, I haven't worked on my Math RPG project. Most of my 
 
 There were already programs that imported images using various techniques. One popular approach imported jpeg images using an image optimization algorithm and then generated the necessary function calls to draw the image.
 
-Since the sprites I planned to used were small images (32x32 or 48x32), my simple solution was to convert the bitmap data into a 2D array of RGB values. Pasting this array into the KA CS platform caused the editor to freeze and lag. Eventually I was able to write the code necessary to draw the sprite mainly use the point() function.
+Since the sprites I planned to used were small images (32x32 or 48x32), my simple solution was to convert the bitmap data into a 2D array of RGB values. Pasting this array into the KA CS platform caused the editor to freeze and lag. Eventually I was able to write the code necessary to draw the sprite mainly using the point() function.
 
 The demo using this approach can be seen [here](http://www.khanacademy.org/cs/pixel-drawing-attempt-1-slow/4828335093841920).
 
@@ -49,9 +49,9 @@ for (y = 0; y < imageDataHeight; ++y) {
 }
 {% endhighlight %}
 
-My first optimization was to use a hash table to look up RGB values. This was possible since the images use a small number of colors. Here is a [link to this demo](http://www.khanacademy.org/cs/pixel-drawing-attempt-2-slightly-faster/5605398025338880).
+My first optimization was to use a hash table to look up RGB values. This was possible since the images use a limited set of colors. Here is a [link to this demo](http://www.khanacademy.org/cs/pixel-drawing-attempt-2-slightly-faster/5605398025338880).
 
-Although, performance improved, this approach didn't seem scalable to multiple animated images.
+Although performance improved, this approach didn't seem scalable to multiple animated images, so I looked for other solutions.
 
 {% highlight javascript linenos %}
 var colorTable = [0,[48,48,48],[102,102,102],[41,41,41],[130,130,130],[115,115,115],[146,146,146],[96,96,96],[85,56,45],[96,64,52],[122,122,122],[103,69,56],[39,39,39],[115,78,64],[236,192,168],[235,206,188],[235,206,189],[240,220,209],[236,198,177],[172,123,113],[255,255,255],[113,82,74],[156,76,63],[96,53,59],[108,60,67],[130,74,82],[236,194,171],[115,64,72],[85,85,85],[66,66,66],[45,45,45],[181,166,158],[81,81,81],[87,87,87],[92,92,92],[153,121,36],[163,129,39],[202,186,176],[79,79,79],[80,80,80],[215,197,187],[89,89,89],[71,71,71],[64,64,64],[63,63,63],[58,58,58],[44,44,44]];
@@ -82,13 +82,13 @@ for (y = 0; y < imageDataHeight; ++y) {
 popMatrix();
 {% endhighlight %}
 
-When I looked at the code from the 3D Minecraft program, I noticed that the canvas element was accessible. This turned out to be somewhat of a hack since the canvas element is inaccesible in normal use cases. The hack involves knowledge of how Processing JS works and considering John Resig developed Processing JS and is involved with the Khan Academy CS program, it makes sense that he knew how to get around the restrictions.
+When I inspected the code from the 3D Minecraft program, I noticed that the canvas element was used. This turned out to be somewhat of a hack since the canvas element is normally not accessible. The hack involves knowledge of how Processing JS works and considering John Resig developed Processing JS and is involved with the Khan Academy CS program, it makes sense that he knew how to get around the restrictions.
 
-The tricky part was figuring out how to modify the code to work for my use case. Access to to the canvas element would definitely allow me to render the animated sprites with good performance. The hack seems to involve overriding certain functions during initialization of either Processing JS or the Khan Academy CS platform. It's difficult to determine what modifications are needed, but it worked and I was able to draw a static background with my characters. [The demo can be viewed here.](http://www.khanacademy.org/cs/pixel-drawing-attempt-3-even-faster/6726213898862592)
+The tricky part was figuring out how to modify the code to work for my use case. Access to to the canvas element would definitely make it possible to render animated sprites with good performance. The hack seems to involve overriding certain functions used during initialization of either Processing JS or the Khan Academy CS platform. It's difficult to determine what modifications are needed, but my set of changes worked and allowed me to draw a static background with my characters. [The demo can be viewed here.](http://www.khanacademy.org/cs/pixel-drawing-attempt-3-even-faster/6726213898862592)
 
 ![Math RPG in Khan Academy CS Program](/images/rpg-in-khanacademy-cs.png)
 
-The next step would be to further optimize the size of the sprites. When there are multiple sprite arrays pasted into the editor, it can crash Chrome and make you lose all your work since there is no auto-save. What I have in mind is maybe using a discrete cosine transforms (DCT) and huffman encoding. I'm not sure if those techniques will help much. Mostly, I just interested in implementing those algorithms.
+The next step would be to further optimize the size of the sprites. When there are multiple sprite arrays pasted into the editor, it can crash Chrome and make you lose all your work since there is no auto-save. What I have in mind is maybe using a discrete cosine transforms (DCT) and huffman encoding. I'm not sure if those techniques will help much. Mostly, I just interested in learning how to implement those algorithms.
 
 Here is the relevant snippet of code:
 
