@@ -75,3 +75,5 @@ The size of the decoder table also needs to be taken into account. A rough attem
 One quick optimization to test out is performing the encoding on each sprite separately. This would make it so a decoder table would need to be included for each sprite. The upside is the decoder tables would be much smaller.
 
 The sample the code used to create the huffman codes for encoding and decoding my image data can be found by [following this link here](/projects/huffman). You'll need to open the console to see the results.
+
+Also if interested, the source is also posted as a [gist](https://gist.github.com/richard-to/9480974).
