@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Huffman Coding</title>
+        <style>
+        .histogram {
+            position:relative;
+        }
+        .histogram div {
+            background: #000;            
+            display: inline-block;
+            width: 5px;
+            vertical-align: bottom;         
+        }
+        </style>
+    </head>
+
+    <body>
+        <script src="data.js"></script>
+
+        <script>
+
+        var HuffmanTableBuilder = function() {};
+
+        // Calculates histogram data needed to build huffman table
+        // TODO(richard-to): Dynamically figure out max Table size instead?
+        //                   Would require looping through data an extra time.
+        HuffmanTableBuilder.prototype._buildHistogram = function(dataList, maxValue) {
+            
+            var histogram = [];
+            var orderedIndex = [];
+            var orderedDist = [];            
+            var max = 0;
+            var count = 0.0;
+
+            // Allocate default array of X length to 0
+            for (var i = 0; i < maxValue; ++i) {
+                histogram.push(0);
+                orderedIndex.push(i);
+            }
+
+            // Count data points in list of data arrays
+            for (var i = 0; i < dataList.length; ++i) {
+                count += dataList[i].length;
+            }
+
+            // Populate histogram and find highest value in histogram
+            // Note that highest value is not the value with the most occurences
+            for (var i = 0; i < dataList.length; ++i) {
+                var data = dataList[i];
+                for (var g = 0; g < data.length; ++g) {
+                    ++histogram[data[g]];
+                    if (data[g] > max) {
+                        max = data[g];
+                    }
+                }
+            }
+            
+            // Sort pixels based on histogram counts
+            orderedIndex.sort(function(a, b) {
+                return histogram[b] - histogram[a];
+            });
+
+            // Sort distribution based on counts and calculate percentage as rounded int
+            // Example: .885 will equal 89
+            for (var i = 0; i < orderedIndex.length; ++i) {
+                orderedDist.push(Math.round((histogram[orderedIndex[i]] / count) * 100));
+            }
+
+            return {
+                data: histogram,
+                orderedIndex: orderedIndex,
+                orderedDist: orderedDist,
+                max: max,
+                count: count
+            };            
+        };
+
+        // Recursively run Huffman algorithm to encoding table
+        // Probably not as efficient as it could be...
+        HuffmanTableBuilder.prototype._huffman = function(dist, codeKeys) {
+            var codeKeysLen = codeKeys.length;
+            var length = dist.length;
+
+            // If number of values in sub distribution matches
+            // the number of code keys, then we can stop.
+            //
+            // It is very important to make sure the distribution
+            // array ends exactly at the number of keys or an 
+            // error will be thrown.
+            if (length == codeKeysLen) {
+                return codeKeys.slice(0);
+            } else {
+
+                // First get the distribution minus the X lowest
+                // values that we will sum together
+                var subDist = dist.slice(0, -codeKeysLen);
+                var subDistLen = subDist.length;
+                var index = subDistLen;                
+                var value = 0;
+                
+                // Add X values to form one value
+                for (var i = 1; i <= codeKeysLen; ++i) {
+                    value += dist[length - i];
+                }
+                
+                // Now let's place it in the right place
+                // in the array
+                //
+                // Definitely think there is a more efficient
+                // way to do this part.
+                for (var i = 0; i < subDistLen; ++i) {
+                    if (value > subDist[i]) {
+                        subDist.splice(i, 0, value);
+                        index = i;
+                        break;
+                    }
+                }
+
+                // If we could not find a spot for the new
+                // value, will place it as the end of the array
+                if (subDist.length == subDistLen) {
+                    subDist.push(value);
+                }
+
+                // Recursively call _huffman again
+                var codeTable = this._huffman(subDist, codeKeys);
+
+                // Now build up the code table from previous results
+                var code = codeTable.splice(index, 1);                
+                for (var i = 0; i < codeKeysLen; ++i) {
+                    codeTable.push(code + codeKeys[i]);
+                }
+
+                return codeTable;
+            }
+        };
+
+        HuffmanTableBuilder.prototype._buildDecoderTable = function(encoderTable) {
+            var decoderTable = {};
+            for (var i = 0; i < encoderTable.length; ++i) {
+                decoderTable[encoderTable[i]] = i;
+            }
+            return decoderTable;
+        };
+
+        HuffmanTableBuilder.prototype._organizeEncoderTable = function(orderedIndex, codeTable) {
+            var encoderTable = [];
+            for (var i = 0; i < codeTable.length; ++i) {
+                encoderTable[orderedIndex[i]] = codeTable[i];
+            }
+            return encoderTable;
+        };
+
+        HuffmanTableBuilder.prototype.build = function(dataList, codeKeys, maxValue) {
+
+            codeKeysLen = codeKeys.length - 1;           
+            var histogram = this._buildHistogram(dataList, maxValue);
+
+
+            // Need to pad ordered histogram dist to make sure
+            // the final step leads to [codeKeysLen + 1] array
+            // values left.
+            //
+            // This currently doesn't work in the 
+            // case where you have all values used. It should
+            // then extend the array with enough 0 values,
+            // but doesn't current do that.
+            var slicePoint = codeKeysLen + 1;
+            while (histogram.max > slicePoint) {
+                slicePoint += codeKeysLen;
+            }
+
+            // This returns the huffman table with the data indexes ordered
+            // For this to work we need to match the code values
+            // with the appropriate array index
+            var codeTable = this._huffman(
+                histogram.orderedDist.slice(0, slicePoint), codeKeys);
+
+            var encoderTable = this._organizeEncoderTable(
+                histogram.orderedIndex, codeTable);
+
+            // Build a table for decoding the encoded result
+            var decoderTable = this._buildDecoderTable(encoderTable);                        
+
+            return {
+                encoderTable: encoderTable,
+                decoderTable: decoderTable 
+            };
+        };  
+        
+        var Huffman = {
+            encode: function(data, encoderTable) {
+                var encodedString = "";
+                for (var i = 0; i < data.length; ++i) {
+                    encodedString += encoderTable[data[i]];
+                }
+                return encodedString;
+            },
+            decode: function(encodedData, decoderTable) {
+                var decodedData = [];
+                var currentKey = "";                
+                for (var i = 0; i < encodedData.length; ++i) {
+                    currentKey += encodedData[i];
+                    if (decoderTable[currentKey] !== undefined) {
+                        decodedData.push(decoderTable[currentKey]);
+                        currentKey = "";
+                    }
+                }
+                return decodedData;
+            },
+            verify: function(originalData, decodedData) {
+                if (decodedData.length != originalData.length) {
+                    return false;
+                }
+
+                for (var i = 0; i < decodedData.length; ++i) {
+                    if (decodedData[i] != originalData[i]) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        };
+
+        var drawHistogram = function(histogram) {
+            var divEl = document.createElement('div');
+            divEl.className = "histogram";
+            for (var i = 0; i < histogram.max; ++i) {
+                var barEl = document.createElement('div');
+                barEl.style.height = 
+                    Math.round((histogram.data[i] / histogram.count) * 100) * 4 + "px";
+                divEl.appendChild(barEl);
+            }
+            document.body.appendChild(divEl);
+        };
+        </script>
+
+        <script>
+
+        var dataList = [waterData, cliffData, grassData, corrinaData, sethData];
+
+        var maxValue = 255;
+        var codeKeys = [
+            "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+            "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+            "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
+            "u", "v", "w", "x", "y", "z"];        
+
+        var huffmanTableBuilder = new HuffmanTableBuilder();
+        
+        var histogram = huffmanTableBuilder._buildHistogram(dataList, maxValue);
+        drawHistogram(histogram);
+
+        var huffmanTables = huffmanTableBuilder.build(dataList, codeKeys, maxValue);
+        for (var i = 0; i < dataList.length; ++i) {
+            var encodedData = Huffman.encode(dataList[i], huffmanTables.encoderTable);
+            var decodedData = Huffman.decode(encodedData, huffmanTables.decoderTable);            
+            var valid = Huffman.verify(dataList[i], decodedData);
+            console.log("Unencoded data array: " + 
+                dataList[i].toString().length);  
+            console.log("Unencoded data array (as string with no commas): " + 
+                dataList[i].toString().replace(/,/g, '').length);         
+            console.log("Encoded data string: " + encodedData.length);
+            console.log("Valid Encoding: " + valid);
+        }
+        </script>
+
+    </body>
+</html>
+
