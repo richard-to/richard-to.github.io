@@ -111,12 +111,13 @@
 
         var multiply = function(ctx) {
             var maxAlpha = 255;
-            var rWeight = 0.21;
-            var gWeight = 0.71;
-            var bWeight = 0.07;
             var rgbaBytes = 4;
 
-            var r, g, b, gray;
+            var r, g, b;
+
+            var rm = 57;
+            var gm = 70;
+            var bm = 111;
 
             var width = ctx.canvas.width;
             var height = ctx.canvas.height;
@@ -133,10 +134,10 @@
                     g = masterData.data[col + 1];
                     b = masterData.data[col + 2];
 
-                    imageData.data[col] = (r/255) * (36/255) * 255;
-                    imageData.data[col + 1] = (g/255) * (50/255) * 255;
-                    imageData.data[col + 2] = (b/255) * (96/255) * 255;
-                    imageData.data[col + 3] = 255;
+                    imageData.data[col] = r * rm / maxAlpha;
+                    imageData.data[col + 1] = g * gm  / maxAlpha;
+                    imageData.data[col + 2] = b * bm / maxAlpha;
+                    imageData.data[col + 3] = maxAlpha;
                 }
             }
             ctx.putImageData(imageData, 0, 0);
@@ -219,6 +220,116 @@
             ctx.putImageData(imageData, 0, 0);
         };
 
+
+        var hough = function(ctx) {
+            var width = ctx.canvas.width;
+            var height = ctx.canvas.height;
+
+            var masterData = ctx.getImageData(0, 0, width, height);            
+            //canny(ctx);
+            sobel(ctx);
+            thresholdImage(ctx);
+            var accumulator = [];
+
+
+            var points = [];
+            for (var i = 0; i < 180; i += 1) {
+                points.push(Math.PI * (i/180.0));
+            }
+
+            for (var i = 0; i < 5000; ++i) {
+                accumulator[i] = [];
+                for (var g = 0; g < points.length; ++g) {
+                    accumulator[i].push(0);
+                }
+            }
+
+            var maxAlpha = 255;
+            var rgbaBytes = 4;
+
+            var houghData = ctx.getImageData(0, 0, width, height);
+            var imageData = ctx.createImageData(width, height);                        
+            
+            var rgbaWidth = width * rgbaBytes;
+            var hx = 0;
+            var hy = 0;
+            for (var row = 0; row < height; ++row) {
+                var fauxRow = row * rgbaWidth;
+                var fauxWidth = fauxRow + rgbaWidth;
+                hy = 0;
+                for (var col = fauxRow; col < fauxWidth; col += rgbaBytes) {
+                    var rx = houghData.data[col];
+                    if (rx > 0) {
+                        for (var g = 0; g < points.length; ++g) {
+                            var p = Math.floor(hy * Math.cos(points[g]) + hx * Math.sin(points[g]));
+                            accumulator[p + 2500][g]++;
+                        }
+                    }
+                    ++hy;
+                }
+                ++hx;
+            }
+            
+            for (var i = 0; i < accumulator.length; ++i) {
+                for (var g = 0; g < accumulator[i].length; ++g) {
+                    if (accumulator[i][g] > 200) {
+                        /*
+                        for (var row = 0; row < height; ++row) {
+                            var col = Math.ceil(((i - 2500) - row * Math.sin(points[g]))/Math.cos(points[g]));
+                            var loc = col * rgbaBytes + row * rgbaWidth;
+                            masterData.data[loc] = 0;
+                            masterData.data[loc + 1] = 255;
+                            masterData.data[loc + 2] = 0;
+
+                            houghData.data[loc] = 0;
+                            houghData.data[loc + 1] = 255;
+                            houghData.data[loc + 2] = 0;                         
+                        } 
+                        */
+                        for (var col = 0; col < width; ++col) {
+                            var row = Math.ceil(((i - 2500) - col * Math.cos(points[g]))/Math.sin(points[g]));
+                            var loc = col * rgbaBytes + row * rgbaWidth;
+                            masterData.data[loc] = 255;
+                            masterData.data[loc + 1] = 0;
+                            masterData.data[loc + 2] = 0;
+
+                            houghData.data[loc] = 255;
+                            houghData.data[loc + 1] = 0;
+                            houghData.data[loc + 2] = 0;                         
+                        }                                              
+                    }
+                }
+            }
+
+            /*
+            hx = 0;
+            for (var row = 0; row < height; ++row) {
+                var fauxRow = row * rgbaWidth;
+                var fauxWidth = fauxRow + rgbaWidth;
+                hy = 0;
+                for (var col = fauxRow; col < fauxWidth; col += rgbaBytes) {
+                    var rx = houghData.data[col];
+                    if (rx > 0) {
+                        for (var g = 0; g < points.length; ++g) {
+                            var p = Math.floor(hy * Math.cos(points[g]) + hx * Math.sin(points[g]));
+                            if (accumulator[p + 1000][g] > 150) {
+                                masterData.data[col] = 255;
+                                masterData.data[col + 1] = 0;
+                                masterData.data[col + 2] = 0;
+
+                                houghData.data[col] = 255;
+                                houghData.data[col + 1] = 0;
+                                houghData.data[col + 2] = 0;                                
+                            }
+                        }
+                    }
+                    ++hy;
+                }
+                ++hx;
+            }*/          
+            ctx.putImageData(masterData, 0, 0);
+        };
+
         var canny = function(ctx) {
             imageToGrayScale(ctx);
             gaussianBlur(ctx);
@@ -248,16 +359,11 @@
                 var fauxWidth = fauxRow + rgbaWidth;
                 for (var col = fauxRow; col < fauxWidth; col += rgbaBytes) {
                     rx = gradXData.data[col];
-                    gx = gradXData.data[col + 1];
-                    bx = gradXData.data[col + 2];
-
                     ry = gradYData.data[col];
-                    gy = gradYData.data[col + 1];
-                    by = gradYData.data[col + 2];
 
                     imageData.data[col] = Math.sqrt(rx * rx + ry * ry);
-                    imageData.data[col + 1] = Math.sqrt(gx * gx + gy * gy);
-                    imageData.data[col + 2] = Math.sqrt(bx * bx + by * by);
+                    imageData.data[col + 1] = imageData.data[col];
+                    imageData.data[col + 2] = imageData.data[col];
                     imageData.data[col + 3] = maxAlpha;
 
                     var angle = Math.atan(rx/ry)/Math.PI * 180;
@@ -300,7 +406,117 @@
                     }
                 }
             }
-            ctx.putImageData(sImageData, 0, 0);
+
+            var tHigh = 50;
+            var tLow = 10;
+            var htImageData = ctx.createImageData(width, height);
+            var ltImageData = ctx.createImageData(width, height);
+            for (var row = 0; row < height; ++row) {
+                var fauxRow = row * rgbaWidth;
+                var fauxWidth = fauxRow + rgbaWidth;
+                for (var col = fauxRow; col < fauxWidth; col += rgbaBytes) {
+                    r = sImageData.data[col];
+                    
+                    if (r >= tHigh) {
+                        htImageData.data[col] = r;
+                        htImageData.data[col + 1] = r;
+                        htImageData.data[col + 2] = r;
+                    } else {
+                        htImageData.data[col] = 0;
+                        htImageData.data[col + 1] = 0;
+                        htImageData.data[col + 2] = 0;
+                    }
+
+                    if (r >= tLow && r < tHigh) {
+                        ltImageData.data[col] = r;
+                        ltImageData.data[col + 1] = r;
+                        ltImageData.data[col + 2] = r;
+                    } else {
+                        ltImageData.data[col] = 0;
+                        ltImageData.data[col + 1] = 0;
+                        ltImageData.data[col + 2] = 0;
+                    }
+
+                    htImageData.data[col + 3] = maxAlpha;
+                    ltImageData.data[col + 3] = maxAlpha;
+                }
+            }      
+
+            var finalImageData = ctx.createImageData(width, height);
+            for (var row = 0; row < height; ++row) {
+                var fauxRow = row * rgbaWidth;
+                var fauxWidth = fauxRow + rgbaWidth;
+                for (var col = fauxRow; col < fauxWidth; col += rgbaBytes) {
+
+                    var rh = htImageData.data[col];                    
+                    if (rh > 0) {
+                        finalImageData.data[col] = 255;
+                        finalImageData.data[col + 1] = 255;
+                        finalImageData.data[col + 2] = 255;
+
+                        var tcol = (col - rgbaBytes) - rgbaWidth;
+                        if (ltImageData.data[tcol] > 0) {
+                            finalImageData.data[tcol] = 255;
+                            finalImageData.data[tcol + 1] = 255;
+                            finalImageData.data[tcol + 2] = 255;
+                        }
+
+                        tcol = col - rgbaWidth;
+                        if (ltImageData.data[tcol] > 0) {
+                            finalImageData.data[tcol] = 255;
+                            finalImageData.data[tcol + 1] = 255;
+                            finalImageData.data[tcol + 2] = 255;
+                        } 
+
+                        tcol = (col + rgbaBytes) - rgbaWidth;
+                        if (ltImageData.data[tcol] > 0) {
+                            finalImageData.data[tcol] = 255;
+                            finalImageData.data[tcol + 1] = 255;
+                            finalImageData.data[tcol + 2] = 255;
+                        }
+
+
+                        tcol = col - rgbaBytes;
+                        if (ltImageData.data[tcol] > 0) {
+                            finalImageData.data[tcol] = 255;
+                            finalImageData.data[tcol + 1] = 255;
+                            finalImageData.data[tcol + 2] = 255;
+                        }
+
+                        tcol = col + rgbaBytes;
+                        if (ltImageData.data[tcol] > 0) {
+                            finalImageData.data[tcol] = 255;
+                            finalImageData.data[tcol + 1] = 255;
+                            finalImageData.data[tcol + 2] = 255;
+                        }
+
+
+                        var tcol = (col - rgbaBytes) + rgbaWidth;
+                        if (ltImageData.data[tcol] > 0) {
+                            finalImageData.data[tcol] = 255;
+                            finalImageData.data[tcol + 1] = 255;
+                            finalImageData.data[tcol + 2] = 255;
+                        }
+
+                        tcol = col + rgbaWidth;
+                        if (ltImageData.data[tcol] > 0) {
+                            finalImageData.data[tcol] = 255;
+                            finalImageData.data[tcol + 1] = 255;
+                            finalImageData.data[tcol + 2] = 255;
+                        } 
+
+                        tcol = (col + rgbaBytes) + rgbaWidth;
+                        if (ltImageData.data[tcol] > 0) {
+                            finalImageData.data[tcol] = 255;
+                            finalImageData.data[tcol + 1] = 255;
+                            finalImageData.data[tcol + 2] = 255;
+                        }
+                    }
+                    finalImageData.data[col + 3] = maxAlpha;
+                }
+            }     
+
+            ctx.putImageData(finalImageData, 0, 0);
         };
 
         var sobelX = function(ctx) {
@@ -461,19 +677,20 @@
         window.onload = function() {
             var resultsEl = document.getElementById('image-results');
             var image = document.getElementById('image');
-            imageToCanvas(resultsEl, image, multiply);
-            imageToCanvas(resultsEl, image, gaussianBlur);
-            imageToCanvas(resultsEl, image, sharpen);
-            imageToCanvas(resultsEl, image, sobel);
-            imageToCanvas(resultsEl, image, imageToGrayScale);
-            imageToCanvas(resultsEl, image, thresholdImage);
-            imageToCanvas(resultsEl, image, function(ctx) {
-                thresholdImage(ctx);
-                invert(ctx);
-            });
-            imageToCanvas(resultsEl, image, invert);
-            imageToCanvas(resultsEl, image, median);
+            //imageToCanvas(resultsEl, image, multiply);
+            //imageToCanvas(resultsEl, image, gaussianBlur);
+            //imageToCanvas(resultsEl, image, sharpen);
+            //imageToCanvas(resultsEl, image, imageToGrayScale);
+            //imageToCanvas(resultsEl, image, thresholdImage);
+            //imageToCanvas(resultsEl, image, function(ctx) {
+            //    thresholdImage(ctx);
+            //    invert(ctx);
+            //});
+            //imageToCanvas(resultsEl, image, invert);
+            //imageToCanvas(resultsEl, image, median);
+            imageToCanvas(resultsEl, image, sobel);            
             imageToCanvas(resultsEl, image, canny);
+            imageToCanvas(resultsEl, image, hough);            
         };
         </script>
 

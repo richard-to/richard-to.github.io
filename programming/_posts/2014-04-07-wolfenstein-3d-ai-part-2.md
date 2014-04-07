@@ -1,0 +1,59 @@
+---
+layout: post
+title: "Wolfenstein 3D AI - Part 2: Helpful Links"
+---
+
+One of the purposes of this project is to apply what I've learned on a project that has no clear solution and or outcome devised by a teacher. Sometimes I hear people complain that they never used anything they learned as a Computer Science student. I don't think that's true. It's just a matter of creating opportunities where this knowledge becomes relevant and useful. While working on this project, I've had to go through a lot of resources to help solve various problems, so I thought I'd list them here.
+
+- Read Lowe’s SIFT paper multiple times with a focus “scale-space extrema detection” and “keypoint localization” sections
+  - Ideally, I want to implement SIFT from the ground up
+  - [Link to Lowe's SIFT Paper](http://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf)
+- Reread Section 4.1.1 - 4.1.3 in Szeliski book
+  - [Electronic draft available here](http://szeliski.org/Book/)
+- Read Chapter 6 in Davies CMV book
+  - [Unfortunately need to buy book. It is available on Amazon.](http://www.amazon.com/Computer-Machine-Vision-Algorithms-Practicalities-ebook/dp/B007OS9B9C)
+- Research on various SIFT implementations
+   - [Source code for Open CV SIFT implementation](https://github.com/Itseez/opencv/blob/master/modules/nonfree/src/sift.cpp)
+   - [Open CV SIFT is based off of this implementation](https://github.com/robwhess/opensift/blob/master/src/sift.c)
+   - [Yet another Open CV SIFT implementation](http://www.aishack.in/2010/07/implementing-sift-in-opencv/)
+   - [SIFT implementation using VXL](http://www.cs.man.ac.uk/~liuja/#demos)
+     - AI Shack implementation based off of this implementation
+   - [Simple Matcher sample code](http://docs.opencv.org/doc/user_guide/ug_features2d.html)
+- [Helpful explanation of SIFT steps from aishack.in](http://www.aishack.in/2010/05/sift-scale-invariant-feature-transform/)
+- [Wikipedia article on Gaussian Blur](http://en.wikipedia.org/wiki/Gaussian_blur)
+- [Wikipedia article on Difference of Gaussians](http://en.wikipedia.org/wiki/Difference_of_Gaussians)
+- Linear interpolation for scaling up images.
+  - [Equation from Wikipedia](http://en.wikipedia.org/wiki/Linear_interpolation)
+- Some futile research on Eigenvalues and Eigenvectors. Need to learn Linear Algebra and Calculus III material.
+  - [Somewhat helpful Wikipedia description](http://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors)
+  - [Khan Academy video that introduces eigenvalues and eigenvectors](https://www.khanacademy.org/math/linear-algebra/alternate_bases/eigen_everything/v/linear-algebra--introduction-to-eigenvalues-and-eigenvectors)
+  - [Khan Academy video example using 2x2 matrix](https://www.khanacademy.org/math/linear-algebra/alternate_bases/eigen_everything/v/linear-algebra--example-solving-for-the-eigenvalues-of-a-2x2-matrix)
+- X11 for automating Linux UI and Screenshots
+  - [Tutorial on using LD_PRELOAD](http://www.catonmat.net/blog/simple-ld-preload-tutorial-part-2/)
+  - [StackOverflow answer on using X11 to control mouse](http://stackoverflow.com/questions/2607010/linux-how-to-capture-screen-and-simulate-mouse-movements/8792991#8792991)
+  - [StackOverflow answer on using X11 to get pixels](http://stackoverflow.com/questions/17518610/how-to-get-a-screen-pixels-color-in-x11/17525571#17525571)
+  - [X11 Documentation](http://www.sbin.org/doc/Xlib/index_contents.html)
+  - [X11 Tutorial](http://tronche.com/gui/x/xlib/)
+  - [Example of how to fake keypresses with X11](http://www.doctort.org/adam/nerd-notes/x11-fake-keypress-event.html)
+- Wolfenstein 3D
+  - [DOS Box](http://www.dosbox.com/)
+  - [Wolfenstein 3D shareware download site](http://www.3drealms.com/wolf3d/)
+  - [Source code from Wolfenstein 3D using javascript and HTML5](https://github.com/id-Software/wolf3d-browser)
+  - [Unofficial Wolf3D implementation using HTML5](http://wolf3d.atw.hu/)
+  - [Map for level 1](http://img4.wikia.nocookie.net/__cb20101120134445/wolfenstein/images/d/d9/WOLF3D_E1M01.PNG)
+  - [Another map for level 1](http://www.belowe.com/images/LostEp/w11.gif)
+  - [Yet another map for level 1](http://www.gamefaqs.com/pc/564603-wolfenstein-3d/faqs/39964)
+- [Game AI Techniques (Specifically chapter 1: State Machine based AI)](http://www.amazon.com/Programming-Game-Example-Mat-Buckland-ebook/dp/B0029LCJXE)
+- Particle Filters
+  - [Udacity Artificial Intelligence for Robotics course](https://udacity.com)
+- SLAM
+  - [SLAM as described in Wikipedia](http://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping)
+  - Briefly described in Udacity Artificial Intelligence for Robotics course also
+- Kinect (Most of this research was done earlier in the year)
+  - [Libfreenect drivers/library](https://github.com/OpenKinect/libfreenect)
+  - [OpenNI](https://github.com/OpenNI/OpenNI)
+  - [Issue with OpenNI and ARM build](https://github.com/OpenNI/OpenNI/issues/81)
+  - [Unmerged fix for SensorKinect driver/lib](https://github.com/avin2/SensorKinect/pull/5)
+  - [Help instructions on install OpenNI on Beagleboard xM](http://youngindiafellowship.academia.edu/JatinSharma/Posts/323707/OpenNI_on_Beagle_Board-XM)
+  - [Helpful tutorial for using Kinect on Ubuntu](http://davetaz-blog.blogspot.fr/2011/03/installing-kinect-on-ubuntu-full-guide.html)
+  - [Helpful information on getting SensorKinect and OpenNI to work on Linux](http://daybydaylinux.blogspot.com/2012/12/how-to-compile-openni-and-sensorkinect.html)

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Discrete Cosine Transform</title>
+    </head>
+
+    <body>
+        <p>
+            "<a href="http://www.flickr.com/photos/dunechaser/518821732/sizes/o/in/photolist-MR6Ch-NjZhh-RYvRp-22Yd4X-2iiqto-2MuDbR-3bdiGG-3bjGTm-3dtt13-3mtUA9-3ywYKN-3EDwy6-3TcSUq-46HgFB-48Q2xa-49REXU-4bazDz-4h4SGR-4ipxpv-4iBbSm-4jUcFo-4nWQ1A-4p3Tfn-4p9fSL-4pfCBV-4puMyh-4sxVtK-4sC8Cn-4unDHj-4AsBqv-4EdWHN-4HeNrk-4HvASy-4KkwTd-4PjFyv-4XwKRT-5bB6YV-5fiwSC-5hPu1F-5jKjYS-5viWhE-5E6icm-5G88Xk-5LTorw-5MVHEh-5NDJ5A-5P7HUY-5T5aPt-5TDiXS-5WH9Ab-5YKenC/">U.S. Army Fire Team</a>" by
+            <a href="http://www.flickr.com/photos/dunechaser/">dunechaser</a> is used under
+            <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>.
+        </p>
+        <div>
+            <img id="image" src="images/lego.jpg" width="640" height="480" />
+        </div>
+
+        <p>
+            This work, "Random Image Transforms", is a derivative of "<a href="http://www.flickr.com/photos/dunechaser/518821732/sizes/o/in/photolist-MR6Ch-NjZhh-RYvRp-22Yd4X-2iiqto-2MuDbR-3bdiGG-3bjGTm-3dtt13-3mtUA9-3ywYKN-3EDwy6-3TcSUq-46HgFB-48Q2xa-49REXU-4bazDz-4h4SGR-4ipxpv-4iBbSm-4jUcFo-4nWQ1A-4p3Tfn-4p9fSL-4pfCBV-4puMyh-4sxVtK-4sC8Cn-4unDHj-4AsBqv-4EdWHN-4HeNrk-4HvASy-4KkwTd-4PjFyv-4XwKRT-5bB6YV-5fiwSC-5hPu1F-5jKjYS-5viWhE-5E6icm-5G88Xk-5LTorw-5MVHEh-5NDJ5A-5P7HUY-5T5aPt-5TDiXS-5WH9Ab-5YKenC/">U.S. Army Fire Team</a>" by
+            <a href="http://www.flickr.com/photos/dunechaser/">dunechaser</a>, used under
+            <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>.
+        </p>
+        <p>
+            "Random Image Transforms" is licensed under  <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a> by Richard To.
+        </p>
+
+        <div id="image-results"></div>        
+        <script>
+
+        var copyImageContext = function(ctx) {
+            var width = ctx.canvas.width;
+            var height = ctx.canvas.height;
+
+            var canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+
+            var copyCtx = canvas.getContext('2d');
+            copyCtx.putImageData(ctx.getImageData(0, 0, width, height), 0, 0);
+            return copyCtx;
+        };
+
+        var imageToCanvas = function(el, image, filter) {
+            var canvas = document.createElement('canvas');
+            canvas.width = image.width;
+            canvas.height = image.height;
+
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(image, 0, 0, image.width, image.height);
+            filter(ctx);
+
+            el.appendChild(canvas);
+        };
+
+        var imageToY = function(ctx) {
+            var maxAlpha = 255;
+            var rWeight = 0.299;
+            var gWeight = 0.587;
+            var bWeight = 0.114;
+            var rgbaBytes = 4;
+
+            var r, g, b, Y;
+
+            var width = ctx.canvas.width;
+            var height = ctx.canvas.height;
+
+            var masterData = ctx.getImageData(0, 0, width, height);
+            var imageData = ctx.createImageData(width, height);
+
+            var data = [];
+            var dct = [];            
+            for (var y = 0; y < height; ++y) {
+                data[y] = [];
+                dct[y] = [];
+            }
+
+            var rgbaWidth = width * rgbaBytes;
+
+            for (var row = 0; row < height; ++row) {
+                var fauxRow = row * rgbaWidth;
+                var fauxWidth = fauxRow + rgbaWidth;
+                for (var col = fauxRow; col < fauxWidth; col += rgbaBytes) {
+                    r = masterData.data[col];
+                    g = masterData.data[col + 1];
+                    b = masterData.data[col + 2];
+                    Y = rWeight * r + gWeight * g + bWeight * b;
+                    imageData.data[col] = Y;
+                    imageData.data[col + 1] = Y;
+                    imageData.data[col + 2] = Y;
+                    imageData.data[col + 3] = maxAlpha;
+
+                     data[row].push(Y);
+                     dct[row].push(0);
+                }
+            }
+
+
+            var calc_grid = function(image, dct, x, y, w, h) {                
+                var midpoint = 128;
+                var shifted_data = [];
+                var ix = 0;
+                var iy = 0;
+                for (var sy = y; sy < y + h; ++sy) {
+                    ix = 0;
+                    shifted_data.push([]);                    
+                    for (var sx = x; sx < x + w; ++sx) {                  
+                        shifted_data[iy].push(image[sy][sx] - midpoint);
+                        ++ix;
+                    }        
+                    ++iy;      
+                }
+                
+                var block = [];
+                for (var u = 0; u < shifted_data.length; ++u) {
+                    block.push([]);
+                    var au = (u == 0) ? (1/Math.sqrt(2)) : 1; 
+                    for (var v = 0; v < shifted_data[u].length; ++v) {
+                        var value = 0;
+                        var av = (v == 0) ? (1/Math.sqrt(2)) : 1;
+
+                        for (var cx = 0; cx < shifted_data.length; ++cx) {
+                            for (var cy = 0; cy < shifted_data[cx].length; ++cy) {
+                                value += shifted_data[cx][cy] * 
+                                    Math.cos( ((2 * cx + 1) * u * Math.PI)/16 ) *
+                                    Math.cos( ((2 * cy + 1) * v * Math.PI)/16 )
+                            }
+                        }
+
+                        value = 1/4 * av * au * value;
+                        block[u].push(value);
+                    }
+                }
+
+                ix = 0;
+                iy = 0;
+                for (var sy = y; sy < y + h; ++sy) {
+                    ix = 0;
+                    for (var sx = x; sx < x + w; ++sx) {
+                        dct[sy][sx] = block[iy][ix];
+                        ++ix;
+                    }        
+                    ++iy;      
+                }
+            };
+            
+            var w = 640;
+            var h = 480;
+            var s = 8;
+            for (var y = 0; y < h; y += s) {
+                for (var x = 0; x < w; x += s) {
+                    calc_grid(data, dct, x, y, s, s);
+                }
+            }
+
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var imageToCb = function(ctx) {
+            var maxAlpha = 255;
+            var rWeight = 0.168736;
+            var gWeight = 0.331264;
+            var bWeight = 0.5;
+            var midValue = 128;
+            var rgbaBytes = 4;
+
+            var r, g, b, Cb;
+
+            var width = ctx.canvas.width;
+            var height = ctx.canvas.height;
+
+            var masterData = ctx.getImageData(0, 0, width, height);
+            var imageData = ctx.createImageData(width, height);
+
+            var rgbaWidth = width * rgbaBytes;
+            for (var row = 0; row < height; ++row) {
+                var fauxRow = row * rgbaWidth;
+                var fauxWidth = fauxRow + rgbaWidth;
+                for (var col = fauxRow; col < fauxWidth; col += rgbaBytes) {
+                    r = masterData.data[col];
+                    g = masterData.data[col + 1];
+                    b = masterData.data[col + 2];
+
+                    Cb = midValue - rWeight * r - gWeight * g + bWeight * b;
+                    
+                    imageData.data[col] = Cb;
+                    imageData.data[col + 1] = Cb;
+                    imageData.data[col + 2] = Cb;
+                    imageData.data[col + 3] = maxAlpha;
+                }
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        var imageToCr = function(ctx) {
+            var maxAlpha = 255;
+            var rWeight = 0.5;
+            var gWeight = 0.418688;
+            var bWeight = 0.081312;
+            var midValue = 128;
+            var rgbaBytes = 4;
+
+            var r, g, b, Cr;
+
+            var width = ctx.canvas.width;
+            var height = ctx.canvas.height;
+
+            var masterData = ctx.getImageData(0, 0, width, height);
+            var imageData = ctx.createImageData(width, height);
+
+            var rgbaWidth = width * rgbaBytes;
+            for (var row = 0; row < height; ++row) {
+                var fauxRow = row * rgbaWidth;
+                var fauxWidth = fauxRow + rgbaWidth;
+                for (var col = fauxRow; col < fauxWidth; col += rgbaBytes) {
+                    r = masterData.data[col];
+                    g = masterData.data[col + 1];
+                    b = masterData.data[col + 2];
+
+                    Cr = midValue + (rWeight * r) - (gWeight * g) - (bWeight * b);
+                    
+                    imageData.data[col] = Cr;
+                    imageData.data[col + 1] = Cr;
+                    imageData.data[col + 2] = Cr;
+                    imageData.data[col + 3] = maxAlpha;
+                }
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        window.onload = function() {
+            var resultsEl = document.getElementById('image-results');            
+            var image = document.getElementById('image');
+            imageToCanvas(resultsEl, image, imageToY);
+            imageToCanvas(resultsEl, image, imageToCb);
+            imageToCanvas(resultsEl, image, imageToCr);
+        };
+        </script>
+
+    </body>
+</html>
+
