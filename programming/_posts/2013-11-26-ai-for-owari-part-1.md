@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI for Owari - Part 1"
+title: "AI for Owari - Part 1: Rules of the game"
 ---
 
 In my AI course this semester, one of the projects was to develop a competent AI for the game Owari. The class had a month to work on their bots and on the due date, we held a round-robin tournament. Top 2 teams received gift cards for pizza! So of course I was motivated. I can't resist free food. And it turned out, so were some of my classmates. There were a lot of creative implementations.

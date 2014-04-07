@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI for Owari - Part 2"
+title: "AI for Owari - Part 2: Minimax with Tic-Tac-Toe"
 ---
 
 Before I started work on my Owari AI, I implemented the Minimax algorithm on Tic-Tac-Toe, which is a much a simpler problem. This simplicity proved to be a problem when I developed my strategy for Owari because it made me think that I could calculate all the game states in a few hours. If I remember correctly, Tic-Tac-Toe has about 180,000 states in its game tree and allowed my JavaScript implementation of Minimax to find the first move in less than a second. Total unique permutations is about 2,400 and allowed me to replace the algorithm with a hash table in my original implementation in Python.

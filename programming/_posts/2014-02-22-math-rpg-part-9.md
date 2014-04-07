@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Math RPG - Part 9"
+title: "Math RPG - Part 9: Importing image sprites on Khan Academy CS platform"
 ---
 
 Since the semester started, I haven't worked on my Math RPG project. Most of my time has been spent memorizing terms in my Anatomy and Physiology course and working on some smaller programming projects. One of those projects was an attempt to port my RPG to the Khan Academy Computer Science platform. There are some cool programs there, especially the 3D-Minecraft program created by John Resig. My first experiment was to see if I could use my sprites on their platform since external images are not allowed for obvious reasons.

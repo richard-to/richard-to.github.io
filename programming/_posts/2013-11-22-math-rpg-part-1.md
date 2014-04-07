@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Math RPG - Part 1"
+title: "Math RPG - Part 1: Introduction"
 ---
 
 My current project is an RPG with a math-based combat system. I plan to post weekly updates about my progress. My hope is that this will motivate me to complete one of my project ideas for once.

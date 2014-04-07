@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Math RPG - Part 6"
+title: "Math RPG - Part 6: Storyline"
 ---
 
 I started thinking about storylines and game play mechanics the last few days. That's a good sign. It means that I'm starting to believe I can follow through with this project. The self-doubt has faded for now and with school out there's just more time to work on this every day. The big test will be when school starts again. Will I make the time necessary?

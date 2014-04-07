@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Math RPG - Part 7"
+title: "Math RPG - Part 7: Combat mode"
 ---
 
 I spent the last two weeks working on the combat system. Specifically I wanted to integrate basic math functionality into the system. My main goal was to implement something usable for the first iteration. The actual implementation was actually straightforward compared to the design. I'm not a designer or an expert in UX, so the process amounts to trial and error. I not only want the game to look good, but I want the interface to make sense.

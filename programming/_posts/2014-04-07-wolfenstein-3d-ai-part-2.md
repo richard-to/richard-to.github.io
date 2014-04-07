@@ -3,7 +3,7 @@ layout: post
 title: "Wolfenstein 3D AI - Part 2: Helpful Links"
 ---
 
-One of the purposes of this project is to apply what I've learned on a project that has no clear solution and or outcome devised by a teacher. Sometimes I hear people complain that they never used anything they learned as a Computer Science student. I don't think that's true. It's just a matter of creating opportunities where this knowledge becomes relevant and useful. While working on this project, I've had to go through a lot of resources to help solve various problems, so I thought I'd list them here.
+One of the purposes of this project is to apply what I've learned on a project that has no clear solution and or outcome devised by a teacher. Sometimes I hear people complain that they never use anything they learned as a Computer Science student. I don't think that's true. It's just a matter of creating opportunities where this knowledge becomes relevant and useful. While working on this project, I've had to go through a lot of resources to help solve various problems, so I thought I'd list them here.
 
 - Read Lowe’s SIFT paper multiple times with a focus “scale-space extrema detection” and “keypoint localization” sections
   - Ideally, I want to implement SIFT from the ground up

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Math RPG - Part 2"
+title: "Math RPG - Part 2: ReactJs"
 ---
 
 For the combat system, I decided to use HTML and CSS to render the menus instead of drawing them on the canvas element. It makes a lot of sense to me since HTML, CSS and some Javascript provide more than enough functionality. No sense in rebuilding the wheel for a basic UI interface.

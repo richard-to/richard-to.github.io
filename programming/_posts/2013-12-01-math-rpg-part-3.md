@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Math RPG - Part 3"
+title: "Math RPG - Part 3: Pixel art"
 ---
 
 Thanks to the "Don't Break the Chain" method, I made decent progress on the game engine this week. Still not where I want to be, but I'm happy that I put in at least an hour each day this week. It definitely adds up and I'm finding it easier to get started. Ideally I'd work on this project out of sheer compulsion. Unfortunately that's just not how I work. Apparently the only option is to trick myself with a calendar full of red X's.

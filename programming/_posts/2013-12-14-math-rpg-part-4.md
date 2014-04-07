@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Math RPG - Part 4"
+title: "Math RPG - Part 4: Animation"
 ---
 
 Just finished finals. I should be happy about this, but two days in and I don't know what to do with myself. Mostly I feel tired and sleepy. I think because of all the late nights and Americano's that I chugged down this week. The point of this aside though, is that I didn't work on my RPG for two weeks and I'm not happy about that. It's frustrating.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Math RPG - Part 8"
+title: "Math RPG - Part 8: Jasmine 2.0/RequireJS"
 ---
 
 Development has slowed down quite a bit in the last few weeks. Part of that is school started last week. But mainly I hit a wall and have been indecisive on how to proceed. As usual my inner-perfectionist wants to clean up the game engine and start adding unit tests and some automation. This week I decided that I would work more on structure even that means no new features on the game. The biggest thing is to just keep hacking away at the project even if I'm doing things aren't necessary yet.
