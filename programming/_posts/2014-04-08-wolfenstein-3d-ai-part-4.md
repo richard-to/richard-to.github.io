@@ -24,6 +24,7 @@ I'll plan to provide some images in the next day or two.
 **Source:**
 
 [View Gist](https://gist.github.com/richard-to/10019190#file-scale_up-cpp)
+
 {% highlight cpp linenos %}
 #include <iostream>
 #include <stdio.h>
