@@ -677,20 +677,19 @@
         window.onload = function() {
             var resultsEl = document.getElementById('image-results');
             var image = document.getElementById('image');
-            //imageToCanvas(resultsEl, image, multiply);
-            //imageToCanvas(resultsEl, image, gaussianBlur);
-            //imageToCanvas(resultsEl, image, sharpen);
-            //imageToCanvas(resultsEl, image, imageToGrayScale);
-            //imageToCanvas(resultsEl, image, thresholdImage);
-            //imageToCanvas(resultsEl, image, function(ctx) {
-            //    thresholdImage(ctx);
-            //    invert(ctx);
-            //});
-            //imageToCanvas(resultsEl, image, invert);
-            //imageToCanvas(resultsEl, image, median);
+            imageToCanvas(resultsEl, image, multiply);
+            imageToCanvas(resultsEl, image, gaussianBlur);
+            imageToCanvas(resultsEl, image, sharpen);
+            imageToCanvas(resultsEl, image, imageToGrayScale);
+            imageToCanvas(resultsEl, image, thresholdImage);
+            imageToCanvas(resultsEl, image, function(ctx) {
+                thresholdImage(ctx);
+                invert(ctx);
+            });
+            imageToCanvas(resultsEl, image, invert);
+            imageToCanvas(resultsEl, image, median);
             imageToCanvas(resultsEl, image, sobel);            
-            imageToCanvas(resultsEl, image, canny);
-            imageToCanvas(resultsEl, image, hough);            
+            imageToCanvas(resultsEl, image, canny);          
         };
         </script>
 

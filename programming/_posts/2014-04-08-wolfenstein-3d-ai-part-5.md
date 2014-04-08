@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Wolfenstein 3D AI - Part 5: OpenCV SIFT Test"
+title: "Wolfenstein 3D AI - Part 5: OpenCV SIFT test"
 ---
 
 One of my worries is that SIFT may not work as well on Wolfenstein 3D. The resolution is only 640 x 480 at best and there aren't many colors used. The floor and ceiling and solid shades of gray - the reason for this is described in the awesomely great book "[Masters of Doom](http://en.wikipedia.org/wiki/Masters_of_Doom)" by David Kushner. To test, the viability of SIFT, I ran the OpenCV implementation of SIFT against some sample screenshots from the game.
