@@ -3,7 +3,7 @@ layout: post
 title: "Wolfenstein 3D AI - Part 7: Door thresholding experiment"
 ---
 
-SIFT is an awesome algorithm, but it is somewhat computational expensive despite many optimizations to improve performance. In games, fast responses are important for success, so even few milliseconds of delay could be detrimental on the harder difficulty levels of Wolfenstein 3D. Additionally one could argue that the simpler solution is the best solution. Thresholding can be effective in Machine Vision problems because the program can be optimized to the problem domain instead of being generalized to say many different games.
+SIFT is an awesome algorithm, but it is somewhat computational expensive despite many optimizations to improve performance. In games, fast responses are important for success, so even a few milliseconds of delay could be detrimental on the harder difficulty levels of Wolfenstein 3D. Additionally one could argue that the simpler solution is the best. Thresholding can be effective in Machine Vision problems because the program can be optimized to the problem domain instead of being generalized to say many different games.
 
 In terms of this project, I would like to work toward more human-like game interactions, but that will be a slow process. It may be better to learn from simpler Machine Vision solutions in the intermediary.
 

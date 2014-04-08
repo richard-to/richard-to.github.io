@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "First attempt at Skeleton transform"
+title: "Skeleton transform: First attempt"
 ---
 
 The following is my first attempt at implementing the thinning algorithms described in [Davies' Computer and Machine Vision book](http://www.amazon.com/Computer-Machine-Vision-Fourth-Edition/dp/0123869080). This was one of the assignments in the Computer and Machine vision course I'm taking. As a bonus, there's also some details on implementing the P4 PBM image format.
