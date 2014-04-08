@@ -9,7 +9,7 @@ Installation of iPython Notebook is not too bad, but on OSX, the instructions su
 
 iPython Notebook's interface is reminiscent of Google Docs's interface. It also turns out to be a web-based application and uses web sockets to process python code snippets. This means to run iPython Notebook, you have to start the server first. To distinguish between code, markdown, and plain text, you need to add "cells" to the document. There are keyboard shortcuts to add specific cell-types so there's no need to use the drop-down menu.
 
-![iPython Notebook UI](/images/ipython-ui.png)
+![iPython Notebook UI](/images/ipython-ui.jpg)
 
 I mainly used iPython Notebook for doing Calculus II homework. This meant creating markdown cells to show each step. The problem with this is that it is tedious to create a new cell for each step. The alternative is to write out all the steps in one cell, but the drawback is that LaTeX is not rendered until the cell loses focus. After like 50+ lines of markdown cells, it takes a long time to render the equations with MathJax. In hindsight, iPython Notebook was not the best choice for my use case.
 

@@ -6,19 +6,19 @@ title: "First attempt at Skeleton transform"
 The following is my first attempt at implementing the thinning algorithms described in [Davies' Computer and Machine Vision book](http://www.amazon.com/Computer-Machine-Vision-Fourth-Edition/dp/0123869080). This was one of the assignments in the Computer and Machine vision course I'm taking. As a bonus, there's also some details on implementing the P4 PBM image format.
 
 **Fig. 1 - Original Image Test Image**
-![Original Image](/images/skel/original.png)
+![Original Image](/images/skel/original.jpg)
 
 **Fig. 2 - Background Image**
-![BG Image](/images/skel/bg.png)
+![BG Image](/images/skel/bg.jpg)
 
 **Fig. 3 - Step 1: Background Subtraction Image**
-![BG Sub](/images/skel/bgsub.png)
+![BG Sub](/images/skel/bgsub.jpg)
 
 **Fig. 4 - Step 2: Threshold Image**
 ![Threshold Image](/images/skel/threshold.png)
 
 **Fig. 5 - Step 3: Distance Labeling Image**
-![Distance Label Image](/images/skel/dist_label.png)
+![Distance Label Image](/images/skel/dist_label.jpg)
 
 **Fig. 6 - Step 4: Thinning Image**
 ![Thinning Image](/images/skel/thinning.png)
@@ -93,11 +93,11 @@ In the t-shirt version, the background subtraction cuts off part of the arm and 
 
 **Fig 9 - Result of Background subtraction with t-shirt**
 
-![Example Skeleton Image Output](/images/skel/light_diff.png)
+![Example Skeleton Image Output](/images/skel/light_diff.jpg)
 
 **Fig 10 - Result of skeleton algorithm with t-shirt**
 
-![Example Skeleton Image Output](/images/skel/light_skel.png)
+![Example Skeleton Image Output](/images/skel/light_skel.jpg)
 
 **Example log output from ex4** 
 

@@ -18,7 +18,7 @@ I recently worked through the neural network tutorial on [AI-Junkie](http://www.
 
 Here is a screen shot of the program:
 
-![Mine Sweeper Neural Network Simulation](/images/minesweeper.png)
+![Mine Sweeper Neural Network Simulation](/images/minesweeper.jpg)
 
 I'm highly considering buying his two books on AI for game development and working through the examples using the same approach I took for the minesweeper simulation. The key will be applying what I learned in my own small program. For the Neural Network, I plan to train a neural network to play tic-tac-toe and pit against an AI that uses alpha-beta pruning. I would like to use Back Propagation instead of a genetic algorithm though.
 

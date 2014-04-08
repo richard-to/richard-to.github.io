@@ -21,17 +21,17 @@ For the test, the following sample programs were used:
 
 **Fig. 1 - Results of Simple matcher program**
 
-![Simple Matcher Matcher 1](/images/wolf3d/simple_matcher_ex1.png)
+![Simple Matcher Matcher 1](/images/wolf3d/simple_matcher_ex1.jpg)
 
 **Fig. 2 - Results of Descriptor Extractor Matcher program with two doors**
 
-![Descriptor Extractor Matcher 1](/images/wolf3d/descriptor_extractor_matcher_ex1.png)
+![Descriptor Extractor Matcher 1](/images/wolf3d/descriptor_extractor_matcher_ex1.jpg)
 
 **Fig. 3 - Results of Descriptor Extractor Matcher program with two doors and one partially occluded**
 
-![Descriptor Extractor Matcher 2](/images/wolf3d/descriptor_extractor_matcher_ex2.png)
+![Descriptor Extractor Matcher 2](/images/wolf3d/descriptor_extractor_matcher_ex2.jpg)
 
 
 **Fig. 4 - Results of Descriptor Extractor Matcher program with no doors**
 
-![Descriptor Extractor Matcher 3](/images/wolf3d/descriptor_extractor_matcher_ex3.png)
+![Descriptor Extractor Matcher 3](/images/wolf3d/descriptor_extractor_matcher_ex3.jpg)

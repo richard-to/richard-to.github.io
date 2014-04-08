@@ -17,6 +17,6 @@ I have bigger plans for Quotidian than just an iPhone app. Building for a single
 
 Here are some mock ups and an early screen shot from the iOS simulator:
 
-![Quotidian Mocks](/images/quotidian_mocks.png)
+![Quotidian Mocks](/images/quotidian_mocks.jpg)
 
-![Quotidian List View Version 1](/images/quotidian_s1.png)
+![Quotidian List View Version 1](/images/quotidian_s1.jpg)

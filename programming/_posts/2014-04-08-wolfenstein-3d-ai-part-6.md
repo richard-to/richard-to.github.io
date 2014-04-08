@@ -9,7 +9,7 @@ The implementation of the first two steps is not working properly yet. There see
 
 **Fig. 1 - Test image**
 
-![Chugach Mountains](/images/wolf3d/test_image.png)
+![Chugach Mountains](/images/wolf3d/test_image.jpg)
 
 Additional implementation notes:
 
@@ -39,7 +39,7 @@ Another thing to note is that the DoG can have negative values since they are no
 
 **Fig. 2 - DoG calculation with 0.5 added to value in matrix to improve visibility for visualization**
 
-![Octave 2 of DoG](/images/wolf3d/dog_octave2.png)
+![Octave 2 of DoG](/images/wolf3d/dog_octave2.jpg)
 
 ## Calculating sigma and k for Gaussian images
 
@@ -84,10 +84,10 @@ Of the four SIFT implementations that I studied, there were 3 different approach
 - [SIFT implementation using VXL](http://www.cs.man.ac.uk/~liuja/#demos)
 
 **Fig. 3 - Gaussian blur on octave 2 image 1**
-![Gaussian Blur Octave 2 Image 1](/images/wolf3d/gauss_blur_octave2_1.png)
+![Gaussian Blur Octave 2 Image 1](/images/wolf3d/gauss_blur_octave2_1.jpg)
 
 **Fig. 4 - Gaussian blur on octave 2 image 4**
-![Gaussian Blur Octave Image 2](/images/wolf3d/gauss_blur_octave2_2.png)
+![Gaussian Blur Octave Image 2](/images/wolf3d/gauss_blur_octave2_2.jpg)
 
 ## Eliminating edge responses
 
@@ -123,7 +123,7 @@ Once again it was interesting to see how different the implementations were.
 
 **Fig. 4 - Keypoints after edge responses eliminated in octave 3**
 
-![Extreme detection Octave 3](/images/wolf3d/extrema_detect_octave_1.png)
+![Extreme detection Octave 3](/images/wolf3d/extrema_detect_octave_1.jpg)
 
 
 ## Source (WIP)

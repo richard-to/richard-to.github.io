@@ -13,13 +13,13 @@ Before I started work on the combat UI, I drew some mock ups using Lucid Chart -
 
 Here are some mock ups for the combat system:
 
-![RPG Combat Mockup](/images/rpg_combat_ui.png)
+![RPG Combat Mockup](/images/rpg_combat_ui.jpg)
 
-![RPG Combat Mockup 2](/images/rpg_combat_ui_2.png)
+![RPG Combat Mockup 2](/images/rpg_combat_ui_2.jpg)
 
 And here is a screen shot of the current implementation:
 
-![RPG Combat With Math](/images/rpg_with_math.png)
+![RPG Combat With Math](/images/rpg_with_math.jpg)
 
 My mock ups tend to serve as a rough outline of what could work. The focus is mainly layout and various UX considerations. I prefer the lo-fi approach, because basic shapes and colors make it easier to focus on the bigger picture. As an example, once I implement my design, I tend to get caught up with perfecting my CSS and HTML markup and I worry about the color of buttons, the font size, etc. Since I'm not a designer and have no training, you can see how this can become a very slow process.
 

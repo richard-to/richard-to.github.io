@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "First attempt at Hough transform"
+title: "Hough transform - First attempt"
 ---
 
 A common problem in digital image processing is detecting straight lines. The brute force solution is to test every point for lines. This approach is computationally intensive. 
@@ -17,7 +17,7 @@ The downside of this approach is that it does not seem to find all straight line
 
 **Fig. 1 Linear Hough transform on airplane with OpenCV**
 
-![Linear Hough Transform with OpenCV ](/images/hough/cv_hough_lines.png)
+![Linear Hough Transform with OpenCV ](/images/hough/cv_hough_lines.jpg)
 
 The Alaska Airlines airplane image was a good choice since there are obvious straight lines. The algorithm does a good job find most of the lines.
 
@@ -31,11 +31,11 @@ There are some errors in the transform though, mainly at the head of the plane a
 
 **Fig. 3 Naive Hough transform on airplane**
 
-![Custom Hough Transform on plane](/images/hough/hough_naive_lines.png)
+![Custom Hough Transform on plane](/images/hough/hough_naive_lines.jpg)
 
 **Fig. 4 Sobel transform applied on airplane before Hough transform**
 
-![Custom Sobel Transform on plane](/images/hough/hough_naive_sobel.png)
+![Custom Sobel Transform on plane](/images/hough/hough_naive_sobel.jpg)
 
 **Fig. 5 Threshold applied after Sobel on airplane before Hough transform**
 

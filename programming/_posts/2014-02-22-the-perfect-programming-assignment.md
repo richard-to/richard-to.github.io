@@ -26,10 +26,10 @@ The downside of the eight-puzzle is that it's a common assignment and one could 
 
 Here is a demo of the eight puzzle using javascript. This implementation uses WebRTC Camera, HTML5 canvas, and some basic image processing to make the standard eight puzzle a bit more interesting. [Check it out here.](/projects/webrtc)
 
-![Eight puzzle with WebRTC](/images/eight-puzzle.png)
+![Eight puzzle with WebRTC](/images/eight-puzzle.jpg)
 
 There's also a non-WebRTC version of the eight puzzle if you'd prefer not to solve a puzzle of your face or are using an older browser. [Check out the regular version here.](/projects/eight-puzzle)
 
-![Eight puzzle with Lego images](/images/lego-eight-puzzle.png)
+![Eight puzzle with Lego images](/images/lego-eight-puzzle.jpg)
 
 The demos were ported from a Python-based implementation I wrote last year in AI. One of challenges of porting the program was that I could not test functionality until all of the code was written. Not surprisingly this lead to numerous bugs, a lot of which were not easily solvable given the amount of moving parts. Eventually I caved-in and wrote unit tests. This was tedious and slow, but uncovered four or five bugs. In all the tests added almost 500 more lines of code. Was worth it worth the time? I would say so, and really I should have done it from the beginning. I'm not sure how people write even a few hundred lines of code without testing!
