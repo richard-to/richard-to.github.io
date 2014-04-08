@@ -434,6 +434,7 @@ h2 {
   line-height: 1.2;
 }
 
+iframe,
 img {
   max-width: 100%;
   height: auto;

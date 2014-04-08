@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Math RPG - Part 10: Improved image sprites for Khan Academy CS platform"
+title: "Math RPG - Part 10: Improved image sprites on Khan Academy CS platform"
 ---
 
 I haven't found time to work on the actual RPG lately, but I did have some time to experiment with huffman coding as a way to shorten the number of characters used to represent the image data. It's doubtful that this improvement will make the Khan Academy CS platform more usable since the uncompressed data will still be large. It's something that needs to be tested at some point.
