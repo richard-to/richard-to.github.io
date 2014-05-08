@@ -73,12 +73,7 @@
             @media screen and (min-width: 960px) {
                 .project-site {
                     width: 960px;
-                }
-
-                iframe {
-                    width: 460px;
-                    height: 360px;
-                }                                
+                }                               
             }
             
         </style>
@@ -143,12 +138,14 @@
             <div class="posts">
                 <div class="project-image">
                     <img src="/images/projects/wolf3d.jpg" alt="Wolf3D SIFT" />
+                    <img src="/images/projects/wolf3d_2.jpg" alt="Enemy COM" />
                 </div>
 
                 <div class="project-content-container">
                     <h2>Wolfenstein 3D Machine Vision and AI</h2>
                     <p class="meta">
-                        Active &bull; 2014 - Present 
+                        Active &bull; 2014 - Present  &bull; 
+                        <a href="https://vimeo.com/94488547">View video</a> 
                     </p>
                     <p>The goal is to use various machine vision techniques and artificial intelligence algorithms to beat at least the first level of Wolfenstein 3D. Of particular interest is applying SIFT to recognize objects in the game in real-time and using an XBOX 360 Kinect and Beagleboard xM to process images on the screen.</p>
 
@@ -160,7 +157,11 @@
                         <li><a href="/programming/wolfenstein-3d-ai-part-4.html">Part 4: Preparing for SIFT</a></li>
                         <li><a href="/programming/wolfenstein-3d-ai-part-5.html">Part 5: OpenCV SIFT test</a></li>
                         <li><a href="/programming/wolfenstein-3d-ai-part-6.html">Part 6: First attempt at SIFT</a></li> 
-                        <li><a href="/programming/wolfenstein-3d-ai-part-7.html">Part 7: Door thresholding experiment</a></li>                                          
+                        <li><a href="/programming/wolfenstein-3d-ai-part-7.html">Part 7: Door thresholding experiment</a></li>                        
+                        <li><a href="/programming/wolfenstein-3d-ai-part-8.html">Part 8: More door thresholding</a></li>
+                        <li><a href="/programming/wolfenstein-3d-ai-part-9.html">Part 9: Detecting enemies</a></li>  
+                        <li><a href="/programming/wolfenstein-3d-ai-part-10.html">Part 10: Measuring walls</a></li>
+                        <li><a href="/programming/wolfenstein-3d-ai-part-11.html">Part 11: Putting it all together</a></li>                                                                                    
                     </ul>
                 </div>
             </div>
@@ -298,14 +299,17 @@
 
 
             <div class="posts">
-                <div class="secondary-project container-right">                                        
-                    <iframe src="//player.vimeo.com/video/91272430?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <div class="secondary-project container-right">                 
+                    <div class="iframe-container">                       
+                    <iframe src="//player.vimeo.com/video/91272430?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
                     <h2><a href="/programming/skeletal-transform.html">Skeleton transform and tracking (2014)</a></h2>
                     <p>The following is my first attempt at implementing the thinning algorithms described in Davies' Computer and Machine Vision book. <a href="/programming/skeletal-transform.html">Read more</a>.</p>                    
                 </div>
 
-                <div class="secondary-project container-left">                                        
-                    <iframe src="//player.vimeo.com/video/91274433?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <div class="secondary-project container-left">    
+                    <div class="iframe-container">                                         
+                    <iframe src="//player.vimeo.com/video/91274433?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+
                     <h2>
                        Tracking laser pointer in cluttered room (2014)
                     </h2>

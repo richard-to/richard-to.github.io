@@ -18,14 +18,15 @@ The first demo video shows the various nodes that work together to control Betel
 - Teleop node: Control the robot using command line
 - Listener node: Subscribes to all messages/topics
 
-
-<iframe src="//player.vimeo.com/video/91270479?byline=0&amp;portrait=0&amp;color=ececec" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/91270479">Betelbot simulator demo 1</a> from <a href="http://vimeo.com/user26692859">Richard To</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<div class="iframe-container">
+<iframe src="//player.vimeo.com/video/91270479?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 
 ***
 
 The second video illustrates the use of web sockets for the web-based visualization front end.
 
-<iframe src="//player.vimeo.com/video/91270481?byline=0&amp;portrait=0&amp;color=ececec" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/91270481">Betelbot simulator demo 2</a> from <a href="http://vimeo.com/user26692859">Richard To</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<div class="iframe-container">
+<iframe src="//player.vimeo.com/video/91270481?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 
 ***
 
