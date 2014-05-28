@@ -47,7 +47,7 @@ This is where my implementation falls apart, specifically on the matter of what 
 
 On page 7 of Lowe's paper, `k = 2^{1/s}`, where `s` appears to be the number of images desired for calculating the minima and maxima. In this case, `s = 2` and `k = \sqrt{2} = 2^{1/2}`. This is just guess though, since the paper specifies that there will be s + 3 blurred images.
 
-The part is clear, but it remains unclear how to calculate successive sigma values. For instance is it as simple as multiplying the previous sigma with k? Thishis [ SIFT article from AI Shack](http://www.aishack.in/2010/05/sift-scale-invariant-feature-transform/2/) seems to describe this approach. Here are  similar numbers reproduced using a starting sigma of 1.0 and k of square of 2. Each new sigma is calculated by multiplying k with the previous sigma. The next octave starts with the sigma of the third image. Lowe's paper says to subsample the third Gaussian image of the previous octave. This saves calculations.
+The part is clear, but it remains unclear how to calculate successive sigma values. For instance is it as simple as multiplying the previous sigma with k? Thishis [SIFT article from AI Shack](http://www.aishack.in/2010/05/sift-scale-invariant-feature-transform/2/) seems to describe this approach. Here are  similar numbers reproduced using a starting sigma of 1.0 and k of square of 2. Each new sigma is calculated by multiplying k with the previous sigma. The next octave starts with the sigma of the third image. Lowe's paper says to subsample the third Gaussian image of the previous octave. This saves calculations.
 
 <table>
     <tr>
