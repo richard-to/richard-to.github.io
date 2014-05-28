@@ -5,6 +5,8 @@ title: "Tips for using the LinkSprite Sim900 GSM shield with pcDuino v2"
 
 This week I integrated the LinkSprite Sim900 GSM shield with a pcDuino v2. The latter can be thought of as a slightly more powerful Raspberry Pi with built-in WiFi and Arduino headers. The nice thing about the pcDuino v2 is that you can access the hardware interfaces using any programming language. Python and C libraries can be downloaded from Github, but be warned that the Python library is buggy and incomplete. There is enough implemented to get started with controlling the GPIO interfaces. Serial and SPI are missing, but regular python libraries exist. For the integration, I chose Python since this project involved string processing and some database storage. The only hardware access required was a serial connection to the GSM shield. This proved tricky and uncovered some quirks that others may find helpful.
 
+![pcDuino v2 with GSM shield](/images/pcduino.jpg)
+
 **Issue 1: Unable to establish serial connection with GSM Shield**
 
 If you need to communicate with a shield using a serial interface, the pin modes for gpio0 and gpio1 need to be set to 3. The pcDuino [c_environment](https://github.com/pcduino/c_environment/) repository defines it as `IO_UART_FUNC` in [pin_arduino.h](https://github.com/pcduino/c_environment/blob/master/hardware/arduino/variants/sunxi/pins_arduino.h). Setting the pin mode is one of the steps in `Serial.begin()`, as can be seen in [Serial.cpp](https://github.com/pcduino/c_environment/blob/master/hardware/arduino/cores/arduino/Serial.cpp#L191-L192).
