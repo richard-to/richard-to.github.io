@@ -35,7 +35,7 @@ class HelloUniverse
 }
 {% endhighlight %}
 
-Meta-data is embedded as a comment in the source file. The meta-data uses yaml due its expressiveness and lack of extraneous syntax. Markdown is also used for content that will be rendered as HTML. There are some minor conflicts with using markdown within yaml, but it works well enough. There is definitely some concern that this approach is too convoluted, but the alternative is developing a custom format. Yaml and Markdown parsers are already available as libraries and the syntaxes are both well documented. No need to rebuild the wheel here.
+Meta-data is embedded as a comment in the source file. The meta-data uses yaml due its expressiveness and lack of extraneous syntax. Markdown is also used for content that will be rendered as HTML. There are some minor conflicts with using markdown within yaml, but it works well enough. There is definitely some concern that this approach is too convoluted, but the alternative is developing a custom format. Yaml and Markdown parsers are already available as libraries and the syntaxes are both well documented. No need to rebuild the wheel.
 
 It's doubtful that static page generation will remain a viable option as more personalization is added. But at this stage I'm happy to keep things simple. Lean and minimal websites is a trend that I wouldn't mind gaining steam.
 
