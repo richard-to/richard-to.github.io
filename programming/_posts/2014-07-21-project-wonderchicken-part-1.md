@@ -51,7 +51,7 @@ I've been using Vagrant for a while and it's great. One thing that frustrates me
 
 Back in the day (like 2-3 years ago) I used to enjoy learning all these new software development tools and programming languages. Now it all seems kind of absurd to keep following what are necessary, but mostly slightly forward laterals. The truth is no matter how much we try to improve JavaScript through this endless kludge of build tools, it's still JavaScript. Or maybe this is a sign that I'm getting old.
 
-On a side note, here is a comparison of two functionally identical `Gruntfile.js` and `gulpfile.js`. I even did the two spaces thing that is popular these days.
+On a side note, here is a comparison of two functionally identical Grunt and Gulp files. I even did the two spaces thing that is popular these days.
 
 **Gruntfile.js example**
 
