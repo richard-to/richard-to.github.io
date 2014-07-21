@@ -1,3 +1,4 @@
+---
 layout: post
 title: "Project Wonderchicken - Part 1: Getting started"
 ---
