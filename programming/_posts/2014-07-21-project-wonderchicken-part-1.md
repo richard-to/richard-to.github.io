@@ -13,7 +13,7 @@ Three paragraphs about the project's codename is a sign of some serious procrast
 
 First off, this project is a remake of a legacy web application that I worked on and which has been in production for a few years. In summer blockbuster terms, this is a reboot of the franchise, a re-imagining. Already, warning signs, big red flags, and alarms should be going off. It's a bad idea to remake an application from the ground up, yet I'm doing it despite numerous doubts. Sometimes the only way to innovate is to start over.
 
-One thing about remakes that I never thought about is this whole idea of needing to be undoubtedly better than the predecessor. For example, the Departed versus Internal Affairs. There's just no justification for rebuilding something only to have it turn out like the recent Friday the 13th or Nightmare on Elm Street reboots. For movies, the nostalgia and reputation of the franchises still brings in ticket sales, but web applications are different. Users will want their favorite features back, complain about the alien landscape of their new user interface, and expect their data is intact. And then there will be the bugs, which will appear more pronounced when compared against a stable web application.
+One thing about remakes that I never thought about is this whole idea of needing to be undoubtedly better than the predecessor. For example, "The Departed" versus "Internal Affairs." There's just no justification for rebuilding something only to have it turn out like the recent "Friday the 13th" or "Nightmare on Elm Street" reboots. For movies, the nostalgia and reputation of the franchises still bring in ticket sales, but web applications are different. Users will want their favorite features back, complain about the alien landscape of their new user interface, and expect their data is intact. And then there will be the bugs, which will appear more pronounced when compared against a stable web application.
 
 Aside from the above user requirements, it better also be the super intuitive UX, mobile-optimized, high performance, bug-free, perfectly architected piece of software everyone dreams about.
 
@@ -23,11 +23,11 @@ To get a sense of my paralysis, here is an overview of my decisions:
 
 **Flask**
 
-I chose Flask over Django because I like the idea of lightweight web framework that gets out of the way. The inevitable problem is that 3rd party plugins will be needed and they take time to learn and don't always work together smoothly. In addition, more time needs to be spent on architecture and organization. And then I'm left wondering if I shouldn't have just gone with Django, but can't commit fully to that decision since so much time was invested in best practices for Flask web applications and their plugins.
+I chose Flask over Django because I like the idea of a lightweight web framework that gets out of the way. The inevitable problem is that 3rd party plugins will be needed and they take time to learn and don't always work together smoothly. In addition, more time needs to be spent on architecture and organization. And then you're (or rather I'm) left wondering whether you should have just gone with Django in first the place, but now can't commit fully to that change since so much time was invested in learning best practices for Flask web applications and associated ecosystem of plugins.
 
 **Postgres**
 
-I've been meaning to try Postgres ever since Oracle bought Sun Microsystems. The initial impression has been good. All the different data types are awesome and make it appear to be a good balance between NoSQL and SQL databases. It remains to be seen how much my MySQL experience will transfer though.
+I've been meaning to try Postgres ever since Oracle bought Sun Microsystems and left me with the impression that MySQL was doomed. My initial impression of Postqres has been good. All the different data types are awesome and make it appear to be a good balance between NoSQL and SQL databases. It remains to be seen how much my MySQL experience will transfer though.
 
 **React**
 
@@ -35,21 +35,23 @@ React just makes sense, especially when combined with the Flux pattern. Backbone
 
 **Less**
 
-Not much of a learning curve here. Similar enough enough to SASS/SCSS that the transition was relatively smooth. The only reason to switch to Less here is because I prefer Node over Ruby when it comes to build tools.
+Not much of a learning curve here. Similar enough enough to SASS/SCSS that the transition was relatively smooth. The only reason to switch to Less here is because I prefer Node over Ruby when it comes to dev tools.
 
 **Gulp**
 
-I tried hard to stick with Grunt, but it's too slow for continuously building JavaScript, which appears to be the preferred work flow these days given the popularity of Browserify and Webpack. The transition to Gulp wasn't bad once I decided to commit to it and studied a few examples. Being able to use JavaScript is a slight improvement, but I would rather use Makefiles combined with the ability to run a build when changes are detected. The best part about Gulp is that it's faster than Grunt, or at least feels that way.
+I tried hard to stick with Grunt, but it's too slow for continuously building JavaScript, which appears to be the preferred work flow these days given the popularity of Browserify and Webpack. The transition to Gulp wasn't bad once I decided to commit to it and studied a few examples. Being able to use JavaScript is a slight improvement, but I would rather use Makefiles combined with the ability to run a build when changes are detected.
 
 **Webpack**
 
-I started with RequireJS three years ago. It was kind of complicated to set up and required some extra syntax and configuration, but it was worth the effort at the time. The Browserify approach just seemed easier, but the build process becomes problematic when a large library, such as React, needs to be included in the build. There is a tool called Watchify, that apparently does incremental builds, but instead I switched to Webpack. The main downside is that the incremental build does not work well with the Grunt or Gulp yet. One weird thing about Webpack is the need to use their built-in development server for optimal performance or benefit or whatever. That's a bit much.
+I started with RequireJS three years ago. It was kind of complicated to set up and required some extra syntax and configuration, but it was worth the effort at the time. For this project, the Browserify approach just seemed easier, but the build process became problematic when a large library, such as React, needed to be included in the build. There is a tool called Watchify, that apparently does incremental builds, but instead I switched to Webpack. The main downside is that the incremental build does not work well with the Grunt or Gulp yet. One weird thing about Webpack is the need to use their built-in development server for optimal performance or benefit or whatever. That's a bit too opinionated.
 
 **Vagrant**
 
-I've been using Vagrant for a while and it's great. One thing that frustrates me is the inability to use Puppet Forge modules. The best solution is to use Puppet-Librarian, which is a Ruby gem that needs to be installed. Luckily it's straightforward to use. I'm tempted to try Ansible though. That it uses Python is reason enough for me to switch.
+I've been using Vagrant for a while and it's great. One thing that frustrates me is the inability to use Puppet Forge modules. The best solution is to use Puppet-Librarian, which is a Ruby gem that needs to be installed. Luckily it's straightforward to use. I'm tempted to replace Puppet with Ansible.
 
-On a side note, here is a comparison of two functionally identical `Gruntfile.js` and `gulpfile.js`. Which one is better?
+Back in the day (like 2-3 years ago) I used to enjoy learning all these new software development tools. Now it all seems kind of absurd to keep following what are necessary, but mostly slightly forward laterals. The truth is no matter how much we try to improve JavaScript through these endless kludge of build tools, it's still JavaScript. Or maybe this is a sign that I'm getting old.
+
+On a side note, here is a comparison of two functionally identical `Gruntfile.js` and `gulpfile.js`. I even did the two spaces thing that is popular these days.
 
 **Gruntfile.js example**
 
