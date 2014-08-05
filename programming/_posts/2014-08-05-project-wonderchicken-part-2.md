@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Project Wonderchicken - Part 1: Using optgroups with WTForms"
+title: "Project Wonderchicken - Part 2: Using optgroups with WTForms"
 ---
 
 The optgroup tag is not used much with drop-down lists, so it is not surprising
-that WTForms does not have an abstraction for optgroups. Everything is great
+that WTForms does not have an abstraction for optgroups. That is a not big deal
 until one day they are actually needed. This was the case with Project
 Wonderchicken last week, and as usual this led to a lot of googling. Eventually
 I gave up and decided to create my own select field with optgroup support.
@@ -15,7 +15,7 @@ Framework 1, which is great for basic forms, but once the layout grows more
 complex, non-standard validations are added, and dynamic fields are required,
 very little elegance is left. The learning curve can also slow new developers
 down and this is not a good thing when they are volunteers. The general feedback
-from them has been that Zend Forms feels unnatural and prevents prototyping.
+from them has been that ZendForm feels unnatural and prevents prototyping.
 This can be partially solved by using View Script.
 
 I have not used WTForms extensively enough to give an opinion on its ease of use
@@ -23,7 +23,7 @@ or API. As with ZendForm, there is no clear solution to handle frontend
 validation other than duplicating validation rules. However, dynamic form fields
 may actually be simpler to manage and the form rendering with Jinja2 is sensible.
 
-Adding an select field with optgroups was a good way to become more familiar
+Adding a select field with optgroups was a good way to become more familiar
 with the codebase of WTForms. WTForms smartly separates the rendering from
 the data and logic oriented aspect of forms. The rendering of elements are
 delegated to Widget classes and the data/logic aspects reside in Field
@@ -34,8 +34,7 @@ In WTForms, `SelectField` and `SelectMultipleField` are sub-classed from
 options. It was unclear what use case this method was designed for, since the
 `Select` widget uses `iter_choices` internally. This uncertainty made it
 difficult to design the iteration for optgroups. The likely scenario would be
-to return an `OptGroup` field which would then need to be iterated through to
-reach the nested options.
+to return an `OptGroup` field to be further iterated through.
 
 Instead of sub-classing `SelectFieldBase`, the new field `SelectOptGroupField`
 is a child of `Field` and does not implement an `__iter__` method, at least for
@@ -43,7 +42,7 @@ now.
 
 Another tricky aspect was deciding how to format the choices list. The current
 solution tries to follow the format of `SelectField` and `SelectMultipleField`,
-but it ends being tedious to write by hand and requires some list manipulation
+but it ends up being tedious to write by hand and requires some list manipulation
 to format results from a database.
 
 Here is an example of the format:
@@ -78,7 +77,7 @@ lambda to iterate through optgroups and their options. This works, but I keep
 debating whether I should have used a widget for the SelectOptGroup.
 
 The following is the source code for my custom SelectOptGroup field and widget.
-It was not too difficult to do, but did require jumping into the Github
+It was not too difficult to program, but did require jumping into the Github
 repository and digging through code.
 
 **SelectOptGroupField**
