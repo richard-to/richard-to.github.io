@@ -1,3 +1,4 @@
+---
 layout: post
 title: "Math RPG - Part 11: More with image sprites on Khan Academy CS platform"
 ---
