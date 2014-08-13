@@ -44,7 +44,7 @@ Here is a screenshot of my spritesheet loaded into the Khan Academy CS platform:
 
 ![Math RPG spritesheet on Khan Academy CS platform](/images/spritesheet.png)
 
-There are threes tricks required for this to work:
+There are three tricks required for this to work:
 
 **1.**
 
