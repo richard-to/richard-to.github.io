@@ -13,16 +13,16 @@ Eventually, I wrote a wrapper class for Director to accomplish most of what I wa
 
 The last problem was that clicking on links would not trigger a route. It was not clear if a hash was required in the URL or how the router worked with non-root base URLs. Finally, there was the nagging concern that the node package for Director included code that was specific to the server-side. Although, I could have used a build with client-side only features, the numerous integration issues had led to too much frustration just to do some "simple" routing.
 
-Now, there's nothing really wrong with Director. Mostly these are just the bitter ravings of a lazy developer and not wanting to spend a week and a half on routing and just growing very frustrated with bridging disparate libraries together and always having the last 20% of functionality missing. However that's just the reality of programming these days. The alternative of rebuilding the wheel every time is likely worse, and I should probably pray for forgiveness to our Open Source Gods.
+Now, there's nothing really wrong with Director. Mostly these are just the bitter ravings of a lazy developer  not wanting to spend a week and a half on routing and just growing very frustrated with bridging disparate libraries together and always having the last 20% of functionality missing. However that's just the reality of programming these days. The alternative of rebuilding the wheel every time is likely worse, and I should probably pray for forgiveness to our Open Source Gods.
 
 For my custom router module, I wanted the following features:
 
 - No dependencies. Not even jQuery or a boatload of npm modules packaged with Browserify or whatever.
-- Support browsers that implement the HTML5 History. Otherwise fallback to regular navigation. No navigation with hash urls
-- Automatically generated path functions similar to Rails
+- Support browsers that implement the HTML5 History. Otherwise fallback to regular navigation. No navigation with hash urls.
+- Automatically generated path functions similar to Rails.
 - Allow multiple router instances for modularity. Use base path checks to improve path search.
 - Automatic event binding to links, similar to jQuery.on events
-- Works with React and Flux pattern
+- Works with React and Flux pattern.
 
 jQuery is great and there are a ton of great plugins for it, but requiring it as a dependency to save maybe 70 lines of code is not worth it for a module that is only 155 lines. The experience definitely makes one appreciate jQuery.
 
@@ -68,7 +68,7 @@ Kingpin.prototype._onLinkClick = function(e) {
 
 In terms of modularity, multiple instances of the router module can be created and they should work unless identical paths are added. The downside is a potential performance hit from bubbling events up for each router.
 
-The HTML5 History API is very straightfoward as explained very clearly in this [Dive into HTML5 article](http://diveintohtml5.info/history.html). Basically the API, allows you to push a URL onto the history stack and listen for the back button.
+The HTML5 History API is straightfoward and is explained clearly in this [Dive into HTML5 article](http://diveintohtml5.info/history.html). Basically the API, allows you to push a URL onto the history stack and listen for the back button.
 
 
 **Ex 3. Popstate event handler**
@@ -93,8 +93,6 @@ I did not want the router to be dependent on React, but at the same time I wante
 
 What I wanted to do was trigger an event using the EventEmitter API in node, similar to how change events and Store objects work. This meant a lot of boilerplate code to pass into the router module and needing to deal with slightly different APIs.
 
-With the router module, routes and handlers are declared like this:
-
 **Ex 5. Simple example of how to pass URL variable into handler function**
 
 {% highlight javascript linenos %}
@@ -102,6 +100,7 @@ router.on('/account/:id/notifications/', function(id) {
     console.log(id);
 });
 {% endhighlight %}
+
 
 **Ex 6. EventEmitter example**
 
@@ -133,7 +132,7 @@ AppRouter.prototype.on = function(route) {
 };
 {% endhighlight %}
 
-I ended up using a global router instance that could be used by different components. A dependency injection framework similar to what is used in Angular could be a good solution. Or it could be overkill. For now it is fine.
+I ended up going with a singleton router instance that could be "required" by different components. A dependency injection framework similar to what is used in Angular could be a good solution if you happen to be anti-singleton.
 
 **Ex 8. Setting up a global router using React specific wrapper for Router module**
 
@@ -190,11 +189,11 @@ _onClickEdit: function(userId) {
 }
 {% endhighlight %}
 
-The snippets probably aren't too helpful, but hopefully they get the general idea across. I created a Github repository for the barebones router module. It's definitely not ready for production yet. As of this writing, I spotted a few errors. For example, I should only add the event listener if HTML5 History is supported. I ended up naming it `Kingpin` for no real reason other than it sounds sort of cool.
+The snippets probably aren't too helpful, but hopefully they get the general idea across. I created a Github repository for the barebones router module. It's definitely not ready for production yet. I already spotted a few errors while writing this post. For example, the click event listener should only be added if HTML5 History is supported. I ended up naming it `Kingpin` for no real reason other than it sounds sort of cool.
 
 Here is the link: [https://github.com/richard-to/kingpin](https://github.com/richard-to/kingpin)
 
-Also here is the full source code for `Kingpin` to pad the word count of this post a bit.
+Also here is the full source code for `Kingpin` to pad the word count a bit.
 
 {% highlight javascript linenos %}
 (function() {
