@@ -105,11 +105,9 @@ if __name__ == '__main__':
     main()
 {% endhighlight %}
 
-The toy example only covers the first section of chapter 2. The latter chapters
+The toy example only covers the first section of chapter 2. The latter sections of this chapter
 cover more complicated examples, such as handwritten digit recognition and
 dating site classification.
 
-I plan to write about those sections as I get to them. The hope is that writing
-will help me learn better and keep me motivated.
-
+I plan to write about those sections as I get to them.
 
