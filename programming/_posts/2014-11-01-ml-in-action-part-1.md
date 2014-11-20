@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ML in Action - Part 1: KNN Toy Example"
+title: "ML in Action - Part 1: KNN toy example"
 ---
 
 I bought the book ["Machine Learning in Action"](http://www.manning.com/pharrington/)
