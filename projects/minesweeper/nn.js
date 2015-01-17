@@ -95,7 +95,7 @@
             // After the first layer, the inputs get set to the output
             // of previous layer
             if (i > 0) {
-                inputs = outputs;
+                inputs = outputs.slice(0);
             }
 
             for (var j = 0; j < this.layers[i].neurons.length; j++) {
