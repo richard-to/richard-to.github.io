@@ -1,6 +1,6 @@
 ---
 layout: fiction
-title: "Flight Plan"
+title: "Flight plan"
 ---
 
 
