@@ -18,3 +18,5 @@ title: "Reading list"
 - *Party of One* - Anneli Rufus
 - *ZYZZYVA: Winter 2014*
 - *Plot & Structure* - James Scott Bell
+- *Creating Characters* - Dwight V. Swain
+- *Treating the 'Untreatable'* - Ira Steinman
