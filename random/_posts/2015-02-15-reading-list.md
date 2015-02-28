@@ -20,3 +20,4 @@ title: "Reading list"
 - *Plot & Structure* - James Scott Bell
 - *Creating Characters* - Dwight V. Swain
 - *Treating the 'Untreatable'* - Ira Steinman
+- *What the Dog Saw* - Malcom Gladwell
