@@ -21,8 +21,8 @@ title: Letters from a Maladroit
 
   <h2>Fiction</h2>
   <ul class="toc">
-  {% for post in site.categories.fiction %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% for post in site.categories.fiction reversed %}
+    <li><a href="{{ post.url }}">{{ post.title }} <em>({{ post.date | date: "%Y") }})</em></a></li>
   {% endfor %}
   </ul>
 
