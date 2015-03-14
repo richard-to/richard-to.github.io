@@ -25,3 +25,7 @@ title: "Reading list"
 **March**
 
 - *Best American Short Stories 2014*
+- *Brain Wars* - Mario Beauregard
+- *Scene & Structure* - Jack M. Bickham
+- *Siddhartha* - Hermann Hesse
+- *Schizophrenia: A Blueprint for Recovery* - Milt Greek
