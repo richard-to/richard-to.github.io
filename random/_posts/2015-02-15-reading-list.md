@@ -29,3 +29,5 @@ title: "Reading list"
 - *Scene & Structure* - Jack M. Bickham
 - *Siddhartha* - Hermann Hesse
 - *Schizophrenia: A Blueprint for Recovery* - Milt Greek
+- *Noctuary* - Thomas Ligotti
+- *Incognito: The Secret Lives of the Brain* - David Eagleman
