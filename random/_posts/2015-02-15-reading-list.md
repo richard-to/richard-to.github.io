@@ -31,3 +31,5 @@ title: "Reading list"
 - *Schizophrenia: A Blueprint for Recovery* - Milt Greek
 - *Noctuary* - Thomas Ligotti
 - *Incognito: The Secret Lives of the Brain* - David Eagleman
+- *Conflict, Action & Suspense* - William Noble
+- *The O. Henry Prize Stories 2014*
