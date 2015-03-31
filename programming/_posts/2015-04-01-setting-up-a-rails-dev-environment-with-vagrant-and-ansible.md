@@ -14,7 +14,7 @@ For the Vagrant box, I wanted to use Ubuntu 14 since it is the current LTS editi
 - [https://atlas.hashicorp.com/ubuntu/boxes/trusty64](https://atlas.hashicorp.com/ubuntu/boxes/trusty64)
   - No vmware support
 - [https://atlas.hashicorp.com/puphpet/boxes/ubuntu1404-x64](https://atlas.hashicorp.com/puphpet/boxes/ubuntu1404-x64)
-  - Ansible not able to connect via SSH. I believe this was a conflict with puppet
+  - Ansible not able to connect via SSH. I believe this was a conflict with Puppet
 - [https://atlas.hashicorp.com/chef/boxes/ubuntu-14.04](https://atlas.hashicorp.com/chef/boxes/ubuntu-14.04)
   - This one worked!
 
@@ -59,7 +59,7 @@ I haven't used any advanced features of Ansible yet, but here's what I like so f
 
 1. Don't need Ansible installed on the Vagrant box, although this is somewhat negated by obtuse SSH errors that can occur if the Vagrant box is set up in a certain way.
 
-2. I like the integrated Ansible galaxy that allows "roles" to be downloaded and used. It's cleaner than Puppet Librarian, but there is the issue of needing to automate the installation of roles for other development machines. Ansible probably already has a solution to this. I  just need to look into it.
+2. I like the integrated Ansible Galaxy that allows "roles" to be downloaded and used. It's cleaner than Puppet Librarian, but there is the issue of needing to automate the installation of roles for other development machines. Ansible probably already has a solution to this. I  just need to look into it.
 
 3. I like the YML configuration. It makes a lot of sense for my relatively basic use cases so far.
 
@@ -163,7 +163,7 @@ There were a number of issues with installing PostgreSQL. The first was missing 
 
 **PostgreSQL issue 2: Can't connect to psql**
 
-After resolving issue number 1, I was still unable to execute the PostgreSQL tasks to create database users.
+After resolving the first issue, I was still unable to execute the PostgreSQL tasks to create database users.
 
 Specifically I got this message:
 
@@ -179,16 +179,16 @@ My eventual solution was to edit the `sudoers` file and add the correct privileg
         line: vagrant ALL=(postgres) ALL
         validate: 'visudo -cf %s'
 
-Also you need to make sure to add `sudo_user: postgres` to be able to login as the postgres admin/superuser account.
+Also you need to make sure to add `sudo_user: postgres` to be able to login as the postgres admin/superuser account when running the `postgresql_user` task.
 
 **PostgreSQL issue 3: Rails can't create test, development, production databases**
 
-Initially I created database users without a password, but I was unable to connect to the database via `psql`. It always checked for a password. There seems to be a way to configure PostgreSQL to not check for a password, but the `pg_hba.conf` file needs to altered.
+Initially I created database users without a password, but I was unable to connect to the database via `psql`. It always checked for a password. There seems to be a way to configure PostgreSQL to not check for a password, but the `pg_hba.conf` file needs to be altered.
 
-In the end it was simpler to just use passwords with the database users. This required hardcoding the passwords into `playbook.yml`, which I think this is OK for development. Ansible also have something called `lookups` that can keep passwords out the `playbook.yml` file, but I didn't use it here.
+In the end it was simpler to just use passwords with the database users. This required hardcoding the passwords into `playbook.yml`, which I think this is OK for development. Ansible also has a feature called `lookups` that can keep passwords out the `playbook.yml` file, but I didn't use it here.
 
 **PostgreSQL issue 4: Can't seed test database with fixtures**
 
-I had trouble running unit tests because the fixtures would not install correctly. This was due to a foreign key issue, specifically, Rails needs to disable foreign key integrity checks when installing fixtures. In PostgreSQL, this requires the SUPERUSER privilege apparently.
+I had trouble running the Rails unit tests because the fixtures would not install correctly when multiple related tables were involved. This was due to a foreign key issue, specifically, Rails needs to disable foreign key integrity checks when installing fixtures. In PostgreSQL, this requires the SUPERUSER privilege apparently.
 
 Source: [http://stackoverflow.com/questions/28046415/loading-rails-fixtures-in-a-specific-order-when-testing](http://stackoverflow.com/questions/28046415/loading-rails-fixtures-in-a-specific-order-when-testing)
