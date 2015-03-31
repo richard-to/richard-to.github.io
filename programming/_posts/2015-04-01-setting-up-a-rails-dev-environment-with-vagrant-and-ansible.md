@@ -155,7 +155,7 @@ For reference, here's what that snippet looks like:
         state: present
         user_install: no
         executable: "{{gem_path}}"
-% endraw %}
+{% endraw %}
 
 **PostgreSQL issue 1: Dependencies**
 
