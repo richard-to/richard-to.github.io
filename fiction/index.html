@@ -1,12 +1,13 @@
 ---
 layout: default
 title: "Letters from a Maladroit: Fiction"
+last_date: ''
 ---
 
 <div id="home">
     {% for post in site.categories.fiction %}
     <div class="posts">
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <h2><a href="{{ post.url }}">{{ post.title }} <em>({{ post.date | date: "%Y") }})</em></a> </h2>
         <p>{{ post.excerpt }}</p>
         <p class="meta">Category: <a href="/{{ post.categories }}">{{ post.categories }}</a></p>
     </div>
