@@ -33,3 +33,7 @@ title: "Reading list"
 - *Incognito: The Secret Lives of the Brain* - David Eagleman
 - *Conflict, Action & Suspense* - William Noble
 - *The O. Henry Prize Stories 2014*
+
+**April**
+
+- *Mad in America* - Robert Whitaker
