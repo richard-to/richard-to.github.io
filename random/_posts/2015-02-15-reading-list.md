@@ -37,3 +37,4 @@ title: "Reading list"
 **April**
 
 - *Mad in America* - Robert Whitaker
+- *The Collected Stories of Lydia Davis* - Lydia Davis
