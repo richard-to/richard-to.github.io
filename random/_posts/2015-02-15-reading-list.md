@@ -38,3 +38,12 @@ title: "Reading list"
 
 - *Mad in America* - Robert Whitaker
 - *The Collected Stories of Lydia Davis* - Lydia Davis
+- *On Teaching and Writing Fiction* - Wallace Stegner
+- *Teatro Grottesco* - Thomas Ligotti
+- *Daring Greatly* - Brené Brown
+
+**May**
+
+- *The Spiritual Gift of Madness*  - Seth Farber
+- *Lightning* - Dean Koontz
+- *On Writing* - Stephen King
