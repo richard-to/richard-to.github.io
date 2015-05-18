@@ -47,3 +47,4 @@ title: "Reading list"
 - *The Spiritual Gift of Madness*  - Seth Farber
 - *Lightning* - Dean Koontz
 - *On Writing* - Stephen King
+- *ZYZZYVA: Spring/Summer 2015*
