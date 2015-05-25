@@ -48,3 +48,4 @@ title: "Reading list"
 - *Lightning* - Dean Koontz
 - *On Writing* - Stephen King
 - *ZYZZYVA: Spring/Summer 2015*
+- *Blind Willow, Sleeping Woman* - Haruki Murakamai
