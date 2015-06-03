@@ -51,3 +51,4 @@ title: "Reading list"
 - *Blind Willow, Sleeping Woman* - Haruki Murakamai
 - *Brain on Fire* - Susannah Cahalan
 - *Everything is Illuminated* - Jonathan Safran Foer
+- *On Becoming a Novelist* - John Gardner
