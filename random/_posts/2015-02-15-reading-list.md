@@ -49,3 +49,5 @@ title: "Reading list"
 - *On Writing* - Stephen King
 - *ZYZZYVA: Spring/Summer 2015*
 - *Blind Willow, Sleeping Woman* - Haruki Murakamai
+- *Brain on Fire* - Susannah Cahalan
+- *Everything is Illuminated* - Jonathan Safran Foer
