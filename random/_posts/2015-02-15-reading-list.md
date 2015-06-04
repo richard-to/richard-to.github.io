@@ -52,3 +52,7 @@ title: "Reading list"
 - *Brain on Fire* - Susannah Cahalan
 - *Everything is Illuminated* - Jonathan Safran Foer
 - *On Becoming a Novelist* - John Gardner
+
+**June**
+
+- *My Age of Anxiety* - Scott Stossel
