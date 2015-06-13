@@ -56,3 +56,4 @@ title: "Reading list"
 **June**
 
 - *My Age of Anxiety* - Scott Stossel
+- *Eating Animals* - Jonathan Safran Foer
