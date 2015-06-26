@@ -59,3 +59,4 @@ title: "Reading list"
 - *Eating Animals* - Jonathan Safran Foer
 - *Fear* - Thich Nhat Hanh
 - *The Isle of Youth* - Laura van den Berg
+- *Eats, Shoots & Leaves* - Lynne Truss
