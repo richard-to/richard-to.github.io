@@ -61,3 +61,7 @@ title: "Reading list"
 - *The Isle of Youth* - Laura van den Berg
 - *Eats, Shoots & Leaves* - Lynne Truss
 - *The Looney-Bin Trip* - Kate Millet
+
+**July**
+
+- *Anatomy of an Epidemic* - Robert Whitaker
