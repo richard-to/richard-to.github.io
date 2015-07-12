@@ -65,3 +65,4 @@ title: "Reading list"
 **July**
 
 - *Anatomy of an Epidemic* - Robert Whitaker
+- *The Conspiracy against the Human Race* - Thomas Ligotti
