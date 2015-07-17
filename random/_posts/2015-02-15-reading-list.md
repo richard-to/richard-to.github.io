@@ -66,3 +66,4 @@ title: "Reading list"
 
 - *Anatomy of an Epidemic* - Robert Whitaker
 - *The Conspiracy against the Human Race* - Thomas Ligotti
+- *The Trial* - Franz Kafka
