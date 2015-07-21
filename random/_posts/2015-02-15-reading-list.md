@@ -68,3 +68,4 @@ title: "Reading list"
 - *The Conspiracy against the Human Race* - Thomas Ligotti
 - *The Trial* - Franz Kafka
 - *The Paris Review No. 213, Summer 2015*
+- *Vintage Munro* - Alice Munro
