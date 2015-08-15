@@ -69,3 +69,7 @@ title: "Reading list"
 - *The Trial* - Franz Kafka
 - *The Paris Review No. 213, Summer 2015*
 - *Vintage Munro* - Alice Munro
+
+**August**
+
+- *Annihilation* - Jeff Vandermeeer
