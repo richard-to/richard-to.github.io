@@ -73,3 +73,4 @@ title: "Reading list"
 **August**
 
 - *Annihilation* - Jeff Vandermeer
+- *Authority* - Jeff Vandermeer
