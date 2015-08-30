@@ -74,3 +74,4 @@ title: "Reading list"
 
 - *Annihilation* - Jeff Vandermeer
 - *Authority* - Jeff Vandermeer
+- *Red Dragon* - Thomas Harris
