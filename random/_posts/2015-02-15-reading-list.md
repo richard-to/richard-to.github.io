@@ -75,3 +75,9 @@ title: "Reading list"
 - *Annihilation* - Jeff Vandermeer
 - *Authority* - Jeff Vandermeer
 - *Red Dragon* - Thomas Harris
+
+**September**
+
+- *Acceptance* - Jeff Vandermeer
+- *Wind/Pinball* - Haruki Murakami
+- *Phaedrus* - Plato
