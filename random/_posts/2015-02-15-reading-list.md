@@ -84,6 +84,6 @@ title: "Reading list"
 - *What I Talk About Whent I Talk About Running* - Haruki Murakami
 - *Modern Romance* - Aziz Ansari
 
-**September**
+**October**
 
 - *Colorless Tsukuru Tasaki and His Years of Pilgrimage* - Haruki Murakami
