@@ -93,3 +93,4 @@ title: "Reading list"
 - *Into the Valley* - Ruth Galm
 - *To the Lighthouse* - Virginia Woolf
 - *Detroit City Is the Place to Be: The Afterlife of an American Metropolis* - Mark Binelli
+- *The Intuitionist* - Colson Whitehead
