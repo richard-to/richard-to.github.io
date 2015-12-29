@@ -94,3 +94,4 @@ title: "Reading list"
 - *To the Lighthouse* - Virginia Woolf
 - *Detroit City Is the Place to Be: The Afterlife of an American Metropolis* - Mark Binelli
 - *The Intuitionist* - Colson Whitehead
+- *The Girl in the Road* - Monica Byrne
