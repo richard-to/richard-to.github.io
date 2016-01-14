@@ -3,6 +3,13 @@ layout: post
 title: "Reading list"
 ---
 
+## 2016
+
+**January**
+
+- *Native Speaker* - Chang-Rae Lee
+- *Flash Boys* - Michael Lewis
+
 ## 2015
 
 **January**
