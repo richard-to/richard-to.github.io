@@ -13,7 +13,7 @@ title: "Reading list"
 
 **February**
 
-- *The Autobiography of Red** - Anne Carson
+- *The Autobiography of Red* - Anne Carson
 
 ## 2015
 
