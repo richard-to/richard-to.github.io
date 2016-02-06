@@ -9,6 +9,11 @@ title: "Reading list"
 
 - *Native Speaker* - Chang-Rae Lee
 - *Flash Boys* - Michael Lewis
+- *The Dark Net* - Jamie Bartlett
+
+**February**
+
+- *The Autobiography of Red** - Anne Carson
 
 ## 2015
 
