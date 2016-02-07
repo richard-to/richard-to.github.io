@@ -1,4 +1,4 @@
 name: Letters from a Maladroit
 markdown: kramdown
-pygments: true
+highlighter: rouge
 permalink: none
