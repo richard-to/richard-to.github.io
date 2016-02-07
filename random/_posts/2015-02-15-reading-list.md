@@ -14,6 +14,7 @@ title: "Reading list"
 **February**
 
 - *The Autobiography of Red* - Anne Carson
+- *Tender Buttons* - Gertrude Stein
 
 ## 2015
 
