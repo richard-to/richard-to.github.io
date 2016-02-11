@@ -15,6 +15,7 @@ title: "Reading list"
 
 - *The Autobiography of Red* - Anne Carson
 - *Tender Buttons* - Gertrude Stein
+- *Imagist Poetry: An Anthology* - Bob Blaisdell
 
 ## 2015
 
