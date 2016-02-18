@@ -16,6 +16,8 @@ title: "Reading list"
 - *The Autobiography of Red* - Anne Carson
 - *Tender Buttons* - Gertrude Stein
 - *Imagist Poetry: An Anthology* - Bob Blaisdell
+- *The Waste Land and other poems* - T.S. Eliot
+- *Hackers: Heroes of the Computer Revolution* - Steven Levy
 
 ## 2015
 
