@@ -18,6 +18,7 @@ title: "Reading list"
 - *Imagist Poetry: An Anthology* - Bob Blaisdell
 - *The Waste Land and other poems* - T.S. Eliot
 - *Hackers: Heroes of the Computer Revolution* - Steven Levy
+- *Lost in the Funhouse* - John Barth
 
 ## 2015
 
