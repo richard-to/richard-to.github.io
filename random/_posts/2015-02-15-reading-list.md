@@ -19,6 +19,7 @@ title: "Reading list"
 - *The Waste Land and other poems* - T.S. Eliot
 - *Hackers: Heroes of the Computer Revolution* - Steven Levy
 - *Lost in the Funhouse* - John Barth
+- *Pedro Paramo* - Juan Rulfo
 
 ## 2015
 
