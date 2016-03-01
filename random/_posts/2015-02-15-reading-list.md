@@ -20,6 +20,7 @@ title: "Reading list"
 - *Hackers: Heroes of the Computer Revolution* - Steven Levy
 - *Lost in the Funhouse* - John Barth
 - *Pedro Paramo* - Juan Rulfo
+- *Winesburg, Ohio* - Sherwood Anderson
 
 ## 2015
 
