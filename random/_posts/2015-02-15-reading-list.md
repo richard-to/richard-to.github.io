@@ -22,6 +22,10 @@ title: "Reading list"
 - *Pedro Paramo* - Juan Rulfo
 - *Winesburg, Ohio* - Sherwood Anderson
 
+**March**
+
+- *Cane* - Jean Toomer
+
 ## 2015
 
 **January**
