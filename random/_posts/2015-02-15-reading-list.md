@@ -25,6 +25,8 @@ title: "Reading list"
 **March**
 
 - *Cane* - Jean Toomer
+- *The Pastures of Heaven* - John Steinbeck
+- *The Periodic Table* - Primo Levi
 
 ## 2015
 
