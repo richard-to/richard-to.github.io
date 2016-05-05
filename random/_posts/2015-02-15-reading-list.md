@@ -37,7 +37,7 @@ title: "Reading list"
 
 **May**
 
-- *A Visits From the Goon Squad* - Jennifer Egan
+- *A Visit From the Goon Squad* - Jennifer Egan
 
 ## 2015
 
