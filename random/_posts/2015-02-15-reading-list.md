@@ -38,6 +38,7 @@ title: "Reading list"
 **May**
 
 - *A Visit From the Goon Squad* - Jennifer Egan
+- *Purity* - Jonathan Franzen
 
 ## 2015
 
