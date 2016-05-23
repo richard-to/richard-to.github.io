@@ -39,6 +39,7 @@ title: "Reading list"
 
 - *A Visit From the Goon Squad* - Jennifer Egan
 - *Purity* - Jonathan Franzen
+- *Dreaming of Cuba* - Cristina Garcia
 
 ## 2015
 
