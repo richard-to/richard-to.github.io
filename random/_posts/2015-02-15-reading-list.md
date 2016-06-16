@@ -45,7 +45,7 @@ title: "Reading list"
 
 **June**
 
-- *The Street of Crocodiles and Other Stories* - Bruno Shulz
+- *The Street of Crocodiles and Other Stories* - Bruno Schulz
 - *The Hidden People* - Ralph Hassig and Kongdan Oh
 
 ## 2015
