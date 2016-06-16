@@ -43,6 +43,11 @@ title: "Reading list"
 - *A Thousand Miles to Freedom: My Escape From North Korea* - Eunsun Kim
 - *Nothing to Envy: Ordinary Lives in Norht Korea* - Barbara Demick
 
+**June**
+
+- *The Street of Crocodiles and Other Stories* - Bruno Shulz
+- *The Hidden People* - Ralph Hassig and Kongdan Oh
+
 ## 2015
 
 **January**
