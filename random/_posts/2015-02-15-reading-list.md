@@ -47,6 +47,13 @@ title: "Reading list"
 
 - *The Street of Crocodiles and Other Stories* - Bruno Schulz
 - *The Hidden People* - Ralph Hassig and Kongdan Oh
+- *The Sympathizer* - Viet Thanh Nguyen
+
+**July**
+
+- *Ficciones* - Luis Jorge Borges
+- *A Scanner Darkly* - Philip K. Dick
+- *Best American Short Stories 2015*
 
 ## 2015
 
