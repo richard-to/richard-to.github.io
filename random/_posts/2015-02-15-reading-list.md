@@ -54,6 +54,7 @@ title: "Reading list"
 - *Ficciones* - Luis Jorge Borges
 - *A Scanner Darkly* - Philip K. Dick
 - *Best American Short Stories 2015*
+- *And of Course You End Up Becoming Yourself* - David Lipsky
 
 ## 2015
 
