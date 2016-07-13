@@ -55,6 +55,7 @@ title: "Reading list"
 - *A Scanner Darkly* - Philip K. Dick
 - *Best American Short Stories 2015*
 - *And of Course You End Up Becoming Yourself* - David Lipsky
+- *North Korea Undercover* - John Sweeney
 
 ## 2015
 
