@@ -56,6 +56,7 @@ title: "Reading list"
 - *Best American Short Stories 2015*
 - *And of Course You End Up Becoming Yourself* - David Lipsky
 - *North Korea Undercover* - John Sweeney
+- *Age of Ambition: Chasing Fortune, Truth, and Faith in the New China* - Evan Osnos
 
 ## 2015
 
