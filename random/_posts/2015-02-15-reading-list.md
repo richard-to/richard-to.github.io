@@ -41,7 +41,7 @@ title: "Reading list"
 - *Purity* - Jonathan Franzen
 - *Dreaming of Cuba* - Cristina Garcia
 - *A Thousand Miles to Freedom: My Escape From North Korea* - Eunsun Kim
-- *Nothing to Envy: Ordinary Lives in Norht Korea* - Barbara Demick
+- *Nothing to Envy: Ordinary Lives in North Korea* - Barbara Demick
 
 **June**
 
