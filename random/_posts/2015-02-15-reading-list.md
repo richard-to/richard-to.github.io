@@ -136,7 +136,7 @@ title: "Reading list"
 - *Acceptance* - Jeff Vandermeer
 - *Wind/Pinball* - Haruki Murakami
 - *Phaedrus* - Plato
-- *What I Talk About Whent I Talk About Running* - Haruki Murakami
+- *What I Talk About When I Talk About Running* - Haruki Murakami
 - *Modern Romance* - Aziz Ansari
 
 **October**
