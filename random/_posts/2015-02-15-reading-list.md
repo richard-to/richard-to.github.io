@@ -57,6 +57,10 @@ title: "Reading list"
 - *And of Course You End Up Becoming Yourself* - David Lipsky
 - *North Korea Undercover* - John Sweeney
 - *Age of Ambition: Chasing Fortune, Truth, and Faith in the New China* - Evan Osnos
+- *Quiet* - Susan Cain
+- *Voices from Chernobyl* - Svetlana Alexievich
+- *The End of the Story* - Lydia Davis
+- *When Things Fall Apart* - Pema Chödrön
 
 ## 2015
 
