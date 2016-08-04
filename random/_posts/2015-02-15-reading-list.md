@@ -61,6 +61,7 @@ title: "Reading list"
 - *Voices from Chernobyl* - Svetlana Alexievich
 - *The End of the Story* - Lydia Davis
 - *When Things Fall Apart* - Pema Chödrön
+- *Zeno's Conscience* - Italo Svevo
 
 ## 2015
 
