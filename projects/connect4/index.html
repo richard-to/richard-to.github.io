@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Connect 4</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+    <body>
+        <div id="main-container">
+            <div id="game-winner-container" class="hide"></div>
+            <div id="game-controls-container">
+                <select id="player-count-select">
+                    <option value="1">1 Player</option>
+                    <option value="2">2 Players</option>
+                </select>
+                <button id="start-game-btn">Start Game</button>
+            </div>
+            <div id="game-status-container">
+                <div id="player1-label">Player 1</div>
+                <div id="player2-label">Player 2</div>
+            </div>
+            <canvas id="board" width="525" height="525"></canvas>
+        </div>
+        <script src="js/connect4.js"></script>
+        <script src="js/connect4.ai.js"></script>
+        <script src="js/main.js"></script>        
+    </body>
+</html>
