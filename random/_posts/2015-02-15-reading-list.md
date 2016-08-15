@@ -66,6 +66,8 @@ title: "Reading list"
 **August**
 
 - *Me Talk Pretty One Day* - David Sedaris
+- *True Love: A Practice for Awakening the Heart* - Thich Nhat Hanh
+- *On Being Stuck: Tapping Into the Creative Power of Writer's Block* - Laraine Herring
 
 ## 2015
 
