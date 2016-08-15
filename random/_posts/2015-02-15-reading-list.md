@@ -63,6 +63,10 @@ title: "Reading list"
 - *When Things Fall Apart* - Pema Chödrön
 - *Zeno's Conscience* - Italo Svevo
 
+**August**
+
+- *Me Talk Pretty One Day* - David Sedaris
+
 ## 2015
 
 **January**
