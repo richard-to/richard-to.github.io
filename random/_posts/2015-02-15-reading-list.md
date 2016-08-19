@@ -68,6 +68,7 @@ title: "Reading list"
 - *Me Talk Pretty One Day* - David Sedaris
 - *True Love: A Practice for Awakening the Heart* - Thich Nhat Hanh
 - *On Being Stuck: Tapping Into the Creative Power of Writer's Block* - Laraine Herring
+- *Playing Dead: A Journey Through the World of Death Fraud* - Elizabeth Greenwood
 
 ## 2015
 
