@@ -70,6 +70,8 @@ title: "Reading list"
 - *On Being Stuck: Tapping Into the Creative Power of Writer's Block* - Laraine Herring
 - *Playing Dead: A Journey Through the World of Death Fraud* - Elizabeth Greenwood
 - *Wonderbook* - Jeff Vandermeer
+- *Awaken to the Buddha Within* - Venerable Wuling
+- *How to live without Fear & Worry* - K. Sri Dhammananda
 
 ## 2015
 
