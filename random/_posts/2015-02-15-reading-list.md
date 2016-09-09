@@ -76,6 +76,7 @@ title: "Reading list"
 **September**
 
 - *Postcolonialism: A very short introduction* - Robert J.C. Young
+- *Globalization: a very short introduction* - Manfred Steger
 
 ## 2015
 
