@@ -77,6 +77,7 @@ title: "Reading list"
 
 - *Postcolonialism: A very short introduction* - Robert J.C. Young
 - *Globalization: a very short introduction* - Manfred Steger
+- *The English Patient* - Michael Ondaatje
 
 ## 2015
 
