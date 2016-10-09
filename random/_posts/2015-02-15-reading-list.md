@@ -79,6 +79,11 @@ title: "Reading list"
 - *Globalization: a very short introduction* - Manfred Steger
 - *The English Patient* - Michael Ondaatje
 
+**October**
+
+- *Lucy* - Jamaica Kincaid
+- *Season of Migration to the North* - Tayeb Salih
+
 ## 2015
 
 **January**
