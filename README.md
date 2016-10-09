@@ -1,1 +1,1 @@
-My personal blog. Contains fiction I wrote years ago. The rest is related to programming, either about my projects or something I learned. On a side note, Github pages rocks! Jekyll is good, but could be faster.
+My personal blog.
