@@ -90,6 +90,12 @@ title: "Reading list"
 - *All Monsters Must Die: An Excursion to North Korea* - Magnus Bartas & Fredrik Ekman
 - *The Cleanest Race: How North Koreans See Themselves -- And Why It Matters* - B.R. Myers
 
+**December**
+
+- *The Underground Railraod* - Colson Whitehead
+- *The Vegetarian* - Han Kang
+- *The Diver's Clothes Lie Empty* - Vendela Vida
+
 ## 2015
 
 **January**
