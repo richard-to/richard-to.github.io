@@ -3,6 +3,13 @@ layout: post
 title: "Reading list"
 ---
 
+## 2017
+
+**January**
+- *Evicted* - Matthew Desmond
+- *The Hidden Life of Trees* - Peter Wohlleben
+- *Story Trumps Structure* - Steven James
+
 ## 2016
 
 **January**
@@ -95,6 +102,7 @@ title: "Reading list"
 - *The Underground Railraod* - Colson Whitehead
 - *The Vegetarian* - Han Kang
 - *The Diver's Clothes Lie Empty* - Vendela Vida
+- *Meditations* - Marcus Aurelius
 
 ## 2015
 
