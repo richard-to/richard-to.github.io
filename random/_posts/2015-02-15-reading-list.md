@@ -9,6 +9,7 @@ title: "Reading list"
 - *Evicted* - Matthew Desmond
 - *The Hidden Life of Trees* - Peter Wohlleben
 - *Story Trumps Structure* - Steven James
+- *Hillbilly Elegy* - J.D. Vance
 
 ## 2016
 
