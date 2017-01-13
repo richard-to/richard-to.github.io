@@ -6,6 +6,7 @@ title: "Reading list"
 ## 2017
 
 **January**
+
 - *Evicted* - Matthew Desmond
 - *The Hidden Life of Trees* - Peter Wohlleben
 - *Story Trumps Structure* - Steven James
