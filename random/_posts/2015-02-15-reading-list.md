@@ -11,6 +11,7 @@ title: "Reading list"
 - *The Hidden Life of Trees* - Peter Wohlleben
 - *Story Trumps Structure* - Steven James
 - *Hillbilly Elegy* - J.D. Vance
+- *Gold Fame Citrus* -  Claire Vaye Watkins
 
 ## 2016
 
