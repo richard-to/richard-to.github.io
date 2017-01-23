@@ -12,6 +12,7 @@ title: "Reading list"
 - *Story Trumps Structure* - Steven James
 - *Hillbilly Elegy* - J.D. Vance
 - *Gold Fame Citrus* -  Claire Vaye Watkins
+- *"Surely, You're Joking, Mr. Feynman!"* - Richard P. Feynman
 
 ## 2016
 
