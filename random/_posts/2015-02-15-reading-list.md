@@ -13,6 +13,7 @@ title: "Reading list"
 - *Hillbilly Elegy* - J.D. Vance
 - *Gold Fame Citrus* -  Claire Vaye Watkins
 - *"Surely, You're Joking, Mr. Feynman!"* - Richard P. Feynman
+- *The Moor's Account* - Laila Lalami
 
 ## 2016
 
