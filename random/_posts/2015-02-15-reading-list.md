@@ -15,6 +15,10 @@ title: "Reading list"
 - *"Surely, You're Joking, Mr. Feynman!"* - Richard P. Feynman
 - *The Moor's Account* - Laila Lalami
 
+**February**
+
+- *Strangers in Their Own Land* - Arlie Russell Hochschild
+
 ## 2016
 
 **January**
