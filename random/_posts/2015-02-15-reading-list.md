@@ -18,6 +18,7 @@ title: "Reading list"
 **February**
 
 - *Strangers in Their Own Land* - Arlie Russell Hochschild
+- *Disgrace* - J.M. Coetzee
 
 ## 2016
 
