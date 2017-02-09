@@ -19,6 +19,7 @@ title: "Reading list"
 
 - *Strangers in Their Own Land* - Arlie Russell Hochschild
 - *Disgrace* - J.M. Coetzee
+- *Another Brooklyn* - Jacqueline Woodson
 
 ## 2016
 
