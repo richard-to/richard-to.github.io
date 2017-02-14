@@ -20,6 +20,7 @@ title: "Reading list"
 - *Strangers in Their Own Land* - Arlie Russell Hochschild
 - *Disgrace* - J.M. Coetzee
 - *Another Brooklyn* - Jacqueline Woodson
+- *Hot Milk* - Deborah Levy
 
 ## 2016
 
