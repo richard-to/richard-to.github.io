@@ -21,6 +21,7 @@ title: "Reading list"
 - *Disgrace* - J.M. Coetzee
 - *Another Brooklyn* - Jacqueline Woodson
 - *Hot Milk* - Deborah Levy
+- *Eileen* - Ottessa Moshfegh
 
 ## 2016
 
