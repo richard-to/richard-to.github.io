@@ -22,6 +22,7 @@ title: "Reading list"
 - *Another Brooklyn* - Jacqueline Woodson
 - *Hot Milk* - Deborah Levy
 - *Eileen* - Ottessa Moshfegh
+- *Outline* - Rachel Cusk
 
 ## 2016
 
