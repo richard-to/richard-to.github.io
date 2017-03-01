@@ -23,6 +23,7 @@ title: "Reading list"
 - *Hot Milk* - Deborah Levy
 - *Eileen* - Ottessa Moshfegh
 - *Outline* - Rachel Cusk
+- *Lucifer at the Starlite: Poems* - Kim Addonizio
 
 ## 2016
 
