@@ -29,6 +29,7 @@ title: "Reading list"
 
 - *The Book of Unknown Americans* - Cristina Henríquez
 - *Exit West* - Moshin Hamid
+- *Lincoln in the Bardo* - George Saunders
 
 ## 2016
 
