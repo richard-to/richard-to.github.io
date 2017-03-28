@@ -30,6 +30,7 @@ title: "Reading list"
 - *The Book of Unknown Americans* - Cristina Henríquez
 - *Exit West* - Moshin Hamid
 - *Lincoln in the Bardo* - George Saunders
+- *Best American Short Stories 2016*
 
 ## 2016
 
