@@ -31,6 +31,7 @@ title: "Reading list"
 - *Exit West* - Moshin Hamid
 - *Lincoln in the Bardo* - George Saunders
 - *Best American Short Stories 2016*
+- *Double Switch* - T.T. Monday
 
 ## 2016
 
