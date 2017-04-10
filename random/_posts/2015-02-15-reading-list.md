@@ -33,6 +33,11 @@ title: "Reading list"
 - *Best American Short Stories 2016*
 - *Double Switch* - T.T. Monday
 
+**April**
+
+- *Homesick for Another World* - Ottessa Moshfegh
+- *Family Life* - Akhil Sharma
+
 ## 2016
 
 **January**
