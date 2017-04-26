@@ -37,6 +37,7 @@ title: "Reading list"
 
 - *Homesick for Another World* - Ottessa Moshfegh
 - *Family Life* - Akhil Sharma
+- *LaRose* - Louise Erdrich
 
 ## 2016
 
