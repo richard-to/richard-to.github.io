@@ -39,6 +39,11 @@ title: "Reading list"
 - *Family Life* - Akhil Sharma
 - *LaRose* - Louise Erdrich
 
+**May**
+
+- *The Interestings* - Meg Wolitzer
+- *The Leavers* - Lisa Ko
+
 ## 2016
 
 **January**
