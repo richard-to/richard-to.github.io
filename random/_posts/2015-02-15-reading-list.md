@@ -43,6 +43,7 @@ title: "Reading list"
 
 - *The Interestings* - Meg Wolitzer
 - *The Leavers* - Lisa Ko
+- *Black Hole Blues and Other Songs from Outer Space* - Janna Levin 
 
 ## 2016
 
