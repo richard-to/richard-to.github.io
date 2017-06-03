@@ -45,6 +45,10 @@ title: "Reading list"
 - *The Leavers* - Lisa Ko
 - *Black Hole Blues and Other Songs from Outer Space* - Janna Levin 
 
+**June**
+
+- *The Three-Body Problem* - Cixin Liu
+
 ## 2016
 
 **January**
