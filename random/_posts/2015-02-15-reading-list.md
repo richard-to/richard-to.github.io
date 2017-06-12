@@ -50,6 +50,7 @@ title: "Reading list"
 - *The Three-Body Problem* - Cixin Liu
 - *The Unsettlers* - Mark Sundeen
 - *Wish Lanterns: Young Lives in New China* - Alec Ash
+- *Stories Of Your Life And Other Stories* - Ted Chiang
 
 ## 2016
 
