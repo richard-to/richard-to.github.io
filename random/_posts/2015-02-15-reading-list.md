@@ -51,6 +51,7 @@ title: "Reading list"
 - *The Unsettlers* - Mark Sundeen
 - *Wish Lanterns: Young Lives in New China* - Alec Ash
 - *Stories Of Your Life And Other Stories* - Ted Chiang
+- *The Divided Self* - R.D. Laing
 
 ## 2016
 
