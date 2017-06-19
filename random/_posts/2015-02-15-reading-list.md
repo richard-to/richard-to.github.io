@@ -52,6 +52,7 @@ title: "Reading list"
 - *Wish Lanterns: Young Lives in New China* - Alec Ash
 - *Stories Of Your Life And Other Stories* - Ted Chiang
 - *The Divided Self* - R.D. Laing
+- *Street of Eternal Happiness: Big City Dreams Along a Shanghai Road* - Rob Schmitz
 
 ## 2016
 
