@@ -53,6 +53,7 @@ title: "Reading list"
 - *Stories Of Your Life And Other Stories* - Ted Chiang
 - *The Divided Self* - R.D. Laing
 - *Street of Eternal Happiness: Big City Dreams Along a Shanghai Road* - Rob Schmitz
+- *Rise of the Robots* - Martin Ford
 
 ## 2016
 
