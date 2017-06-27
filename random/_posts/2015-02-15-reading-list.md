@@ -54,6 +54,7 @@ title: "Reading list"
 - *The Divided Self* - R.D. Laing
 - *Street of Eternal Happiness: Big City Dreams Along a Shanghai Road* - Rob Schmitz
 - *Rise of the Robots* - Martin Ford
+- *China's Second Continent* - Howard W. French
 
 ## 2016
 
