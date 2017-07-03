@@ -56,6 +56,10 @@ title: "Reading list"
 - *Rise of the Robots* - Martin Ford
 - *China's Second Continent* - Howard W. French
 
+**July**
+
+- *The Empty Mirror: Experiences in a Japanese Zen Monastery* - Janwillem van de Wetering
+
 ## 2016
 
 **January**
