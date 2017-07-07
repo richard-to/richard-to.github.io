@@ -59,6 +59,7 @@ title: "Reading list"
 **July**
 
 - *The Empty Mirror: Experiences in a Japanese Zen Monastery* - Janwillem van de Wetering
+- *The Crying of Lot 49* - Thomas Pynchon
 
 ## 2016
 
