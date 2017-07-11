@@ -60,6 +60,7 @@ title: "Reading list"
 
 - *The Empty Mirror: Experiences in a Japanese Zen Monastery* - Janwillem van de Wetering
 - *The Crying of Lot 49* - Thomas Pynchon
+- *White Noise* - Don DeLillo
 
 ## 2016
 
