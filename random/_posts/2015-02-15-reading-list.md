@@ -62,6 +62,7 @@ title: "Reading list"
 - *The Crying of Lot 49* - Thomas Pynchon
 - *White Noise* - Don DeLillo
 - *What We Talk About When We Talk About Love* - Raymond Carver
+- *Drown* - Junot Diaz
 
 ## 2016
 
