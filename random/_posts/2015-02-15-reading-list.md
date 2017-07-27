@@ -63,6 +63,7 @@ title: "Reading list"
 - *White Noise* - Don DeLillo
 - *What We Talk About When We Talk About Love* - Raymond Carver
 - *Drown* - Junot Diaz
+- *Blood Meridian* - Cormac McCarthy
 
 ## 2016
 
