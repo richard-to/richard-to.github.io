@@ -64,6 +64,7 @@ title: "Reading list"
 - *What We Talk About When We Talk About Love* - Raymond Carver
 - *Drown* - Junot Diaz
 - *Blood Meridian* - Cormac McCarthy
+- *In Our Time* - Ernest Hemingway
 
 ## 2016
 
