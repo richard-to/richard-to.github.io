@@ -65,6 +65,7 @@ title: "Reading list"
 - *Drown* - Junot Diaz
 - *Blood Meridian* - Cormac McCarthy
 - *In Our Time* - Ernest Hemingway
+- *The Goldfinch* - Donna Tartt
 
 ## 2016
 
