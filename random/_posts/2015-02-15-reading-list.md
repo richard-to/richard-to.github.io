@@ -67,6 +67,10 @@ title: "Reading list"
 - *In Our Time* - Ernest Hemingway
 - *The Goldfinch* - Donna Tartt
 
+**August**
+
+- *Zen Confidential: Confessions of Wayward Monk* - Shozen Jack Haubner
+
 ## 2016
 
 **January**
