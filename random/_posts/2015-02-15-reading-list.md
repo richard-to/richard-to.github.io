@@ -70,6 +70,7 @@ title: "Reading list"
 **August**
 
 - *Zen Confidential: Confessions of Wayward Monk* - Shozen Jack Haubner
+- *On Anarchism* - Noam Chomsky
 
 ## 2016
 
