@@ -71,6 +71,7 @@ title: "Reading list"
 
 - *Zen Confidential: Confessions of Wayward Monk* - Shozen Jack Haubner
 - *On Anarchism* - Noam Chomsky
+- *Heidegger* - Jonathan Ree
 
 ## 2016
 
