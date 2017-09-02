@@ -5,9 +5,9 @@ title: "Google Compute Engine with Ansible"
 
 Recently I was working on using Ansible with Google Compute Engine (GCE). This turned out to be a somewhat frustrating experience, so I thought I'd write down some notes of what issues I ran into.
 
-The tutorial I was using was: https://googlecloudplatform.github.io/compute-video-demo-ansible/
+The tutorial I was using was: [https://googlecloudplatform.github.io/compute-video-demo-ansible/](https://googlecloudplatform.github.io/compute-video-demo-ansible/)
 
-The corresponding Github repository is here: https://github.com/GoogleCloudPlatform/compute-video-demo-ansible
+The corresponding Github repository is here: [https://github.com/GoogleCloudPlatform/compute-video-demo-ansible](https://github.com/GoogleCloudPlatform/compute-video-demo-ansible)
 
 I didn't follow the exact tutorial. I made manual made modifications to the Ansible configuration, mainly I simplified it to use only one instance. I also copied out the code by hand and made modifications as I went along. This I believe led to some of the problems I ran into (lack of understanding / misconceptions on my part).
 
@@ -30,7 +30,7 @@ The first thing that's needed is to create a service account, which is basically
 gcloud iam service-accounts create <account-name> --display-name "Account Display Name"
 ```
 
-Source: https://cloud.google.com/iam/docs/creating-managing-service-accounts
+Source: [https://cloud.google.com/iam/docs/creating-managing-service-accounts](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
 
 **Service account roles**
 
@@ -41,14 +41,14 @@ gcloud projects add-iam-policy-binding compute-trial \
     --member serviceAccount:<account-name>@<project-name>.iam.gserviceaccount.com --role roles/editor
 ```
 
-source: https://cloud.google.com/iam/docs/granting-roles-to-service-accounts
+source: [https://cloud.google.com/iam/docs/granting-roles-to-service-accounts](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts)
 
 
 **Service account JSON key**
 
 Next we need to generate the service account key to authenticate the service account and allow it to automate various GCE management steps.
 
-The key can be generated from the web console: https://console.cloud.google.com/apis/credentials?project=<project-name>
+The key can be generated from the web console: [https://console.cloud.google.com/apis/credentials?project=<project-name>](https://console.cloud.google.com/apis/credentials?project=<project-name>)
 
 But as always, using gcloud is preferable:
 
@@ -56,7 +56,7 @@ But as always, using gcloud is preferable:
 gcloud iam service-accounts keys create key.json --iam-account=<account-name>@<project-name>.iam.gserviceaccount.com
 ```
 
-source: https://cloud.google.com/sdk/gcloud/reference/iam/service-accounts/keys/create
+source: [https://cloud.google.com/sdk/gcloud/reference/iam/service-accounts/keys/create](https://cloud.google.com/sdk/gcloud/reference/iam/service-accounts/keys/create)
 
 **SSH connection**
 
@@ -65,7 +65,7 @@ Here I had some misunderstandings on how the ssh worked.
 gcloud allows you to connect to your instance using: `gcloud compute ssh <instance-name>`. This is nice in that you don't have 
 to type in the ip to connect to the server. I believe it can also connect to instances in a private network.
 
-You can read more about this command here: https://cloud.google.com/sdk/gcloud/reference/compute/ssh
+You can read more about this command here: [https://cloud.google.com/sdk/gcloud/reference/compute/ssh](https://cloud.google.com/sdk/gcloud/reference/compute/ssh)
 
 Now if you want to connect to an instance using the normal ssh command, you can use `gcloud compute config-ssh` and 
 this will generate a configuration in `.ssh/config`.
@@ -102,8 +102,7 @@ And get this error:
 RuntimeError: No CA Certificates were found in CA_CERTS_PATH. For information on how to get required certificate files, please visit https://libcloud.readthedocs.org/en/latest/other/ssl-certificate-validation.html
 ```
 
-So I installed certifi via pip, but this didn't work. I'm still not sure why it didn't work. Turned out I had to download the cert file 
-manually. I downloaded the certs here http://curl.haxx.se/docs/caextract.html
+So I installed certifi via pip, but this didn't work. I'm still not sure why it didn't work. Turned out I had to download the cert file manually. I downloaded the certs here [http://curl.haxx.se/docs/caextract.html](http://curl.haxx.se/docs/caextract.html)
 
 Then I set the SSL_CERT_FILE to the path of cert.pem downloaded from above. 
 
@@ -111,7 +110,7 @@ Then I set the SSL_CERT_FILE to the path of cert.pem downloaded from above.
 SSL_CERT_FILE=./cacert.pem GCE_INI_PATH=./gce.ini ansible all -i gce.py -m setup
 ```
 
-source: https://groups.google.com/forum/#!topic/ansible-project/WTef9t1TyA0
+source: [https://groups.google.com/forum/#!topic/ansible-project/WTef9t1TyA0](https://groups.google.com/forum/#!topic/ansible-project/WTef9t1TyA0)
 
 **No hosts found error**
 
@@ -144,4 +143,4 @@ Modified ansible hosts file:
 [gce_instances]
 myinstance[1:4]
 ```
-Via: https://github.com/jlund/streisand/issues/629#issuecomment-296398774
+Via: [https://github.com/jlund/streisand/issues/629#issuecomment-296398774](https://github.com/jlund/streisand/issues/629#issuecomment-296398774)
