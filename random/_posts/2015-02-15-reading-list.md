@@ -74,6 +74,10 @@ title: "Reading list"
 - *Heidegger* - Jonathan Ree
 - *Birds of America* - Lorrie Moore
 
+**September**
+
+- *The Book: On the Taboo Against Knowing Who You Are* - Alan Watts
+
 ## 2016
 
 **January**
