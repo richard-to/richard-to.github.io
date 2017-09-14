@@ -77,6 +77,7 @@ title: "Reading list"
 **September**
 
 - *The Book: On the Taboo Against Knowing Who You Are* - Alan Watts
+- *Emily Dickinson: A Collection of Critical Essays*
 
 ## 2016
 
