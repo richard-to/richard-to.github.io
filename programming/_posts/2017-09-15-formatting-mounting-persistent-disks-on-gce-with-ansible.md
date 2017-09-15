@@ -48,4 +48,4 @@ After testing those commands manually, I wrote a simple Ansible role to automate
 
  Next, if the disk exists, we'll format the disk if it does not contain "UUID=" which appears in "file -sL" when the disk is formatted.
 
- Next, the built-in Ansible "file" and "mount" modules can be used for creating a directory that we can use as the mount location the persistent drive.
+ Finally, the built-in Ansible "file" and "mount" modules can be used for creating a mount directory and then mounting the disk to that location.
