@@ -81,6 +81,10 @@ title: "Reading list"
 - *A Citizen's Guide to Ecology* - Lawrence B. Slobodkin
 - *Americanah* - Chimamanda Ngozi Adichie
 
+**October**
+
+- *The Stone Raft* - Jose Saramago
+
 ## 2016
 
 **January**
