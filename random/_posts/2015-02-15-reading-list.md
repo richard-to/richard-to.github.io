@@ -84,6 +84,7 @@ title: "Reading list"
 **October**
 
 - *The Stone Raft* - Jose Saramago
+- *Cosmicomics* - Italo Calvino
 - *Nomadland: Surviving America in the Twenty-First Century* - Jessica Bruder
 
 ## 2016
