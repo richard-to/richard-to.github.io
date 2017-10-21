@@ -86,6 +86,7 @@ title: "Reading list"
 - *The Stone Raft* - Jose Saramago
 - *Cosmicomics* - Italo Calvino
 - *Nomadland: Surviving America in the Twenty-First Century* - Jessica Bruder
+- *goodbye, things* - Fumio Sasaki
 
 ## 2016
 
