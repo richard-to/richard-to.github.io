@@ -87,6 +87,7 @@ title: "Reading list"
 - *Cosmicomics* - Italo Calvino
 - *Nomadland: Surviving America in the Twenty-First Century* - Jessica Bruder
 - *goodbye, things* - Fumio Sasaki
+- *A Manual for Cleaning Women: Selected Stories* - Lucia Berlin
 
 ## 2016
 
