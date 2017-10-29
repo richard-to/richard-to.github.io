@@ -88,6 +88,7 @@ title: "Reading list"
 - *Nomadland: Surviving America in the Twenty-First Century* - Jessica Bruder
 - *goodbye, things* - Fumio Sasaki
 - *A Manual for Cleaning Women: Selected Stories* - Lucia Berlin
+- *The Remains of the Day* - Kazuo Ishiguro
 
 ## 2016
 
