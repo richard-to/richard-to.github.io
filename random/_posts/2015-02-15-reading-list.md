@@ -90,6 +90,10 @@ title: "Reading list"
 - *A Manual for Cleaning Women: Selected Stories* - Lucia Berlin
 - *The Remains of the Day* - Kazuo Ishiguro
 
+**November**
+
+- *My Struggle: Book 1* - Karl Ove Knausgaard
+
 ## 2016
 
 **January**
