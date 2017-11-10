@@ -93,6 +93,7 @@ title: "Reading list"
 **November**
 
 - *My Struggle: Book 1* - Karl Ove Knausgaard
+- *The Sixth Extinction* - Elizabeth Kolbert
 
 ## 2016
 
