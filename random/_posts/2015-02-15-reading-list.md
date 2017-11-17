@@ -95,6 +95,7 @@ title: "Reading list"
 - *My Struggle: Book 1* - Karl Ove Knausgaard
 - *The Sixth Extinction* - Elizabeth Kolbert
 - *Letters to a Young Poet* - Rainer Maria Rilke
+- *Anti-Natalism: Rejectionist Philosophy from Buddhism to Benatar* - Ken Coates
 
 ## 2016
 
