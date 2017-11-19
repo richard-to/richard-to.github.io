@@ -96,6 +96,7 @@ title: "Reading list"
 - *The Sixth Extinction* - Elizabeth Kolbert
 - *Letters to a Young Poet* - Rainer Maria Rilke
 - *Anti-Natalism: Rejectionist Philosophy from Buddhism to Benatar* - Ken Coates
+- *Assisted: An Autobiography* - John Stockton
 
 ## 2016
 
