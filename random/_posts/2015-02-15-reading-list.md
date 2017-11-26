@@ -97,6 +97,7 @@ title: "Reading list"
 - *Letters to a Young Poet* - Rainer Maria Rilke
 - *Anti-Natalism: Rejectionist Philosophy from Buddhism to Benatar* - Ken Coates
 - *Assisted: An Autobiography* - John Stockton
+- *The Invisibility Cloak* - Ge Fei
 
 ## 2016
 
