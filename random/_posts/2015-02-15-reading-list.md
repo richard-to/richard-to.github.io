@@ -98,6 +98,7 @@ title: "Reading list"
 - *Anti-Natalism: Rejectionist Philosophy from Buddhism to Benatar* - Ken Coates
 - *Assisted: An Autobiography* - John Stockton
 - *The Invisibility Cloak* - Ge Fei
+- *Pilgrim at Tinker Creek* - Annie Dillard
 
 ## 2016
 
