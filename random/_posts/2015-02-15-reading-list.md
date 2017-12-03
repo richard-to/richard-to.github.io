@@ -100,6 +100,10 @@ title: "Reading list"
 - *The Invisibility Cloak* - Ge Fei
 - *Pilgrim at Tinker Creek* - Annie Dillard
 
+**December**
+
+- *Story Genius* - Lisa Cron
+
 ## 2016
 
 **January**
