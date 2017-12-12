@@ -103,6 +103,7 @@ title: "Reading list"
 **December**
 
 - *Story Genius* - Lisa Cron
+- *Fantasyland* - Kurt Anderson
 
 ## 2016
 
