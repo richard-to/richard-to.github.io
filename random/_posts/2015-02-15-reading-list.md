@@ -3,6 +3,13 @@ layout: post
 title: "Reading list"
 ---
 
+## 2018
+
+**January**
+
+- *ZYZZYVA, No. 111*
+- *Travels with Charley* - John Steinbeck
+
 ## 2017
 
 **January**
