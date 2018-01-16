@@ -9,6 +9,8 @@ title: "Reading list"
 
 - *ZYZZYVA, No. 111*
 - *Travels with Charley* - John Steinbeck
+- *A Walk in the Woods* - Bill Bryson
+- *The Gunslinger* - Stephen King
 
 ## 2017
 
