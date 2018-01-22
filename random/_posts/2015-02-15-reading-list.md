@@ -11,6 +11,7 @@ title: "Reading list"
 - *Travels with Charley* - John Steinbeck
 - *A Walk in the Woods* - Bill Bryson
 - *The Gunslinger* - Stephen King
+- *The Martian* - Andy Weir
 
 ## 2017
 
