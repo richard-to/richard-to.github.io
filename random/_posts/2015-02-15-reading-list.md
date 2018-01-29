@@ -12,6 +12,8 @@ title: "Reading list"
 - *A Walk in the Woods* - Bill Bryson
 - *The Gunslinger* - Stephen King
 - *The Martian* - Andy Weir
+- *Sing, Unburied, Sing* - Jesmyn Ward
+- *Night Sky with Exit Wounds* - Ocean Vuong
 
 ## 2017
 
