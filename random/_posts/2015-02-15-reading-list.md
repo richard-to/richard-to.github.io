@@ -14,6 +14,7 @@ title: "Reading list"
 - *The Martian* - Andy Weir
 - *Sing, Unburied, Sing* - Jesmyn Ward
 - *Night Sky with Exit Wounds* - Ocean Vuong
+- *Songs for the Open Road*
 
 ## 2017
 
