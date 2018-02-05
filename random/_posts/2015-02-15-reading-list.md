@@ -18,7 +18,7 @@ title: "Reading list"
 
 **February**
 
-- *The Road* Cormac McCarthy
+- *The Road* - Cormac McCarthy
 
 ## 2017
 
