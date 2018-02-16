@@ -20,6 +20,7 @@ title: "Reading list"
 
 - *The Road* - Cormac McCarthy
 - *Train Dreams* - Denis Johnson
+- *Fear and Loathing in Las Vegas* - Hunter S. Thompson
 
 ## 2017
 
