@@ -27,6 +27,10 @@ title: "Reading list"
 
 - *The Book of Disquiet* - Fernando Pessoa
 
+**April**
+
+- *How to Die: An Ancient Guide to the End of Life* - Seneca
+
 ## 2017
 
 **January**
