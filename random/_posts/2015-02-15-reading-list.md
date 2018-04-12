@@ -26,6 +26,7 @@ title: "Reading list"
 **March**
 
 - *The Book of Disquiet* - Fernando Pessoa
+- *The Parasite* - Michael Serres
 
 **April**
 
