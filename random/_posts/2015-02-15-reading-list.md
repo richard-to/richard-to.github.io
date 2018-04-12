@@ -26,11 +26,11 @@ title: "Reading list"
 **March**
 
 - *The Book of Disquiet* - Fernando Pessoa
-- *The Parasite* - Michael Serres
 
 **April**
 
 - *How to Die: An Ancient Guide to the End of Life* - Seneca
+- *The Parasite* - Michael Serres
 
 ## 2017
 
