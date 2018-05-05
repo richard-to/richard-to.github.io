@@ -31,6 +31,7 @@ title: "Reading list"
 
 - *How to Die: An Ancient Guide to the End of Life* - Seneca
 - *The Parasite* - Michael Serres
+- *Janesville* - Amy Goldstein
 
 ## 2017
 
