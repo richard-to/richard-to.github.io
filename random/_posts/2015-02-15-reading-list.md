@@ -33,6 +33,10 @@ title: "Reading list"
 - *The Parasite* - Michael Serres
 - *Janesville* - Amy Goldstein
 
+**May**
+
+- *The Floating World* - Cynthia Kadohata
+
 ## 2017
 
 **January**
