@@ -36,6 +36,9 @@ title: "Reading list"
 **May**
 
 - *The Floating World* - Cynthia Kadohata
+- *Young China* - Zak Dychtwald
+- *Strange Weather in Tokyo* - Hiromi Kawakami
+- *Automating Inequality* - Virginia Eubanks
 
 ## 2017
 
