@@ -40,6 +40,12 @@ title: "Reading list"
 - *Strange Weather in Tokyo* - Hiromi Kawakami
 - *Automating Inequality* - Virginia Eubanks
 
+**June**
+
+- *The Gene* - Siddhartha Mukherjee
+- *Stoner* - John Williams
+- *Your Heart is a Muscle the Size of a Fist* - Sunil Yapa
+
 ## 2017
 
 **January**
