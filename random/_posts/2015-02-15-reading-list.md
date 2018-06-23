@@ -45,6 +45,8 @@ title: "Reading list"
 - *The Gene* - Siddhartha Mukherjee
 - *Stoner* - John Williams
 - *Your Heart is a Muscle the Size of a Fist* - Sunil Yapa
+- *Jesus' Son* - Denis Johnson
+- *Life on Mars* - Tracy K. Smith
 
 ## 2017
 
