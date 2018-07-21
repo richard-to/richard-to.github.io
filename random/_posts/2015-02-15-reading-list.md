@@ -48,6 +48,12 @@ title: "Reading list"
 - *Jesus' Son* - Denis Johnson
 - *Life on Mars* - Tracy K. Smith
 
+**July**
+
+- *The Courage of Hopelessness* - Slavoj Zizek
+- *The Dark Forest* - Liu Cixin
+- *The Vanished* - Lena Mauger and Stephane Remeal
+
 ## 2017
 
 **January**
