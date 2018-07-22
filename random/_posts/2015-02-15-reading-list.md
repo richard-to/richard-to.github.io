@@ -52,7 +52,8 @@ title: "Reading list"
 
 - *The Courage of Hopelessness* - Slavoj Zizek
 - *The Dark Forest* - Liu Cixin
-- *The Vanished* - Lena Mauger and Stephane Remeal
+- *The Vanished* - Léna Mauger and Stéphane Remael
+- *The Law* - Frederic Bastiat
 
 ## 2017
 
