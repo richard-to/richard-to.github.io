@@ -54,6 +54,7 @@ title: "Reading list"
 - *The Dark Forest* - Liu Cixin
 - *The Vanished* - Léna Mauger and Stéphane Remael
 - *The Law* - Frederic Bastiat
+- *I am a Strange Loop* - Douglas Hofstadter
 
 ## 2017
 
