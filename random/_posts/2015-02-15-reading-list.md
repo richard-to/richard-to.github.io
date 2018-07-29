@@ -158,7 +158,7 @@ title: "Reading list"
 - *Story Genius* - Lisa Cron
 - *Fantasyland* - Kurt Anderson
 - *On the Road* - Jack Kerouac
-- *The Electric Kool-Aid Acid Test* Tom Wolfe
+- *The Electric Kool-Aid Acid Test* - Tom Wolfe
 - *Life Is a Miracle* - Wendell Berry
 
 ## 2016
