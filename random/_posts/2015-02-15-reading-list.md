@@ -56,6 +56,10 @@ title: "Reading list"
 - *The Law* - Frederic Bastiat
 - *I am a Strange Loop* - Douglas Hofstadter
 
+**August**
+
+- *Convenience Store Woman* - Sayaka Murata
+
 ## 2017
 
 **January**
