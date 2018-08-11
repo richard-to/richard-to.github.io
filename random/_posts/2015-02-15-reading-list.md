@@ -59,6 +59,7 @@ title: "Reading list"
 **August**
 
 - *Convenience Store Woman* - Sayaka Murata
+- *Haunted by Chaos* - Sulmaan Wasif Khan
 
 ## 2017
 
