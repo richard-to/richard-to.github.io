@@ -60,6 +60,7 @@ title: "Reading list"
 
 - *Convenience Store Woman* - Sayaka Murata
 - *Haunted by Chaos* - Sulmaan Wasif Khan
+- *The Extent of My Own Stupidity* - Soko Morinaga 
 
 ## 2017
 
