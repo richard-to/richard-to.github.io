@@ -61,6 +61,7 @@ title: "Reading list"
 - *Convenience Store Woman* - Sayaka Murata
 - *Haunted by Chaos* - Sulmaan Wasif Khan
 - *The Extent of My Own Stupidity* - Soko Morinaga 
+- *The Rinzai Zen Way* - Meido Moore
 
 ## 2017
 
