@@ -62,6 +62,7 @@ title: "Reading list"
 - *Haunted by Chaos* - Sulmaan Wasif Khan
 - *The Extent of My Own Stupidity* - Soko Morinaga 
 - *The Rinzai Zen Way* - Meido Moore
+- *The Perfect Weapon* - David E. Sanger
 
 ## 2017
 
