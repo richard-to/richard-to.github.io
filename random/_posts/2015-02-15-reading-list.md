@@ -63,6 +63,7 @@ title: "Reading list"
 - *The Extent of My Own Stupidity* - Soko Morinaga 
 - *The Rinzai Zen Way* - Meido Moore
 - *The Perfect Weapon* - David E. Sanger
+- *Men without Women* - Haruki Murakami
 
 ## 2017
 
