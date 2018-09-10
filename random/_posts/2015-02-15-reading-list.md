@@ -65,6 +65,10 @@ title: "Reading list"
 - *The Perfect Weapon* - David E. Sanger
 - *Men without Women* - Haruki Murakami
 
+**September**
+
+- *The Secret History* - Donna Tartt
+
 ## 2017
 
 **January**
