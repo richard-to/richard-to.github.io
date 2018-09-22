@@ -68,6 +68,8 @@ title: "Reading list"
 **September**
 
 - *The Secret History* - Donna Tartt
+- *The Future of the Mind* - Michio Kaku
+- *The Body Artist* - Don Delillo
 
 ## 2017
 
