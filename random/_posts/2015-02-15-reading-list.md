@@ -70,6 +70,7 @@ title: "Reading list"
 - *The Secret History* - Donna Tartt
 - *The Future of the Mind* - Michio Kaku
 - *The Body Artist* - Don Delillo
+- *CivilWarLand in Bad Decline* - George Saunders
 
 ## 2017
 
