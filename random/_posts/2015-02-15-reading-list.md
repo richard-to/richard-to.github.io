@@ -71,6 +71,7 @@ title: "Reading list"
 - *The Future of the Mind* - Michio Kaku
 - *The Body Artist* - Don Delillo
 - *CivilWarLand in Bad Decline* - George Saunders
+- *The Heart of a Dog* - Mikhail Bulgakov
 
 ## 2017
 
