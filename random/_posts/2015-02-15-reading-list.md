@@ -73,6 +73,12 @@ title: "Reading list"
 - *CivilWarLand in Bad Decline* - George Saunders
 - *The Heart of a Dog* - Mikhail Bulgakov
 
+**October**
+
+- *Everything I Never Told You* - Celeste Ng
+- *Everything and More* - David Foster Wallace
+- *The Emotional Craft of Fiction* - Donald Maas
+
 ## 2017
 
 **January**
