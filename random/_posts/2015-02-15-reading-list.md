@@ -78,6 +78,8 @@ title: "Reading list"
 - *Everything I Never Told You* - Celeste Ng
 - *Everything and More* - David Foster Wallace
 - *The Emotional Craft of Fiction* - Donald Maas
+- *Confessions of a Recovering Environmentalist* - Paul Kingsnorth
+- *How to Write an Autobiographical Novel: Essays* - Alexander Chee
 
 ## 2017
 
