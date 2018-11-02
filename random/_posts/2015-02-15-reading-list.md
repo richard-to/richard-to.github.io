@@ -80,6 +80,7 @@ title: "Reading list"
 - *The Emotional Craft of Fiction* - Donald Maas
 - *Confessions of a Recovering Environmentalist* - Paul Kingsnorth
 - *How to Write an Autobiographical Novel: Essays* - Alexander Chee
+- *Dreamland* - Sam Quinones
 
 ## 2017
 
