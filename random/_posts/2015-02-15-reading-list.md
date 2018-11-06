@@ -82,6 +82,10 @@ title: "Reading list"
 - *How to Write an Autobiographical Novel: Essays* - Alexander Chee
 - *Dreamland* - Sam Quinones
 
+**November**
+
+- *A Kind of Mirraculas Paradise* - Sandra Allen
+
 ## 2017
 
 **January**
