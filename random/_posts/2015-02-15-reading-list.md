@@ -85,6 +85,7 @@ title: "Reading list"
 **November**
 
 - *A Kind of Mirraculas Paradise* - Sandra Allen
+- *Screenwriting for Neurotics* - Scott Sublett
 
 ## 2017
 
