@@ -87,6 +87,7 @@ title: "Reading list"
 - *A Kind of Mirraculas Paradise* - Sandra Allen
 - *Screenwriting for Neurotics* - Scott Sublett
 - *The Incendiaries* - R.O. Kwon
+- *The Problem With Me* - Han Han
 
 ## 2017
 
