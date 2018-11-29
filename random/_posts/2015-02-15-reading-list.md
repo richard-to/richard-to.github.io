@@ -88,6 +88,7 @@ title: "Reading list"
 - *Screenwriting for Neurotics* - Scott Sublett
 - *The Incendiaries* - R.O. Kwon
 - *The Problem With Me* - Han Han
+- *The Iowa Review Fall 2018*
 
 ## 2017
 
