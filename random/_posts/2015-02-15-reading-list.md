@@ -90,6 +90,11 @@ title: "Reading list"
 - *The Problem With Me* - Han Han
 - *The Iowa Review Fall 2018*
 
+**December**
+
+- *Prairie Schooner Fall 2018*
+- *Selected Poems* - William Carlos Williams
+
 ## 2017
 
 **January**
