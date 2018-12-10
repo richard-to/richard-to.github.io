@@ -94,6 +94,7 @@ title: "Reading list"
 
 - *Prairie Schooner Fall 2018*
 - *Selected Poems* - William Carlos Williams
+- *The Man in the High Castle* - Philip K. Dick
 
 ## 2017
 
