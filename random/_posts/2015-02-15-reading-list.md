@@ -96,6 +96,7 @@ title: "Reading list"
 - *Selected Poems* - William Carlos Williams
 - *The Man in the High Castle* - Philip K. Dick
 - *Jack of Shadows* - Roger Zelazny
+- *Mao II* - Don DeLillo
 
 ## 2017
 
