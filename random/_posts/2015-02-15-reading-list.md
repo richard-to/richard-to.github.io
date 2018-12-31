@@ -97,6 +97,7 @@ title: "Reading list"
 - *The Man in the High Castle* - Philip K. Dick
 - *Jack of Shadows* - Roger Zelazny
 - *Mao II* - Don DeLillo
+- *The Collected Poems* - Sylvia Plath
 
 ## 2017
 
