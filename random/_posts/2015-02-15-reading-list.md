@@ -98,6 +98,7 @@ title: "Reading list"
 - *Jack of Shadows* - Roger Zelazny
 - *Mao II* - Don DeLillo
 - *The Collected Poems* - Sylvia Plath
+- *Severance* - Ling Ma
 
 ## 2017
 
