@@ -3,6 +3,12 @@ layout: post
 title: "Reading list"
 ---
 
+## 2019
+
+**January**
+
+- *A New Selected Poems* - Galway Kinnell
+
 ## 2018
 
 **January**
