@@ -8,6 +8,7 @@ title: "Reading list"
 **January**
 
 - *A New Selected Poems* - Galway Kinnell
+- *China's Great Wall of Debt* - Dinny McMahon
 
 ## 2018
 
