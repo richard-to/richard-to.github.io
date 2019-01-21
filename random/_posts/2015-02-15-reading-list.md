@@ -10,7 +10,7 @@ title: "Reading list"
 - *A New Selected Poems* - Galway Kinnell
 - *China's Great Wall of Debt* - Dinny McMahon
 - *The Essential W.S. Merwin* - W.S. Merwin
-- *Manifestly Haraway - Donna Haraway
+- *Manifestly Haraway* - Donna Haraway
 
 ## 2018
 
