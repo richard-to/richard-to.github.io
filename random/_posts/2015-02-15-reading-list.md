@@ -11,6 +11,11 @@ title: "Reading list"
 - *China's Great Wall of Debt* - Dinny McMahon
 - *The Essential W.S. Merwin* - W.S. Merwin
 - *Manifestly Haraway* - Donna Haraway
+- *Carceral Capitalism* - Jackie Wang
+
+**February**
+
+- *Portrait of an Artist as a Young Man* - James Joyce
 
 ## 2018
 
