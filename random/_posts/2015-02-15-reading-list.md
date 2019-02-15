@@ -16,6 +16,7 @@ title: "Reading list"
 **February**
 
 - *Portrait of an Artist as a Young Man* - James Joyce
+- *One Hundred Years of Solitude* - Gabriel Garcia Marquez
 
 ## 2018
 
