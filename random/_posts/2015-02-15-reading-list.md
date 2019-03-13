@@ -17,6 +17,8 @@ title: "Reading list"
 
 - *Portrait of an Artist as a Young Man* - James Joyce
 - *One Hundred Years of Solitude* - Gabriel Garcia Marquez
+- *No Nature* - Gary Snyder
+- *Their Eyes Were Watching God* - Zora Neale Hurston
 
 ## 2018
 
