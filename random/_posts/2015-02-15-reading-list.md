@@ -20,6 +20,11 @@ title: "Reading list"
 - *No Nature* - Gary Snyder
 - *Their Eyes Were Watching God* - Zora Neale Hurston
 
+**March**
+
+- *The Problem with Being Born* - E. M. Cioran
+- *Asymmetry* - Lisa Halliday
+
 ## 2018
 
 **January**
