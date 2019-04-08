@@ -24,6 +24,14 @@ title: "Reading list"
 
 - *The Problem with Being Born* - E. M. Cioran
 - *Asymmetry* - Lisa Halliday
+- *The Real Work* - Gary Snyder
+- *How to Change Your Mind* - Michael Pollen
+
+**April**
+
+- *The Collected Schizophrenias* - Esme Weijun Wang
+- *Conversations with Kafka* - Gustav Janouch
+- *Tao Teh Ching* - Lao Tzu
 
 ## 2018
 
