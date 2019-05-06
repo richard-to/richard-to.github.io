@@ -33,6 +33,10 @@ title: "Reading list"
 - *Conversations with Kafka* - Gustav Janouch
 - *Tao Teh Ching* - Lao Tzu
 
+**May**
+
+- *Being Mortal* - Atul Gawande
+
 ## 2018
 
 **January**
