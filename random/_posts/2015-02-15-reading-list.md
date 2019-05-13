@@ -36,6 +36,8 @@ title: "Reading list"
 **May**
 
 - *Being Mortal* - Atul Gawande
+- *When Breath Becomes Air* - Paul Kalanithi
+- *Watership Down* - Richard Adams
 
 ## 2018
 
