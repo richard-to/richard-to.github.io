@@ -38,6 +38,8 @@ title: "Reading list"
 - *Being Mortal* - Atul Gawande
 - *When Breath Becomes Air* - Paul Kalanithi
 - *Watership Down* - Richard Adams
+- *The Castle* - Franz Kafka
+- *Learning to Die in the Anthropocene* - Roy Scranton
 
 ## 2018
 
