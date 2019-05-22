@@ -11,21 +11,22 @@ In terms of looking for a solution, none of my Google searches led to relevant r
 
 Here is an example folder structure:
 
-    .vagrant
-        machines
-            default
-                virtualbox
-                vmware_fusion
-                    007cab9c-3243-4957-bf67-4eaf2a52997c
-                        Virtual Disk-s001.vmdk
-                        ...
-                        precise64.vmx
-                    action_provision
-                    forwarded_ports
-                    synced_folders
-                    id
-                    index_uuid
-
+```
+.vagrant
+    machines
+        default
+            virtualbox
+            vmware_fusion
+                007cab9c-3243-4957-bf67-4eaf2a52997c
+                    Virtual Disk-s001.vmdk
+                    ...
+                    precise64.vmx
+                action_provision
+                forwarded_ports
+                synced_folders
+                id
+                index_uuid
+```
 
 The folder with random numbers and letters is the location of the VM. Vagrant locates the machine using the `id` file, which contains the fullpath to the VM directory. If the folder specified in the `id` doesn't exist, a new VM will be created and the existing VM is deleted completely.
 

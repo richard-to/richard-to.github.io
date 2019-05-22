@@ -32,14 +32,14 @@ Evaluate if xdotool could be used.
 
 **Source:**
 
-{% highlight bash linenos %}
+```
 #!/bin/bash
 
 # Use xdotool to find Wolf3D game window and fire gun after 1 second
-xdotool search "DOSBOX*" windowactivate 
+xdotool search "DOSBOX*" windowactivate
 sleep 1
 xdotool key ctrl
-{% endhighlight %}
+```
 
 ***
 
@@ -78,7 +78,7 @@ This program uses the extended window manager hint (EWMH) "\_NET\_CLIENT\_LIST" 
 
 [View Gist](https://gist.github.com/richard-to/10017943#file-x11_screen_grab-cpp)
 
-{% highlight cpp linenos %}
+```
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -109,15 +109,15 @@ bool findDOSBoxWindow(Display *display, Window &window)
     int format;
     unsigned long numItems;
     unsigned long bytesAfter;
-    
+
     unsigned char *data = '\0';
-    Window *list;    
+    Window *list;
     char *windowName;
 
     int status = XGetWindowProperty(display, rootWindow, atom, 0L, (~0L), false,
         AnyPropertyType, &actualType, &format, &numItems, &bytesAfter, &data);
     list = (Window *)data;
-    
+
     if (status >= Success && numItems) {
         for (int i = 0; i < numItems; ++i) {
             status = XFetchName(display, list[i], &windowName);
@@ -141,7 +141,7 @@ bool findDOSBoxWindow(Display *display, Window &window)
 int main(int argc, char *argv[])
 {
     Display *display = XOpenDisplay(NULL);
-    Window rootWindow = RootWindow(display, DefaultScreen(display));    
+    Window rootWindow = RootWindow(display, DefaultScreen(display));
     Window DOSBoxWindow;
 
     XWindowAttributes DOSBoxWindowAttributes;
@@ -151,22 +151,22 @@ int main(int argc, char *argv[])
     }
 
     XGetWindowAttributes(display, DOSBoxWindow, &DOSBoxWindowAttributes);
-  
+
     int width = DOSBoxWindowAttributes.width;
     int height = DOSBoxWindowAttributes.height;
 
-    namedWindow(WINDOW_TITLE, WINDOW_AUTOSIZE);    
-    
+    namedWindow(WINDOW_TITLE, WINDOW_AUTOSIZE);
+
     Mat frame = Mat::zeros(height, width, CV_8UC3);
     Vec3b frameRGB;
 
     XColor colors;
     XImage *image;
-    
+
     unsigned long red_mask;
     unsigned long green_mask;
     unsigned long blue_mask;
-    
+
     while (true) {
         image = XGetImage(
             display, DOSBoxWindow, 0, 0, width, height, AllPlanes, ZPixmap);
@@ -178,26 +178,26 @@ int main(int argc, char *argv[])
         for (int i = 0; i < height; ++i) {
             for (int j = 0; j < width; ++j) {
                 colors.pixel = XGetPixel(image, j, i);
-               
+
                 // TODO(richard-to): Figure out why red and blue are swapped
-                frameRGB = frame.at<Vec3b>(i, j);            
+                frameRGB = frame.at<Vec3b>(i, j);
                 frameRGB.val[0] = colors.pixel & blue_mask;
                 frameRGB.val[1] = (colors.pixel & green_mask) >> 8;
-                frameRGB.val[2] = (colors.pixel & red_mask) >> 16;       
+                frameRGB.val[2] = (colors.pixel & red_mask) >> 16;
                 frame.at<Vec3b>(i, j) = frameRGB;
             }
         }
-        
+
         XFree(image);
 
         imshow(WINDOW_TITLE, frame);
-        
+
         if (waitKey(10) >= 0) {
             break;
         }
     }
 }
-{% endhighlight %}
+```
 
 ***
 
@@ -215,7 +215,7 @@ There were issues getting keyboard events sent to the Wolf3D window.
 
 Some applications, such as Firefox (according to some websites), ignore automated keyboard events sent from x11 to a specific window. When the `XSendEvent` is called the `XLib` library will set the send_event field in the `XKeyEvent` struct to true.
 
-This can be worked around by overriding the `XNextEvent` function using `LD_PRELOAD`. This is described [here](http://www.semicomplete.com/blog/geekery/xsendevent-xdotool-and-ld_preload.html) 
+This can be worked around by overriding the `XNextEvent` function using `LD_PRELOAD`. This is described [here](http://www.semicomplete.com/blog/geekery/xsendevent-xdotool-and-ld_preload.html).
 
 The above links uses a library called `liboverride` to simplify the usage of `LD_PRELOAD`.
 
@@ -235,9 +235,9 @@ The `XSendEvent` function was not working because of two mistakes in the program
 
 Finally code that worked:
 
-{% highlight cpp linenos %}
+```
 XKeyEvent event;
-event.type = KeyPress;      
+event.type = KeyPress;
 event.display = display;
 event.send_event = False;
 event.window = DOSBoxWindow;
@@ -250,10 +250,10 @@ XFlush(display);
 
 millisleep(100);
 
-event.type = KeyRelease;      
+event.type = KeyRelease;
 XSendEvent(display, DOSBoxWindow, True, KeyReleaseMask, (XEvent *)&event);
 XFlush(display);
-{% endhighlight %}
+```
 
 **Source:**
 

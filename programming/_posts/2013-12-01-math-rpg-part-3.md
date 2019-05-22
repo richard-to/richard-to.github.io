@@ -23,7 +23,7 @@ For the sprite sheet I'm using [TexturePacker Lite](http://www.codeandweb.com/te
 
 As you can see from the screenshots, the tiles are very square and don't look great when tiled. It definitely doesn't create the illusion that the character is in a free-flowing world. The grid is fairly blatant. Luckily one of the tutorials I'm working on off explains how to make the world less grid-like. Just haven't gotten to it since I'd need to redraw the background tiles in Pixen. If you look carefully, the background tiles are higher resolution (64x64) than the character sprite (32x48) which is scaled 2x currrently.
 
-{% highlight json linenos %}
+```
 [
     [2, 2, 2, 1, 2, 2, 0, 2, 2, 1, 2, 0],
     [0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0],
@@ -38,7 +38,7 @@ As you can see from the screenshots, the tiles are very square and don't look gr
     [2, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0],
     [2, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
-{% endhighlight %}
+```
 
 
 Here are some pixel art tutorials that I found helpful:

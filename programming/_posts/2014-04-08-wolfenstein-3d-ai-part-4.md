@@ -25,7 +25,7 @@ I'll plan to provide some images in the next day or two.
 
 [View Gist](https://gist.github.com/richard-to/10019190#file-scale_up-cpp)
 
-{% highlight cpp linenos %}
+```
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -43,8 +43,8 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    namedWindow(WINDOW_TITLE, WINDOW_AUTOSIZE);    
-    
+    namedWindow(WINDOW_TITLE, WINDOW_AUTOSIZE);
+
     Mat src = imread(IMAGE);
     Mat scaled = Mat::zeros(src.rows * 2, src.cols * 2, CV_8UC3);
     Vec3b p0;
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
             if (i + 1 == src.rows) {
                 scaled.at<Vec3b>(i * 2 + 1, j * 2) = src.at<Vec3b>(i, j);
             } else {
-                p0 = src.at<Vec3b>(i, j); 
+                p0 = src.at<Vec3b>(i, j);
                 p1 = src.at<Vec3b>(i + 1, j);
                 pInterpolated.val[0] = p0.val[0] + (p1.val[0] - p0.val[0]) * 0.5;
                 pInterpolated.val[1] = p0.val[1] + (p1.val[1] - p0.val[1]) * 0.5;
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
             if (j + 1 == src.cols) {
                 scaled.at<Vec3b>(i * 2, j * 2 + 1) = src.at<Vec3b>(i, j);
             } else {
-                p0 = src.at<Vec3b>(i, j); 
+                p0 = src.at<Vec3b>(i, j);
                 p1 = src.at<Vec3b>(i, j + 1);
                 pInterpolated.val[0] = p0.val[0] + (p1.val[0] - p0.val[0]) * 0.5;
                 pInterpolated.val[1] = p0.val[1] + (p1.val[1] - p0.val[1]) * 0.5;
@@ -85,14 +85,14 @@ int main(int argc, char *argv[])
                 pInterpolated.val[0] = p0.val[0] + (p1.val[0] - p0.val[0]) * 0.5;
                 pInterpolated.val[1] = p0.val[1] + (p1.val[1] - p0.val[1]) * 0.5;
                 pInterpolated.val[2] = p0.val[2] + (p1.val[2] - p0.val[2]) * 0.5;
-                scaled.at<Vec3b>(i * 2 + 1, j * 2 + 1)  = pInterpolated;  
+                scaled.at<Vec3b>(i * 2 + 1, j * 2 + 1)  = pInterpolated;
             }
         }
     }
     imshow(WINDOW_TITLE, scaled);
     waitKey(0);
 }
-{% endhighlight %}
+```
 
 ***
 
@@ -108,7 +108,7 @@ Resample an image to half the size. Lowe’s paper on SIFT says to sample pixels
 
 [View Gist](https://gist.github.com/richard-to/10019190#file-scale_down-cpp)
 
-{% highlight cpp linenos %}
+```
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -126,8 +126,8 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    namedWindow(WINDOW_TITLE, WINDOW_AUTOSIZE);    
-    
+    namedWindow(WINDOW_TITLE, WINDOW_AUTOSIZE);
+
     Mat src = imread(IMAGE);
     Mat scaled = Mat::zeros(src.rows / 2, src.cols / 2, CV_8UC3);
 
@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
     imshow(WINDOW_TITLE, scaled);
     waitKey(0);
 }
-{% endhighlight %}
+```
 
 ***
 
@@ -222,7 +222,7 @@ I tested the program with a sigma value of 1.0 and compared the results testing 
 
 [View Gist](https://gist.githubusercontent.com/richard-to/10019190/raw/f95c0d822ae0a8f47ffb8b3727843e1cfd0b2671/gaussian_blur.cpp)
 
-{% highlight cpp linenos %}
+```
 #include <iostream>
 #include <math.h>
 #include <stdio.h>
@@ -242,8 +242,8 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    namedWindow(WINDOW_TITLE, WINDOW_AUTOSIZE);    
-    
+    namedWindow(WINDOW_TITLE, WINDOW_AUTOSIZE);
+
     Mat src = imread(IMAGE);
     Mat blur = Mat::zeros(src.rows, src.cols, CV_8UC3);
 
@@ -262,16 +262,16 @@ int main(int argc, char *argv[])
             sum += kernel[x][y];
         }
     }
-    
+
     // Normalize Sigma
     for (int x = 0; x < 3; ++x) {
-        for (int y = 0; y < 3; ++y) {   
-            kernel[x][y] = kernel[x][y] / sum; 
+        for (int y = 0; y < 3; ++y) {
+            kernel[x][y] = kernel[x][y] / sum;
         }
     }
 
     // Log Kernel for Sanity Check
-    for (int x = 0; x < 3; ++x) {       
+    for (int x = 0; x < 3; ++x) {
         printf("%f %f %f\n", kernel[x][0], kernel[x][1], kernel[x][2]);
     }
 
@@ -290,7 +290,7 @@ int main(int argc, char *argv[])
             Vec3b p7 = src.at<Vec3b>(i + 1, j);
             Vec3b p8 = src.at<Vec3b>(i + 1, j + 1);
 
-            double r = 
+            double r =
                 p0[0] * kernel[0][0] + p1[0] * kernel[0][1] + p2[0] * kernel[0][2] +
                 p3[0] * kernel[1][0] + p4[0] * kernel[1][1] + p5[0] * kernel[1][2] +
                 p6[0] * kernel[2][0] + p7[0] * kernel[2][1] + p8[0] * kernel[2][2];
@@ -303,7 +303,7 @@ int main(int argc, char *argv[])
             double b =
                 p0[2] * kernel[0][0] + p1[2] * kernel[0][1] + p2[2] * kernel[0][2] +
                 p3[2] * kernel[1][0] + p4[2] * kernel[1][1] + p5[2] * kernel[1][2] +
-                p6[2] * kernel[2][0] + p7[2] * kernel[2][1] + p8[2] * kernel[2][2];              
+                p6[2] * kernel[2][0] + p7[2] * kernel[2][1] + p8[2] * kernel[2][2];
 
             Vec3b q0;
             q0[0] = r;
@@ -316,4 +316,4 @@ int main(int argc, char *argv[])
     imshow(WINDOW_TITLE, blur);
     waitKey(0);
 }
-{% endhighlight %}
+```

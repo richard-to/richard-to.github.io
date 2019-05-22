@@ -37,24 +37,26 @@ There are three programs for ex4.
     -  Convert jpg to ppm: `ffmpeg -i frames_dark/frame%d.jpg frames_dark_ppm/frame%d.ppm`
 - **ex4** Takes prerecorded frames in ppm format and runs skeleton algorithm on each frame. Each frame is output in pbm format
     - Usage: `ex4 input_folder output_folder`
-    - The frames are output in pgm format because ffmpeg does not seem to work with pbm. 
+    - The frames are output in pgm format because ffmpeg does not seem to work with pbm.
     - The frames can be converted into mp4 using ffmpeg: `ffmpeg -r 24 -i ouput_folder/frames%d.pgm ex4_video.mp4`
 - **ex4_1** Performs the skeleton algorithm on a single image and outputs each step as an image
     - Usage: `ex4_1 input_frame.ppm bg_frame.ppm output_folder`
 
 For **ex4** and **ex4_1** the following settings can be adjusted at compile time to work with specific images:
 
-    // Begin - Settings
-    #define DEBUG 1
-    #define DIFF_THRESH 40
-    #define DIFF_COLOR 255
-    #define THRESHOLD 200
-    
-    // Only available in ex4
-    #define FILENAME_IN "%s/frame%d.ppm"
-    #define FILENAME_OUT "%s/frame%d.pgm"
-    
-    // End - Settings
+```
+// Begin - Settings
+#define DEBUG 1
+#define DIFF_THRESH 40
+#define DIFF_COLOR 255
+#define THRESHOLD 200
+
+// Only available in ex4
+#define FILENAME_IN "%s/frame%d.ppm"
+#define FILENAME_OUT "%s/frame%d.pgm"
+
+// End - Settings
+```
 
 The steps used in my skeleton algorithm:
 
@@ -82,7 +84,7 @@ While learning how to implement the skeleton algorithm, I also implemented some 
 **Skeleton arm tracking with bare arm**
 
 <div class="iframe-container">
-<iframe src="//player.vimeo.com/video/91272431?byline=0&amp;portrait=0&amp;color=ececec"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<iframe src="//player.vimeo.com/video/91272431?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 
 **Skeletong arm tracking with OpenCV**
 
@@ -101,46 +103,48 @@ In the t-shirt version, the background subtraction cuts off part of the arm and 
 
 ![Example Skeleton Image Output](/images/skel/light_skel.jpg)
 
-**Example log output from ex4** 
+**Example log output from ex4**
 
-    Processing frame 413...
-    --Reading frame 413...DONE...0.31595s
-    --BG subtraction frame 413...DONE...0.4348s
-    --Threshold frame 413...DONE...0.3442s
-    --Distance labelling frame 413...DONE...0.17745s
-    --Eroding frame 413...DONE...0.30399s
-    --Skeletonize frame 413...DONE...0.90771s
-    --Writing frame 413...DONE...0.13237s
-    --Clean up memory for frame 413...DONE...0.578s
-    Processing frame...DONE...0.192310s
-    
-    Processing frame 414...
-    --Reading frame 414...DONE...0.31638s
-    --BG subtraction frame 414...DONE...0.4346s
-    --Threshold frame 414...DONE...0.3476s
-    --Distance labelling frame 414...DONE...0.17741s
-    --Eroding frame 414...DONE...0.30405s
-    --Skeletonize frame 414...DONE...0.90849s
-    --Writing frame 414...DONE...0.12736s
-    --Clean up memory for frame 414...DONE...0.549s
-    Processing frame...DONE...0.191915s
-    
-    Processing frame 415...
-    --Reading frame 415...DONE...0.31652s
-    --BG subtraction frame 415...DONE...0.4345s
-    --Threshold frame 415...DONE...0.3451s
-    --Distance labelling frame 415...DONE...0.17770s
-    --Eroding frame 415...DONE...0.30421s
-    --Skeletonize frame 415...DONE...0.91881s
-    --Writing frame 415...DONE...0.12764s
-    --Clean up memory for frame 415...DONE...0.589s
-    Processing frame...DONE...0.193067s
-    
-    Processing frame 416...
-    --Reading frame 416...Error opening frames_dark_ppm/frame416.ppm
-    Processing frame...DONE...0.92s
-    
-    416 frames processed in 1854.703606s
+```
+Processing frame 413...
+--Reading frame 413...DONE...0.31595s
+--BG subtraction frame 413...DONE...0.4348s
+--Threshold frame 413...DONE...0.3442s
+--Distance labelling frame 413...DONE...0.17745s
+--Eroding frame 413...DONE...0.30399s
+--Skeletonize frame 413...DONE...0.90771s
+--Writing frame 413...DONE...0.13237s
+--Clean up memory for frame 413...DONE...0.578s
+Processing frame...DONE...0.192310s
+
+Processing frame 414...
+--Reading frame 414...DONE...0.31638s
+--BG subtraction frame 414...DONE...0.4346s
+--Threshold frame 414...DONE...0.3476s
+--Distance labelling frame 414...DONE...0.17741s
+--Eroding frame 414...DONE...0.30405s
+--Skeletonize frame 414...DONE...0.90849s
+--Writing frame 414...DONE...0.12736s
+--Clean up memory for frame 414...DONE...0.549s
+Processing frame...DONE...0.191915s
+
+Processing frame 415...
+--Reading frame 415...DONE...0.31652s
+--BG subtraction frame 415...DONE...0.4345s
+--Threshold frame 415...DONE...0.3451s
+--Distance labelling frame 415...DONE...0.17770s
+--Eroding frame 415...DONE...0.30421s
+--Skeletonize frame 415...DONE...0.91881s
+--Writing frame 415...DONE...0.12764s
+--Clean up memory for frame 415...DONE...0.589s
+Processing frame...DONE...0.193067s
+
+Processing frame 416...
+--Reading frame 416...Error opening frames_dark_ppm/frame416.ppm
+Processing frame...DONE...0.92s
+
+416 frames processed in 1854.703606s
+```
 
 **Technical Issues**
 
@@ -149,34 +153,36 @@ There were some technical issues with my implementation. Specifically the use of
 The pbm format has slightly different rules from pgm and ppm. For the P4 format, the 1s and 0s are encoded as bits and not integer values. This makes sense since 1s and 0s require only one bit to represent. For the P1 format, ascii characters are used to represent the 1s and 0s. This is similar to the P2 and P3 formats. The difference here is that lines need to end at 70 characters. The image viewer in Ubuntu renders the invalid pbm format correctly and made me assume that it would work. This was not the case when running the following ffmpeg command `ffmpeg -r 24 output/frame%d.pbm video.mp4`
 
 Error output from ffmpeg:
-    
-    *** THIS PROGRAM IS DEPRECATED ***
-    This program is only provided for compatibility and will be removed in a future release. Please use avconv instead.
-    Input #0, image2, from 'skel_out/frame%d.pbm':
-      Duration: 00:00:17.33, start: 0.000000, bitrate: N/A
-        Stream #0.0: Video: pbm, monow, 640x480, 24 fps, 24 tbr, 24 tbn, 24 tbc
-    File 'test.mp4' already exists. Overwrite ? [y/N] y
-    Incompatible pixel format 'monow' for codec 'mpeg4', auto-selecting format 'yuv420p'
-    [buffer @ 0x7000c0] w:640 h:480 pixfmt:monow
-    [avsink @ 0x6fd980] auto-inserting filter 'auto-inserted scaler 0' between the filter 'src' and the filter 'out'
-    [scale @ 0x6fe0a0] w:640 h:480 fmt:monow -> w:640 h:480 fmt:yuv420p flags:0x4
-    Output #0, mp4, to 'test.mp4':
-      Metadata:
-        encoder         : Lavf53.21.1
-        Stream #0.0: Video: mpeg4, yuv420p, 640x480, q=2-31, 200 kb/s, 24 tbn, 24 tbc
-    Stream mapping:
-      Stream #0.0 -> #0.0
-    Press ctrl-c to stop encoding
-    Error while decoding stream #0.0
-    Error while decoding stream #0.0
-    Error while decoding stream #0.0
-    Error while decoding stream #0.0
+
+```
+*** THIS PROGRAM IS DEPRECATED ***
+This program is only provided for compatibility and will be removed in a future release. Please use avconv instead.
+Input #0, image2, from 'skel_out/frame%d.pbm':
+    Duration: 00:00:17.33, start: 0.000000, bitrate: N/A
+    Stream #0.0: Video: pbm, monow, 640x480, 24 fps, 24 tbr, 24 tbn, 24 tbc
+File 'test.mp4' already exists. Overwrite ? [y/N] y
+Incompatible pixel format 'monow' for codec 'mpeg4', auto-selecting format 'yuv420p'
+[buffer @ 0x7000c0] w:640 h:480 pixfmt:monow
+[avsink @ 0x6fd980] auto-inserting filter 'auto-inserted scaler 0' between the filter 'src' and the filter 'out'
+[scale @ 0x6fe0a0] w:640 h:480 fmt:monow -> w:640 h:480 fmt:yuv420p flags:0x4
+Output #0, mp4, to 'test.mp4':
+    Metadata:
+    encoder         : Lavf53.21.1
+    Stream #0.0: Video: mpeg4, yuv420p, 640x480, q=2-31, 200 kb/s, 24 tbn, 24 tbc
+Stream mapping:
+    Stream #0.0 -> #0.0
+Press ctrl-c to stop encoding
+Error while decoding stream #0.0
+Error while decoding stream #0.0
+Error while decoding stream #0.0
+Error while decoding stream #0.0
+```
 
 After patching ex4 and ex4_1 to write valid pbm images, ffmpeg would still not work.
 
 Original version:
 
-{% highlight cpp linenos %}
+```
 void write_pbm(char filename_out[], PNM_Meta *pbm_meta, UINT8 **data)
 {
     FILE *fpout;
@@ -195,13 +201,13 @@ void write_pbm(char filename_out[], PNM_Meta *pbm_meta, UINT8 **data)
             fwrite((void *)&out, 1, 1, fpout);
         }
     }
-    fclose(fpout);   
+    fclose(fpout);
 }
-{% endhighlight %}
+```
 
 Patched version with fixed line widths:
 
-{% highlight cpp linenos %}
+```
 void write_pbm(char filename_out[], PNM_Meta *pbm_meta, UINT8 **data)
 {
     FILE *fpout;
@@ -229,17 +235,19 @@ void write_pbm(char filename_out[], PNM_Meta *pbm_meta, UINT8 **data)
             }
         }
     }
-    fclose(fpout);   
+    fclose(fpout);
 }
-{% endhighlight %}   
+```
 
 The quick fix for the ffmpeg and pbm issue was to convert from pbm to pgm. This required using imagemagick and running mogrify on the pbm output images
 
-    # If image magick not installed
-    sudo apt-get install imagemagick
-    
-    mogrify -path skel_out_pgm -format pgm skel_out/*.pbm
-    
+```
+# If image magick not installed
+sudo apt-get install imagemagick
+
+mogrify -path skel_out_pgm -format pgm skel_out/*.pbm
+```
+
 In the final code, the ex4 program outputs images in pgm format instead of pbm.
 
 There's a bit too much code to post here, so check out [the Gist](https://gist.github.com/richard-to/10078407) if you're interested in the code.

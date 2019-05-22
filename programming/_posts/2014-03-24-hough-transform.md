@@ -3,11 +3,13 @@ layout: post
 title: "Hough transform - First attempt"
 ---
 
-A common problem in digital image processing is detecting straight lines. The brute force solution is to test every point for lines. This approach is computationally intensive. 
+A common problem in digital image processing is detecting straight lines. The brute force solution is to test every point for lines. This approach is computationally intensive.
 
 The Hough transform reduces the amount of computation to detect lines by transforming the *x* and *y* plane to a *theta* and *p* plane. For straight lines, we can use this equation:
 
-    p = x * cos * theta + y * sin * theta
+```
+p = x * cos * theta + y * sin * theta
+```
 
 For every *x* and *y* coordinate, the value of *p* is calculated for a specific interval of radians from 0 to $\pi$. The example in the paper uses 20 degree intervals. The results of these calculations are then stored in an accumulator table, which counts the number of occurrences for *p* and $\theta$ pairs. Pairs with the most occurrences are a good indicator of a straight line. The threshold can be adjusted manually to count straight lines.
 
@@ -47,4 +49,6 @@ My implementation was very basic and bare bones. From Fig. 3, it can be seen tha
 
 For the Sobel transform, one improvement I learned from looking at the GIMP implementation is dividing the final gradient (not sure if this is the right term) by 5.66. This seems to lessen the intensity of the colors and makes lighter lines black and removes a lot of noise. Relevant snippet of code:
 
-    data_out[i][j] = (UINT8)(sqrt(grad_x * grad_x + grad_y * grad_y) / 5.66);
+```
+data_out[i][j] = (UINT8)(sqrt(grad_x * grad_x + grad_y * grad_y) / 5.66);
+```

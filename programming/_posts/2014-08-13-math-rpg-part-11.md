@@ -60,7 +60,7 @@ canvas.
 
 I'm not sure how it works, but the following code returns a global "this"
 
-{% highlight javascript linenos %}
+```
 var initLoader = function() {
     var loader = function(m) {
         // How is "this" global???
@@ -68,14 +68,14 @@ var initLoader = function() {
     }(this);
 };
 initLoader()
-{% endhighlight %}
+```
 
 **3.**
 
 The final trick for loading images is adding the "crossOrigin=anonymous"
 attribute to the image element.
 
-{% highlight javascript linenos %}
+```
 /**
  * Trick to load spritesheet image based on the awesome Super Mario Bros demo by
  * JstuffJr.
@@ -124,4 +124,4 @@ var draw = function() {
         image(canvasMeta.pimg, 0, 0, canvasMeta.w, canvasMeta.h);
     }
 };
-{% endhighlight %}
+```

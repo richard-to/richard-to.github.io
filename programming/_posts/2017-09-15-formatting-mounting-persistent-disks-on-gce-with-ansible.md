@@ -5,7 +5,7 @@ title: "Formatting and mounting persistent disks on GCE with Ansible"
 
 I was working on using Ansible to format and mount persistent disks on Google Compute Engine (GCE). The question I had was how to determine if the disk needed to be formatted and mounted.
 
-In this case, the solution turned out to be simple, since there are sym-links to `/dev/sdbX` in `/dev/disk/by-id/`. The latter folder contains the "disk-name" assigned to the disk when it's attached to the GCE instance. The only caveat is that "google-" is prefixed to the name.
+In this case, the solution turned out to be simple, since there are sym-links to `/dev/sdbX` in `/dev/disk/by-id/`. The latter folder contains the "disk-name" assigned to the disk when it's attached to the GCE instance. The only caveat is that `google-` is prefixed to the name.
 
 With that knowledge, the same steps provided in the Google Cloud Platform (GCP) documentation can be used: [https://cloud.google.com/compute/docs/disks/add-persistent-disk](https://cloud.google.com/compute/docs/disks/add-persistent-disk). The only change is replacing the paths.
 

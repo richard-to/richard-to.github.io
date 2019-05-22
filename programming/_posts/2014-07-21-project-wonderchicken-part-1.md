@@ -21,31 +21,31 @@ I almost want to hack out a prototype while drunk 70% of the time, just to calm 
 
 To get a sense of my paralysis, here is an overview of my decisions:
 
-**Flask**
+### Flask
 
 I chose Flask over Django because I like the idea of a lightweight web framework that gets out of the way. The inevitable problem is that 3rd party plugins will be needed and they take time to learn and don't always work together smoothly. In addition, more time needs to be spent on architecture and organization. And then you're (or rather I'm) left wondering whether you should have just gone with Django in first the place, but now can't commit fully to that change since so much time was invested in learning best practices for Flask web applications and associated ecosystem of plugins.
 
-**Postgres**
+### Postgres
 
 I've been meaning to try Postgres ever since Oracle bought Sun Microsystems and left me with the impression that MySQL was doomed. My initial impression of Postqres has been good. All the different data types are awesome and make it appear to be a good balance between NoSQL and SQL databases. It remains to be seen how much my MySQL experience will transfer though.
 
-**React**
+### React
 
 React just makes sense, especially when combined with the Flux pattern. Backbone was awesome until I had to deal with nested views beyond a simple list of items. AngularJS never felt right. I learned a lot from their dependency injection implementation, but they lost me at Directives, which appear too complicated, especially in comparison to React.
 
-**Less**
+### Less
 
 Not much of a learning curve here. Similar enough enough to SASS/SCSS that the transition was relatively smooth. The only reason to switch to Less here is because I prefer Node over Ruby when it comes to dev tools.
 
-**Gulp**
+### Gulp
 
 I tried hard to stick with Grunt, but it's too slow for continuously building JavaScript, which appears to be the preferred work flow these days given the popularity of Browserify and Webpack. The transition to Gulp wasn't bad once I decided to commit to it and studied a few examples. Being able to use JavaScript is a slight improvement, but I would rather use Makefiles combined with the ability to run a build when changes are detected.
 
-**Webpack**
+### Webpack
 
 I started with RequireJS three years ago. It was kind of complicated to set up and required some extra syntax and configuration, but it was worth the effort at the time. For this project, the Browserify approach just seemed easier, but the build process became problematic when a large library, such as React, needed to be included in the build. There is a tool called Watchify, that apparently does incremental builds, but instead I switched to Webpack. The main downside is that the incremental build does not work well with the Grunt or Gulp yet. One weird thing about Webpack is the need to use their built-in development server for optimal performance or benefit or whatever. That's a bit too opinionated.
 
-**Vagrant**
+### Vagrant
 
 I've been using Vagrant for a while and it's great. One thing that frustrates me is the inability to use Puppet Forge modules. The best solution is to use Puppet-Librarian, which is a Ruby gem that needs to be installed. Luckily it's straightforward to use. I'm tempted to replace Puppet with Ansible.
 
@@ -53,9 +53,9 @@ Back in the day (like 2-3 years ago) I used to enjoy learning all these new soft
 
 On a side note, here is a comparison of two functionally identical Grunt and Gulp files. I even did the two spaces thing that is popular these days.
 
-**Gruntfile.js example**
+### Gruntfile.js example
 
-{% highlight javascript linenos %}
+```
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -148,11 +148,11 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint', 'copy', 'less', 'webpack']);
   grunt.registerTask('build', ['jshint', 'clean', 'copy', 'less', 'webpack']);
 };
-{% endhighlight %}
+```
 
-**gulpfile.js example**
+### gulpfile.js example
 
-{% highlight javascript linenos %}
+```
 var gulp = require('gulp');
 
 var gutil = require("gulp-util");
@@ -218,4 +218,4 @@ gulp.task('watch', function() {
   gulp.watch('src/less/**/*.less', ['styles']);
   gulp.watch(['src/js/**/*.js', 'src/js/**/*.jsx'], ['scripts']);
 });
-{% endhighlight %}
+```

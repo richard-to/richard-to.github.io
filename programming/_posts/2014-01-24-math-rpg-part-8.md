@@ -11,10 +11,9 @@ This week I integrated Require JS and Jasmine 2.0. Require JS is asynchronously 
 
 Turns out that it is fairly simple to set up using Jasmine 2.0 since its syntax for async support. With Jasmine 1.3, the async support is a bit messier.
 
-
 Here is an annotated example the modified SpecRunner.html that comes with Jasmine 2.0 standalone.
 
-{% highlight html linenos %}
+```html
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -70,11 +69,11 @@ Here is an annotated example the modified SpecRunner.html that comes with Jasmin
 <body>
 </body>
 </html>
-{% endhighlight %}
+```
 
 Here is an example of a spec file and you can use Require JS to load assets using Jasmine 2.0 async support.
 
-{% highlight javascript linenos %}
+```
 describe("Circular List Operation", function() {
     // The CircularList object needs to be loaded by RequireJs
     // before we can use it.
@@ -108,4 +107,4 @@ describe("Circular List Operation", function() {
         });
     });
 });
-{% endhighlight %}
+```

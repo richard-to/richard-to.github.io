@@ -36,7 +36,7 @@ The downside of listening on the body element is that all clicks will be bubbled
 
 **Ex 1. Vanilla event listeners with feature checking**
 
-{% highlight javascript linenos %}
+```
 Kingpin.prototype.startListening = function() {
     if (document.body.addEventListener) {
         document.body.addEventListener('click', this._onLinkClick.bind(this));
@@ -47,11 +47,11 @@ Kingpin.prototype.startListening = function() {
     }
     return this;
 };
-{% endhighlight %}
+```
 
 **Ex 2. Properly handling event bubbling for links**
 
-{% highlight javascript linenos %}
+```
 Kingpin.prototype._onLinkClick = function(e) {
     var node = e.target;
     while (node.tagName !== 'A' && node.parentNode)  {
@@ -64,7 +64,7 @@ Kingpin.prototype._onLinkClick = function(e) {
         }
     }
 };
-{% endhighlight %}
+```
 
 In terms of modularity, multiple instances of the router module can be created and they should work unless identical paths are added. The downside is a potential performance hit from bubbling events up for each router.
 
@@ -73,21 +73,21 @@ The HTML5 History API is straightfoward and is explained clearly in this [Dive i
 
 **Ex 3. Popstate event handler**
 
-{% highlight javascript linenos %}
+```
 Kingpin.prototype._onPopState = function(e) {
     this.setRoute(location.pathname);
 };
-{% endhighlight %}
+```
 
 
 **Ex 4. Out of context and not very helpful usage of history.pushState**
 
-{% highlight javascript linenos %}
+```
 this.go[routeName] = function() {
     action.apply(scope, arguments);
     history.pushState(null, null, self.urlFor[routeName].apply(self, arguments));
 };
-{% endhighlight %}
+```
 
 I did not want the router to be dependent on React, but at the same time I wanted it to work with it. This meant adding a wrapper class around the router module. In this regard, trying to integrate Director with React and the Flux pattern proved very educational.
 
@@ -95,16 +95,16 @@ What I wanted to do was trigger an event using the EventEmitter API in node, sim
 
 **Ex 5. Simple example of how to pass URL variable into handler function**
 
-{% highlight javascript linenos %}
+```
 router.on('/account/:id/notifications/', function(id) {
     console.log(id);
 });
-{% endhighlight %}
+```
 
 
 **Ex 6. EventEmitter example**
 
-{% highlight javascript linenos %}
+```
 // From: self.events.emitChange({route: route, params: params});
 
 _onRouteChange: function(e) {
@@ -113,11 +113,11 @@ _onRouteChange: function(e) {
         params: e.params
     });
 }
-{% endhighlight %}
+```
 
 **Ex 7. Wrapper to integrate with React and EventEmitter**
 
-{% highlight javascript linenos %}
+```
 AppRouter.prototype.on = function(route) {
     var self = this;
     var paramsList = _extractUrlParams(route);
@@ -130,13 +130,13 @@ AppRouter.prototype.on = function(route) {
     });
     return this;
 };
-{% endhighlight %}
+```
 
 I ended up going with a singleton router instance that could be "required" by different components. A dependency injection framework similar to what is used in Angular could be a good solution if you happen to be anti-singleton.
 
 **Ex 8. Setting up a global router using React specific wrapper for Router module**
 
-{% highlight javascript linenos %}
+```
 var Router = require('../utils/Router');
 var paths = [
     '/accounts/',
@@ -144,11 +144,11 @@ var paths = [
     '/accounts/:user_id/edit/'];
 var AccountRouter = new Router(paths);
 module.exports = AccountRouter;
-{% endhighlight %}
+```
 
 **Ex 9. Snippet to illustrate basic usage in React component**
 
-{% highlight javascript linenos %}
+```
 componentDidMount: function() {
     AccountRouter.startListening();
     AccountRouter.addRouteChangeListener(this._onRouteChange);
@@ -187,7 +187,7 @@ _onClickEdit: function(userId) {
     AccountRouter.go.account_edit(userId);
     return false;
 }
-{% endhighlight %}
+```
 
 The snippets probably aren't too helpful, but hopefully they get the general idea across. I created a Github repository for the barebones router module. It's definitely not ready for production yet. I already spotted a few errors while writing this post. For example, the click event listener should only be added if HTML5 History is supported. I ended up naming it `Kingpin` for no real reason other than it sounds sort of cool.
 
@@ -195,7 +195,7 @@ Here is the link: [https://github.com/richard-to/kingpin](https://github.com/ric
 
 Also here is the full source code for `Kingpin` to pad the word count a bit.
 
-{% highlight javascript linenos %}
+```
 (function() {
     // Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
     if (!Array.isArray) {
@@ -351,4 +351,4 @@ Also here is the full source code for `Kingpin` to pad the word count a bit.
 
     window.Kingpin = Kingpin;
 })();
-{% endhighlight %}
+```

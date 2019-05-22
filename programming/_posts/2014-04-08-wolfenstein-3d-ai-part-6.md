@@ -13,19 +13,19 @@ The implementation of the first two steps is not working properly yet. There see
 
 Additional implementation notes:
 
-## Use double instead of uchar
+### Use double instead of uchar
 
 64 bit floating point (double) values between 0.0 and 1.0 are used instead if unsigned chars (uchar) values between 0 and 255. This increases the precision and appears to create more keypoints.
 
-## Octaves
+### Octaves
 
-One octave is the set of images at a particular level of the pyramid. For example octave 1 would consist of five Gaussian blurred image with resolution 1166 x 790, three Difference of Gaussians (DoG) images at the same resolution, and two images that contain keypoints. Lowe's paper has a good diagram on page 6.
+One octave is the set of images at a particular level of the pyramid. For example octave 1 would consist of five Gaussian blurred images with resolution 1166 x 790, three Difference of Gaussians (DoG) images at the same resolution, and two images that contain keypoints. Lowe's paper has a good diagram on page 6.
 
-## Maxima and minima of DoG images
+### Maxima and minima of DoG images
 
 The maxima and minima of the DoG images is calculated by comparing the 8 neighboring pixels on current image and the 18 pixels from images above and below. This is 36 comparisons for each pixel of the image. Luckily not all comparisons are needed since the algorithm is searching for the smallest (minima) or largest (maxima) pixel. Lowe's paper has a good diagram on page 7.
 
-## Calculating DoGs
+### Calculating DoGs
 
 The equation to calculate the DoG requires two Gaussian images. The first image has a sigma that is a factor of `k` larger or smaller than the second image. Here `D` represents the DoG image. `G` appears to represent the Gaussian kernels and `I` represents the image.
 
@@ -41,11 +41,11 @@ Another thing to note is that the DoG can have negative values since they are no
 
 ![Octave 2 of DoG](/images/wolf3d/dog_octave2.jpg)
 
-## Calculating sigma and k for Gaussian images
+### Calculating sigma and k for Gaussian images
 
 This is where my implementation falls apart, specifically on the matter of what value of `k` to use and what value of `sigma` to use for each successive Gaussian image.
 
-On page 7 of Lowe's paper, `k = 2^{1/s}`, where `s` appears to be the number of images desired for calculating the minima and maxima. In this case, `s = 2` and `k = \sqrt{2} = 2^{1/2}`. This is just guess though, since the paper specifies that there will be s + 3 blurred images.
+On page 7 of Lowe's paper, `k = 2^{1/s}`, where `s` appears to be the number of images desired for calculating the minima and maxima. In this case, `s = 2` and `k = \sqrt{2} = 2^{1/2}`. This is just guess a though, since the paper specifies that there will be s + 3 blurred images.
 
 The part is clear, but it remains unclear how to calculate successive sigma values. For instance is it as simple as multiplying the previous sigma with k? Thishis [SIFT article from AI Shack](http://www.aishack.in/2010/05/sift-scale-invariant-feature-transform/2/) seems to describe this approach. Here are  similar numbers reproduced using a starting sigma of 1.0 and k of square of 2. Each new sigma is calculated by multiplying k with the previous sigma. The next octave starts with the sigma of the third image. Lowe's paper says to subsample the third Gaussian image of the previous octave. This saves calculations.
 
@@ -65,14 +65,14 @@ The part is clear, but it remains unclear how to calculate successive sigma valu
         <td>2.83</td>
         <td>4</td>
         <td>5.66</td>
-    </tr>    
+    </tr>
 </table>
 
 Looking at the table, the sigma value seems to double at every other image in the octave. Is this correct? Or should the sigma only double at the last image?
 
 One possible error in my implementation could be this line:
 
-    gaussian_blur(gauss[i - 1], gauss[i], scale[i % num_scales]); 
+    gaussian_blur(gauss[i - 1], gauss[i], scale[i % num_scales]);
 
 Here the Gaussian blur is applied to the previous image and not the first image. It seems like the first image makes more sense since the previous image would already have a Gaussian blur applied. Wouldn't this increase the sigma factor?
 
@@ -89,7 +89,7 @@ Of the four SIFT implementations that I studied, there were 3 different approach
 **Fig. 4 - Gaussian blur on octave 2 image 4**
 ![Gaussian Blur Octave Image 2](/images/wolf3d/gauss_blur_octave2_2.jpg)
 
-## Eliminating edge responses
+### Eliminating edge responses
 
 This part was difficult to understand, mainly because of the Linear Algebra and Calculus in three dimensions that is required to understand how edge responses are eliminated. Edge responses are minima and maxima that correspond to edges in the image. These points do not handle change in scale and noise as well as corners apparently.
 
@@ -103,7 +103,7 @@ To eliminate edge responses, Lowe uses a Hessian matrix to compute something cal
     <tr>
         <td>Dxy</td>
         <td>Dyy</td>
-    </tr>    
+    </tr>
 </table>
 
 How are Dxx, Dyy, and Dxy calculated or what do they represent? Apparently these are derivatives that can be estimated by subtracting neighboring pixels. Once we have these values, it seems that we can just plug in the values to solve these two equations, where alpha and beta are [eigenvalues](http://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors). These values can be ignored since we will only be using Dxx, Dyy, and Dxy to perform the calculations.
@@ -126,11 +126,11 @@ Once again it was interesting to see how different the implementations were.
 ![Extreme detection Octave 3](/images/wolf3d/extrema_detect_octave_1.jpg)
 
 
-## Source (WIP)
+### Source (WIP)
 
 [View Gist](https://gist.github.com/richard-to/10075591)
 
-{% highlight cpp linenos %}
+```
 #include <iostream>
 #include <math.h>
 #include <stdio.h>
@@ -198,7 +198,7 @@ void scale_down_2x(Mat src, Mat &scaled)
 {
     scaled = Mat::zeros(src.rows / 2, src.cols / 2, CV_64F);
     int i;
-    int j; 
+    int j;
     for (i = 0; i < scaled.rows; ++i) {
         for (j = 0; j < scaled.cols; ++j) {
             scaled.at<double>(i, j) = src.at<double>(i * 2, j * 2);
@@ -213,7 +213,7 @@ void scale_up_2x(Mat src, Mat &scaled)
     double p1;
 
     int i;
-    int j; 
+    int j;
     for (i = 0; i < src.rows; ++i) {
         for (j = 0; j < src.cols; ++j) {
             scaled.at<double>(i * 2, j * 2) = src.at<double>(i, j);
@@ -221,7 +221,7 @@ void scale_up_2x(Mat src, Mat &scaled)
             if (i + 1 == src.rows) {
                 scaled.at<double>(i * 2 + 1, j * 2) = src.at<double>(i, j);
             } else {
-                p0 = src.at<double>(i, j); 
+                p0 = src.at<double>(i, j);
                 p1 = src.at<double>(i + 1, j);
                 scaled.at<double>(i * 2 + 1, j * 2) = p0 + (p1 - p0) * 0.5;
             }
@@ -229,7 +229,7 @@ void scale_up_2x(Mat src, Mat &scaled)
             if (j + 1 == src.cols) {
                 scaled.at<double>(i * 2, j * 2 + 1) = src.at<double>(i, j);
             } else {
-                p0 = src.at<double>(i, j); 
+                p0 = src.at<double>(i, j);
                 p1 = src.at<double>(i, j + 1);
                 scaled.at<double>(i * 2, j * 2 + 1) = p0 + (p1 - p0) * 0.5;
             }
@@ -249,13 +249,13 @@ void gaussian_blur(Mat src, Mat &blur, double sigma)
 {
     blur = src.clone();
 
-    double xdist[KERNEL_SIZE][KERNEL_SIZE] = 
+    double xdist[KERNEL_SIZE][KERNEL_SIZE] =
     {
         {1, 1, 1},
         {0, 0, 0},
         {1, 1, 1}
     };
-    double ydist[KERNEL_SIZE][KERNEL_SIZE] = 
+    double ydist[KERNEL_SIZE][KERNEL_SIZE] =
     {
         {1, 0, 1},
         {1, 0, 1},
@@ -286,10 +286,10 @@ void gaussian_blur(Mat src, Mat &blur, double sigma)
             sum += kernel[x][y];
         }
     }
-    
+
     for (x = 0; x < KERNEL_SIZE; ++x) {
-        for (y = 0; y < KERNEL_SIZE; ++y) {   
-            kernel[x][y] = kernel[x][y] / sum; 
+        for (y = 0; y < KERNEL_SIZE; ++y) {
+            kernel[x][y] = kernel[x][y] / sum;
         }
     }
 
@@ -307,7 +307,7 @@ void gaussian_blur(Mat src, Mat &blur, double sigma)
             p7 = src.at<double>(i + 1, j);
             p8 = src.at<double>(i + 1, j + 1);
 
-            blur.at<double>(i, j) = 
+            blur.at<double>(i, j) =
                 p0 * kernel[0][0] + p1 * kernel[0][1] + p2 * kernel[0][2] +
                 p3 * kernel[1][0] + p4 * kernel[1][1] + p5 * kernel[1][2] +
                 p6 * kernel[2][0] + p7 * kernel[2][1] + p8 * kernel[2][2];
@@ -337,28 +337,28 @@ void scale_space_pyramid(Mat src, Mat gauss[], Mat dogs[], double sigma, int num
     double sig_total = 0;
     int i;
 
-    double k = pow(2.0, 1.0 / (num_scales - 3));    
+    double k = pow(2.0, 1.0 / (num_scales - 3));
     scale[0] = sigma;
     for (i = 1; i < num_scales; ++i) {
         sig_prev = pow(k, i - 1) * sigma;
         sig_total = sig_prev * k;
         scale[i] = sqrt(sig_total * sig_total - sig_prev * sig_prev);
-    }        
+    }
 
     gaussian_blur(src, gauss[0], scale[0]);
     for (i = 1; i < num_images; ++i) {
-        if (i % num_scales == 0) {    
+        if (i % num_scales == 0) {
             scale_down_2x(gauss[i - num_scales + (num_scales - 3)], gauss[i]);
         } else {
-            gaussian_blur(gauss[i - 1], gauss[i], scale[i % num_scales]); 
+            gaussian_blur(gauss[i - 1], gauss[i], scale[i % num_scales]);
             diff_of_gaussians(gauss[i - 1], gauss[i], dogs[dog_count++]);
         }
     }
 }
 
 void detect_extrema(Mat dogs[], Mat extremas[], int num_octaves, int num_dogs)
-{  
-    int dogs_per_octave = num_dogs / num_octaves;    
+{
+    int dogs_per_octave = num_dogs / num_octaves;
     Mat image_above;
     Mat image;
     Mat image_below;
@@ -384,13 +384,13 @@ void detect_extrema(Mat dogs[], Mat extremas[], int num_octaves, int num_dogs)
                 for (w = 1; w < cols; ++w) {
                     val = image.at<double>(h, w);
                     if (
-                        (   
+                        (
                             abs(val) < CONTRAST_THRESHOLD &&
                             val > image.at<double>(h - 1, w - 1) &&
                             val > image.at<double>(h - 1, w) &&
                             val > image.at<double>(h - 1, w + 1) &&
                             val > image.at<double>(h, w - 1) &&
-                            val > image.at<double>(h, w + 1) &&  
+                            val > image.at<double>(h, w + 1) &&
                             val > image.at<double>(h + 1, w - 1) &&
                             val > image.at<double>(h + 1, w) &&
                             val > image.at<double>(h + 1, w + 1) &&
@@ -400,29 +400,29 @@ void detect_extrema(Mat dogs[], Mat extremas[], int num_octaves, int num_dogs)
                             val > image_above.at<double>(h - 1, w + 1) &&
                             val > image_above.at<double>(h, w - 1) &&
                             val > image_above.at<double>(h, w) &&
-                            val > image_above.at<double>(h, w + 1) &&  
+                            val > image_above.at<double>(h, w + 1) &&
                             val > image_above.at<double>(h + 1, w - 1) &&
                             val > image_above.at<double>(h + 1, w) &&
-                            val > image_above.at<double>(h + 1, w + 1) &&                          
+                            val > image_above.at<double>(h + 1, w + 1) &&
 
                             val > image_below.at<double>(h - 1, w - 1) &&
                             val > image_below.at<double>(h - 1, w) &&
                             val > image_below.at<double>(h - 1, w + 1) &&
                             val > image_below.at<double>(h, w - 1) &&
                             val > image_below.at<double>(h, w) &&
-                            val > image_below.at<double>(h, w + 1) &&  
+                            val > image_below.at<double>(h, w + 1) &&
                             val > image_below.at<double>(h + 1, w - 1) &&
                             val > image_below.at<double>(h + 1, w) &&
-                            val > image_below.at<double>(h + 1, w + 1)                         
-                        ) 
+                            val > image_below.at<double>(h + 1, w + 1)
+                        )
                             ||
-                        (        
+                        (
                             abs(val) < CONTRAST_THRESHOLD &&
                             val < image.at<double>(h - 1, w - 1) &&
                             val < image.at<double>(h - 1, w) &&
                             val < image.at<double>(h - 1, w + 1) &&
                             val < image.at<double>(h, w - 1) &&
-                            val < image.at<double>(h, w + 1) &&  
+                            val < image.at<double>(h, w + 1) &&
                             val < image.at<double>(h + 1, w - 1) &&
                             val < image.at<double>(h + 1, w) &&
                             val < image.at<double>(h + 1, w + 1) &&
@@ -432,28 +432,28 @@ void detect_extrema(Mat dogs[], Mat extremas[], int num_octaves, int num_dogs)
                             val < image_above.at<double>(h - 1, w + 1) &&
                             val < image_above.at<double>(h, w - 1) &&
                             val < image_above.at<double>(h, w) &&
-                            val < image_above.at<double>(h, w + 1) &&  
+                            val < image_above.at<double>(h, w + 1) &&
                             val < image_above.at<double>(h + 1, w - 1) &&
                             val < image_above.at<double>(h + 1, w) &&
-                            val < image_above.at<double>(h + 1, w + 1) &&                          
+                            val < image_above.at<double>(h + 1, w + 1) &&
 
                             val < image_below.at<double>(h - 1, w - 1) &&
                             val < image_below.at<double>(h - 1, w) &&
                             val < image_below.at<double>(h - 1, w + 1) &&
                             val < image_below.at<double>(h, w - 1) &&
                             val < image_below.at<double>(h, w) &&
-                            val < image_below.at<double>(h, w + 1) &&  
+                            val < image_below.at<double>(h, w + 1) &&
                             val < image_below.at<double>(h + 1, w - 1) &&
                             val < image_below.at<double>(h + 1, w) &&
                             val < image_below.at<double>(h + 1, w + 1)
-                        ) 
+                        )
                     ) {
                         extrema.at<double>(h, w) = 1.0;
 
-                        double dxx = 
+                        double dxx =
                             (image.at<double>(h - 1, w) + image.at<double>(h - 1, w)) - 2.0 * val;
 
-                        double dyy = 
+                        double dyy =
                             (image.at<double>(h, w - 1) + image.at<double>(h, w + 1)) - 2.0 * val;
 
                         double dxy =
@@ -471,7 +471,7 @@ void detect_extrema(Mat dogs[], Mat extremas[], int num_octaves, int num_dogs)
                             extrema.at<double>(h, w) = 0;
                         } else {
                             found++;
-                        }                       
+                        }
                     }
                 }
             }
@@ -492,39 +492,39 @@ int main(int argc, char *argv[])
     Mat src = imread(IMAGE);
     Mat gray;
     Mat norm;
-    Mat preblur;    
+    Mat preblur;
     Mat scaledUp;
-    Mat gauss[num_images];    
+    Mat gauss[num_images];
     Mat dogs[dog_count];
     Mat extremas[dog_count - (NUM_OCTAVES * 2)];
 
     grayscale(src, gray);
     normalize(gray, norm);
     gaussian_blur(norm, preblur, PRE_BLUR_SIGMA);
-    scale_up_2x(preblur, scaledUp); 
+    scale_up_2x(preblur, scaledUp);
     scale_space_pyramid(scaledUp, gauss, dogs, INITIAL_SIGMA, NUM_OCTAVES, NUM_SCALES);
     detect_extrema(dogs, extremas, NUM_OCTAVES, dog_count);
 
     int i;
     if (SHOW_GAUSSIANS) {
-        for (i = 0; i < num_images; ++i) {                
+        for (i = 0; i < num_images; ++i) {
             imshow(WINDOW_NAME, gauss[i]);
-            waitKey(0);          
+            waitKey(0);
         }
     }
 
-    if (SHOW_DOGS) {    
-        for (i = 0; i < dog_count; ++i) {                
+    if (SHOW_DOGS) {
+        for (i = 0; i < dog_count; ++i) {
             imshow(WINDOW_NAME, dogs[i]);
-            waitKey(0);          
+            waitKey(0);
         }
     }
 
-    if (SHOW_EXTREMA) {      
-        for (i = 0; i < extrema_count; ++i) {                
+    if (SHOW_EXTREMA) {
+        for (i = 0; i < extrema_count; ++i) {
             imshow(WINDOW_NAME, extremas[i]);
-            waitKey(0);          
+            waitKey(0);
         }
     }
 }
-{% endhighlight %}
+```

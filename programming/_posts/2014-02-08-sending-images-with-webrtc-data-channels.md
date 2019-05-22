@@ -14,7 +14,7 @@ Note that I'm using local channels and am just displaying an image and not rende
 
 This was a bit tricky to figure out since the WebRTC stuff is constantly changing. Not to mention Firefox and Chrome work slightly differently.
 
-I'm going to focus on Chrome, since the error messages you got seemed related to Chrome, specifically *Uncaught NetworkError: Failed to execute 'send' on 'RTCDataChannel': Could not send data*. This issue was described here: [https://groups.google.com/forum/#!topic/discuss-webrtc/U927CZaCdKU](https://groups.google.com/forum/#!topic/discuss-webrtc/U927CZaCdKU)
+I'm going to focus on Chrome, since the error messages you got seemed related to Chrome, specifically `Uncaught NetworkError: Failed to execute 'send' on 'RTCDataChannel': Could not send data`. This issue was described here: [https://groups.google.com/forum/#!topic/discuss-webrtc/U927CZaCdKU](https://groups.google.com/forum/#!topic/discuss-webrtc/U927CZaCdKU)
 
 This is due to the *RTP data channel* being rate limited. The link I gave you mentioned *3 KB/sec* and in my testing that sounds about right, possibly worse depending on how you chunk your data.
 
@@ -22,19 +22,19 @@ The good news is that after Chrome 31, you can use SCTP-based data channels. See
 
 That means instead of this:
 
-{% highlight javascript linenos %}
+```
 window.localPeerConnection = new webkitRTCPeerConnection(servers,
   {optional: [{RtpDataChannels: true}]});
-{% endhighlight %}
+```
 
 You can do something like this (probably can remove the second parameter):
 
-{% highlight javascript linenos %}
+```
 window.localPeerConnection = new webkitRTCPeerConnection(servers,
   {optional: []});
-{% endhighlight %}
+```
 
-I believe you will still be rate limited, but now it is *64kbps*. I may be wrong about this number. Can't find the link I read it from.
+I believe you will still be rate limited, but now it is `64kbps`. I may be wrong about this number. Can't find the link I read it from.
 
 One good thing about the SCTP channel is that you can use a reliable data connection (TCP) instead of unreliable (UDP) and the data gets sent in order. I'm not positive about that. Once again, can't find the link.
 
@@ -42,22 +42,22 @@ Now, because of this, it seems you will have to chunk you data still. You can't 
 
 The second thing you need to know is that blob data is not currently supported by Chrome. At least in regular Chrome 32. This means we have to send data as text if we want to use Chrome.
 
-What we can do is turn our image data into base64 using *canvas.toDataURL()*. Here is an example of how that would work:
+What we can do is turn our image data into base64 using `canvas.toDataURL()`. Here is an example of how that would work:
 
-{% highlight javascript linenos %}
-  var canvas = document.createElement('canvas');
-  canvas.width = startimage.width;
-  canvas.height = startimage.height;
-  var ctx = canvas.getContext('2d');
-  ctx.drawImage(startimage, 0, 0, startimage.width, startimage.height);
-  var data = canvas.toDataURL("image/jpeg");
-{% endhighlight %}
+```
+var canvas = document.createElement('canvas');
+canvas.width = startimage.width;
+canvas.height = startimage.height;
+var ctx = canvas.getContext('2d');
+ctx.drawImage(startimage, 0, 0, startimage.width, startimage.height);
+var data = canvas.toDataURL("image/jpeg");
+```
 
 Now that we have our data, we just need to break up the bas64 string:
 
 Here is an implementation of chunking the data that I use in my demo above:
 
-{% highlight javascript linenos %}
+```
 function sendData() {
   trace("Sending data");
   sendButton.disabled = true;
@@ -88,22 +88,22 @@ function sendData() {
     }
   }, delay);
 }
-{% endhighlight %}
+```
 
-The implementation is pretty straightforward, basically just using *setInterval*. You can mess around with the slice size and delay parameters. Also we need to set a terminator character to know when are message is finished. I just used a *\n* character. I want to note that this demo doesn't account for different messages being passed at the same time. To make that work, you'd need to think of a protocol that would help figure out which message is which.
+The implementation is pretty straightforward, basically just using `setInterval`. You can mess around with the slice size and delay parameters. Also we need to set a terminator character to know when are message is finished. I just used a `\n` character. I want to note that this demo doesn't account for different messages being passed at the same time. To make that work, you'd need to think of a protocol that would help figure out which message is which.
 
 Here is how the receiver would be implemented. It basically just keeps track of the data until it receives the terminator character, which I just used newline character.
 
-{% highlight javascript linenos %}
-  function handleMessage(event) {
-    if (event.data == "\n") {
-      endimage.src = imageData;
-      trace("Received all data. Setting image.");
-    } else {
-      imageData += event.data;
-      //trace("Data chunk received");
-    }
+```
+function handleMessage(event) {
+  if (event.data == "\n") {
+    endimage.src = imageData;
+    trace("Received all data. Setting image.");
+  } else {
+    imageData += event.data;
+    //trace("Data chunk received");
   }
-{% endhighlight %}
+}
+```
 
 Hope this helps a bit. It was fun researching it. Not really sure if this would be the ideal solution for sending an image over WebRTC. There are some demos out there that do P2P file transfer and stuff. I guess it depends on your purpose.

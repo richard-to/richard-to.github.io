@@ -5,25 +5,23 @@ title: "Wolfenstein 3D - Part 11: Putting it all together"
 
 The previous posts illustrated different techniques that could be used in an AI to beat Wolfenstein 3D using machine vision. Actually applying the techniques together in real-time proved to be difficult, but it was necessary to start the test runs. The current bot uses a simple state machine to perform tasks such as localization, door searching, and attacking enemies. The code is very rough at the moment. There is still along way to go before the bot can beat the first level of the game, but it’s definitely possible.
 
-**Demo 1 - Wall measurements, door and enemy detection**
+### Demo 1 - Wall measurements, door and enemy detection
 
 <div class="iframe-container">
-<iframe src="//player.vimeo.com/video/94488547?byline=0&amp;portrait=0&amp;color=ececec"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="//player.vimeo.com/video/94488547?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
-**Demo 2 - Wall measurements and door detection**
+### Demo 2 - Wall measurements and door detection
 
 <div class="iframe-container">
 <iframe src="//player.vimeo.com/video/94488548?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
-The bot has the following states:
-
-**Localize**
+### State 1: Localize
 
 The localize state is where the bot measures the wall heights and tries to locate itself on the map using a particle filter. The particle filter is not yet implemented. Currently the bot just takes readings of the walls.
 
-Wolf3D uses ray-casting to render the graphics and because of the lack of processing power in the early 90's, all the walls are the same height. This means no staircases to walk up or down. No inclines or domes. 
+Wolf3D uses ray-casting to render the graphics and because of the lack of processing power in the early 90's, all the walls are the same height. This means no staircases to walk up or down. No inclines or domes.
 
 This fact allows us to accurately measure the distance to the walls by reversing the ray-casting calculations.
 
@@ -38,7 +36,7 @@ To get distance, we can calculate: **(Real height of wall) / (Rendered height of
 
 One of the current issues with measuring walls is the lack of a compass. Currently it’s not too clear how to handle this. Again, a particle filter implementation could solve this problem.
 
-**Find Door**
+### State 2: Find Door
 
 The find door state works by having the character spin in a circle until a door is detected. The bot then transitions to a state where it will run toward the door, open it, and run through.After that there will be a four second pause for the door to close. This is done to make sure the measurements are accurate.
 
@@ -46,7 +44,7 @@ This strategy works well, but the problem is that the bot will end up choosing t
 
 Additionally the bot has trouble with rooms that contain multiple corridors and turns. Without other doors to follow, it will go out the same door.
 
-**Attack Enemy**
+### State 3: Attack Enemy
 
 Currently the bot will search for an enemy if under attack. The bot knows it’s under attack if the health bar changes.
 

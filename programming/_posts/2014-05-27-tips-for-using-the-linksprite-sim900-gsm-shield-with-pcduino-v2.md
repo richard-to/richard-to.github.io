@@ -7,7 +7,7 @@ This week I integrated the LinkSprite Sim900 GSM shield with a pcDuino v2. The l
 
 ![pcDuino v2 with GSM shield](/images/pcduino.jpg)
 
-**Issue 1: Unable to establish serial connection with GSM Shield**
+### Issue 1: Unable to establish serial connection with GSM Shield
 
 If you need to communicate with a shield using a serial interface, the pin modes for gpio0 and gpio1 need to be set to 3. The pcDuino [c_environment](https://github.com/pcduino/c_environment/) repository defines it as `IO_UART_FUNC` in [pin_arduino.h](https://github.com/pcduino/c_environment/blob/master/hardware/arduino/variants/sunxi/pins_arduino.h). Setting the pin mode is one of the steps in `Serial.begin()`, as can be seen in [Serial.cpp](https://github.com/pcduino/c_environment/blob/master/hardware/arduino/cores/arduino/Serial.cpp#L191-L192).
 
@@ -15,27 +15,27 @@ The [python library](https://github.com/pcduino/python-pcduino) only allows you 
 
 Assuming you're using the gpio module referenced by the blink led sample, we just need to add the following function:
 
-{% highlight python linenos %}
+```
 def enableUart():
     with open(_MODE_FD_PATH % 'gpio0', 'w') as f:
         f.write(str(IO_UART_FUNC))
     with open(_MODE_FD_PATH % 'gpio1', 'w') as f:
         f.write(str(IO_UART_FUNC))
-{% endhighlight %}
+```
 
 You will also need to declare the variable `IO_UART_FUNC` and assign it a value of `3`.
 
 Now a serial connection to the GSM shield can be established like this:
 
-{% highlight python linenos %}
+```
 from serial import Serial
 from gpio import enableUart
 
 enableUart()
 shield_serial = Serial('/dev/ttyS1', baudrate=115200, timeout=0)
-{% endhighlight %}
+```
 
-**Issue 2: Garbled SMS text message when forwarding directly to serial**
+### Issue 2: Garbled SMS text message when forwarding directly to serial
 
 There is example code to easily get started with receiving SMS text messages at [tronixstuff](http://tronixstuff.com/2014/01/08/tutorial-arduino-and-sim900-gsm-modules/). This code is written for the Arduino IDE, but it's easy to convert to Python.
 
@@ -43,13 +43,13 @@ The first thing you'll notice is that a bunch of gibberish gets printed to the c
 
 The second, more critical issue, is that the SMS text message including the header gets garbled after 64 characters. This looks to be the input buffer size, so if we use the default 19200 baud rate, the serial input cannot be read fast enough. However if we up the baud rate to 115200, then the message is read perfectly. This works but does not make sense since the shield's baud rate is definitely 19200. This was tested by sending `AT` commands and listening for input with different baud rates. With the former, there is no response. And with the latter, gibberish shows up. To make matters more confusing, the `AT+CMGL` and `AT+CMGR` commands output complete text messages when using 19200 for the baud rate of the shield and the serial connection.
 
-This appears to be a bug with the shield. It seems to be forwarding the incoming SMS text message input at an uncontrolled rate. When using the Arduino IDE and Software Serial, the SMS text message gets cut off at 64 characters*. 
+This appears to be a bug with the shield. It seems to be forwarding the incoming SMS text message input at an uncontrolled rate. When using the Arduino IDE and Software Serial, the SMS text message gets cut off at 64 characters*.
 
 To receive SMS text messages with the pcDuino v2, the GSM shield's baud rate needs to be set at 115200 using the following AT command: `AT+IPR=115200`. The serial connection also needs to be 115200.
 
 Here is some rough sample code to read SMS text messages with python, GSM shield, and pcDuino v2. Make sure to download the gpio module from the pcduino python repository and make the change described in issue 1.
 
-{% highlight python linenos %}
+```
 import argparse
 import logging
 import serial
@@ -60,7 +60,7 @@ class Sim900(object):
     """
     Sends commands to and read input from Sim900 shield.
     """
-    
+
     CRLF = "\r\n"
     CTRL_Z = chr(26)
     DELAY_SEC = 0.1
@@ -115,7 +115,7 @@ class SMSReader(object):
         Makes sure Sim900 shield is set to listen
         for incoming SMS text messages in text mode.
 
-        For the PcDuino, a baudrate of 115200 is 
+        For the PcDuino, a baudrate of 115200 is
         required. Otherwise, SMS text message is garbled.
 
         Returns:
@@ -124,7 +124,7 @@ class SMSReader(object):
         self.sim900.change_baudrate(baudrate)
         self.sim900.send_cmd("AT+CMGF=1")
         self.sim900.send_cmd("AT+CNMI=2,2,0,0,0")
-        
+
         msg = ""
         while self.sim900.available() != 0:
             msg = self.sim900.read_available()
@@ -135,7 +135,7 @@ class SMSReader(object):
         Listens for incoming SMS text messages with +CMT response code.
 
         Returns:
-            If SMS text message is found, header and message will be returned as 
+            If SMS text message is found, header and message will be returned as
             a string.
 
             If not message found, an empty string will be returned.
@@ -144,7 +144,7 @@ class SMSReader(object):
         mode = self.MODE_LISTEN
         while True:
             while self.sim900.available() != 0:
-                data = self.sim900.read_available()                
+                data = self.sim900.read_available()
                 if mode == self.MODE_LISTEN and self.DATA_BEGIN in data:
                     msg += data
                     mode = self.MODE_MSG
@@ -167,17 +167,17 @@ def main():
     parser.add_argument('-p', '--port', help='Serial port', default='/dev/ttyS1')
     parser.add_argument('-b', '--baudrate', type=int, help='Baudrate of Sim900 GSM shield', default=115200)
     args = parser.parse_args()
-    
+
     port = args.port
     baudrate = args.baudrate
 
     # Setup logger
     logging.basicConfig(level=LOG_LEVEL, format=LOG_FORMAT)
-     
+
     logger = logging.getLogger()
     file_log_handler = logging.FileHandler(LOG_FILE)
     logger.addHandler(file_log_handler)
-     
+
     formatter = logging.Formatter(LOG_FORMAT)
     file_log_handler.setFormatter(formatter)
 
@@ -196,7 +196,7 @@ def main():
     print ""
     print "Press CTRL+C to stop the program."
     print ""
-    
+
     print reader.init_reader()
 
     while True:
@@ -207,8 +207,8 @@ def main():
 
 
 if __name__ == '__main__':
-    main()              
-{% endhighlight %}
+    main()
+```
 
 *This is the maximum buffer size set by the Software Serial library. We can fix the issue by increasing the buffer size.
 

@@ -47,7 +47,7 @@ to format results from a database.
 
 Here is an example of the format:
 
-{% highlight python linenos %}
+```
 (
     (
         (
@@ -68,7 +68,7 @@ Here is an example of the format:
     ('Value 6', 'Label 6'),
     ('Value 7', 'Label 7'),
 )
-{% endhighlight %}
+```
 
 The last hurdle was handling the iteration of optgroups in the `iter_choices`
 generator. The main reason is that it didn't seem right for the `SelectOptGroup`
@@ -80,9 +80,9 @@ The following is the source code for my custom SelectOptGroup field and widget.
 It was not too difficult to program, but did require jumping into the Github
 repository and digging through code.
 
-**SelectOptGroupField**
+### SelectOptGroupField
 
-{% highlight python linenos %}
+```
 from wtforms.compat import text_type
 from wtforms.fields import Field
 from wtforms.widgets import Option
@@ -135,11 +135,11 @@ class SelectOptGroupField(Field):
             for d in self.data:
                 if d not in values:
                     raise ValueError(self.gettext("'%(value)s' is not a valid choice for this field") % dict(value=d))
-{% endhighlight %}
+```
 
-**SelectOptGroup**
+### SelectOptGroup
 
-{% highlight python linenos %}
+```
 from cgi import escape
 from wtforms.compat import text_type
 from wtforms.widgets import html_params, Select, HTMLString
@@ -163,4 +163,4 @@ class SelectOptGroup(object):
                 html.append(Select.render_option(val, label, selected))
         html.append('</select>')
         return HTMLString(''.join(html))
-{% endhighlight %}
+```

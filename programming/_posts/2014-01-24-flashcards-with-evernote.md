@@ -31,50 +31,49 @@ You can try out the [flashcards here](/projects/flashcards).
 
 Finally here is the script that I wrote to parse the exported notes.
 
-{% highlight python linenos %}
-    import argparse
-    import distutils.core
-    import json
+```
+import argparse
+import distutils.core
+import json
 
-    from datetime import datetime
-    from os import listdir
-    from os.path import isfile, isdir, join, basename
-    from xml.sax.saxutils import escape
+from datetime import datetime
+from os import listdir
+from os.path import isfile, isdir, join, basename
+from xml.sax.saxutils import escape
 
-    from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 
-    parser = argparse.ArgumentParser(description='Convert Evernote HTML export directory into JSON')
-    parser.add_argument('directories', metavar='D', nargs='+', help='A list of Evernote export directories')
-    parser.add_argument('-o', '--output', help='Output directory', required=True)
-    parser.add_argument('-f', '--file', help="Output JSON/JS file", required=True)
-    args = parser.parse_args()
+parser = argparse.ArgumentParser(description='Convert Evernote HTML export directory into JSON')
+parser.add_argument('directories', metavar='D', nargs='+', help='A list of Evernote export directories')
+parser.add_argument('-o', '--output', help='Output directory', required=True)
+parser.add_argument('-f', '--file', help="Output JSON/JS file", required=True)
+args = parser.parse_args()
 
-    directories = args.directories
-    output = args.output
-    outfile = args.file
+directories = args.directories
+output = args.output
+outfile = args.file
 
-    data = {}
-    for directory in directories:
-        noteSet = []
-        files = [f for f in listdir(directory) if isfile(join(directory, f)) and f.endswith('.html') and f != 'index.html']
-        resources = [d for d in listdir(directory) if isdir(join(directory, d))]
-        for r in resources:
-            distutils.dir_util.copy_tree(join(directory, r), join(output, basename(directory), r))
+data = {}
+for directory in directories:
+    noteSet = []
+    files = [f for f in listdir(directory) if isfile(join(directory, f)) and f.endswith('.html') and f != 'index.html']
+    resources = [d for d in listdir(directory) if isdir(join(directory, d))]
+    for r in resources:
+        distutils.dir_util.copy_tree(join(directory, r), join(output, basename(directory), r))
 
-        for f in files:
-            h = open(join(directory, f))
-            soup = BeautifulSoup(h)
-            for img in soup.find_all('img'):
-                img['src'] = '/'.join([basename(directory), img['src'].replace('?', '%3F')])
+    for f in files:
+        h = open(join(directory, f))
+        soup = BeautifulSoup(h)
+        for img in soup.find_all('img'):
+            img['src'] = '/'.join([basename(directory), img['src'].replace('?', '%3F')])
 
-            noteSet.append({
-                'title': soup.find('title').get_text(),
-                'content': soup.find('body').encode_contents()
-            })
-            h.close()
-        data[basename(directory)] = noteSet
+        noteSet.append({
+            'title': soup.find('title').get_text(),
+            'content': soup.find('body').encode_contents()
+        })
+        h.close()
+    data[basename(directory)] = noteSet
 
-    with open(join(output, outfile), 'w') as f:
-        f.write('var data = ' + json.dumps(data) + ";");
-
-{% endhighlight %}
+with open(join(output, outfile), 'w') as f:
+    f.write('var data = ' + json.dumps(data) + ";");
+```
