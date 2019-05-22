@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Random Docker Troubleshooting"
+title: "Random Docker troubleshooting"
 ---
 
 I've been working on converting most of my Ansible setup to Docker. I didn't take particularly good notes, but so decided to post a some problems and or questions I ran into along the way.
