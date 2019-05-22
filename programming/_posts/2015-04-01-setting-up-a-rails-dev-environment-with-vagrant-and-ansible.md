@@ -7,7 +7,7 @@ Over the weekend, I started learning Ruby on Rails 4. I've used Ruby on Rails 2 
 
 The first thing I needed to do was set up a rails development environment with Vagrant and Ansible. It took about four hours to get things right, but the reproducibility and environment separation is worth the effort.
 
-## Vagrant Setup
+### Vagrant Setup
 
 For the Vagrant box, I wanted to use Ubuntu 14 since it is the current LTS edition. One of the troubles with Vagrant boxes is that they are not all set up the same. I considered the following boxes:
 
@@ -20,10 +20,7 @@ For the Vagrant box, I wanted to use Ubuntu 14 since it is the current LTS editi
 
 The following is my Vagrantfile:
 
-{% highlight ruby linenos %}
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
+```
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -41,13 +38,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
 end
-{% endhighlight %}
+```
 
 The Vagrantfile is straightforward. I forward port 3000 so I can view the development website. I also set the RAM at 1GB. Currently my laptop has 8GB RAM and I usually run Chrome, Evernote, Spotify, Scrivener, Sublime Text 2, and iTerm2 with no problems. I think a smaller amount of RAM can be used in this case, but I highly recommend getting lots of RAM if you plan on developing in VMs. I used to have 16GB RAM installed, but then one of the RAM sticks died.
 
 That's it for the Vagrantfile.
 
-## Ansible Setup
+### Ansible Setup
 
 I recently started using Ansible. For the past 2-3 years I have been using Puppet with Vagrant. The downsides were:
 
@@ -137,7 +134,7 @@ This setup is somewhat based on the instructions found at [https://gorails.com/s
 
 Here are some of the issues I ran into during setup.
 
-**Gem path issue**
+####  Gem path issue
 
 I used a "role" to install `rbenv`. This was the suggested way to install the latest version of ruby. The other option was to use `rvm`. I had a bad experience with `rvm` three or four years ago and have no idea how to remove it from my laptop. This is a big reason why I only do development in virtual machines nowadays.
 
@@ -157,11 +154,11 @@ For reference, here's what that snippet looks like:
         executable: "{{gem_path}}"
 {% endraw %}
 
-**PostgreSQL issue 1: Dependencies**
+#### PostgreSQL issue 1: Dependencies
 
 There were a number of issues with installing PostgreSQL. The first was missing dependencies that prevented Ansible from running its PostgreSQL tasks. Ansible uses python, so it makes sense that I needed to install `psycopg2`, which is a PostgreSQL adapter for python. I installed this via pip, but ran into an error. I also needed to install `libpq-dev` via `apt`. It may have been easier to just do `python-psycopg2` via `apt`. Then it would have handled the dependencies correctly. That's definitely the one drawback of pip, the obscure error messages when a dependency is missing.
 
-**PostgreSQL issue 2: Can't connect to psql**
+#### PostgreSQL issue 2: Can't connect to psql
 
 After resolving the first issue, I was still unable to execute the PostgreSQL tasks to create database users.
 
@@ -181,13 +178,13 @@ My eventual solution was to edit the `sudoers` file and add the correct privileg
 
 Also you need to make sure to add `sudo_user: postgres` to be able to login as the postgres admin/superuser account when running the `postgresql_user` task.
 
-**PostgreSQL issue 3: Rails can't create test, development, production databases**
+#### PostgreSQL issue 3: Rails can't create test, development, production databases
 
 Initially I created database users without a password, but I was unable to connect to the database via `psql`. It always checked for a password. There seems to be a way to configure PostgreSQL to not check for a password, but the `pg_hba.conf` file needs to be altered.
 
 In the end it was simpler to just use passwords with the database users. This required hardcoding the passwords into `playbook.yml`, which I think this is OK for development. Ansible also has a feature called `lookups` that can keep passwords out the `playbook.yml` file, but I didn't use it here.
 
-**PostgreSQL issue 4: Can't seed test database with fixtures**
+#### PostgreSQL issue 4: Can't seed test database with fixtures
 
 I had trouble running the Rails unit tests because the fixtures would not install correctly when multiple related tables were involved. This was due to a foreign key issue, specifically, Rails needs to disable foreign key integrity checks when installing fixtures. In PostgreSQL, this requires the SUPERUSER privilege apparently.
 

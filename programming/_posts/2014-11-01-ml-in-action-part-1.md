@@ -34,7 +34,7 @@ The sample code that Harrington uses relies on numpy. This made the code a bit
 more obscure since I'm a novice with numpy. For educational purposes I wrote my
 own implementation using basic python:
 
-{% highlight python linenos %}
+```
 import math
 import numpy as np
 
@@ -103,7 +103,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-{% endhighlight %}
+```
 
 The toy example only covers the first section of chapter 2. The latter sections of this chapter
 cover more complicated examples, such as handwritten digit recognition and

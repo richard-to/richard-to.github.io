@@ -13,11 +13,11 @@ To build Hamburger Maker, I have settled on the javascript game library Phaser. 
 
 Phaser has allowed me to develop a basic demo in two-three hours of programming. The API makes sense and has covered my basic use cases so far: click events, drag and drop, sprites, text, game loop.
 
-Most of my time has been spent drawing the sprites: lettuce, ketchup, tomatoes, onions, etc. For that I chose Boxy SVG, which is a great Chrome App--lightweight, fast, easy to use. The alternatives where Illustrator, which I find unbearably slow on my laptop and Inkscape, which does not work too well on OSX.
+Most of my time has been spent drawing the sprites: lettuce, ketchup, tomatoes, onions, etc. For that I chose Boxy SVG, which is a great Chrome App--lightweight, fast, easy to use. The alternatives were Illustrator, which I find unbearably slow on my laptop and Inkscape, which does not work too well on OSX.
 
 Now that the sprites have been drawn, I'm starting to think about gameplay mechanics, specifically how to make this somewhat fun.
 
-## Links
+### Links
 
 - [Working Demo](http://richard.to/hamburger-maker/)
 - [Github Repository](https://github.com/richard-to/hamburger-maker)

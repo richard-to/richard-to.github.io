@@ -9,28 +9,28 @@ Like kNN, decision trees are very intuitive. The book uses 20 questions as an an
 On that note, Udacity recently released an Intro to Machine Learning course that does a very good job of explaining decision trees. The videos on entropy and information gain are clearer than explanations from various sections of books that I've read on the algorithm. Udacity does a good job of focusing on intuition. There's not much theory, math, or even implementation, which is fine for an introductory course. Scikit Learn is used for the hands-on exercises. This is nice as well since these skills can immediately be applied to a real world situation. Scikit Learn has an especially nice API design. Applying basic algorithms is essentially the same three lines.
 
 **Decision trees with Scikit Learn**
-{% highlight python %}
+```
 from sklearn.tree import DecisionTreeClassifier
 clf = DecisionTreeClassifier()
 clf.fit(features_train, labels_train)
 pred = clf.predict(features_test)
-{% endhighlight %}
+```
 
 **Naive Bayes with Scikit Learn**
-{% highlight python %}
+```
 from sklearn.naive_bayes import GaussianNB
 clf = GaussianNB()
 clf.fit(features_train, labels_train)
 pred = clf.predict(features_test)
-{% endhighlight %}
+```
 
 **Support Vector Classification with Scikit Learn**
-{% highlight python %}
+```
 from sklearn.svm import SVC
 clf = SVC()
 clf.fit(features_train, labels_train)
 pred = clf.predict(features_test)
-{% endhighlight %}
+```
 
 With that said the hard part is the data wrangling and feature set development. Also experimenting with and learning about the multitude of parameters for each algorithm is kind of daunting.
 
@@ -105,6 +105,7 @@ Continuing with the fish data set, we can visualize the information gain as foll
 There are two options, Yes/No, for this feature. This means we will have two branches.
 
 Branch 1 (Yes):
+
 <table>
     <tr>
         <th>Can survive without coming to surface?</th>
@@ -122,15 +123,16 @@ Branch 1 (Yes):
         <td>Yes</td>
         <td>No</td>
     </tr>
-    <tr>
 </table>
 
 Branch 2 (No):
+
 <table>
     <tr>
         <th>Can survive without coming to surface?</th>
         <th>Fish?</th>
     </tr>
+    <tr>
         <td>No</td>
         <td>No</td>
     </tr>
@@ -180,7 +182,7 @@ I have avoided reading the author's implementations and have tried to implement 
 
 The first method calculates the entropy of the data set:
 
-{% highlight python %}
+```
 def calcShannonEntropy(dataSet):
     """
     Calculates Shannon entropy of classifications in data
@@ -201,12 +203,12 @@ def calcShannonEntropy(dataSet):
     for count in labels.values():
         entropy -= (count/total) * math.log(count/total, 2)
     return entropy
-{% endhighlight %}
+```
 
 
 Next there needs to be a method to split a data set into a subset for branching down the tree.
 
-{% highlight python %}
+```
 def splitDataSet(dataSet, axis, value):
     """
     Splits data set on a given column containing a specified value.
@@ -226,11 +228,11 @@ def splitDataSet(dataSet, axis, value):
         if data[axis] == value:
             subSet.append(data[:axis] + data[axis + 1:])
     return subSet
-{% endhighlight %}
+```
 
 Our last helper method is the most important as it calculates the information gain and picks the best feature to split on.
 
-{% highlight python %}
+```
 def chooseBestFeatureToSplit(dataSet):
     """
     Split on the feature with the largest information gain.
@@ -261,11 +263,11 @@ def chooseBestFeatureToSplit(dataSet):
 
     maxGain = max(infoGain)
     return infoGain.index(maxGain)
-{% endhighlight %}
+```
 
 The key method is `createTree` which builds the tree recursively. The stopping conditions are when the leaf node  contains examples with a uniform classification or if there are no more features to split on. In the latter case, the most frequent classification is chosen.
 
-{% highlight python %}
+```
 def createTree(dataSet, labels):
     """
     Creates decision tree using ID3 algorithm
@@ -292,11 +294,11 @@ def createTree(dataSet, labels):
         tree[labels[bestFeature]][value] = createTree(
             subset, labels[:bestFeature] + labels[bestFeature + 1:])
     return tree
-{% endhighlight %}
+```
 
 Once the tree is created, we can create a simple method to classify data. This method recursively calls itself until it reaches a leaf node.
 
-{% highlight python %}
+```
 def classify(inputData, tree, labels):
     """
     Classify given data using decision tree
@@ -311,12 +313,12 @@ def classify(inputData, tree, labels):
     label = tree.keys()[0]
     labelIndex = labels.index(label)
     return classify(inputData, tree[label][inputData[labelIndex]], labels)
-{% endhighlight %}
+```
 
 Here is the full decision tree implementation:
 
-{% highlight python linenos %}
 
+```
 import math
 
 
@@ -464,4 +466,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-{% endhighlight %}
+```

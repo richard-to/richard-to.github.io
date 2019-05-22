@@ -31,7 +31,7 @@ The game is broken up into three modules. The idea is to separate the logic and 
 
 This makes testing the logic with units tests much easier and can allow for alternate UIs to be used.
 
-**GameEngine**
+#### GameEngine
 
 Just a bunch of functions that operate on the Minesweeper board model. Functionality includes:
 
@@ -41,11 +41,11 @@ Just a bunch of functions that operate on the Minesweeper board model. Functiona
 - Correctly unvealing squares on the board after a square is clicked
 - Checking for winners
 
-**GameStore**
+#### GameStore
 
 The GameStore is created from a GameFactory. This allows options to be passed into the store. For example, to change the dimensions of the board or the number of mines.
 
-**ReactApp**
+#### ReactApp
 
 The ReactApp contains the following components:
 
@@ -60,13 +60,13 @@ The ReactApp contains the following components:
 ![Beersweeper Component Layout](/images/beersweeper-component-layout.png)
 
 
-## GameEngine
+### GameEngine
 
 Since I've used Jasmine before, writing tests for the GameEngine was straightforward. There's not much to say, other than Jest provides good instructions on how to run the unit tests.
 
 The GameEngine consists of a bunch of functions that operate on the minesweeper board model.
 
-**Data structure**
+#### Data structure
 
 The data structure used is a 2D-array of "squares," where "squares" are regular objects with two values:
 
@@ -80,13 +80,13 @@ The state value seems controversial, but this data is integral to the logic of t
 
 The data structure was designed as just data. All operations are handled through functions. Although it didn't work out perfectly, the idea was to make the data structure (array and squares) immutable, or at least treat them that way. This seems to have the benefit of making testing easier.
 
-**Generating mines**
+#### Generating mines
 
 This function is relatively straightforward. It will throw an error if the number of mines is greater than the number of squares. This could cause an infinite loop.
 
 The algorithm for generating the mines is: Randomly pick a y and x position. If it is empty, change the square to a mine. If it already contains a mine, repeat until an empty square is found.
 
-{% highlight javascript linenos %}
+```
 var generateMines = function(board, numMines) {
   var size = getBoardSize(board);
   if (numMines > size.width * size.height) {
@@ -106,9 +106,9 @@ var generateMines = function(board, numMines) {
   }
   return clonedBoard;
 };
-{% endhighlight %}
+```
 
-**Generating adjaceny numbers**
+#### Generating adjaceny numbers
 
 The brute force way to do it is to manually look at each adjacent square, but this can be error prone and repetitive.
 
@@ -116,7 +116,7 @@ An interesting solution that I learned a few days ago is to create an array of t
 
 I added try and catch block to avoid edge cases, such as the top row or bottom row of squares. Although these are not exceptional cases, it's cleaner than using a convoluted if statement. Using try/except blocks like this is something that is advocated in Python code.
 
-{% highlight javascript linenos %}
+```
 var countAdjacentMines = function(board, y, x) {
   var adjacentSquares = [
     [-1, -1], [-1, 0], [-1, 1],
@@ -135,9 +135,9 @@ var countAdjacentMines = function(board, y, x) {
   }
   return mineCount;
 };
-{% endhighlight %}
+```
 
-**Revealing squares**
+#### Revealing squares
 
 In minesweeper, if you click on a square that is empty, then all adjacent squares will be revealed up to the numbered squares.
 
@@ -146,7 +146,7 @@ If you click on a numbered square, then only that square is revealed.
 This can easily be done by thinking of the 2D array as a highly connected graph. Then a depth-first search with pre-order traversal can recursively reveal the squares. The algorithm stops whenever a numbered square is encountered.
 
 
-{% highlight javascript linenos %}
+```
 var revealSquares = function(board, y, x) {
   var clonedBoard = cloneBoard(board);
   var adjacentSquares = [
@@ -181,9 +181,9 @@ var revealSquares = function(board, y, x) {
 
   return clonedBoard;
 };
-{% endhighlight %}
+```
 
-## GameStore
+### GameStore
 
 There's not much to say about the GameStore. It's uses many of the same concepts as the typical React Store.
 
@@ -191,33 +191,32 @@ One change is that this module return a factory function. This allows for user s
 
 Example usage:
 
-{% highlight javascript linenos %}
+```
 var GameFactory = require('./minesweeper/GameFactory');
 var MinesweeperGame = GameFactory.create({
     width: 50,
     height: 10,
     numMines: 5
 });
-{% endhighlight %}
+```
 
 The other change, as mentioned earlier, is the lack of a dispatcher. This is because the Store actions are called directly by components.
 
 This module does not have unit tests yet.
 
-## React Components
+##$ React Components
 
 Jest made it fairly easy to unit test React components. Admittedly, these tests were written after all the components were written. So not very TDD of me.
 
 The mock timers were a bit confusing to use when testing the Timer component, but everything else made sense.
 
-**App Component**
+#### App Component
 
 The AppFactory module returns a create function that allows the GameStore to be injected into the App.
 
 This use of factories is something that I was experimenting with to avoid the use of singleton modules, which seems limit the modularity of components. I'll have to experiment with this more to see if it is useful. This minesweeper game would have no problems with a global store since the components aren't likely to be re-used for other purposes.
 
-
-**MinesweeperBoard Component**
+#### MinesweeperBoard Component
 
 The MinesweeperBoard is also created via a create function. It requires that a MinesweeperSquare
 component be passed in.
@@ -226,7 +225,7 @@ The original version of this component included a minesweeper row component, whi
 
 This version generates the row divs without the use of a wrapper component.
 
-{% highlight javascript linenos %}
+```
 var React = require('react/addons');
 
 var GameStatus = require('../Constants').GameStatus;
@@ -256,9 +255,9 @@ module.exports = {
     });
   }
 }
-{% endhighlight %}
+```
 
-**MinesweeperSquare Component**
+#### MinesweeperSquare Component
 
 The MinesweeperSquareFactory module returns a create function that accepts a callback for when a square is clicked. This was done to avoid passing the callback from the App to the MinesweeperBoard to the MinesweeperSquare.
 
@@ -267,7 +266,7 @@ The MinesweeperSquare component takes the square state as two separate props. Th
 With this component, I considered different squares for each type of square, but that seemed like overkill to implement a Strategy/State pattern.
 
 
-**Timer Component**
+#### Timer Component
 
 The timer component was kind of tricky to implement, and I'm not sold that this is the best solution. It keeps track of the time elapsed using it's own state. Start/Stop/Reset are passed in via props.
 
@@ -277,7 +276,7 @@ In terms of minesweeper:
 2. The timer stops when the user when wins or loses.
 3. The timer resets to 0 when restart is clicked.
 
-## Design
+### Design
 
 In terms of design, there is a tendency to want to emulate the old school look of the game. I avoided that by taking inspiration from the Windows Phone version of Minesweeper, which has a much more modern and minimal look.
 
@@ -285,7 +284,7 @@ Instead of right clicking to flag a square, buttons are used. This proved to be 
 
 There is more work to do before it is usable on mobile devices though.
 
-## TODO
+### TODO
 
 I'm not entirely finished with this project. There are few more things todo:
 
@@ -295,7 +294,7 @@ I'm not entirely finished with this project. There are few more things todo:
 4. Add hotkeys "d" and "f" to switch from dig mode and flag mode. Clicking the buttons can be tedious.
 5. Make the game play well on mobile devices of different sizes.
 
-## Links
+### Links
 
 - [Working Demo](http://richard.to/projects/beersweeper/)
 - [Github Repository](https://github.com/richard-to/minesweeper)

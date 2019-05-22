@@ -3,7 +3,7 @@ layout: post
 title: "Reading list"
 ---
 
-## 2019
+### 2019
 
 **January**
 
@@ -41,7 +41,7 @@ title: "Reading list"
 - *The Castle* - Franz Kafka
 - *Learning to Die in the Anthropocene* - Roy Scranton
 
-## 2018
+### 2018
 
 **January**
 
@@ -98,7 +98,7 @@ title: "Reading list"
 
 - *Convenience Store Woman* - Sayaka Murata
 - *Haunted by Chaos* - Sulmaan Wasif Khan
-- *The Extent of My Own Stupidity* - Soko Morinaga 
+- *The Extent of My Own Stupidity* - Soko Morinaga
 - *The Rinzai Zen Way* - Meido Moore
 - *The Perfect Weapon* - David E. Sanger
 - *Men without Women* - Haruki Murakami
@@ -138,7 +138,7 @@ title: "Reading list"
 - *The Collected Poems* - Sylvia Plath
 - *Severance* - Ling Ma
 
-## 2017
+### 2017
 
 **January**
 
@@ -178,7 +178,7 @@ title: "Reading list"
 
 - *The Interestings* - Meg Wolitzer
 - *The Leavers* - Lisa Ko
-- *Black Hole Blues and Other Songs from Outer Space* - Janna Levin 
+- *Black Hole Blues and Other Songs from Outer Space* - Janna Levin
 
 **June**
 
@@ -243,7 +243,7 @@ title: "Reading list"
 - *The Electric Kool-Aid Acid Test* - Tom Wolfe
 - *Life Is a Miracle* - Wendell Berry
 
-## 2016
+### 2016
 
 **January**
 
@@ -337,7 +337,7 @@ title: "Reading list"
 - *The Diver's Clothes Lie Empty* - Vendela Vida
 - *Meditations* - Marcus Aurelius
 
-## 2015
+### 2015
 
 **January**
 

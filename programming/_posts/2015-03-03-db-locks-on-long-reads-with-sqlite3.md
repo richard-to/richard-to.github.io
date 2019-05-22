@@ -21,15 +21,14 @@ The following is the code for the experiment:
 
 **constants.py**
 
-{% highlight python linenos %}
+```
 DB_FILE = 'test.db'
 UPDATES_TABLE = 'updates'
-{% endhighlight %}
+```
 
 **install.py**
 
-{% highlight python linenos %}
-
+```
 import random
 import sqlite3
 
@@ -97,12 +96,11 @@ for table_number in xrange(NUM_TABLES):
 conn.commit()
 
 conn.close()
-
-{% endhighlight %}
+```
 
 **write_loop.py**
 
-{% highlight python linenos %}
+```
 import sqlite3
 from constants import DB_FILE, UPDATES_TABLE
 
@@ -114,11 +112,11 @@ while True:
     conn.commit()
     count += 1
 conn.close()
-{% endhighlight %}
+```
 
 **long_read.py**
 
-{% highlight python linenos %}
+```
 import sqlite3
 from constants import DB_FILE
 
@@ -135,8 +133,8 @@ conn = sqlite3.connect(DB_FILE)
 cursor = conn.cursor()
 cursor.execute(query)
 conn.close()
-{% endhighlight %}
+```
 
-Resources:
+**Resources**
 
 - [SQLite 3 documentation on locking](http://www.sqlite.org/lockingv3.html)

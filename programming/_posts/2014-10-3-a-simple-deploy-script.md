@@ -13,9 +13,9 @@ The downside of the old deploy script was that we needed to switch to a user acc
 
 To solve this issue, I decided that the best option would be to proxy commands to the designated deployment user, which would not be too different than the client/server model used by some web applications. A full-blown web server was overkill. Instead I used Pyro4, which basically creates a daemon that listens for and executes commands from a client script. In this case, the daemon would execute the deploy script as the correct user.
 
-**Example of daemon:**
+### Example of daemon:
 
-{% highlight python linenos %}
+```
 import Pyro4
 
 DEPLOY_SCRIPT_PATH = '/home/deploybot/bin/deploy.sh'
@@ -38,11 +38,11 @@ uri=daemon.register(code_deployer)
 ns.register("local.deploybot", uri)
 
 daemon.requestLoop()
-{% endhighlight %}
+```
 
-**Example of client:**
+### Example of client:
 
-{% highlight python linenos %}
+```
 #!/usr/bin/env python
 import argparse
 import Pyro4
@@ -52,24 +52,24 @@ parser.add_argument("-d", "--docs", help="Deploy docs", action="store_true")
 args = parser.parse_args()
 code_deployer=Pyro4.Proxy("PYRONAME:local.deploybot")
 print code_deployer.deploy(docs=args.docs)
-{% endhighlight %}
+```
 
 To deploy code to the production server, the developer would just need to ssh into the server and execute the command `deploy`. To skip the ssh step, the Fabric library can be used.
 
 To make sure that the daemon runs on start up, Supervisor is used to manage the daemon and Pyro4 nameserver. The nameserver is used to resolve the daemon using a fixed URI or name. The nameserver requirement caused some problems because Supervisor has no way to start dependent processes first. This can be worked around with a bootstrap script that manually uses supervisorctl to start processes in a specified order.
 
-**Example of Supervisor bootstrap process**
+### Example of Supervisor bootstrap process
 
-{% highlight bash linenos %}
+```
 #!/bin/bash
 
 supervisorctl start pyro4-ns
 supervisorctl start deploybotd
-{% endhighlight %}
+```
 
-**Example of supervisor configuration**
+### Example of supervisor configuration
 
-{% highlight bash linenos %}
+```
 [program:deploybot-bootstrap]
 command=/usr/local/bin/deploybot-bootstrap.sh
 process_name=%(program_name)s
@@ -93,7 +93,7 @@ autostart=false
 autorestart=true
 stopsignal=QUIT
 user=deploybot
-{% endhighlight %}
+```
 
 Before getting to the actual deploy script, it should be mentioned that this server runs CentOS 7 with SELinux, which caused a lot of permission problems.
 
@@ -106,20 +106,21 @@ Lastly, sudo can only be run with a valid tty, which is a problem when executing
 Overall, the deploy script turned out to be far from simple. I'm not sure if that is a good thing or not.
 
 
-**Sudoers file snippet**
-{% highlight bash linenos %}
+### Sudoers file snippet
+
+```
 #Defaults    requiretty
 #Defaults   !visiblepw
 
 ...
 
 deploybot ALL=(ALL) NOPASSWD: /sbin/restorecon /var/rfs/src/webcode.py,/usr/sbin/apachectl restart
-{% endhighlight %}
+```
 
 
-**Deploy script example**
+### Deploy script example
 
-{% highlight bash linenos %}
+```
 #!/bin/bash
 
 # Notes:
@@ -257,4 +258,4 @@ if [[ $? = 0 ]]
         echo "--Rsync docs to $DOC_OUT_DIR ... FAILED"
         exit;
 fi
-{% endhighlight %}
+```

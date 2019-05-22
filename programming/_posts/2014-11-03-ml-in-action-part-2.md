@@ -43,7 +43,7 @@ For examples 2.2 and 2.3, I rewrote the kNN algorithm using Pandas. The book use
 
 Here is the implementation with comments removed:
 
-{% highlight python linenos %}
+```
 def classify(input_data, training_set, labels, k=1):
     distance_diff = training_set - input_data
     distance_squared = distance_diff**2
@@ -52,53 +52,53 @@ def classify(input_data, training_set, labels, k=1):
     distance_df.sort(columns=[0], inplace=True)
     top_knn = distance_df[:k]
     return top_knn[1].value_counts().index.values[0]
-{% endhighlight %}
+```
 
 For each example subtract the corresponding feature from the input data.
 
-{% highlight python %}
+```
 distance_diff = training_set - input_data
-{% endhighlight %}
+```
 
 Next square the difference of each feature.
 
-{% highlight python %}
+```
 distance_squared = distance_diff**2
-{% endhighlight %}
+```
 
 Then take the square root of the squared distance of each feature.
 
-{% highlight python %}
+```
 distance = distance_squared.sum(axis=1)**0.5
-{% endhighlight %}
+```
 
 Now combine the classification with distance calculation of each example.
 
-{% highlight python %}
+```
 distance_df = pd.concat([distance, labels], axis=1)
-{% endhighlight %}
+```
 
 With the classifications linked to the distance, we can sort the array from closest to farthest.
 
-{% highlight python %}
+```
 distance_df.sort(columns=[0], inplace=True)
-{% endhighlight %}
+```
 
 Extract the top k closest examples.
 
-{% highlight python %}
+```
 top_knn = distance_df[:k]
-{% endhighlight %}
+```
 
 Return the classification of the most common neighbors
 
-{% highlight python %}
+```
 return top_knn[1].value_counts().index.values[0]
-{% endhighlight %}
+```
 
 Here is the full kNN implementation using Pandas. The dating data set is used here:
 
-{% highlight python linenos %}
+```
 import itertools
 from ggplot import ggplot, aes, geom_point
 import numpy as np
@@ -225,4 +225,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-{% endhighlight %}
+```
