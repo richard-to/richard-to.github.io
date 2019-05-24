@@ -40,6 +40,7 @@ title: "Reading list"
 - *Watership Down* - Richard Adams
 - *The Castle* - Franz Kafka
 - *Learning to Die in the Anthropocene* - Roy Scranton
+- *Man's Search for Meaning* - Viktor Frankl
 
 ### 2018
 
