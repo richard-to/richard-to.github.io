@@ -42,7 +42,7 @@ title: "Reading list"
 - *Learning to Die in the Anthropocene* - Roy Scranton
 - *Man's Search for Meaning* - Viktor Frankl
 - *In Love with the World* - Yongey Mingyur Rinpoche
-- *Death's End* - Cixin Lui
+- *Death's End* - Cixin Liu
 
 ### 2018
 
