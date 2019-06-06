@@ -44,6 +44,10 @@ title: "Reading list"
 - *In Love with the World* - Yongey Mingyur Rinpoche
 - *Death's End* - Cixin Liu
 
+**June**
+
+- *Under Red Skies* - Karoline Kan
+
 ### 2018
 
 **January**
