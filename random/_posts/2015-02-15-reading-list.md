@@ -47,6 +47,7 @@ title: "Reading list"
 **June**
 
 - *Under Red Skies* - Karoline Kan
+- *On Earth We're Briefly Gorgeous* - Ocean Vuong
 
 ### 2018
 
