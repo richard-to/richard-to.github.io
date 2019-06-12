@@ -48,6 +48,7 @@ title: "Reading list"
 
 - *Under Red Skies* - Karoline Kan
 - *On Earth We're Briefly Gorgeous* - Ocean Vuong
+- *The Recovering* - Leslie Jamison
 
 ### 2018
 
