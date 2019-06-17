@@ -49,6 +49,8 @@ title: "Reading list"
 - *Under Red Skies* - Karoline Kan
 - *On Earth We're Briefly Gorgeous* - Ocean Vuong
 - *The Recovering* - Leslie Jamison
+- *The Great Believers* - Rebecca Makkai
+- *Chasing the Chinese Dream* - Nick Holdstock
 
 ### 2018
 
