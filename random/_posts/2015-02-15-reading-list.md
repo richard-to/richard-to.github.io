@@ -51,6 +51,7 @@ title: "Reading list"
 - *The Recovering* - Leslie Jamison
 - *The Great Believers* - Rebecca Makkai
 - *Chasing the Chinese Dream* - Nick Holdstock
+- *Illuminations* - Arthur Rimbaud
 
 ### 2018
 
