@@ -52,6 +52,7 @@ title: "Reading list"
 - *The Great Believers* - Rebecca Makkai
 - *Chasing the Chinese Dream* - Nick Holdstock
 - *Illuminations* - Arthur Rimbaud
+- *The Tibetan Book of the Dead* - Robert A.F. Thurman
 
 ### 2018
 
