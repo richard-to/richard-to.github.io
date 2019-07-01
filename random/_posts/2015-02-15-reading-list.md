@@ -53,6 +53,7 @@ title: "Reading list"
 - *Chasing the Chinese Dream* - Nick Holdstock
 - *Illuminations* - Arthur Rimbaud
 - *The Tibetan Book of the Dead* - Robert A.F. Thurman
+- *The Overstory* - Richard Powers
 
 ### 2018
 
