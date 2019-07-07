@@ -3,13 +3,13 @@ layout: post
 title: "Too Many Cooks - Part 1: Phaser 3, Tiled, Texture Packer"
 ---
 
-I recently started working on a massively multiplayer online game (MMOG). Imagine Overcooked 2 with up to one hundred players on one map. And imagine the team based mechanics of Killer Queen. That's the basic concept of Too Many Cooks.
+As a side project, I recently started developing a web-based multiplayer game. Imagine Overcooked with up to one hundred players on one map. And imagine the team based mechanics of Killer Queen. That's the basic concept of Too Many Cooks.
 
 My primary objective for this project is to learn how to use various Google Cloud Platform (GCP) products, specifically Firestore, Cloud Functions, and Cloud Dataflow.
 
-My secondary objective is to learn basic game development. For this project, I will be focusing on platformer mechanics.
+My secondary objective is to learn basic game development. For this project I will be focusing on platformer mechanics.
 
-The initial phases of this project will be to determine the feasibility of my ideas. For instance, my first question is how hard is it to build a simple platformer in Phaser 3? From there, I will need to know how to integrate Firestore to enable multiplayer gameplay.
+The initial phases of this project will be to determine the feasibility of the concept. For instance, my first question is how hard is it to build a simple platformer in Phaser 3? From there, I will need to know how to integrate Firestore to enable multiplayer gameplay.
 
 The answer to my first question turns out to be relatively simple. In fact, the Phaser 3 website provides a tutorial on creating a basic platformer called [Making your first Phaser 3 game](https://phaser.io/tutorials/making-your-first-phaser-3-game/part1).
 
@@ -48,7 +48,7 @@ this.load.multiatlas('redGuy', 'assets/redGuy.json', 'assets');
 
 ### How do I create a level map?
 
-In Math RPG, I had decided to build a game engine from scratch, and to create my level maps, I created a 2-D array and added integers that referenced my tiles. From there I could take the array and draw the tiles
+In Math RPG, I had decided to build a game engine from scratch. To create my level maps, I created a 2-D array and added integers that referenced my tiles. From there I could take the array and draw the tiles
 on the canvas element.
 
 The map looked something like this:
@@ -101,11 +101,11 @@ One problem I ran into with Tiled was that it initially failed to separate my ti
 Tiled expects each tile in the Sprite sheet to fit in consistent dimensions. So if I specify the dimensions of my tiles to be 32x32, then Tiled
 will divide all the tiles that way. Texture Packer does this perfectly. Just make sure to only include tiles that are the same size.
 
-The dimensions of my tiles are 128x128, however this caused overlap in Tiled. I had to use 130x130 for the slicing to work correctly. I was not able to figure the cause of this problem.
+The dimensions of my tiles are 128x128, however this caused overlap in Tiled. I had to use 130x130 for the slicing to work correctly. I was not able to figure out the cause of this problem.
 
 ### Make sure to embed the tilemap metadata
 
-Tiled creates a `.tsx` file for the tilemaps metadata. This includes the properties of a tile and things such as collision points.
+Tiled creates a `.tsx` file for the tilemap's metadata. This includes the properties of a tile and things such as collision points.
 
 Phaser 3 does not support this, so you will need to configure Tiled to embed the tilemap metadata into the exported JSON data rather than referencing the `.tsx` file.
 
@@ -116,9 +116,9 @@ I spent a good amount of time trying to figure this out. The simple answer seems
 
 Phaser 3 supports Matter.js which does allow for more granular collision detection.
 
-In Tiled, you can draw collision boxes on your individual tiles. This metadata can then exported into the JSON file which can be read by Phaser 3.
+In Tiled, you can draw collision boxes on your individual tiles. This metadata can then be exported into the JSON file, which can be read by Phaser 3.
 
-I believe this data can be using `setCollisionFromCollisionGroup`, however this appeared to have no affect with `Arcade` physics. I did not test this out with Matter.js.
+I believe this data can be read using `setCollisionFromCollisionGroup`, however this appears to have no affect with `Arcade` physics. I did not test this out with Matter.js.
 
 ### How do I move the character around?
 
@@ -233,7 +233,7 @@ player.anims.play('walk', true);
 
 ### Full code snippet
 
-I haven't create a Github repo for this project yet, so I'll just post the code snippet for the demo here.
+I haven't created a Github repo for this project yet, so I'll just post the code snippet for the demo here.
 
 ```javascript
 const LEVEL_HEIGHT = 3900;
