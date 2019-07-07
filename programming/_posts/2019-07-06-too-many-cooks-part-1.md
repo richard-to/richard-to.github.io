@@ -3,7 +3,7 @@ layout: post
 title: "Too Many Cooks - Part 1: Phaser 3, Tiled, Texture Packer"
 ---
 
-As a side project, I recently started developing a web-based multiplayer game. Imagine Overcooked with up to one hundred players on one map. And imagine the team based mechanics of Killer Queen. That's the basic concept of Too Many Cooks.
+As a side project, I recently started experimenting with a web-based multiplayer game. Imagine Overcooked with up to one hundred players on one map. And imagine the team based mechanics of Killer Queen. That's the basic concept of Too Many Cooks.
 
 My primary objective for this project is to learn how to use various Google Cloud Platform (GCP) products, specifically Firestore, Cloud Functions, and Cloud Dataflow.
 
