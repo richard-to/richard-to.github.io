@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Wind / Pinball"
+title: "Book Review - Wind / Pinball"
 ---
 
 "In that instant, for no reason and based on no grounds whatsoever, it suddenly struck me: I think can write a novel," writes Haruki Murakami in the introduction to his latest book *Wind / Pinball*, a double-feature of his first two novels: *Hear the Wind Sing* and *Pinball, 1973*.
