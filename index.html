@@ -16,7 +16,7 @@ layout: default
   {% for post in site.categories.random reversed %}
     <li><a href="{{ post.url }}">
         {% if post.formatted_title %}
-          {{ post.formatted_title | markdownify }}
+          {{ post.formatted_title | markdownify | remove: '<p>' | remove: '</p>' }}
         {% else %}
           {{ post.title }}
         {% endif %}

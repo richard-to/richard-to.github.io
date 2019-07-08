@@ -34,7 +34,7 @@
     <div class="container">
       <h1>
         {% if page.formatted_title %}
-          {{ page.formatted_title | markdownify }}
+          {{ page.formatted_title | markdownify | remove: '<p>' | remove: '</p>' }}
         {% else %}
           {{ page.title }}
         {% endif %}
