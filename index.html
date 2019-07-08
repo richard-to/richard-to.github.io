@@ -13,8 +13,14 @@ layout: default
 
   <h3>Random</h3>
   <ul class="toc">
-  {% for post in site.categories.random %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% for post in site.categories.random reversed %}
+    <li><a href="{{ post.url }}">
+        {% if post.formatted_title %}
+          {{ post.formatted_title | markdownify }}
+        {% else %}
+          {{ post.title }}
+        {% endif %}
+    </a></li>
   {% endfor %}
   </ul>
 
