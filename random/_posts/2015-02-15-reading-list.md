@@ -55,6 +55,10 @@ title: "Reading list"
 - *The Tibetan Book of the Dead* - Robert A.F. Thurman
 - *The Overstory* - Richard Powers
 
+**July**
+
+- *The Future is History* - Masha Gessen
+
 ### 2018
 
 **January**
