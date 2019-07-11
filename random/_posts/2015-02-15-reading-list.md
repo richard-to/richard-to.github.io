@@ -58,6 +58,7 @@ title: "Reading list"
 **July**
 
 - *The Future is History* - Masha Gessen
+- *Invisible Planets* - Ken Liu
 
 ### 2018
 
