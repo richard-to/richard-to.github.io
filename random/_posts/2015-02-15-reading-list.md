@@ -59,7 +59,7 @@ title: "Reading list"
 
 - *The Future is History* - Masha Gessen
 - *Invisible Planets* - Ken Liu
-- *The Stranger in the Wooods* - Michael Finkel
+- *The Stranger in the Woods* - Michael Finkel
 - *What I Talk About When I Talk About Running* - Haruki Murakami
 
 ### 2018
