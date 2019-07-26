@@ -55,6 +55,13 @@ title: "Reading list"
 - *The Tibetan Book of the Dead* - Robert A.F. Thurman
 - *The Overstory* - Richard Powers
 
+**July**
+
+- *The Future is History* - Masha Gessen
+- *Invisible Planets* - Ken Liu
+- *The Stranger in the Woods* - Michael Finkel
+- *What I Talk About When I Talk About Running* - Haruki Murakami
+
 ### 2018
 
 **January**
