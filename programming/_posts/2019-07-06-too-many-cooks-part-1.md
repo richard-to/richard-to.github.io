@@ -15,7 +15,7 @@ The answer to my first question turns out to be relatively simple. In fact, the 
 
 The code to needed to create a basic platformer demo ends up being less than 100 lines of code.
 
-Most of my time was spent creating usable sprites and tilemaps. Unlike with my Math RPG project, I chose not to draw my own pixel art this time. Instead I decided to use free assets from itch.io. Choosing asset proved to be difficult and in hindsight I should have simply drawn colored squares as placeholders.
+Most of my time was spent creating usable sprites and tilemaps. Unlike with my Math RPG project, I chose not to draw my own pixel art this time. Instead I decided to use free assets from itch.io. Choosing assets proved to be difficult and in hindsight I should have simply drawn colored squares as placeholders.
 
 I settled on an asset pack called [Platform Game Assets](https://bayat.itch.io/platform-game-assets) by Bayat Games. It uses a cartnoonish vector style rather than the retro pixel style that seems popular on the itch.io game assets section.
 
