@@ -9,9 +9,9 @@ Performance of querying and working with FDW data sources depends on the impleme
 
 The idea of being able to access data from one PostgreSQL database to another seems very useful. For example if we wanted to store user accounts in their own database. Or if we needed to access data from a different service.
 
-Setting up the `postres_fdw` extension and being able to query data from a remote database is not too difficult. The main thing to be aware of is the `pg_hba.conf` configuration and PostgreSQL role management. Definitely want to make sure access is restricted at the right levels.
+Setting up the `postres_fdw` extension and being able to query data from a remote database is not too difficult. The main thing to be aware of is the `pg_hba.conf` configuration and PostgreSQL role management. We definitely want to make sure access is restricted at the right levels.
 
-The next question that will come to mind is how can these foreign tables be queried in our application code. In this scenario, we'll assume the usage of SQLAlchemy ORM as a our data access layer. The first thing we'll find out is that neither SQLAlchemy Core or ORM have support for Foreign Data Wrapper, which means we'll have to write our own DDL code to make it work.
+The next question that will come to mind is how can these foreign tables be queried in our application code. In this scenario, we'll assume the usage of SQLAlchemy ORM as our data access layer. The first thing we'll find out is that neither SQLAlchemy Core or ORM have support for Foreign Data Wrapper, which means we'll have to write our own DDL code to make it work.
 
 Before we get into SQLAlchemy integration, let's go over the basic commands for using Foreign Data Wrapper with another PostgreSQL database.
 
@@ -49,7 +49,7 @@ The `CREATE FOREIGN TABLE` command will create a proxy table of the remote table
 
 Creating the schema for each foreign table can be tedious, so there is also an option to import the whole schema with one command.
 
-One other thing to keep in mind is that the correct privileges need to be granted to the application role in order to query the the remote table.
+One other thing to keep in mind is that the correct privileges need to be granted to the application role in order to query the remote table.
 
 ```sql
 CREATE FOREIGN TABLE {remote_table_name} (
@@ -71,8 +71,8 @@ When integrating postgres_fdw support into SQLAlchemy for a typical web applicat
 
 - Can the foreign tables be created and dropped in application code for integration and/or unit test purposes?
 - Can the addition of foreign tables be detected by database migrations (Alembic)?
-- Can we query the table without writing out the SQL?
 - Can postgres_fdw configuration be deployed to servers (Ansible)?
+- Can we query the table without writing out the SQL?
 
 In order to use foreign tables with SQLAlchemy, we will need to implement the following commands:
 
