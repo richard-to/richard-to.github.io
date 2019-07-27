@@ -61,6 +61,7 @@ title: "Reading list"
 - *Invisible Planets* - Ken Liu
 - *The Stranger in the Woods* - Michael Finkel
 - *What I Talk About When I Talk About Running* - Haruki Murakami
+- *Seven Brief Lessons on Physics* - Carlo Rovelli
 
 ### 2018
 
