@@ -62,6 +62,7 @@ title: "Reading list"
 - *The Stranger in the Woods* - Michael Finkel
 - *What I Talk About When I Talk About Running* - Haruki Murakami
 - *Seven Brief Lessons on Physics* - Carlo Rovelli
+- *The Uninhabitable Earth* - David Wallace-Wells
 
 ### 2018
 
