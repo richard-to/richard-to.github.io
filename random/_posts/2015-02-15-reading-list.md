@@ -64,6 +64,10 @@ title: "Reading list"
 - *Seven Brief Lessons on Physics* - Carlo Rovelli
 - *The Uninhabitable Earth* - David Wallace-Wells
 
+**August**
+
+- *The Age of Surveillance Capitalism* - Shoshana Zuboff
+
 ### 2018
 
 **January**
