@@ -67,6 +67,8 @@ title: "Reading list"
 **August**
 
 - *The Age of Surveillance Capitalism* - Shoshana Zuboff
+- *Blindness* - José Saramago
+- *White Oleander* - Janet Fitch
 
 ### 2018
 
