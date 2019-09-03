@@ -69,6 +69,7 @@ title: "Reading list"
 - *The Age of Surveillance Capitalism* - Shoshana Zuboff
 - *Blindness* - José Saramago
 - *White Oleander* - Janet Fitch
+- *The Order of Time* - Carlo Rovelli
 
 ### 2018
 
