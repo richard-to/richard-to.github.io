@@ -301,7 +301,7 @@ title: "Reading list"
 
 **April**
 
-- *The Inviation-Only Zone* - Robert S. Boynton
+- *The Invitation-Only Zone* - Robert S. Boynton
 - *100 Selected Poems* - e.e. Cummings
 - *Howl and other poems* - Allen Ginsberg
 - *The Lathe of Heaven* - Ursula K. Le Guin
