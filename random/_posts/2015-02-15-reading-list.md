@@ -71,6 +71,10 @@ title: "Reading list"
 - *White Oleander* - Janet Fitch
 - *The Order of Time* - Carlo Rovelli
 
+**September**
+
+- *Crashed* - Adam Tooze
+
 ### 2018
 
 **January**
