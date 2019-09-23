@@ -74,6 +74,7 @@ title: "Reading list"
 **September**
 
 - *Crashed* - Adam Tooze
+- *The Past Life Perspective* - Ann C. Barham
 
 ### 2018
 
