@@ -76,6 +76,11 @@ title: "Reading list"
 - *Crashed* - Adam Tooze
 - *The Past Life Perspective* - Ann C. Barham
 
+**October**
+
+- *Steppenwolf* - Hermann Hesse
+- *Journey to the end of the night* - Louis-Ferdinand Céline
+
 ### 2018
 
 **January**
