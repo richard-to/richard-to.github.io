@@ -79,7 +79,7 @@ title: "Reading list"
 **October**
 
 - *Steppenwolf* - Hermann Hesse
-- *Journey to the end of the night* - Louis-Ferdinand Céline
+- *Journey to the End of the Night* - Louis-Ferdinand Céline
 
 ### 2018
 
