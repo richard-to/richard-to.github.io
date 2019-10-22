@@ -80,6 +80,8 @@ title: "Reading list"
 
 - *Steppenwolf* - Hermann Hesse
 - *Journey to the End of the Night* - Louis-Ferdinand Céline
+- *The Unwomanly Face of War* - Svetlana Alexievich
+- *The Double and The Gambler* - Dostoevsky
 
 ### 2018
 
