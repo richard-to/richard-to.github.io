@@ -82,6 +82,7 @@ title: "Reading list"
 - *Journey to the End of the Night* - Louis-Ferdinand Céline
 - *The Unwomanly Face of War* - Svetlana Alexievich
 - *The Double and The Gambler* - Dostoevsky
+- *Carrie* - Stephen King
 
 ### 2018
 
