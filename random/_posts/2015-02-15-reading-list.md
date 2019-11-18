@@ -84,6 +84,11 @@ title: "Reading list"
 - *The Double and The Gambler* - Dostoevsky
 - *Carrie* - Stephen King
 
+**November**
+
+- *The Sellout* - Paul Beatty
+- *What To Think About Machines That Think* - John Brockman
+
 ### 2018
 
 **January**
