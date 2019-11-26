@@ -88,6 +88,7 @@ title: "Reading list"
 
 - *The Sellout* - Paul Beatty
 - *What To Think About Machines That Think* - John Brockman
+- *Do Androids Dream of Electric Sheep* - Philip K. Dick
 
 ### 2018
 
