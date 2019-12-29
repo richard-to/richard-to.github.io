@@ -95,6 +95,8 @@ title: "Reading list"
 
 - *Underground* - Haruki Murakami
 - *How to live without fear and worry* - K. Sri Dhammananda
+- *The light fantastic* - Terry Pratchett
+- *Everything we do matters* - Venerable Wuling
 
 ### 2018
 
