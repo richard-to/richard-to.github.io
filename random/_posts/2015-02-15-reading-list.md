@@ -97,6 +97,7 @@ title: "Reading list"
 - *How to live without fear and worry* - K. Sri Dhammananda
 - *The light fantastic* - Terry Pratchett
 - *Everything we do matters* - Venerable Wuling
+- *Exhalation* - Ted Chiang
 
 ### 2018
 
