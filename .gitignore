@@ -1,4 +1,14 @@
-_site
+# OS Generated files
 .DS_Store
+
+# Jekyll
+_site
 .jekyll-metadata
+
+# Ruby
+.bundle
 Gemfile.lock
+vendor
+
+# VSCode
+*.code-workspace
