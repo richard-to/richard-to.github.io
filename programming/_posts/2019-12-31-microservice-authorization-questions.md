@@ -49,7 +49,7 @@ API keys have the same problem as opaque access tokens. Usually API keys are for
 
 I want to iterate that this is the part that I'm confused about. So this section is mostly brainstorming and questions.
 
-1. Can JWTs be fully stateless?
+### 1. Can JWTs be fully stateless?
 
 I don't think it's possible to make JWTs fully stateless. The log out use case is one. The best way to manage log out is to keep a token blacklist using Redis.
 
@@ -59,7 +59,7 @@ Part of this can be accomplished with scopes. For example we could have scopes p
 
 That doesn't ruin the usefulness of JWTs though. JWT's can be stateless in that we can be sure that the user is authenticated. This means we don't need to check with the authentication server.
 
-2. Can OAuth2 scopes be used for authorization?
+### 2. Can OAuth2 scopes be used for authorization?
 
 OAuth2 scopes are commonly used for various APIs, such as Github, Slack, Facebook, Twitter, etc. In these cases the application gets access to say te Github API. So we're not dealing with access to multiple APIs.
 
@@ -71,7 +71,7 @@ This makes sense and is not too bad. But one question is where would these permi
 
 This makes OAuth2 scopes less attractive for managing authorization to many microservices.
 
-3. How do we provide authorization to a microservice?
+### 3. How do we provide authorization to a microservice?
 
 If authorization is handled locally, then we have a chicken and the egg problem since a user could be authenticated, but then have no access to any microservices.
 
@@ -81,7 +81,7 @@ One solution is to have a super admin account that could access all microservice
 
 With global or local authorization we would still need to maintain separate user and permissions tables. Ideally the implementation of these would be implemented the same way on all microservices.
 
-4. What about GCP IAMs as a blueprint?
+### 4. What about GCP IAMs as a blueprint?
 
 Google Cloud Platform (GCP) Identify and Access Management (IAM) is a very granular permissioning system. The gcloud CLI is able to manage different GCP services with a relatively consistent interface. GCP IAM a bit difficult to manage in practice since there are many services and many roles available.
 
