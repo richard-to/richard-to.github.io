@@ -88,3 +88,10 @@ Google Cloud Platform (GCP) Identify and Access Management (IAM) is a very granu
 It is unclear to me if the implementation of the IAMs is global or local managed. It seems like a mix of both since, permissions can be added globally.
 
 The GCP IAMs model seems like overkill for my relatively simple purposes.
+
+## Resources
+
+- [FastAPI Security Intro](https://fastapi.tiangolo.com/tutorial/security/intro/)
+- [How We Solved Authentication and Authorization in Our Microservice Architecture](https://andela.com/insights/)how-we-solved-authentication-and-authorization-in-our-microservice-architecture/
+- [Microservices Authentication and Authorization Solutions](https://medium.com/tech-tajawal/microservice-authentication-and-authorization-solutions-e0e5e74b248a)
+- [Authorization and Authentication with Microservices](https://www.leanix.net/en/blog/authorization-authentication-with-microservices)
