@@ -98,6 +98,7 @@ title: "Reading list"
 - *The light fantastic* - Terry Pratchett
 - *Everything we do matters* - Venerable Wuling
 - *Exhalation* - Ted Chiang
+- *Living Beautifully with Uncertainty and Change* - Pema Chödrön
 
 ### 2018
 
