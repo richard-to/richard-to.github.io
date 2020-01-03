@@ -3,13 +3,6 @@ layout: post
 title: "Reading list"
 ---
 
-### 2020
-
-**January**
-
-- *Less* - Andrew Sean Greer
-- *The Four Noble Truths* - Venerable Ajahn Sumedho
-
 ### 2019
 
 **January**
