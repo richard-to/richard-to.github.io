@@ -3,6 +3,14 @@ layout: post
 title: "Reading list"
 ---
 
+### 2020
+
+**January**
+
+- *Less* - Andrew Sean Greer
+- *The Four Noble Truths* - Venerable Ajahn Sumedho
+- *Taking the Leap* - Pema Chödrön
+
 ### 2019
 
 **January**
