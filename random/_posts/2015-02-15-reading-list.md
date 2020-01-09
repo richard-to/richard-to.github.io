@@ -10,6 +10,7 @@ title: "Reading list"
 - *Less* - Andrew Sean Greer
 - *The Four Noble Truths* - Venerable Ajahn Sumedho
 - *Taking the Leap* - Pema Chödrön
+- *Siddhartha's Brain* - James Kingsland
 
 ### 2019
 
