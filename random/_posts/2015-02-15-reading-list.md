@@ -11,6 +11,7 @@ title: "Reading list"
 - *The Four Noble Truths* - Venerable Ajahn Sumedho
 - *Taking the Leap* - Pema Chödrön
 - *Siddhartha's Brain* - James Kingsland
+- *The Places that Scare You* - Pema Chödrön
 
 ### 2019
 
