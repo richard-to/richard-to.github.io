@@ -12,6 +12,7 @@ title: "Reading list"
 - *Taking the Leap* - Pema Chödrön
 - *Siddhartha's Brain* - James Kingsland
 - *The Places that Scare You* - Pema Chödrön
+- *Thich Nhat Hanh: Essential Writings* - Thich Nhat Hanh
 
 ### 2019
 
