@@ -13,6 +13,7 @@ title: "Reading list"
 - *Siddhartha's Brain* - James Kingsland
 - *The Places that Scare You* - Pema Chödrön
 - *Thich Nhat Hanh: Essential Writings* - Thich Nhat Hanh
+- *Just Mercy* - Bryan Stevenson
 
 ### 2019
 
