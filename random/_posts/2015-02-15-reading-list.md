@@ -14,6 +14,7 @@ title: "Reading list"
 - *The Places that Scare You* - Pema Chödrön
 - *Thich Nhat Hanh: Essential Writings* - Thich Nhat Hanh
 - *Just Mercy* - Bryan Stevenson
+- *Why Buddhism is True* - Robert Wright
 
 ### 2019
 
