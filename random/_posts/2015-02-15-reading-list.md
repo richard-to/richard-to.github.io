@@ -15,6 +15,7 @@ title: "Reading list"
 - *Thich Nhat Hanh: Essential Writings* - Thich Nhat Hanh
 - *Just Mercy* - Bryan Stevenson
 - *Why Buddhism is True* - Robert Wright
+- *Lost Connections* - Johann Hari
 
 ### 2019
 
