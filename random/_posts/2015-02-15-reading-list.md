@@ -17,6 +17,10 @@ title: "Reading list"
 - *Why Buddhism is True* - Robert Wright
 - *Lost Connections* - Johann Hari
 
+**February**
+
+- *Maybe You Should Talk to Someone* - Lori Gottlieb
+
 ### 2019
 
 **January**
