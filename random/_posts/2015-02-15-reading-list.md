@@ -20,6 +20,7 @@ title: "Reading list"
 **February**
 
 - *Maybe You Should Talk to Someone* - Lori Gottlieb
+- *The Refugees* - Viet Thanh Nguyen
 
 ### 2019
 
