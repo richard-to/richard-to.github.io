@@ -22,6 +22,8 @@ title: "Reading list"
 - *Maybe You Should Talk to Someone* - Lori Gottlieb
 - *The Refugees* - Viet Thanh Nguyen
 - *The Heart of the Buddha's Teaching* - Thich Nhat Hanh
+- *How to love* - Thich Nhat Hanh
+- *Pride and Prejudice* - Jane Austen
 
 ### 2019
 
