@@ -24,6 +24,7 @@ title: "Reading list"
 - *The Heart of the Buddha's Teaching* - Thich Nhat Hanh
 - *How to love* - Thich Nhat Hanh
 - *Pride and Prejudice* - Jane Austen
+- *Don't be a Jerk* - Brad Warner
 
 ### 2019
 
