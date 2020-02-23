@@ -31,7 +31,7 @@ gcloud components update;
 
 #### 1.2 Install Docker for macOS:
 
-Follow the instructions here: https://docs.docker.com/docker-for-mac/install/
+Follow the instructions here: [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/docker-for-mac/install/)
 
 #### 1.3 Start minikube
 
