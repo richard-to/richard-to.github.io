@@ -3,6 +3,10 @@ layout: post
 title: "Setting up Kubernetes for local development"
 ---
 
+These setup instructions are also posted on Github at my [Kubernetes Experiments](https://github.com/richard-to/kubernetes-experiments) repository. 
+
+These instructions will also reference code from that repository, specifically step 2.2.
+
 ### 1. Environment setup
 
 - minikube
