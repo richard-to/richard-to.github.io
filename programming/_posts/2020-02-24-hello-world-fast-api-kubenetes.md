@@ -3,7 +3,7 @@ layout: post
 title: "Hellworld with FastAPI and Kubernetes"
 ---
 
-The goal of this exercise is deploy a FastAPI app using Kubernetes.
+The goal of this exercise is to deploy a FastAPI app using Kubernetes.
 
 ### 0. Github repository
 
