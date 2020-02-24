@@ -15,7 +15,7 @@ The [python library](https://github.com/pcduino/python-pcduino) only allows you 
 
 Assuming you're using the gpio module referenced by the blink led sample, we just need to add the following function:
 
-```
+```python
 def enableUart():
     with open(_MODE_FD_PATH % 'gpio0', 'w') as f:
         f.write(str(IO_UART_FUNC))
@@ -27,7 +27,7 @@ You will also need to declare the variable `IO_UART_FUNC` and assign it a value 
 
 Now a serial connection to the GSM shield can be established like this:
 
-```
+```python
 from serial import Serial
 from gpio import enableUart
 
@@ -49,7 +49,7 @@ To receive SMS text messages with the pcDuino v2, the GSM shield's baud rate nee
 
 Here is some rough sample code to read SMS text messages with python, GSM shield, and pcDuino v2. Make sure to download the gpio module from the pcduino python repository and make the change described in issue 1.
 
-```
+```python
 import argparse
 import logging
 import serial

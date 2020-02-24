@@ -39,7 +39,7 @@ The downsides are good problems to have actually. They are problems that would i
 
 ### A Java example
 
-```
+```java
 /*
 ---
 title: Hello Universe
@@ -67,7 +67,7 @@ class HelloUniverse
 
 **A C++ example**
 
-```
+```cpp
 /*
 ---
 title: Hello Universe

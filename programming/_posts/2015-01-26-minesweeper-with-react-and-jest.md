@@ -86,7 +86,7 @@ This function is relatively straightforward. It will throw an error if the numbe
 
 The algorithm for generating the mines is: Randomly pick a y and x position. If it is empty, change the square to a mine. If it already contains a mine, repeat until an empty square is found.
 
-```
+```js
 var generateMines = function(board, numMines) {
   var size = getBoardSize(board);
   if (numMines > size.width * size.height) {
@@ -116,7 +116,7 @@ An interesting solution that I learned a few days ago is to create an array of t
 
 I added try and catch block to avoid edge cases, such as the top row or bottom row of squares. Although these are not exceptional cases, it's cleaner than using a convoluted if statement. Using try/except blocks like this is something that is advocated in Python code.
 
-```
+```js
 var countAdjacentMines = function(board, y, x) {
   var adjacentSquares = [
     [-1, -1], [-1, 0], [-1, 1],
@@ -146,7 +146,7 @@ If you click on a numbered square, then only that square is revealed.
 This can easily be done by thinking of the 2D array as a highly connected graph. Then a depth-first search with pre-order traversal can recursively reveal the squares. The algorithm stops whenever a numbered square is encountered.
 
 
-```
+```js
 var revealSquares = function(board, y, x) {
   var clonedBoard = cloneBoard(board);
   var adjacentSquares = [
@@ -191,7 +191,7 @@ One change is that this module return a factory function. This allows for user s
 
 Example usage:
 
-```
+```js
 var GameFactory = require('./minesweeper/GameFactory');
 var MinesweeperGame = GameFactory.create({
     width: 50,
@@ -225,7 +225,7 @@ The original version of this component included a minesweeper row component, whi
 
 This version generates the row divs without the use of a wrapper component.
 
-```
+```js
 var React = require('react/addons');
 
 var GameStatus = require('../Constants').GameStatus;

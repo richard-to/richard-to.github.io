@@ -9,7 +9,7 @@ The strategy that works best for me is to do something everyday. Once I get a fe
 
 One major problem is that I left off in a bad spot. I ran into an issue with my combat system impementation. In my simplified use-case, I had my character fighting two orcs. After my character attacks, the two orcs attack back. Since the game-play is turned based, it would be simple to code synchronously. Unfortunately the animations run asynchronously. This essentially means callback hell. The following snippet occurs after the player selects attack from the menu.
 
-```
+```js
 handleEnemySelect: function(entity, event) {
     var self = this;
 
@@ -37,7 +37,7 @@ Before I got distracted by finals, I was thinking about possible solutions. My i
 
 To avoid the nested callbacks, I considered using an animation queue that works kind of like the async library. Here is an example of how I envisioned it could work.
 
-```
+```js
 Animation.queue(Hero.attack).queue(Enemy.attack).queue(Enemy.attack).run(function() {
     // Logic Here.
 });
@@ -45,7 +45,7 @@ Animation.queue(Hero.attack).queue(Enemy.attack).queue(Enemy.attack).run(functio
 
 That looks fairly clean, but unfortunately my use cases are more complicated. Here is another variation I played around with.
 
-```
+```js
 forEach(DataHeroes)
     if (DataEnemies.Alive()) {
         Animation.queue(Hero.attack,  DataHero.attack(DataEnemy));
@@ -73,7 +73,7 @@ This snippet is better. It accounts for dead enemies and heroes and all animatio
 
 After writing this post, I ended up working out a solution that I'm satisfied with. At least for now.
 
-```
+```js
 // Event handler for attack menu options
 handleEnemySelect: function(entity, event) {
     var self = this;

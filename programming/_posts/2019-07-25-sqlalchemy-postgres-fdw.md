@@ -15,7 +15,7 @@ The next question that will come to mind is how can these foreign tables be quer
 
 Before we get into SQLAlchemy integration, let's go over the basic commands for using Foreign Data Wrapper with another PostgreSQL database.
 
-### PostgreSQL FDW Basics
+## PostgreSQL FDW Basics
 
 First we need to enable the `postgres_fdw` extension. It is already included in the default PostgreSQL installation, so we just need to enable the extension. We want to enable this extension on the database that will be querying the remote table.
 
@@ -65,7 +65,7 @@ Helpful resources for using the `postgres_fdw` extension:
  - [Foreign Data Wrappers in PostgreSQL and a closer look at postgres_fdw](https://www.percona.com/blog/2018/08/21/foreign-data-wrappers-postgresql-postgres_fdw/)
 - [PostgreSQL documentation on postgres_fdw](https://www.postgresql.org/docs/current/postgres-fdw.html)
 
-### Integrating postgres_fdw into SQLAlchemy
+## Integrating postgres_fdw into SQLAlchemy
 
 When integrating postgres_fdw support into SQLAlchemy for a typical web application, we need to consider the following questions:
 
@@ -92,7 +92,7 @@ GRANT USAGE ON FOREIGN DATA WRAPPER postgres_fdw TO app_user;
 
 As of Ansible 2.8, you can grant `FOREIGN DATA WRAPPER` privileges to a role using the `postgresql_privs` module.
 
-#### Create/Drop Server - DDL
+### Create/Drop Server - DDL
 
 ```python
 import sqlalchemy as sa
@@ -162,7 +162,7 @@ This configuration however does not help us for the existing database case since
 The only other thing to note about this code is that I'm not escaping the parameters properly. There's likely a way to do that, but for this experiment I have not done so.
 
 
-#### Create/Drop User Mapping - DDL
+### Create/Drop User Mapping - DDL
 
 The DDL for `USER MAPPING` follows the same pattern as `SERVER`. It also has the same caveats in regard to db migrations and escaping parameters.
 
@@ -214,7 +214,7 @@ def create_user_mapping(role, server_name, remote_role, remote_password, metadat
 ```
 
 
-#### Create/Drop Foreign Table - DDL
+### Create/Drop Foreign Table - DDL
 
 ```python
 import sqlalchemy as sa
@@ -307,7 +307,7 @@ The current implementation of this foreign table DDL is incomplete. Currently it
 
 On a side note, the `sqlalchemy-utils` module contains DDL implementations for using materialization views.
 
-#### DB Migrations with Alembic
+### DB Migrations with Alembic
 
 Currently DB migrations would not be triggered with the creation of the above DDL elements.
 

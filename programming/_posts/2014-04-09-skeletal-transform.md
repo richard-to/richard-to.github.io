@@ -44,7 +44,7 @@ There are three programs for ex4.
 
 For **ex4** and **ex4_1** the following settings can be adjusted at compile time to work with specific images:
 
-```
+```cpp
 // Begin - Settings
 #define DEBUG 1
 #define DIFF_THRESH 40
@@ -105,7 +105,7 @@ In the t-shirt version, the background subtraction cuts off part of the arm and 
 
 **Example log output from ex4**
 
-```
+```cpp
 Processing frame 413...
 --Reading frame 413...DONE...0.31595s
 --BG subtraction frame 413...DONE...0.4348s
@@ -182,7 +182,7 @@ After patching ex4 and ex4_1 to write valid pbm images, ffmpeg would still not w
 
 Original version:
 
-```
+```cpp
 void write_pbm(char filename_out[], PNM_Meta *pbm_meta, UINT8 **data)
 {
     FILE *fpout;
@@ -207,7 +207,7 @@ void write_pbm(char filename_out[], PNM_Meta *pbm_meta, UINT8 **data)
 
 Patched version with fixed line widths:
 
-```
+```cpp
 void write_pbm(char filename_out[], PNM_Meta *pbm_meta, UINT8 **data)
 {
     FILE *fpout;
@@ -241,7 +241,7 @@ void write_pbm(char filename_out[], PNM_Meta *pbm_meta, UINT8 **data)
 
 The quick fix for the ffmpeg and pbm issue was to convert from pbm to pgm. This required using imagemagick and running mogrify on the pbm output images
 
-```
+```shell
 # If image magick not installed
 sudo apt-get install imagemagick
 

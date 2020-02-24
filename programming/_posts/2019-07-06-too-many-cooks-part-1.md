@@ -25,7 +25,7 @@ I settled on an asset pack called [Platform Game Assets](https://bayat.itch.io/p
 
 The following sections cover technical questions and challenges I encountered while developing the demo.
 
-### How do I create sprite sheets and tilemaps?
+## How do I create sprite sheets and tilemaps?
 
 The asset pack I downloaded included the platform tiles as separate image files. I could have loaded them as separate files using `this.load.image`, but that seemed tedious. In addition, Tiled requires the use of tilemaps, which are essentially the separate images combined into a single image.
 
@@ -37,7 +37,7 @@ The Phaser 3 export creates a JSON output that can be used with `this.load.multi
 
 Example from the demo:
 
-```javascript
+```js
 // Param 1: Name used to reference atlas later
 // Param 2: Location of atlas of file
 // Param 3: Directory where sprite sheet(s) are located
@@ -46,7 +46,7 @@ this.load.multiatlas('redGuy', 'assets/redGuy.json', 'assets');
 
 ![Texture Packer usage](/images/too-many-cooks/p1-texture-packer.png)
 
-### How do I create a level map?
+## How do I create a level map?
 
 In Math RPG, I had decided to build a game engine from scratch. To create my level maps, I created a 2-D array and added integers that referenced my tiles. From there I could take the array and draw the tiles
 on the canvas element.
@@ -94,7 +94,7 @@ function create() {
 
 [Here is a great article on how to use Tiled](ttps://medium.com/@michaelwesthadley/modular-game-worlds-in-phaser-3-tilemaps-1-958fc7e6bbd6).
 
-### Why does Tiled not slice my tilemap correctly?
+## Why does Tiled not slice my tilemap correctly?
 
 One problem I ran into with Tiled was that it initially failed to separate my tiles correctly (i.e. the squares would contain overlap into tiles).
 
@@ -103,14 +103,14 @@ will divide all the tiles that way. Texture Packer does this perfectly. Just mak
 
 The dimensions of my tiles are 128x128, however this caused overlap in Tiled. I had to use 130x130 for the slicing to work correctly. I was not able to figure out the cause of this problem.
 
-### Make sure to embed the tilemap metadata
+## Make sure to embed the tilemap metadata
 
 Tiled creates a `.tsx` file for the tilemap's metadata. This includes the properties of a tile and things such as collision points.
 
 Phaser 3 does not support this, so you will need to configure Tiled to embed the tilemap metadata into the exported JSON data rather than referencing the `.tsx` file.
 
 
-### How do I make non-square collisions?
+## How do I make non-square collisions?
 
 I spent a good amount of time trying to figure this out. The simple answer seems to be that the `Arcade` physics option only allows square and circle hit boxes.
 
@@ -120,7 +120,7 @@ In Tiled, you can draw collision boxes on your individual tiles. This metadata c
 
 I believe this data can be read using `setCollisionFromCollisionGroup`, however this appears to have no affect with `Arcade` physics. I did not test this out with Matter.js.
 
-### How do I move the character around?
+## How do I move the character around?
 
 This turned out to be straightforward. The main thing is that the keyboard code goes into the `update` function which is basically the game loop.
 
@@ -148,7 +148,7 @@ function update() {
 }
 ```
 
-### Why can't I jump?
+## Why can't I jump?
 
 In the Phaser 3 platform tutorial, the following code is used for jumping.
 
@@ -168,7 +168,7 @@ if (cursors.up.isDown && player.body.blocked.down) {
 }
 ```
 
-### How do I make the screen move to the next section of the map?
+## How do I make the screen move to the next section of the map?
 
 One thing I spent a fair amount of time on in Math RPG was making the map scroll as the player moved around. Turns out in Phaser 3 this is very easy.
 
@@ -189,7 +189,7 @@ function create() {
 }
 ```
 
-### How do I animate my character?
+## How do I animate my character?
 
 I only understand the basics of creating an animation.
 
@@ -231,7 +231,7 @@ Finally using the animation (to be used in the `update` function):
 player.anims.play('walk', true);
 ```
 
-### Full code snippet
+## Full code snippet
 
 I haven't created a Github repo for this project yet, so I'll just post the code snippet for the demo here.
 

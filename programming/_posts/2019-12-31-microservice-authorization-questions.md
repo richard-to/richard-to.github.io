@@ -11,7 +11,7 @@ Authorization is where I find myself confused. I believe that local authorizatio
 
 The rest of this post is an attempt at working out a solution to local authorization.
 
-### FastAPI Oauth2
+## FastAPI Oauth2
 
 First let's start with some more concrete details. I based my microservice implementation on the [FastAPI security tutorial](https://fastapi.tiangolo.com/tutorial/security/intro/).
 
@@ -23,7 +23,7 @@ The single API use case makes the JWT somewhat irrelevant since the tutorial per
 
 In terms of authorization, the scopes are connected to the users table.
 
-### Global authentication with FastAPI and Oauth2
+## Global authentication with FastAPI and Oauth2
 
 Separating the authentication code to its own API was straightforward. No real changes needed to be made. The main thing that needs to be added is the CORS middleware, to allow different domains to access the authentication server.
 
@@ -33,7 +33,7 @@ That's all that needs to be done to allow global authentication.
 
 One thing that I wasn't sure about was the use of the password flow. Is that only useful for the single server example? When would the password flow not be sufficient?
 
-### Opaque access tokens and API keys
+## Opaque access tokens and API keys
 
 Another option aside from JWTs is to use opaque access tokens. These are basically tokens without encoded data. This means that opaque access tokens needed to be checked to ensure their validity.
 
@@ -45,11 +45,11 @@ The worst option would be to directly access the authentication server's databas
 
 API keys have the same problem as opaque access tokens. Usually API keys are for managing bot accounts. This way the user doesn't have to share out their personal account password. There's nothing technically wrong with this approach, but what if they are mixed with JWTs? Then microserviceA would need to manage two different type of tokens, one stateless and one stateful.
 
-### Local authorization with FastAPI and Oauth2
+## Local authorization with FastAPI and Oauth2
 
 I want to iterate that this is the part that I'm confused about. So this section is mostly brainstorming and questions.
 
-#### 1. Can JWTs be fully stateless?
+### 1. Can JWTs be fully stateless?
 
 I don't think it's possible to make JWTs fully stateless. The log out use case is one. The best way to manage log out is to keep a token blacklist using Redis.
 
@@ -59,7 +59,7 @@ Part of this can be accomplished with scopes. For example we could have scopes p
 
 That doesn't ruin the usefulness of JWTs though. JWT's can be stateless in that we can be sure that the user is authenticated. This means we don't need to check with the authentication server.
 
-#### 2. Can OAuth2 scopes be used for authorization?
+### 2. Can OAuth2 scopes be used for authorization?
 
 OAuth2 scopes are commonly used for various APIs, such as Github, Slack, Facebook, Twitter, etc. In these cases the application gets access to say the Github API only (i.e. we're not dealing with access to multiple APIs).
 
@@ -71,7 +71,7 @@ This makes sense and is not too bad. But one question is where would these permi
 
 This makes OAuth2 scopes less attractive for managing authorization to many microservices.
 
-#### 3. How do we provide authorization to a microservice?
+### 3. How do we provide authorization to a microservice?
 
 If authorization is handled locally, then we have a chicken and the egg problem since a user could be authenticated, but then have no access to any microservices.
 
@@ -81,7 +81,7 @@ One solution is to have a super admin account that could access all microservice
 
 With global or local authorization we would still need to maintain separate user and permissions tables. Ideally the implementation of these would be implemented the same way on all microservices.
 
-#### 4. What about GCP IAMs as a blueprint?
+### 4. What about GCP IAMs as a blueprint?
 
 Google Cloud Platform (GCP) Identify and Access Management (IAM) is a very granular permissioning system. The gcloud CLI is able to manage different GCP services with a relatively consistent interface. GCP IAM a bit difficult to manage in practice since there are many services and many roles available.
 
@@ -89,7 +89,7 @@ It is unclear to me if the implementation of the IAMs is globally or locally man
 
 The GCP IAMs model seems like overkill for my relatively simple purposes.
 
-### Resources
+## Resources
 
 - [FastAPI Security Intro](https://fastapi.tiangolo.com/tutorial/security/intro/)
 - [How We Solved Authentication and Authorization in Our Microservice Architecture](https://andela.com/insights/how-we-solved-authentication-and-authorization-in-our-microservice-architecture/)

@@ -15,7 +15,7 @@ To solve this issue, I decided that the best option would be to proxy commands t
 
 ### Example of daemon:
 
-```
+```python
 import Pyro4
 
 DEPLOY_SCRIPT_PATH = '/home/deploybot/bin/deploy.sh'
@@ -42,7 +42,7 @@ daemon.requestLoop()
 
 ### Example of client:
 
-```
+```python
 #!/usr/bin/env python
 import argparse
 import Pyro4
@@ -60,7 +60,7 @@ To make sure that the daemon runs on start up, Supervisor is used to manage the 
 
 ### Example of Supervisor bootstrap process
 
-```
+```python
 #!/bin/bash
 
 supervisorctl start pyro4-ns
@@ -120,7 +120,7 @@ deploybot ALL=(ALL) NOPASSWD: /sbin/restorecon /var/rfs/src/webcode.py,/usr/sbin
 
 ### Deploy script example
 
-```
+```shell
 #!/bin/bash
 
 # Notes:

@@ -22,14 +22,14 @@ The good news is that after Chrome 31, you can use SCTP-based data channels. See
 
 That means instead of this:
 
-```
+```js
 window.localPeerConnection = new webkitRTCPeerConnection(servers,
   {optional: [{RtpDataChannels: true}]});
 ```
 
 You can do something like this (probably can remove the second parameter):
 
-```
+```js
 window.localPeerConnection = new webkitRTCPeerConnection(servers,
   {optional: []});
 ```
@@ -44,7 +44,7 @@ The second thing you need to know is that blob data is not currently supported b
 
 What we can do is turn our image data into base64 using `canvas.toDataURL()`. Here is an example of how that would work:
 
-```
+```js
 var canvas = document.createElement('canvas');
 canvas.width = startimage.width;
 canvas.height = startimage.height;
@@ -57,7 +57,7 @@ Now that we have our data, we just need to break up the bas64 string:
 
 Here is an implementation of chunking the data that I use in my demo above:
 
-```
+```js
 function sendData() {
   trace("Sending data");
   sendButton.disabled = true;
@@ -94,7 +94,7 @@ The implementation is pretty straightforward, basically just using `setInterval`
 
 Here is how the receiver would be implemented. It basically just keeps track of the data until it receives the terminator character, which I just used newline character.
 
-```
+```js
 function handleMessage(event) {
   if (event.data == "\n") {
     endimage.src = imageData;

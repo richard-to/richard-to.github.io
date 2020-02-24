@@ -38,7 +38,7 @@ default ansible_ssh_common_args="-F .vagrant-ssh" ansible_user=vagrant
 ```
 
 ### Example playbook
-```
+```yml
 ---
 - hosts: local
   gather_facts: false

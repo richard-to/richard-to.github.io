@@ -19,7 +19,7 @@ __2.__
 
 Each component is rendered as one node. This means the following is invalid.
 
-```
+```jsx
 return(
     <CustomComponent1 />
     <CustomComponent2 />
@@ -28,7 +28,7 @@ return(
 
 If you try to render the above code, you will get an error message that makes it sound like a syntax error. To solve this problem, you can wrap your child components in a div.
 
-```
+```jsx
 return(
     <div>
         <CustomComponent1 />
@@ -47,7 +47,7 @@ For now I'm just passing a callback to the child component and triggering it whe
 
 Here is an untested example:
 
-```
+```js
 var ChildMenu = React.createClass({
     handleClick: function(event) {
         this.props.onClickChild(event);

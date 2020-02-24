@@ -25,7 +25,7 @@ I'll plan to provide some images in the next day or two.
 
 [View Gist](https://gist.github.com/richard-to/10019190#file-scale_up-cpp)
 
-```
+```cpp
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -108,7 +108,7 @@ Resample an image to half the size. Lowe’s paper on SIFT says to sample pixels
 
 [View Gist](https://gist.github.com/richard-to/10019190#file-scale_down-cpp)
 
-```
+```cpp
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -222,7 +222,7 @@ I tested the program with a sigma value of 1.0 and compared the results testing 
 
 [View Gist](https://gist.githubusercontent.com/richard-to/10019190/raw/f95c0d822ae0a8f47ffb8b3727843e1cfd0b2671/gaussian_blur.cpp)
 
-```
+```cpp
 #include <iostream>
 #include <math.h>
 #include <stdio.h>

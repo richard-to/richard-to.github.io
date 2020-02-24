@@ -31,7 +31,7 @@ You can try out the [flashcards here](/projects/flashcards).
 
 Finally here is the script that I wrote to parse the exported notes.
 
-```
+```python
 import argparse
 import distutils.core
 import json

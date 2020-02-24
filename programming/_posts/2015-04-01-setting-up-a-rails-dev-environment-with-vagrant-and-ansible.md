@@ -20,7 +20,7 @@ For the Vagrant box, I wanted to use Ubuntu 14 since it is the current LTS editi
 
 The following is my Vagrantfile:
 
-```
+```ruby
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|

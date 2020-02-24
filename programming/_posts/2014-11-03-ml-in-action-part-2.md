@@ -43,7 +43,7 @@ For examples 2.2 and 2.3, I rewrote the kNN algorithm using Pandas. The book use
 
 Here is the implementation with comments removed:
 
-```
+```python
 def classify(input_data, training_set, labels, k=1):
     distance_diff = training_set - input_data
     distance_squared = distance_diff**2
@@ -56,49 +56,49 @@ def classify(input_data, training_set, labels, k=1):
 
 For each example subtract the corresponding feature from the input data.
 
-```
+```python
 distance_diff = training_set - input_data
 ```
 
 Next square the difference of each feature.
 
-```
+```python
 distance_squared = distance_diff**2
 ```
 
 Then take the square root of the squared distance of each feature.
 
-```
+```python
 distance = distance_squared.sum(axis=1)**0.5
 ```
 
 Now combine the classification with distance calculation of each example.
 
-```
+```python
 distance_df = pd.concat([distance, labels], axis=1)
 ```
 
 With the classifications linked to the distance, we can sort the array from closest to farthest.
 
-```
+```python
 distance_df.sort(columns=[0], inplace=True)
 ```
 
 Extract the top k closest examples.
 
-```
+```python
 top_knn = distance_df[:k]
 ```
 
 Return the classification of the most common neighbors
 
-```
+```python
 return top_knn[1].value_counts().index.values[0]
 ```
 
 Here is the full kNN implementation using Pandas. The dating data set is used here:
 
-```
+```python
 import itertools
 from ggplot import ggplot, aes, geom_point
 import numpy as np

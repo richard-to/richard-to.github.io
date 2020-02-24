@@ -21,14 +21,14 @@ The following is the code for the experiment:
 
 **constants.py**
 
-```
+```python
 DB_FILE = 'test.db'
 UPDATES_TABLE = 'updates'
 ```
 
 **install.py**
 
-```
+```python
 import random
 import sqlite3
 
@@ -100,7 +100,7 @@ conn.close()
 
 **write_loop.py**
 
-```
+```python
 import sqlite3
 from constants import DB_FILE, UPDATES_TABLE
 
@@ -116,7 +116,7 @@ conn.close()
 
 **long_read.py**
 
-```
+```python
 import sqlite3
 from constants import DB_FILE
 

@@ -18,7 +18,7 @@ Before proceeding, apache-libcloud library is required to be installed. This isn
 
 My current python installation is via Anaconda with python 2.7 as the default. I find that using Anaconda is a useful in that I avoid installing pip libraries as root, which tends to lead to problems and pollutes the base python installation. I could use virtualenv, but I prefer to not switch to the default environment each time. Anaconda has virtualenv support, so I can use that when needed. I just like to have a default installation.
 
-```
+```shell
 pip install apache-libcloud==0.20.1
 ```
 
@@ -26,7 +26,7 @@ pip install apache-libcloud==0.20.1
 
 The first thing that's needed is to create a service account, which is basically a bot account and helps avoid having to share credentials. You can use the website control panel to do this, but to me using the gcloud CLI seems preferable, easier to automate.
 
-```
+```shell
 gcloud iam service-accounts create <account-name> --display-name "Account Display Name"
 ```
 
@@ -36,7 +36,7 @@ Source: [https://cloud.google.com/iam/docs/creating-managing-service-accounts](h
 
 Next we need to grant the service account a role. I picked the "editor" role. Not sure if that's the right one, but it made the most sense looking at the long list of roles.
 
-```
+```shell
 gcloud projects add-iam-policy-binding compute-trial \
     --member serviceAccount:<account-name>@<project-name>.iam.gserviceaccount.com --role roles/editor
 ```
@@ -92,7 +92,7 @@ the quotes, the authentication worked, but then I ran into a certificate problem
 
 I'd run this test command:
 
-```
+```shell
 GCE_INI_PATH=./gce.ini ansible all -i gce.py -m setup
 ```
 
@@ -106,7 +106,7 @@ So I installed certifi via pip, but this didn't work. I'm still not sure why it 
 
 Then I set the SSL_CERT_FILE to the path of cert.pem downloaded from above.
 
-```
+```shell
 SSL_CERT_FILE=./cacert.pem GCE_INI_PATH=./gce.ini ansible all -i gce.py -m setup
 ```
 

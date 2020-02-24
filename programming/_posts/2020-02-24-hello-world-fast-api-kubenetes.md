@@ -5,13 +5,13 @@ title: "Hellworld with FastAPI and Kubernetes"
 
 The goal of this exercise is to deploy a FastAPI app using Kubernetes.
 
-### 0. Github repository
+## 0. Github repository
 
-All code referenced in this post can be found here: 
+All code referenced in this post can be found here:
 
 - [https://github.com/richard-to/kubernetes-experiments](https://github.com/richard-to/kubernetes-experiments)
 
-### 1. Hello World app
+## 1. Hello World app
 
 This is the example app from the FastAPI documentation. It basically returns `{"Hello": "World"}`.
 
@@ -26,7 +26,7 @@ def read_root():
     return {"Hello": "World"}
 ```
 
-### 2. Dockerfile
+## 2. Dockerfile
 
 The Dockerfile is based off a prebuilt docker image that integrates Uvicorn, Gunicorn, and FastAPI.
 
@@ -43,7 +43,7 @@ FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
 COPY ./app /app
 ```
 
-### 3. Creating the Docker image
+## 3. Creating the Docker image
 
 ```shell
 docker build -t helloworld .;
@@ -66,7 +66,7 @@ In another terminal, you now can push the image:
 docker push localhost:5000/helloworld;
 ```
 
-#### 3.1 Alternate method to push Docker image to Minikube registry
+### 3.1 Alternate method to push Docker image to Minikube registry
 
 After deleting my Minikube cluster and creating new one, I noticed that the above
 approach stopped working. I'm not sure what happened, but I did notice it used Hyperkit instead
@@ -105,7 +105,7 @@ You can also use the approach used here:
 The problem with this approach is that image must be tagged with the Minikube IP instead of localhost, which
 makes it unconvenient to use with the Kubernetes declarative approach.
 
-### 4. Deploying the Helloworld API
+## 4. Deploying the Helloworld API
 
 ```shell
 # Register a service will provide internal network access to the Helloworld API
@@ -129,7 +129,7 @@ You can get the IP of your minikube VM installation using `minikube ip`. My IP i
 
 Now you should be able to view the api at http://helloworld.test
 
-#### 4.1 Service file
+### 4.1 Service file
 
 This file configures a `helloworld` service that provides access to
 the `helloworld` app via port `80`.
@@ -152,7 +152,7 @@ spec:
   - port: 80
 ```
 
-#### 4.2 Deployment file
+### 4.2 Deployment file
 
 This file deploys a stateless pod to the cluster. Here we specify our
 helloworld image to be run with only 1 instance (replica).
@@ -179,7 +179,7 @@ spec:
         - containerPort: 80
 ```
 
-#### 4.3 Ingress file
+### 4.3 Ingress file
 
 This file configures access to our helloworld app at http://helloworld.test.
 

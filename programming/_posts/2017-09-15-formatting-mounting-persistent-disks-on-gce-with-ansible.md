@@ -13,7 +13,7 @@ After testing those commands manually, I wrote a simple Ansible role to automate
 
 **mount_disk/tasks/main.yml:**
 
-```
+```yml
 - name: Check if disk exists
   shell: "file -sL /dev/disk/by-id/google-{{ disk_name }}"
   register: disk_exists
@@ -38,7 +38,7 @@ After testing those commands manually, I wrote a simple Ansible role to automate
 
  **mount_disk/vars/main.yml:**
 
- ```
+ ```yml
  disk_name: disk-name
  ```
 

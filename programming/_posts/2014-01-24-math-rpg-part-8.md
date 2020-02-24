@@ -73,7 +73,7 @@ Here is an annotated example the modified SpecRunner.html that comes with Jasmin
 
 Here is an example of a spec file and you can use Require JS to load assets using Jasmine 2.0 async support.
 
-```
+```js
 describe("Circular List Operation", function() {
     // The CircularList object needs to be loaded by RequireJs
     // before we can use it.

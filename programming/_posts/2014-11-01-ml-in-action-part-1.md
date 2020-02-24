@@ -34,7 +34,7 @@ The sample code that Harrington uses relies on numpy. This made the code a bit
 more obscure since I'm a novice with numpy. For educational purposes I wrote my
 own implementation using basic python:
 
-```
+```python
 import math
 import numpy as np
 

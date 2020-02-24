@@ -55,7 +55,7 @@ On a side note, here is a comparison of two functionally identical Grunt and Gul
 
 ### Gruntfile.js example
 
-```
+```js
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -152,7 +152,7 @@ module.exports = function(grunt) {
 
 ### gulpfile.js example
 
-```
+```js
 var gulp = require('gulp');
 
 var gutil = require("gulp-util");

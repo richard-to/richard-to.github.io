@@ -31,7 +31,7 @@ The original code I wrote for the pcDuino took into account a faster baud rate a
 
 ### Arduino sketch for mediating commands and responses
 
-```
+```cpp
 #include <SoftwareSerial.h>
 SoftwareSerial Sim900(7, 8);
 
@@ -63,7 +63,7 @@ void loop()
 
 This is the relevant code to receiving incoming SMS text messages. I didn't include the classes to parse the text message body and store the data in a database since that's implementation specific.
 
-```
+```python
 import re
 import sqlite3
 from time import sleep
@@ -228,7 +228,7 @@ class SMSReader(object):
 
 ### An example of how to use the above module named sim900
 
-```
+```python
 #! /usr/bin/env python
 import argparse
 from datetime import datetime

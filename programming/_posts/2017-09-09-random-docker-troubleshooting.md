@@ -44,7 +44,7 @@ The value of Docker Compose becomes immediately clear when trying to manage two 
 
 **Ex 1: Starting the containers:**
 
-```
+```shell
 docker build -t web_app /path/to/dockerfile
 docker run --name db --link web_app:web_app -d -v /opt/postgresql/data:/var/lib/postgresql/data -db
 docker run --name web_app -d -v /src/code:/var/www -p 5000:5000 web_app
@@ -52,7 +52,7 @@ docker run --name web_app -d -v /src/code:/var/www -p 5000:5000 web_app
 
 **Ex 2: Cleaning up the containers**
 
-```
+```shell
 docker stop web_app
 docker stop db
 docker rm web_app

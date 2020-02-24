@@ -48,7 +48,7 @@ In terms of the preprocessing step, I needed to make sure the final tick would b
 
 Putting that all together, I ended with this function:
 
-```javascript
+```js
 var calcMax = function(value) {
   var divisor = Math.pow(10, value.toFixed(0).length - 1);
   var rounded = value - (value % divisor) + divisor;

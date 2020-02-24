@@ -78,7 +78,7 @@ This program uses the extended window manager hint (EWMH) "\_NET\_CLIENT\_LIST" 
 
 [View Gist](https://gist.github.com/richard-to/10017943#file-x11_screen_grab-cpp)
 
-```
+```cpp
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>

@@ -36,7 +36,7 @@ The downside of listening on the body element is that all clicks will be bubbled
 
 **Ex 1. Vanilla event listeners with feature checking**
 
-```
+```js
 Kingpin.prototype.startListening = function() {
     if (document.body.addEventListener) {
         document.body.addEventListener('click', this._onLinkClick.bind(this));
@@ -51,7 +51,7 @@ Kingpin.prototype.startListening = function() {
 
 **Ex 2. Properly handling event bubbling for links**
 
-```
+```js
 Kingpin.prototype._onLinkClick = function(e) {
     var node = e.target;
     while (node.tagName !== 'A' && node.parentNode)  {
@@ -73,7 +73,7 @@ The HTML5 History API is straightfoward and is explained clearly in this [Dive i
 
 **Ex 3. Popstate event handler**
 
-```
+```js
 Kingpin.prototype._onPopState = function(e) {
     this.setRoute(location.pathname);
 };
@@ -82,7 +82,7 @@ Kingpin.prototype._onPopState = function(e) {
 
 **Ex 4. Out of context and not very helpful usage of history.pushState**
 
-```
+```js
 this.go[routeName] = function() {
     action.apply(scope, arguments);
     history.pushState(null, null, self.urlFor[routeName].apply(self, arguments));
@@ -95,7 +95,7 @@ What I wanted to do was trigger an event using the EventEmitter API in node, sim
 
 **Ex 5. Simple example of how to pass URL variable into handler function**
 
-```
+```js
 router.on('/account/:id/notifications/', function(id) {
     console.log(id);
 });
@@ -104,7 +104,7 @@ router.on('/account/:id/notifications/', function(id) {
 
 **Ex 6. EventEmitter example**
 
-```
+```js
 // From: self.events.emitChange({route: route, params: params});
 
 _onRouteChange: function(e) {
@@ -117,7 +117,7 @@ _onRouteChange: function(e) {
 
 **Ex 7. Wrapper to integrate with React and EventEmitter**
 
-```
+```js
 AppRouter.prototype.on = function(route) {
     var self = this;
     var paramsList = _extractUrlParams(route);
@@ -136,7 +136,7 @@ I ended up going with a singleton router instance that could be "required" by di
 
 **Ex 8. Setting up a global router using React specific wrapper for Router module**
 
-```
+```js
 var Router = require('../utils/Router');
 var paths = [
     '/accounts/',
@@ -148,7 +148,7 @@ module.exports = AccountRouter;
 
 **Ex 9. Snippet to illustrate basic usage in React component**
 
-```
+```js
 componentDidMount: function() {
     AccountRouter.startListening();
     AccountRouter.addRouteChangeListener(this._onRouteChange);
@@ -195,7 +195,7 @@ Here is the link: [https://github.com/richard-to/kingpin](https://github.com/ric
 
 Also here is the full source code for `Kingpin` to pad the word count a bit.
 
-```
+```js
 (function() {
     // Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
     if (!Array.isArray) {

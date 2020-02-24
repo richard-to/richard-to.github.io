@@ -15,7 +15,7 @@ The Select2 documentation provides multiple ways to load array data. A hidden in
 
 Initially, the school data was loaded using the data parameter:
 
-```
+```js
 $("#school-select").select2({
     data: schoolData
     formatSelection: format,
@@ -30,7 +30,7 @@ The Select2 docs provide an example under "Lock selections", where they use prel
 
 Once I understood how the query function worked, the main changes to example were using a `for` loop and adding a match limit to improve the search performance.
 
-```
+```js
 $('#school-select').select2({
     query: function (query) {
         var data = {results: []};
@@ -59,7 +59,7 @@ $('#school-select').select2({
 
 In terms of jQuery validate integration, the latest version (3.5.1) works out of the box, except that the error message will not disappear when valid input is provided. This can be fixed by adding a change event listener:
 
-```
+```js
 $('#school-select').select2().change(function(){
     $(this).valid();
 });

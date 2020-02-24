@@ -130,7 +130,7 @@ Once again it was interesting to see how different the implementations were.
 
 [View Gist](https://gist.github.com/richard-to/10075591)
 
-```
+```cpp
 #include <iostream>
 #include <math.h>
 #include <stdio.h>

@@ -7,7 +7,7 @@ A common problem in digital image processing is detecting straight lines. The br
 
 The Hough transform reduces the amount of computation to detect lines by transforming the *x* and *y* plane to a *theta* and *p* plane. For straight lines, we can use this equation:
 
-```
+```cpp
 p = x * cos * theta + y * sin * theta
 ```
 
@@ -49,6 +49,6 @@ My implementation was very basic and bare bones. From Fig. 3, it can be seen tha
 
 For the Sobel transform, one improvement I learned from looking at the GIMP implementation is dividing the final gradient (not sure if this is the right term) by 5.66. This seems to lessen the intensity of the colors and makes lighter lines black and removes a lot of noise. Relevant snippet of code:
 
-```
+```cpp
 data_out[i][j] = (UINT8)(sqrt(grad_x * grad_x + grad_y * grad_y) / 5.66);
 ```

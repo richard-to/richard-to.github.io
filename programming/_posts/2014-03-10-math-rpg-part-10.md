@@ -17,7 +17,7 @@ The first step was to build a histogram of all the values that appeared in each 
 
 Instead of using "0" and "1" to encode the color values, the digits 0-9 and letters a-z where used. Technically including the capital letters A-Z may have helped too, but that was not included in this attempt.
 
-```
+```js
 var codeKeys = [
     "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
     "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",

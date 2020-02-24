@@ -47,7 +47,7 @@ to format results from a database.
 
 Here is an example of the format:
 
-```
+```python
 (
     (
         (
@@ -82,7 +82,7 @@ repository and digging through code.
 
 ### SelectOptGroupField
 
-```
+```python
 from wtforms.compat import text_type
 from wtforms.fields import Field
 from wtforms.widgets import Option
@@ -139,7 +139,7 @@ class SelectOptGroupField(Field):
 
 ### SelectOptGroup
 
-```
+```python
 from cgi import escape
 from wtforms.compat import text_type
 from wtforms.widgets import html_params, Select, HTMLString
