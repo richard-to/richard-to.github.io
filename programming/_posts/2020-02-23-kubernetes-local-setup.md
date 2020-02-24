@@ -31,7 +31,7 @@ gcloud components update;
 
 ### 1.2 Install Docker for macOS:
 
-Follow the instructions here: [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/docker-for-mac/install/)
+Follow the instructions here: <https://docs.docker.com/docker-for-mac/install/>
 
 ### 1.3 Start minikube
 
@@ -82,8 +82,7 @@ To view the dashboard, we need to run this command in a separate terminal:
 kubectl proxy
 ```
 
-Now we can view the dashboard at: [http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
-)
+Now we can view the dashboard at: <http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/>
 
 ### 2.4 Logging in to the web UI
 
@@ -97,5 +96,5 @@ Copy and paste this token into the web UI.
 
 ### 2.5 Resources:
 
-- [https://github.com/kubernetes/dashboard](https://github.com/kubernetes/dashboard)
-- [https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md)
+- <https://github.com/kubernetes/dashboard>
+- <https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md>

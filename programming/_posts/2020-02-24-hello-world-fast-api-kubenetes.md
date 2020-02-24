@@ -9,7 +9,7 @@ The goal of this exercise is to deploy a FastAPI app using Kubernetes.
 
 All code referenced in this post can be found here:
 
-- [https://github.com/richard-to/kubernetes-experiments](https://github.com/richard-to/kubernetes-experiments)
+- <https://github.com/richard-to/kubernetes-experiments>
 
 ## 1. Hello World app
 
@@ -94,13 +94,13 @@ docker push localhost:5000/helloworld;
 
 This is the approach for Windows:
 
-- [https://minikube.sigs.k8s.io/docs/tasks/registry/insecure/](https://minikube.sigs.k8s.io/docs/tasks/registry/insecure/)
+- <https://minikube.sigs.k8s.io/docs/tasks/registry/insecure/>
 
 To get the name of your registry pod, you can use this command: `kubectl get pods  --namespace kube-system`.
 
 You can also use the approach used here:
 
-- [https://minikube.sigs.k8s.io/docs/tasks/docker_registry/](https://minikube.sigs.k8s.io/docs/tasks/docker_registry/)
+- <https://minikube.sigs.k8s.io/docs/tasks/docker_registry/>
 
 The problem with this approach is that image must be tagged with the Minikube IP instead of localhost, which
 makes it unconvenient to use with the Kubernetes declarative approach.
