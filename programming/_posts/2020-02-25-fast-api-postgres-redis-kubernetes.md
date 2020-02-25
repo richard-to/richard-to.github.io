@@ -20,6 +20,12 @@ This exercise sets up an API for authenticating users. We will use the following
     - [Security](https://fastapi.tiangolo.com/tutorial/security/)
     - [CORS](https://fastapi.tiangolo.com/tutorial/cors/)
 
+## 0. Github repository
+
+All code referenced in this post can be found here:
+
+- <https://github.com/richard-to/kubernetes-experiments>
+
 ## 1. The authentication API
 
 - The authentication API will be used a centralized authentication service for other APIs.
