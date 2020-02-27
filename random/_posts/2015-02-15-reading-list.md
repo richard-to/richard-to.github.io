@@ -25,6 +25,8 @@ title: "Reading list"
 - *How to love* - Thich Nhat Hanh
 - *Pride and Prejudice* - Jane Austen
 - *Don't be a Jerk* - Brad Warner
+- *The Institute* - Stephen King
+- *Strange Planet* - Nathan Pyle
 
 ### 2019
 
