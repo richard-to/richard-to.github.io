@@ -28,6 +28,10 @@ title: "Reading list"
 - *The Institute* - Stephen King
 - *Strange Planet* - Nathan Pyle
 
+**March**
+
+- *The Man Who Knew Infinity* - Robert Kanigel
+
 ### 2019
 
 **January**
