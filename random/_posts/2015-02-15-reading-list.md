@@ -31,6 +31,7 @@ title: "Reading list"
 **March**
 
 - *The Man Who Knew Infinity* - Robert Kanigel
+- *When Panic Attacks* - David D. Burns
 
 ### 2019
 
