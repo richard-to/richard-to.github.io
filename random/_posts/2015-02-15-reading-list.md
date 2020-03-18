@@ -32,6 +32,7 @@ title: "Reading list"
 
 - *The Man Who Knew Infinity* - Robert Kanigel
 - *When Panic Attacks* - David D. Burns
+- *Visions of Infinity* - Ian Stewart
 
 ### 2019
 
