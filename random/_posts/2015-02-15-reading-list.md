@@ -37,6 +37,11 @@ title: "Reading list"
 - *The Gold Coast* - Kim Stanley Robinson
 - *Pacific Edge* - Kim Stanley Robinson
 
+**April**
+
+- *The Topeka School* - Ben Lerner
+- *Seven Eves* - Neal Stephenson
+
 ### 2019
 
 **January**
