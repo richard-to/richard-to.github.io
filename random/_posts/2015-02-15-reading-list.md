@@ -378,7 +378,7 @@ title: "Reading list"
 
 - *A Visit From the Goon Squad* - Jennifer Egan
 - *Purity* - Jonathan Franzen
-- *Dreaming of Cuba* - Cristina Garcia
+- *Dreaming in Cuban* - Cristina Garcia
 - *A Thousand Miles to Freedom: My Escape From North Korea* - Eunsun Kim
 - *Nothing to Envy: Ordinary Lives in North Korea* - Barbara Demick
 
