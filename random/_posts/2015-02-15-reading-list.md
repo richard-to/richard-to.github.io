@@ -431,7 +431,7 @@ title: "Reading list"
 
 **December**
 
-- *The Underground Railraod* - Colson Whitehead
+- *The Underground Railroad* - Colson Whitehead
 - *The Vegetarian* - Han Kang
 - *The Diver's Clothes Lie Empty* - Vendela Vida
 - *Meditations* - Marcus Aurelius
