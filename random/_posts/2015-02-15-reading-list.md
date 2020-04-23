@@ -425,7 +425,7 @@ title: "Reading list"
 
 **November**
 
-- *Fantasia: An Algerian Calvacade* - Assia Djebar
+- *Fantasia: An Algerian Cavalcade* - Assia Djebar
 - *All Monsters Must Die: An Excursion to North Korea* - Magnus Bartas & Fredrik Ekman
 - *The Cleanest Race: How North Koreans See Themselves -- And Why It Matters* - B.R. Myers
 
