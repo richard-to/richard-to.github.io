@@ -42,6 +42,10 @@ title: "Reading list"
 - *The Topeka School* - Ben Lerner
 - *Seven Eves* - Neal Stephenson
 
+**May**
+
+- *The Stand* - Stephen King
+
 ### 2019
 
 **January**
