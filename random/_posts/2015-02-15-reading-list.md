@@ -45,6 +45,7 @@ title: "Reading list"
 **May**
 
 - *The Stand* - Stephen King
+- *The Paper Menagerie* - Ken Liu
 
 ### 2019
 
