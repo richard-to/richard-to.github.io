@@ -46,6 +46,10 @@ title: "Reading list"
 
 - *The Stand* - Stephen King
 - *The Paper Menagerie* - Ken Liu
+- *Never Let Me Go* - Kazuo Ishiguro
+- *Drive Your Plow Over The Bones Dead* - Olga Tokarczuk
+- *The Undying* - Anne Boyer
+- *Feeling Good Together* - David D. Burns
 
 ### 2019
 
