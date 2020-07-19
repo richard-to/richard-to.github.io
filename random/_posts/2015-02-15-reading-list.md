@@ -51,6 +51,22 @@ title: "Reading list"
 - *The Undying* - Anne Boyer
 - *Feeling Good Together* - David D. Burns
 
+**June**
+
+- *Love in the Time of Cholera* - Gabriel Garcia Marquez
+- *Surviving Autocracy* - Masha Gessen
+- *Thinking, Fast and Slow* - Daniel Kahneman
+- *The New Jim Crow* - Michelle Alexander
+
+**July**
+
+- *Between the World and Me* - Ta-Nehisi Coates
+- *Zyzzyva #118: The 35th Anniversary Issue*
+- *The Nickel Boys* - Colson Whitehead
+- *The Art of Living* - Thich Nhat Hanh
+- *Stranger Planet* - Nathan W. Pyle
+- *Owls Do Cry* - Janet Frame
+
 ### 2019
 
 **January**
