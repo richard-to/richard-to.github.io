@@ -66,6 +66,7 @@ title: "Reading list"
 - *The Art of Living* - Thich Nhat Hanh
 - *Stranger Planet* - Nathan W. Pyle
 - *Owls Do Cry* - Janet Frame
+- *A Room of One's Own* - Virginia Woolf
 
 ### 2019
 
