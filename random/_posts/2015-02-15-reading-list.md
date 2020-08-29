@@ -68,6 +68,12 @@ title: "Reading list"
 - *Owls Do Cry* - Janet Frame
 - *A Room of One's Own* - Virginia Woolf
 
+**August**
+
+- *The Origins of Totalitarianism* - Hannah Arendt
+- *White Fragility* - Robin DiAngelo
+- *The Sandman* - Neil Gaiman
+
 ### 2019
 
 **January**
