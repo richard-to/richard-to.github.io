@@ -11,11 +11,11 @@ So for this first write up, I decided to do a "Curry" detector, specifically I w
 
 I decided on a "Curry" detector for a couple reasons. First is that it seemed relatively easy and likely to succeed. The book emphasizes that its important to experiment and to not get too worried about doing something amazing. It's better to start and apply the concepts and work with the code. The second reason is that I couldn't think of that many interesting ideas for image classification, though I will post some of the other ideas I had considered.
 
-On the topic of experiments, I really appreciate how the course developers have put int a lot of work into making it easy to get started with running the code, which is important for lowering the barrier to getting started. I basically created a free account on Gradient Paperspace, selected the Fast.AI sample notebook and was able to run the examples from the Jupyter notebooks.
+On the topic of experiments, I really appreciate how the course developers have put in a lot of work into making it easy to get started with running the code, which is important for lowering the barrier to getting started. I basically created a free account on Gradient Paperspace, selected the Fast.AI sample notebook and was able to run the examples from the Jupyter notebooks.
 
 ## Code walkthrough
 
-First we want to import the python libraries that we plan to use. The sample notebook contain a utils.py file with some utility functions.
+First we want to import the python libraries that we plan to use. The sample notebook contains a utils.py file with some utility functions.
 
 ```python
 from utils import *
@@ -51,9 +51,9 @@ failed = verify_images(fns)
 failed.map(Path.unlink)
 ```
 
-Now that we have a dataset, we need to format the images to be used by the fastai framework. To do this, fastai provides DataBlock class which appears to be a factory class that helps with creating DataSet and DataLoader classes based on various options and settings. The nice thing is that the DataBlock class is able to handle many different types of data, such as images. The other helpful feature is that the framework provides functions for image transforms, such as resizing and skewing. The latter transforms are interesting in that they distort the image, but apparently this helps improve accuracy by providing variations of the image.
+Now that we have a dataset, we need to format the images to be used by the fastai framework. To do this, fastai provides a DataBlock class which appears to be a factory class that helps with creating DataSet and DataLoader classes based on various options and settings. The nice thing is that the DataBlock class is able to handle many different types of data, such as images. The other helpful feature is that the framework provides functions for image transforms, such as resizing and skewing. The latter transforms are interesting in that they distort the image, but apparently this helps improve accuracy by providing variations of the image.
 
-For instance, here we'll use the RandomResizedCrop image transform function. Here we want images resized to 224x224 pixel squares to match the size of the images used by the ResNet pre-trained convolutional neural network that we will be using as a our base. The RandomResizedCrop seems like it will randomly resize the image and then crop it. The important part about cropping the image is that aspect ratio will be preserved and black bars won't be added if the image isn't a perfect square.
+For instance, here we'll use the RandomResizedCrop image transform function. Here we want images resized to 224x224 pixel squares to match the size of the images used by the ResNet pre-trained convolutional neural network that we will be using as our base. The RandomResizedCrop seems like it will randomly resize the image and then crop it. The important part about cropping the image is that aspect ratio will be preserved and black bars won't be added if the image isn't a perfect square.
 
 ```python
 curries = DataBlock(
@@ -74,7 +74,7 @@ Once we have our images set up, we can run the `cnn_learner` using the resnet18 
 
 We use a CNN since apparently it's really effective for image classification. I think the book will explain why in later chapters since it takes a top down approach to teaching deep learning.
 
-The `fine_tune` method since we're using a pretrained model and building off of that. Apparently this is called transfer learning. And one big benefit of this is that it allows us to train the model specific tasks using less data and resources by leveraging an existing model. With transfer learning we replace the last layer with our custom layer. We pass in a value of four to look at each image four times. They call these epochs. The interesting thing is that you can train it for two epochs. Save the model, then train it for another two epochs later. The thing to watch out for is doing too many epochs which may lead to overfitting.
+The `fine_tune` method is used since we're using a pretrained model and building off of that. Apparently this is called transfer learning. And one big benefit of this is that it allows us to train the model for specific tasks using less data and resources by leveraging an existing model. With transfer learning we replace the last layer with our custom layer. We pass in a value of four to look at each image four times. They call these epochs. The interesting thing is that you can train it for two epochs, save the model, then train it for another two epochs later. The thing to watch out for is doing too many epochs which may lead to overfitting.
 
 ```python
 learn = cnn_learner(dls, resnet18, metrics=error_rate)
