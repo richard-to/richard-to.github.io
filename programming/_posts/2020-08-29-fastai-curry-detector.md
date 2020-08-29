@@ -34,7 +34,7 @@ path = Path("curry")
 # Only download images if they don't exist
 if not path.exists():
 	path.mkdir()
-	# For each curry type, search bing, then download
+    # For each curry type, search bing, then download
     # the images
     for o in curry_types:
         dest = (path/o)
@@ -117,7 +117,7 @@ Manually cleaning up the dataset was not too intuitive. The fastai framework doe
 ![Image Cleaner](/images/curry-detector/curry_seth_images.png)
 
 This means that I had to manually download the images and re-upload them to the dev environment. The Jupyter notebook UI only allows me to download one image at a time (rather than a whole folder), so I had to zip up the images using the terminal before downloading the images.
-One weird thing is that when I unzipped the images, the folders didn't have the executable permission, so I need to `chmod` the folders. After that I just cycled through the images and deleted bad images.
+One weird thing is that when I unzipped the images, the folders didn't have the executable permission, so I needed to `chmod` the folders. After that I just cycled through the images and deleted bad images.
 
 
 ## Appendix B: Other ideas
