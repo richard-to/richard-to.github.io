@@ -139,9 +139,9 @@ loss = mnist_loss(preds, train_y)
 
 ### Stochastic Gradient Descent
 
-We use Stochastic Gradient Descent (SGD) to help adjust the parameters of our model. The key to remember is that we want to decrease the loss. SGD is performed to figure out how to adjust the parameters of our model so that the loss will decrease, thereby leading to a more accurate model. The intuition with SGD is that a derivative can calculate the change of a value. So if we're able to calculate the change, then we have an idea of how to adjust the parameters in order to minimize the loss. Basically if the slope is large, that means we need to make a bigger adjustment than a smaller slope.
+We use stochastic gradient descent (SGD) to help adjust the parameters of our model. The key to remember is that we want to decrease the loss. SGD is performed to figure out how to adjust the parameters of our model so that the loss will decrease, thereby leading to a more accurate model. The intuition with SGD is that a derivative can calculate the change of a value. So if we're able to calculate the change, then we have an idea of how to adjust the parameters in order to minimize the loss. Basically if the slope is large, that means we need to make a bigger adjustment than a smaller slope.
 
-With SGD we need to calculate the derivative with respect to each weight (all other weights treated as constants). This is done for with the call to `loss.backward()`, which does something called backpropagation, which basically means calculating the derivatives of each layer.
+With SGD we need to calculate the derivative with respect to each weight (all other weights are treated as constants). This is done for with the call to `loss.backward()`, which does something called backpropagation, which basically means calculating the derivatives of each layer.
 
 Another important thing to note is that the gradient is calculated from the loss function. Here the gradient is calculated from the derivative of the sigmoid function and not the linear function that we are training.
 
