@@ -74,6 +74,12 @@ title: "Reading list"
 - *White Fragility* - Robin DiAngelo
 - *The Sandman* - Neil Gaiman
 
+**September**
+
+- *Peace Is Every Step: The Path of Mindfulness in Everyday Life* - Thich Nhat Hanh
+- *The Beautiful Thing That Awaits Us All* - Laird Barron
+- *I Never Promised You a Rose Garden* - Joanne Greenberg
+
 ### 2019
 
 **January**
