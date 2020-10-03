@@ -79,6 +79,12 @@ title: "Reading list"
 - *Peace Is Every Step: The Path of Mindfulness in Everyday Life* - Thich Nhat Hanh
 - *The Beautiful Thing That Awaits Us All* - Laird Barron
 - *I Never Promised You a Rose Garden* - Joanne Greenberg
+- *Eat the Buddha: Life and Death in a Tibetan Town* - Barbara Demick
+- *How to Read Literature Like a Professor* - Thomas C. Foster
+- *Frankenstein* - Mary Wollstonecraft Shelley
+- *Our Malady: Lessons in Liberty from a Hospital Diary* - Timothy Snyder
+- *M Train* - Patti Smith
+- *We are the weather* - Jonathan Safran Foer
 
 ### 2019
 
