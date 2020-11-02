@@ -86,6 +86,15 @@ title: "Reading list"
 - *M Train* - Patti Smith
 - *We are the weather* - Jonathan Safran Foer
 
+**October**
+
+- *2001: A Space Odyssey* - Arthur C. Clarke
+- *The NeuroGeneration* - Tan Le
+- *Little Fires Everywhere* - Celeste Ng
+- *Little Brother* - Cory Doctorow
+- *Creating Short Fiction* - Damon Knight
+- *Ready Player One* Ernest Cline
+
 ### 2019
 
 **January**
