@@ -95,6 +95,16 @@ title: "Reading list"
 - *Creating Short Fiction* - Damon Knight
 - *Ready Player One* Ernest Cline
 
+**November**
+
+- *Fear: Essential Wisdom for Getting Through the Storm* - Thich Nhat Hanh
+- *Supernova Era* - Cixin Liu
+- *Astrophysics for People in a Hurry* - Neil deGrasse Tyson
+- *I Contain Multitudes: The Microbes Within Us and a Grander View of Life* - Ed Yong
+- *The Silence* Don DeLillo
+- *The Sirens of Titans* Kurt Vonnegut
+- *Station Eleven* - Emily St. John Mandel
+
 ### 2019
 
 **January**
