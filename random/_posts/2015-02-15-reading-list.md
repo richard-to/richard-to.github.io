@@ -101,8 +101,8 @@ title: "Reading list"
 - *Supernova Era* - Cixin Liu
 - *Astrophysics for People in a Hurry* - Neil deGrasse Tyson
 - *I Contain Multitudes: The Microbes Within Us and a Grander View of Life* - Ed Yong
-- *The Silence* Don DeLillo
-- *The Sirens of Titans* Kurt Vonnegut
+- *The Silence* - Don DeLillo
+- *The Sirens of Titans* - Kurt Vonnegut
 - *Station Eleven* - Emily St. John Mandel
 
 ### 2019
