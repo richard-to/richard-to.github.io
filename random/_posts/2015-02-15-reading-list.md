@@ -105,6 +105,17 @@ title: "Reading list"
 - *The Sirens of Titans* - Kurt Vonnegut
 - *Station Eleven* - Emily St. John Mandel
 
+**December**
+
+- *Hamnet* - Maggie O'Farrell
+- *Breakfast of Champions* - Kurt Vonnegut
+- *Homeland Elegies* - Ayad Akhtar
+- *The Emperor of All Maladies* - Siddhartha Mukherjee
+- *Pity the Reader: On Writing With Style* - Kurt Vonnegut and Suzanne McConnell
+- *Interior Chinatown* - Charles Yu
+- *Cat's Cradle* - Kurt Vonnegut
+- *Ready Player Two* - Ernest Cline
+ 
 ### 2019
 
 **January**
