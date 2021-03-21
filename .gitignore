@@ -12,3 +12,4 @@ vendor
 
 # VSCode
 *.code-workspace
+.vscode
