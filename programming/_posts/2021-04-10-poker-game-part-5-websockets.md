@@ -52,7 +52,7 @@ The server has two main aspects:
   - Sending events (messages) to clients
 - Processing incoming events to update the state of the poker game
 
-### General Websocket management
+### General WebSocket management
 
 This is mostly handled by Gorilla WebSocket. There is also some associated boilerplate code that
 needs to be written.
