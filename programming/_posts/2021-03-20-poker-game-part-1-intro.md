@@ -22,6 +22,7 @@ Google App Engine is used for hosting the app. I chose it since I thought it wou
 - [User interface](/programming/poker-game-part-2-ui.html)
 - [Tailwind CSS](/programming/poker-game-part-3-tailwind.html)
 - [Google App Engine](/programming/poker-game-part-4-google-app-engine.html)
+- [Websockets](/programming/poker-game-part-5-websockets.html)
 
 ## Repository
 
