@@ -15,26 +15,27 @@ This post focuses on point 2. Part 6 in this series will cover the WebRTC integr
 Poker is a turn based game which makes WebSockets a good candidate for creating a realtime
 multiple player game that runs smoothly.
 
-For our poker game, a central server would store game state and process player actions which
-would be routed from the player's browser (client).
+For this poker game, a central server will store game state and process player actions which
+will be routed to/from the player's browser (client).
 
-The client would be responsible for the following:
+The client will be responsible for the following:
 
 - sending player input (bet, raises, chat messages, etc) to the game server.
 - rendering the updated game state
 
-The client is designed to perform a minimal amount of logic. One reason is that this prevents
-cheating since the central server performs all the game logic and input validation.
+The client is designed to perform minimal logic. One reason is that this prevents
+cheating since the central server performs all the game logic and input validation which
+enforces an authoritative state.
 
-This is a nice simple model. That works well a game like poker. WebSockets, however, would not
+This is a nice simple model. That works well for a game like poker. WebSockets, however, would not
 be a good choice for a fast paced FPS game since WebSockets uses TCP which provides reliable
 packet transfer. Dropped packets must be resent.
 
 A browser based FPS game would require UDP over WebRTC. This would still require a central server
 to prevent cheating. But the server would run the WebRTC protocol. All client connections would
-connect to the central server via WebRTC instead of via WebSockets (though the latter would still
+connect to the central server via WebRTC instead of WebSockets (though the latter would still
 be needed for signaling). Even with UDP, an FPS would need to account for lag since accuracy
-is very important in this type game. So further optimizations would need to be made.
+is very important in this type game, so further optimizations would need to be made.
 
 Thankfully in poker, we don't have to worry about those issues.
 
@@ -72,7 +73,7 @@ Some other adjustments:
   message that will be converted to JSON.
 - JSON message conversions
 
-Overall I aimed to keep the game logic mostly out of this client.go and hub.go files unless necessary.
+Overall I aimed to keep the game logic mostly out of the client.go and hub.go files unless necessary.
 
 ### GameState or the game engine
 
@@ -128,7 +129,7 @@ const actionRaise string = "raise"
 const actionUpdateGame string = "update-game"
 ```
 
-The event naming could have been more consistent. And I should figured out a way to
+The event naming could have been more consistent. And I should figure out a way to
 delineate between incoming and outgoing events better.
 
 Currently the incoming events are processed in a big conditional statement.
@@ -331,11 +332,11 @@ useEffect(() => {
 
 ### Event loop
 
-One thing you will notice about the useEffect hook is that the client onmessage listener
-is implemented outside of the useEffect.
+One thing you will notice is the client onmessage listener is implemented outside of the
+useEffect hook.
 
 This is because the onmessage function needs the app state. The problem is the app state
-will be updated which means that useEffect would be triggered more than once since we
+will be updated, which means that useEffect would be triggered more than once since we
 would need to add `[dispatch, appState]` to the useEffect dependencies. Technically we
 could exclude appState from the dependencies, but that will trigger a warning from React.
 
@@ -402,19 +403,19 @@ const ws = useContext(WebSocketContext)
 
 ### Synchronous updates
 
-One issue that I have not solved yet are scenarios where it would be nice to process
+One issue I have not solved yet are scenarios where it would be nice to process
 events synchronously rather than asynchronously.
 
 This is primarily to avoid race conditions that could cause the state to be updated
 incorrectly, missed, or delayed.
 
-This caused trouble when orchestrating the WebRTC connections, which cause delayed
+This caused trouble when orchestrating the WebRTC connections, which caused delayed
 rendering of video when a player sits down at the table. This will be discussed more
 in the next post.
 
-The main thing I am wondering is how best to pipeline events to run in serial pipeline
-instead of writing code to handle the race condition possibilities that made the code
-structure less than ideal at times.
+The main thing I am wondering is how best to pipeline events to run in a serialized
+pipeline instead of writing code to handle the race condition possibilities which
+made the code less readable.
 
 ## Repository
 
