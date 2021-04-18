@@ -355,7 +355,6 @@ if (videoRef) {
         videoRef.muted = player.muted
     }
 }
-})
 ```
 
 Then later:
