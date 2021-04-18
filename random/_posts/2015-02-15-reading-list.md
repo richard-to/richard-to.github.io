@@ -3,6 +3,29 @@ layout: post
 title: "Reading list"
 ---
 
+### 2021
+
+**January**
+
+- *Black Flags: The Rise of ISIS* - Joby Warrick
+- *Sapiens: A Brief History of Humankind* - Yuval Noah Harari
+
+**February**
+
+- *Japanese Death Poems: Written by Zen Monks and Haiku Poets on the Verge of Death* - Yoel Huffman
+- *How to Take Smart Notes* - Sönke Ahrens
+
+**March**
+
+- *A Swim in a Pond in the Rain* - George Saunders
+- *The Code Breaker* - Walter Isaacson
+
+**April**
+
+- *The Social Singularity* - Max Borders
+- *The Theatre of War* - Bryan Doerries
+- *Klara and the Sun* - Kazuo Ishiguro
+
 ### 2020
 
 **January**
@@ -115,7 +138,7 @@ title: "Reading list"
 - *Interior Chinatown* - Charles Yu
 - *Cat's Cradle* - Kurt Vonnegut
 - *Ready Player Two* - Ernest Cline
- 
+
 ### 2019
 
 **January**
