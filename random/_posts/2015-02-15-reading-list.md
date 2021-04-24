@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Reading list"
+show_date: false
 ---
 
 ### 2021
@@ -25,6 +26,7 @@ title: "Reading list"
 - *The Social Singularity* - Max Borders
 - *The Theatre of War* - Bryan Doerries
 - *Klara and the Sun* - Kazuo Ishiguro
+- *Land of Big Numbers* - Te-Ping Chen
 
 ### 2020
 

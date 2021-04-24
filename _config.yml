@@ -4,3 +4,9 @@ markdown: kramdown
 permalink: none
 google_analytics: UA-58675809-1
 date_format: '%B %d, %Y'
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      show_date: true
