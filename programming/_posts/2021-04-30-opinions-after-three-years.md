@@ -51,6 +51,8 @@ Other things I've changed my mind about:
 	- *I'm always on the lookout for tools that solve the problems of documentation, such as outdated or missing information, but there's not much out there. This means we just have to work harder in the meantime; we have to perform the drudge work of maintaining it.*
 - Code review is hard and underappreciated and to do it well seems like an act of giving
 	- *great article on code review called [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)*
+- Try for smaller merge requests with well organized commits
+	- *another example of thinking about others and making it easier for them*
 - Try not to over-work since your well-being is more important (or work is work)
 	- *or there's always tomorrow until there isn't*
 - My opinion of how best to approach unit testing keeps changing
