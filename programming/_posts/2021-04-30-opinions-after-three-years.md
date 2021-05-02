@@ -38,7 +38,7 @@ Other things I've changed my mind about:
 ## New opinions
 
 - Code is only a small part of software engineering
-	- *Took me so long to truly learn this!*
+	- *don't get me wrong, code is still incredibly important*
 - When writing code, always keep your current and future teammates in mind. What can you do to make things easier for them? How can you help them?
 	- *this is the crux of many of my new opinions*
 - Ego is unavoidable
