@@ -10,3 +10,5 @@ defaults:
       path: ""
     values:
       show_date: true
+plugins:
+  - jekyll-feed
