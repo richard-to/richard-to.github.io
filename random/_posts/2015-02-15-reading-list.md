@@ -28,6 +28,21 @@ show_date: false
 - *Klara and the Sun* - Kazuo Ishiguro
 - *Land of Big Numbers* - Te-Ping Chen
 
+**June**
+
+- *I, Robot* - Isaac Asimov
+- *American Short Fiction, Volume 24, Issue 73*
+- *Zyzzyva #120: The Technology Issue*
+- *A Thousand Brains: A New Theory of Intelligence* Jeff Hawkins
+
+**July**
+
+- *I'm Waiting for You and Other Stories* - Bo-young Kim
+
+**August**
+
+- *Blockchain Chicken Farm* - Xiaowei Wang
+
 ### 2020
 
 **January**
