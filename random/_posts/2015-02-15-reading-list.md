@@ -33,7 +33,7 @@ show_date: false
 - *I, Robot* - Isaac Asimov
 - *American Short Fiction, Volume 24, Issue 73*
 - *Zyzzyva #120: The Technology Issue*
-- *A Thousand Brains: A New Theory of Intelligence* Jeff Hawkins
+- *A Thousand Brains: A New Theory of Intelligence* - Jeff Hawkins
 
 **July**
 
