@@ -42,6 +42,15 @@ show_date: false
 **August**
 
 - *Blockchain Chicken Farm* - Xiaowei Wang
+- *A Handbook of Disappointed Fate* - Anne Boyer
+- *The Burnout Society* - Byung-Chul Han
+- *The Sun and Her Flowers* - Rupi Kaur
+- *Save the Cat! Writes a Novel* - Jessica Brody
+- *No Longer Human* - Osamu Dazai
+
+**September**
+
+- *Spirit Tech: The Brave New World of Consciousness Hacking and Enlightenment Engineering* - Wesley J. Wildman
 
 ### 2020
 
