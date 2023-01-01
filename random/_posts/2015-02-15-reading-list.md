@@ -22,7 +22,7 @@ show_date: false
 
 **May**
 
-- *Afterparties** - Anthony Veasna So
+- *Afterparties* - Anthony Veasna So
 - *Time Is a Mother* - Ocean Vuong
 - *My Year Abroad* - Chang-rae Lee
 
