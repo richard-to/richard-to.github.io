@@ -4,6 +4,51 @@ title: "Reading list"
 show_date: false
 ---
 
+### 2022
+
+**January**
+
+- *The Every* - Dave Eggers
+- *The Expulsion of the Other: Society, Perception and Communication Today* - Byung-Chul Han
+
+**February**
+
+- *The Pushcart Prize XLV: Best of the Small Presses 2021 Edition*
+
+**April**
+
+- *Bewilderment* - Richard Powers
+- *The Pushcart Prize XLV: Best of the Small Presses 2022 Edition*
+
+**May**
+
+- *Afterparties** - Anthony Veasna So
+- *Time Is a Mother* - Ocean Vuong
+- *My Year Abroad* - Chang-rae Lee
+
+**July**
+
+- *Killing Commendatore* - Haruki Murakami
+
+**September**
+- *Non-Things: Upheaval in the Lifeworld* - Byung-Chul Han
+- *The Palliative Society: Pain Today* - Byung-Chul Han
+
+**October**
+
+- *2666* - Robert Bolaño
+
+**November**
+
+- *Letters to Milena* - Franz Kafka
+
+**December**
+
+- *Psychopolitics: Neoliberalism and New Technologies of Power* - Byung-Chul Han
+- *Togetherness* - Wo Chan
+- *Roadside Picnic* - Arkady Strugatsky and Boris Strugatsky
+- *Atomic Habits* - James Clear
+
 ### 2021
 
 **January**
