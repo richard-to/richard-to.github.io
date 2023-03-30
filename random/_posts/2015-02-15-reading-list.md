@@ -4,6 +4,34 @@ title: "Reading list"
 show_date: false
 ---
 
+### 2023
+
+**January** 
+
+- *Too Loud a Solitude* - Hrabal, Bohumil
+- *Either/Or* - Elif Batuman
+- *The Possessed* - Elif Batuman
+- *Strangers to Ourselves: Unsettled Minds and the Stories That Make Us* - Rachel Aviv 
+- *How We Live Is How We Die* - Chödrön, Pema
+- *The Echo Maker* - Richard Powers
+- *How to Have a Life: An Ancient Guide to Using Our Time Wisely* - Seneca
+- The Politics of Experience* - R.D. Laing
+
+**February**
+
+- *The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma* - Bessel van der Kolk
+- *Even Greater Mistakes: Stories* - Charlie Jane Anders
+- *Surveillance State: China's Quest to Launch a New Era of Social Control* - Josh Chin
+- *How to Be Free: An Ancient Guide to the Stoic Life* - Epictetus
+- *Enlightenment Now: The Case for Reason, Science, Humanism, and Progress* - Steven Pinker
+
+**March**
+
+- *Minority Report and Other Stories* - Philip K. Dick
+- *Cheap Land Colorado: Off-Gridders at America's Edge* - Ted Conover
+- *Like A Thief In Broad Daylight: Power in the Era of Post-Humanity* - Slavoj Žižek
+- *The Savage Detectives* - Roberto Bolaño
+
 ### 2022
 
 **January**
