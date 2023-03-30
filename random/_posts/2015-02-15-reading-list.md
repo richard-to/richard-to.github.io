@@ -15,7 +15,7 @@ show_date: false
 - *How We Live Is How We Die* - Chödrön, Pema
 - *The Echo Maker* - Richard Powers
 - *How to Have a Life: An Ancient Guide to Using Our Time Wisely* - Seneca
-- The Politics of Experience* - R.D. Laing
+- *The Politics of Experience* - R.D. Laing
 
 **February**
 
