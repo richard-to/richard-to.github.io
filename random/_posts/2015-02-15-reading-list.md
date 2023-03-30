@@ -12,7 +12,7 @@ show_date: false
 - *Either/Or* - Elif Batuman
 - *The Possessed* - Elif Batuman
 - *Strangers to Ourselves: Unsettled Minds and the Stories That Make Us* - Rachel Aviv 
-- *How We Live Is How We Die* - Chödrön, Pema
+- *How We Live Is How We Die* - Pema Chödrön
 - *The Echo Maker* - Richard Powers
 - *How to Have a Life: An Ancient Guide to Using Our Time Wisely* - Seneca
 - *The Politics of Experience* - R.D. Laing
