@@ -8,7 +8,7 @@ show_date: false
 
 **January** 
 
-- *Too Loud a Solitude* - Hrabal, Bohumil
+- *Too Loud a Solitude* - Bohumil Hrabal
 - *Either/Or* - Elif Batuman
 - *The Possessed* - Elif Batuman
 - *Strangers to Ourselves: Unsettled Minds and the Stories That Make Us* - Rachel Aviv 
