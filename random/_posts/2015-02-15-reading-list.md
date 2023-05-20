@@ -32,6 +32,13 @@ show_date: false
 - *Like A Thief In Broad Daylight: Power in the Era of Post-Humanity* - Slavoj Žižek
 - *The Savage Detectives* - Roberto Bolaño
 
+**April**
+
+- *Liberation Day: Stories* - George Saunders
+- *Sea of Tranquility* - Emily St. John Mandel
+- *Libra* - Don DeLillo
+- *How High We Go In the Dark* - Sequoia Nagamatsu
+
 ### 2022
 
 **January**
