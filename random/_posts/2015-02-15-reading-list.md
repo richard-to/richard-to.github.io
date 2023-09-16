@@ -59,6 +59,7 @@ show_date: false
 
 **September**
 
+- *The Burnout Society* - Byung-Chul Han (reread)
 - *Poverty, By America* - Matthew Desmond
   
 ### 2022
