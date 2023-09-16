@@ -39,6 +39,28 @@ show_date: false
 - *Libra* - Don DeLillo
 - *How High We Go In the Dark* - Sequoia Nagamatsu
 
+**June**
+
+- *The Pushcart Prize XLVII: Best of the Small Presses 2023 Edition*
+- *The Helmet of Horror* - Victor Pelvin
+
+**July**
+
+- *Children of Time* - Adrian Tchaikovsky
+- *Gulag: A History* - Anne Applebaum
+- *A Wing and a Prayer* - Anders Gyllenhaal
+- *Stay True* - Hua Hsu
+- *The Genius of Birds* - Jennifer Ackerman
+- *The Insect Crisis* - Oliver Milman
+
+**August**
+
+- *Wandering Earth* - Cixin Liu
+
+**September**
+
+- *Poverty, By America* - Matthew Desmond
+  
 ### 2022
 
 **January**
