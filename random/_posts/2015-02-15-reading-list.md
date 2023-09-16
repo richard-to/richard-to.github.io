@@ -56,7 +56,8 @@ show_date: false
 **August**
 
 - *Wandering Earth* - Cixin Liu
-
+- *The Best Short Stories 2022: The O. Henry Prize Winners*
+  
 **September**
 
 - *The Burnout Society* - Byung-Chul Han (reread)
