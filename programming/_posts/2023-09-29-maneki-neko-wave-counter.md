@@ -31,10 +31,10 @@ Here are the components needed for this simple project.
 
 - Sharp GP2Y0A41SKOF IR Sensor (4cm - 30cm)
   - Mine came with a JST Connector
--  Arduino UNO Rev3 (or compatible board)
--  DF Robot - I2C RGB Backlight LCD 16x2 Display Module for Arduino
-   - I bought the shield because I wanted something simple (i.e. no soldering), but it
-     should be possible to find a non-shield version of the LCD display module.
+- Arduino UNO Rev3 (or compatible board)
+- DF Robot - I2C RGB Backlight LCD 16x2 Display Module for Arduino
+  - I bought the shield because I wanted something simple (i.e. no soldering), but it
+    should be possible to find a non-shield version of the LCD display module.
 - 3 M/F jumper wires for IR Sensor
   - Analog pin
   - Ground
@@ -64,6 +64,11 @@ you can also use other analog pins.
 # 6. The Sketch
 
 Here is the sketch I used. For the most up to date version, see the Github repository.
+
+The LCD library is from this Github repository: [https://github.com/DFRobot/DFRobot_RGBLCD1602](https://github.com/DFRobot/DFRobot_RGBLCD1602). I installed the repository using the Arduino
+IDE library manager. This sketch uses the 1.0 version of this library. Make sure
+to install the right one since the interfaces are slightly different, namely the
+constructor.
 
 ```c++
 #include "DFRobot_RGBLCD1602.h"  // Using version 1.0 of the library
