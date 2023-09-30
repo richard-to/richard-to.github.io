@@ -78,18 +78,15 @@ While learning how to implement the skeleton algorithm, I also implemented some 
 
 **Skeleton arm tracking with dark clothing**
 
-<div class="iframe-container">
-<iframe src="//player.vimeo.com/video/91272430?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<div style="padding:60% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/91272430?byline=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 **Skeleton arm tracking with bare arm**
 
-<div class="iframe-container">
-<iframe src="//player.vimeo.com/video/91272431?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<div style="padding:60% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/91272431?byline=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 **Skeletong arm tracking with OpenCV**
 
-<div class="iframe-container">
-<iframe src="//player.vimeo.com/video/91272429?byline=0&amp;portrait=0&amp;color=ececec" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<div style="padding:60% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/91272429?byline=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 The background subtraction worked very well in the video where I was wearing dark clothing. The skeleton looks decent, The noise spurs are noticeable and there are definite lines that are more than 1 pixel width wide.
 
