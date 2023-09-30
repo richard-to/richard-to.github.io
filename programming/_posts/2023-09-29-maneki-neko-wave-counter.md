@@ -20,7 +20,7 @@ The features are pretty limited.
 
 1. Counts maneki neko waves. The IR sensor needs to be placed perpendicular to the end
    of the paw. The `WAVE_DOWN_DISTANCE_CM` and `WAVE_UP_DISTANCE_CM` constants will need
-   to be adjusted based on the maneki size's size. A wave is counted as a complete down
+   to be adjusted based on the maneki neko's size. A wave is counted as a complete down
    and up motion.
 2. The LCD background can be toggled by clicking the select button on the LCD Shield.
    The available colors can be adjusted by modifying the `colors` array.
