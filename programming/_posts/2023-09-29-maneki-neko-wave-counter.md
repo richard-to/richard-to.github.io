@@ -12,7 +12,7 @@ things do in one day?
 
 Here is a video of the maneki neko wave counter in action.
 
-<iframe src="https://player.vimeo.com/video/869733700?byline=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="400" height="711" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Maneki Neko beckoning counter"></iframe>
+<iframe src="https://player.vimeo.com/video/869733700?byline=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="400" height="711" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Maneki Neko wave counter"></iframe>
 
 # 3. Features
 
