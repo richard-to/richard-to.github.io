@@ -53,13 +53,13 @@ The Sharp IR Sensor has three pins:
 - Power
 - Ground
 
-![Sharp IR Sensor to Arduino wiring side view](/images/lcd-shield-side-view.jpeg)
+![Sharp IR Sensor to Arduino wiring](/images/lcd-shield.jpeg)
 
 To connect the Sharp IR sensor to the Arduino, we need to connect the wires to the DF
 Robot LCD Shield which exposes multiple pins for sensors. We will use the A0 pin, but
 you can also use other analog pins.
 
-![Sharp IR Sensor to Arduino wiring](/images/lcd-shield.jpeg)
+![Sharp IR Sensor to Arduino wiring side view](/images/lcd-shield-side-view.jpeg)
 
 # 6. The Sketch
 
