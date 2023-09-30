@@ -6,12 +6,12 @@ show_date: false
 
 ### 2023
 
-**January** 
+**January**
 
 - *Too Loud a Solitude* - Bohumil Hrabal
 - *Either/Or* - Elif Batuman
 - *The Possessed* - Elif Batuman
-- *Strangers to Ourselves: Unsettled Minds and the Stories That Make Us* - Rachel Aviv 
+- *Strangers to Ourselves: Unsettled Minds and the Stories That Make Us* - Rachel Aviv
 - *How We Live Is How We Die* - Pema Chödrön
 - *The Echo Maker* - Richard Powers
 - *How to Have a Life: An Ancient Guide to Using Our Time Wisely* - Seneca
@@ -57,12 +57,16 @@ show_date: false
 
 - *Wandering Earth* - Cixin Liu
 - *The Best Short Stories 2022: The O. Henry Prize Winners*
-  
+
 **September**
 
-- *The Burnout Society* - Byung-Chul Han (reread)
+- *The Burnout Society* - Byung-Chul Han
 - *Poverty, By America* - Matthew Desmond
-  
+- *Children of Ruin* - Adrian Tchaikovsky
+- *Wildland: The Making of America's Fury* - Evan Osnos
+- *Yellowface* - R.F. Kuang
+- *Infinite Jest* - David Foster Wallace
+
 ### 2022
 
 **January**
