@@ -67,6 +67,11 @@ show_date: false
 - *Yellowface* - R.F. Kuang
 - *Infinite Jest* - David Foster Wallace
 
+**October**
+
+- *The Undocumented Americans* - Karla Cornejo Villavicencio
+- *Unbound: Transgender Men and the Remaking of Identity* - Arlene Stein
+
 ### 2022
 
 **January**
