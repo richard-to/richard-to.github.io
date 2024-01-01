@@ -72,6 +72,28 @@ show_date: false
 - *The Undocumented Americans* - Karla Cornejo Villavicencio
 - *Unbound: Transgender Men and the Remaking of Identity* - Arlene Stein
 
+**November**
+
+- *Study for Obedience* - Sarah Bernstein
+- *Last Evenings on Earth* - Roberto Bolaño
+- *By Night in Chile* - Roberto Bolaño
+- *The Terraformers* - Annalee Newitz
+  
+**December**
+
+- *Biography of X* - Catherine Lacey
+- *Gut: The Inside Story of Our Body's Most Underrated Organ* - Guilia Enders
+- *The Illiterate* - Ágota Kristóf
+- *Cowboy Graves: Three Novellas* - Roberto Bolaño
+- *The Best American Short Stories 2023*
+- *The Mind of a Bee* - Lars Chittka
+- *The Pushcart Prize XLVIII: Best of the Small Presses 2024 Edition*
+- *The Mind-Gut Connection* - Emeran Meyer
+- *Demon Copperhead* - Barbara Kingsolver
+- *The MANIAC* - Benjamín Labatut
+- *The Midnight Library* - Matt Haig
+- *Distant Transit* - Maja Haderlap
+  
 ### 2022
 
 **January**
