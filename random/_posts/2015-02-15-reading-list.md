@@ -8,7 +8,7 @@ show_date: false
 
 **January**
 
-- *Lacan on Madness: Madness, yes you can't*
+- *Lacan on Madness: Madness*
 - *Same Bed Different Dreams* - Ed Park
 
 **February**
