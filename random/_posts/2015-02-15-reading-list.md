@@ -31,7 +31,7 @@ show_date: false
 
 **May**
 
-- This Is Not Propaganda: Adventures in the War Against Reality* - Peter Pomerantsev
+- *This Is Not Propaganda: Adventures in the War Against Reality* - Peter Pomerantsev
   
 ### 2023
 
