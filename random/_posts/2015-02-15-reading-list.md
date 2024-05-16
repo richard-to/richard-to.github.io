@@ -4,6 +4,35 @@ title: "Reading list"
 show_date: false
 ---
 
+### 2024
+
+**January**
+
+- *Lacan on Madness: Madness, yes you can't*
+- *Same Bed Different Dreams* - Ed Park
+
+**February**
+  
+- *Children of Memory* - Adrian Tchaikovsky
+- *The Best American Science Fiction and Fantasy 2023*
+- *Starter Villain* - John Scalzi
+
+**March**
+
+- *The Fragile Earth: Writing from The New Yorker on Climate Change*
+- *On Fire: The (Burning) Case for a Green New Deal* - Naomi Klein
+- *Secondhand Time: The Last of the Soviets* - Svetlana Alexievich
+
+**April**
+
+- *All the Pretty Horses* - Cormac McCarthy
+- *Putin Country: A Journey into the Real Russia* - Anne Garrels
+- *China After Mao: The Rise of a Superpower* - Frank Dikötter
+
+**May**
+
+- This Is Not Propaganda: Adventures in the War Against Reality* - Peter Pomerantsev
+  
 ### 2023
 
 **January**
