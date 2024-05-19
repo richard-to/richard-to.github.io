@@ -21,9 +21,9 @@ discussion.
 One feature, I always wanted to add was the ability to verify people's answers on the
 fly. Back then, it wasn't possible due to the freeform nature of the responses. So when
 ChatGPT 3.5 came out, it occurred to me that LLMs could handle this use case easily.
-They probably already ingested the J-Archive as well.
+The J-Archive was probably ingested as part of the training data as well.
 
-I never got the chance to implement this since moved to a new job. So for this Mesop
+I never got the chance to implement this since I moved to a new job. So for this Mesop
 app, I thought it'd be fun to build out a Jeopardy app with LLM integration.
 
 # 3 Why Mesop?
@@ -59,7 +59,7 @@ to HTMX and FastUI.
 Before walking through the Mesop Jeopardy app, it may be helpful to run the app.
 
 You will need a Google API Key for Gemini Pro. You can create one using the instructions
-at https://ai.google.dev/gemini-api/docs/api-key.
+at [https://ai.google.dev/gemini-api/docs/api-key](https://ai.google.dev/gemini-api/docs/api-key).
 
 ```
 git clone git@github.com:richard-to/mesop-jeopardy.git
@@ -328,7 +328,7 @@ from old ASP.NET web apps. If done incorrectly, this led to the very large view 
 for relatively simple applications.
 
 We're still working on making performance improvements to Mesop, but one improvement
-we implemented recently is returning a diff the component tree rather than the whole
+we implemented recently is returning a diff of the component tree rather than the whole
 tree. Typically, only a small portion of the UI will change after a user interaction.
 
 ## 6.4 Event Handlers
@@ -371,7 +371,7 @@ function.
 In Mesop, this is not possible. Use of lambdas, decorated functions, nested functions,
 partial functions (via functools) will not work.
 
-For more information, see https://google.github.io/mesop/guides/troubleshooting/#avoid-using-closure-variables-in-event-handler
+For more information, see [https://google.github.io/mesop/guides/troubleshooting/#avoid-using-closure-variables-in-event-handler](https://google.github.io/mesop/guides/troubleshooting/#avoid-using-closure-variables-in-event-handler)
 
 The workaround is to use the `key` argument that is associated with each Mesop
 component.
@@ -399,7 +399,7 @@ def on_click_cell(e: me.ClickEvent):
   state.selected_question_key = e.key
 ```
 
-For the Jeopardy app, we store the key in the state class and parse it later using the `get_selected_question` helper function.
+For the Jeopardy app, we store the `key` in the state class and parse it later using the `get_selected_question` helper function.
 
 ```python
 def get_selected_question(board, selected_question_key) -> dict[str, str]:
@@ -442,7 +442,7 @@ def on_click_submit(e: me.ClickEvent):
 This part is not Mesop specific. It is just basic data clean up and formatting.
 
 The most important part about Jeopardy is the questions. We need questions to display
-on the board. I use an old dataset I found a while ago on Reddit. It's a dataset
+on the board. I use an old dataset I found awhile ago on Reddit. It's a dataset
 containing 200K questions from the start of Jeopardy all the way to about 2010 or so.
 I believe the questions were scraped from the J Archive, so I don't want to include the
 dataset in the repo. It's easy to find.
@@ -571,4 +571,4 @@ def check_answer(clue: str, answer: str, response: str) -> list[bool, str]:
 
 ## 8 Repository
 
-The code can be found here: https://github.com/richard-to/mesop-jeopardy
+The code can be found here: [https://github.com/richard-to/mesop-jeopardy](https://github.com/richard-to/mesop-jeopardy)
