@@ -32,6 +32,19 @@ show_date: false
 **May**
 
 - *This Is Not Propaganda: Adventures in the War Against Reality* - Peter Pomerantsev
+- *Save the Cat! Writes for TV: The Last Book on Creating Binge-Worthy Content You'll Ever Need* - Jamie Nash
+- *Nothing Is True and Everything Is Possible: The Surreal Heart of the New Russia* - Peter Pomerantsev
+- *The Soul of an Octopus: A Surprising Exploration into the Wonder of Consciousness* - Sy Montgomery
+
+**June**
+
+- *Truth Is the Arrow* - Steve Almond
+- *Anxiety: A Philosophical Guide* - Samir Chopra
+
+**July**
+
+- *When Things Fall Apart* - Pema Chödrön
+- *Buddha's Brain* - Rick Hanson
   
 ### 2023
 
