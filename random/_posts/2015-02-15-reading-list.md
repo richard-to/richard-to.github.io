@@ -33,7 +33,7 @@ show_date: false
 
 - *This Is Not Propaganda* - Peter Pomerantsev
 - *Save the Cat! Writes for TV* - Jamie Nash
-- *Nothing Is True and Everything Is Possible - Peter Pomerantsev
+- *Nothing Is True and Everything Is Possible* - Peter Pomerantsev
 - *The Soul of an Octopus* - Sy Montgomery
 
 **June**
@@ -45,7 +45,14 @@ show_date: false
 
 - *When Things Fall Apart* - Pema Chödrön
 - *Buddha's Brain* - Rick Hanson
-  
+- *How to Tell a Story* - The Moth
+
+**August**
+
+- *On Extinction* - Ben Ware
+- *The Thursday Murder Club* - Richard Osman
+- *Feeling Great* - David Burns
+
 ### 2023
 
 **January**
