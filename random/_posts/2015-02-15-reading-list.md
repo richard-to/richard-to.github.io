@@ -52,6 +52,14 @@ show_date: false
 - *On Extinction* - Ben Ware
 - *The Thursday Murder Club* - Richard Osman
 - *Feeling Great* - David Burns
+- *The Burnout Society* - Byung-Chul Han
+- The Heart of the Buddha's Teaching* - Thich Nhat Hanh
+
+**September**
+
+- *The Social Singularity* - Max Borders
+- *The Bullet That Missed* - Richard Osman
+- *The Divided Self* - R.D. Laing
 
 ### 2023
 
