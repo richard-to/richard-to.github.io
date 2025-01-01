@@ -61,6 +61,29 @@ show_date: false
 - *The Bullet That Missed* - Richard Osman
 - *The Divided Self* - R.D. Laing
 
+**October**
+
+- *Lost Connections* - Johann Hari
+- *The Last Devil to Die* - Richard Osman
+- *The End of Love* - Eva Illouz
+- *Take Back Your Mind* - Lodro Rinzler
+- *When We Cease to Understand the World* - Benjamín Labatut
+- *No Country for Old Men* - Cormac McCarthy
+
+**November**
+
+- *Martyr!*	- Kaveh Akbar
+- *The Best American Short Stories 2024*
+
+**December**
+
+- *Babel* - R.F. Kuang
+- *The Pushcart Prize XLIX: Best of the Small Presses 2025 Edition*
+- *Rejection* - Tony Tulathimutte
+- *The Gulag Archipelago* - Aleksandr Solzhenitsyn
+- *Wednesday's Child* - Yiyun Li
+- *How Silicon Valley Unleashed Techno-feudalism* - Cédric Durand
+  
 ### 2023
 
 **January**
