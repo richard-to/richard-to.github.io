@@ -53,7 +53,7 @@ show_date: false
 - *The Thursday Murder Club* - Richard Osman
 - *Feeling Great* - David Burns
 - *The Burnout Society* - Byung-Chul Han
-- The Heart of the Buddha's Teaching* - Thich Nhat Hanh
+- *The Heart of the Buddha's Teaching* - Thich Nhat Hanh
 
 **September**
 
