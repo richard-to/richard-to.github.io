@@ -9,16 +9,16 @@ This post covers the initial of approach of creating the Gemni Multimodal Live A
 
 ## 1 Websocket connection
 
-The main question was whether [Mesop](https://github.com/google/mesop) would work with the Gemini Multimodal Live API which uses websockets as help achieve fast response times. Mesop does have experimental websocket support, but does not support push events, which would be needed to handle responses from the API that
+The main question was whether [Mesop](https://github.com/google/mesop) would work with the Gemini Multimodal Live API which uses websockets to help achieve lower latency response times. Mesop does have experimental websocket support, but does not support push events, which would be needed to handle responses from the API that
 may not be triggered by a user event. Another related problem was how to keep the websocket connection running.
 
-The other issue was the lack of documentation and examples since the API is so new. Luckily, there's good example of using the the websocket API in python at [https://github.com/google-gemini/cookbook/blob/main/gemini-2/websockets/live_api_starter.py](https://gi.thub.com/google-gemini/cookbook/blob/main/gemini-2/websockets/live_api_starter.py).
+The other issue was the lack of documentation and examples since the API is so new. Luckily, there's a good example of using the websocket API in python at [https://github.com/google-gemini/cookbook/blob/main/gemini-2/websockets/live_api_starter.py](https://gi.thub.com/google-gemini/cookbook/blob/main/gemini-2/websockets/live_api_starter.py).
 
 ## 1.1 Websocket mode
 
-Since the websocket connection the Gemini Multimodal Live API is going to be on the backend Mesop server, the Mesop server also needs to establish a websocket connection to the client. The reason will be explained in the section 1.2.
+Since the websocket connection to the Gemini Multimodal Live API is going to be on the backend Mesop server, the Mesop server also needs to establish a websocket connection to the client. The reason will be explained in section 1.2.
 
-As mentioned in the previous section, Mesop has support for websockets. Thie feature needs to be enabled with the following environmente variable.
+As mentioned in the previous section, Mesop has support for websockets. This feature needs to be enabled with the following environment variable.
 
 ```
 MESOP_WEBSOCKETS_ENABLED=true
@@ -170,7 +170,7 @@ async def initialize_gemini_api(e: me.ClickEvent):
       yield
 ```
 
-All this code is start the websocket connection and continuously yield audio response chunks from the API.
+All this code does is start the websocket connection and continuously yield audio response chunks from the API.
 
 We also store the websocket connection in a global dict to ensure each user has their own connection to the API.
 
@@ -204,18 +204,18 @@ async def run(self):
     traceback.print_exception(EG)
 ```
 
-The main thing to know for this block is that we create a async task group that receives audio input from the API, processess the chunk, and adds it the `audio_in_queue`.
+The main thing to know for this block is that we create an async task group that receives audio input from the API, processess the chunk, and adds it the `audio_in_queue`.
 
 We then have an infinite loop that keeps waiting for data to be added to the `audio_in_queue` which then gets yielded to the event handler, which updates the state with the new chunk of audio.
 
 ## 1.4 Drawbacks
 
-This whole set up feels pretty hacky, which it is. Mesop wasn't built for this use case. Here are the current issues:
+This whole setup feels pretty hacky, which it is. Mesop wasn't built for this use case. Here are the current issues:
 
 1. No clear way to close the connection once the infinite event loop has been started
 2. Support for handling error cases is unclear
 3. Mesop server is no longer focused on just UI rendering
-4. Mesop server has to take on the extra load of the websockets, so the data input and output
+4. Mesop server has to take on the extra load of the websockets (i.e. data input and output can take a lot of bandwidth).
 
 # 2 Audio
 
@@ -274,9 +274,9 @@ The audio recorder web component took the most work to get working.
 
 The general idea of the audio recording web component is that it sends data as events for each chunk of audio.
 
-The main problem was the lack of clear and explicit documentation for input was accepted. Turns out that Gemini is looking for base64 encoded PCM data that is at 16000hz. If the audio is not properly formatted, no response is returned from the API.
+The main problem was the lack of clear and explicit documentation for what input format was accepted. Turns out that Gemini is looking for base64 encoded PCM data that is at 16000hz. If the audio is not properly formatted, no response is returned from the API.
 
-This is slightly problematic since on the JS side, it's not easy to change the sampling rate. For example, my laptop records audio at 48000hz.
+This is slightly problematic since on the JS side it's not easy to change the sampling rate. For example, my laptop records audio at 48000hz and the browser can't override it.
 
 One other thing to note is that the Gemini Multimodal Live API can do Voice Activity Detection (VAD). This is nice since it means you don't have to implement it yourself. However, due to the limited quota, you'll run out of quota pretty quickly if you send a continuous audio stream to the API.
 
@@ -284,13 +284,13 @@ Also the current implementation requires that the user wear headphones since sys
 
 The javascript for the audio recorder ended being pretty messy due to all the adjustments and debugging that I needed to make to get things working.
 
-Out of laziness or perhaps increasing dependence, I also relied heavily on Claude to write the code here. I just continuously asked it to make adjustments and brainstorm potential issues.
+Out of laziness or perhaps increasing dependence, I also relied heavily on Claude to write the code here. I just continuously asked it to make adjustments and brainstorm potential solutions to issues.
 
 This is where the Gemini Multimodal Live API being very new did not help since Claude did not have this data ingested. Nor did it have any examples.
 
-In the end, I was able to figure out 16000hz sampling rate requirement by looking at the example code, wondering why it chose that explicitly. It was also oddly different than 24000hz for output. From there, though, I was able to ask Claude for ways to get the input audio to the right sampling rate. This took a lot of trial an error since Claude did take me down some directions that led to dead ends.
+In the end, I was able to figure out the 16000hz sampling rate requirement by looking at the example code. I wondered why it chose that explicitly. It was also oddly different than the 24000hz for output. From there, though, I was able to ask Claude for ways to get the input audio to the right sampling rate. This took a lot of trial and error since Claude did take me down some directions that led to dead ends.
 
-The audio recorder javascript also uses the deprecated `createScriptProcessor` approach. It should use the audio worklet approach. But after so many issues, I didn't bother asking Claude to get a working version using audio worklet approach.
+The audio recorder javascript also uses the deprecated `createScriptProcessor` approach. It should use the audio worklet approach. But after so many issues, I didn't bother asking Claude to get a working version using the audio worklet approach.
 
 ```javascript
 import {
@@ -763,7 +763,7 @@ customElements.define("audio-recorder", AudioRecorder);
 
 Aside from the PCM formatting issues mentioned above, the other issue was how to forward this data from Mesop to the Gemini API.
 
-In the end, it turned out to be pretty simple. We were able to just a simple direct websocket call.
+In the end, it turned out to be pretty simple. We were able to just send a simple direct websocket call.
 
 ```python
 async def send_audio_direct(self, data):
@@ -787,7 +787,7 @@ async def send_audio_direct(self, data):
 
 This part is a departure from the example code at [https://github.com/google-gemini/cookbook/blob/main/gemini-2/websockets/live_api_starter.py](https://gi.thub.com/google-gemini/cookbook/blob/main/gemini-2/websockets/live_api_starter.py).
 
-In their example,they have queue that stores the input data and another task group that reads the queue and sends the data to the API. This made sense in their example, because it's a command line program.
+In their example, they a have queue that stores the input data and another task group that reads the queue and sends the data to the API. This made sense in their example, because it's a command line program.
 
 Nonetheless, when I tried this approach with Mesop, I ran into issues with the queue filling up (this queue is set to a max of five entries) and also an issue where the queue was not read immediately. There was a long delay which led to delayed responses from the API.
 
@@ -795,7 +795,7 @@ I never figured out the exact reason for that. Thankfully, just calling the webs
 
 ## 3 Video
 
-After getting audio to work, getting video to work relatively straightforward. I imagine screenshare would also be fairy easy to do and fairly similar to video.
+After getting audio to work, getting video to work was relatively straightforward. I imagine screenshare would also be fairy easy to do and fairly similar to video.
 
 For video, I think the main things here are to limit the FPS. Especially for this scenario where not much will be changing in the background, sending 30-60 FPS is overkill. So we just send two FPS.
 
@@ -894,7 +894,7 @@ stop() {
 
 One problem that I knew I would need to handle for Mesop Jeopardy Live was the question of how to keep the game state in sync with the Gemini Live API.
 
-The current version of the API has the limitation of only being able to handle one modality. So it's not possible to do both Audio and Text. This meant, I could get a text respnse with some JSON out to use for updating the Mesop UI.
+The current version of the API has the limitation of only being able to handle one modality. So it's not possible to do both Audio and Text. This meant, we can't get a text respnse with some JSON out to use for updating the Mesop UI when we are in audio mode.
 
 Luckily, custom tools is a way to get around this issue.
 
@@ -902,7 +902,7 @@ Custom tools aren't technically called by Gemini. They just send the signature o
 
 So to check if this idea would work, I created a simple demo with a custom tool for selecting boxes.
 
-For the tool demo, I used this exampel code as reference - [https://github.com/google-gemini/cookbook/blob/main/gemini-2/live_api_tool_use.ipynb](https://github.com/google-gemini/cookbook/blob/main/gemini-2/live_api_tool_use.ipynb).
+For the tool demo, I used this example code as reference - [https://github.com/google-gemini/cookbook/blob/main/gemini-2/live_api_tool_use.ipynb](https://github.com/google-gemini/cookbook/blob/main/gemini-2/live_api_tool_use.ipynb).
 
 ## 4.1 Defining a custom tool
 
@@ -980,7 +980,7 @@ In the above snippet, the main thing to see is how we update the Mesop state. Th
 
 We also send back the tool response to give Gemini context. In this case we give Gemini context on what happend. Does the box exist? Is it already open? And what question was in the box?
 
-The tool call response is parsed out when received data from the websocket.
+The tool call response is parsed out when data is received from the websocket.
 
 ```python
 async def receive_audio(self):
@@ -1000,7 +1000,6 @@ async def receive_audio(self):
 
 <img width="1307" alt="Screenshot 2025-02-09 at 12 58 48 PM" src="https://github.com/user-attachments/assets/54a2df88-9053-490c-955e-243a76c0ae1d" />
 
-
 # 6 Repository
 
-The code can be found at https://github.com/richard-to/mesop-gemini-2-experiments.
+The code can be found at [https://github.com/richard-to/mesop-gemini-2-experiments](https://github.com/richard-to/mesop-gemini-2-experiments]).
