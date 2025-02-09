@@ -5,7 +5,7 @@ title: "Mesop Jeopardy Live - Part 1: Mesop + Gemini Multimodal Live API"
 
 After seeing the [Gemini Multimodal Live API](https://ai.google.dev/gemini-api/docs/multimodal-live) on [AI Studio](https://aistudio.google.com/live), it gave me the idea of extending the [Mesop Jeopardy demo](https://richard.to/programming/mesop-jeopardy.html) with audio input/output.
 
-This post covers the initial of approach of creating the Gemni Multimodal Live API connection on the backend Mesop server.
+This post covers the initial approach of integrating the Gemini Multimodal Live API with the backend Mesop server.
 
 ## 1 Websocket connection
 
@@ -229,7 +229,7 @@ Getting the audio to work was one of the bigger challenges. Reasons:
 
 ## 2.1 Audio Player web component
 
-The audio player web component works processing audio chunks sent from the API via Mesop state.
+The audio player web component works by processing audio chunks sent from the API via Mesop state.
 
 In order to save bandwidth, the audio chunks are not saved. Everytime state gets updated, a new audio chunk is added.
 
@@ -278,7 +278,7 @@ The main problem was the lack of clear and explicit documentation for what input
 
 This is slightly problematic since on the JS side it's not easy to change the sampling rate. For example, my laptop records audio at 48000hz and the browser can't override it.
 
-One other thing to note is that the Gemini Multimodal Live API can do Voice Activity Detection (VAD). This is nice since it means you don't have to implement it yourself. However, due to the limited quota, you'll run out of quota pretty quickly if you send a continuous audio stream to the API.
+One other thing to note is that the Gemini Multimodal Live API can do Voice Activity Detection (VAD). This is nice since it means you don't have to implement it yourself. However, due to the limited quota, you'll run out of quota pretty quickly if you send a continuous audio stream to the API. This is why the I had to add VAD on the client as well.
 
 Also the current implementation requires that the user wear headphones since system noise cancellation isn't implemented.
 
@@ -787,17 +787,17 @@ async def send_audio_direct(self, data):
 
 This part is a departure from the example code at [https://github.com/google-gemini/cookbook/blob/main/gemini-2/websockets/live_api_starter.py](https://gi.thub.com/google-gemini/cookbook/blob/main/gemini-2/websockets/live_api_starter.py).
 
-In their example, they a have queue that stores the input data and another task group that reads the queue and sends the data to the API. This made sense in their example, because it's a command line program.
+In their example, they have a queue that stores the input data and another task group that reads the queue and sends the data to the API. This made sense in their example, because it's a command line program.
 
 Nonetheless, when I tried this approach with Mesop, I ran into issues with the queue filling up (this queue is set to a max of five entries) and also an issue where the queue was not read immediately. There was a long delay which led to delayed responses from the API.
 
-I never figured out the exact reason for that. Thankfully, just calling the websocket directly worked fine.
+I never figured out the exact reason for that. Thankfully, just calling the websocket directly worked fine. There were no issues with cross async threads or anything like that.
 
 ## 3 Video
 
 After getting audio to work, getting video to work was relatively straightforward. I imagine screenshare would also be fairy easy to do and fairly similar to video.
 
-For video, I think the main things here are to limit the FPS. Especially for this scenario where not much will be changing in the background, sending 30-60 FPS is overkill. So we just send two FPS.
+For video, I think the main things here are to limit the FPS, especially considering the limited quota for video. Especially for this scenario where not much will be changing in the background, sending 30-60 FPS is overkill anyway. So we just send two FPS.
 
 There's also a step to pre-process the frames using canvas, which is an old and common technique. I used this in [Too Many Cooks](https://github.com/richard-to/too-many-cooks).
 
@@ -894,7 +894,7 @@ stop() {
 
 One problem that I knew I would need to handle for Mesop Jeopardy Live was the question of how to keep the game state in sync with the Gemini Live API.
 
-The current version of the API has the limitation of only being able to handle one modality. So it's not possible to do both Audio and Text. This meant, we can't get a text respnse with some JSON out to use for updating the Mesop UI when we are in audio mode.
+The current version of the API has the limitation of only being able to handle one modality. So it's not possible to do both Audio and Text. This means we can't get a text response with some JSON to use for updating the Mesop UI when we are in audio mode.
 
 Luckily, custom tools is a way to get around this issue.
 
