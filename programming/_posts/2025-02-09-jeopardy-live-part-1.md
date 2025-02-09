@@ -998,6 +998,9 @@ async def receive_audio(self):
 
 # 5 Screenshot
 
+<img width="1307" alt="Screenshot 2025-02-09 at 12 58 48 PM" src="https://github.com/user-attachments/assets/54a2df88-9053-490c-955e-243a76c0ae1d" />
+
+
 # 6 Repository
 
 The code can be found at https://github.com/richard-to/mesop-gemini-2-experiments.
