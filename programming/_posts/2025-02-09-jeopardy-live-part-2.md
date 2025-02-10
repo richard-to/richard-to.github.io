@@ -5,14 +5,13 @@ title: "Mesop Jeopardy Live - Part 2: Implementation"
 
 <img width="1312" alt="jeopardy-live-2" src="https://github.com/user-attachments/assets/6bf149b7-79a8-47a1-8760-68bf6751fc81" />
 
-
 [Part 1](https://richard.to/programming/jeopardy-live-part-1.html) of this series focused on evaluating the feasibility of using the [Gemini Multimodal Live API](https://ai.google.dev/gemini-api/docs/multimodal-live) with [Mesop](https://github.com/google/mesop).
 
 This post will focus on the actual implementation of Mesop Jeopardy Live.
 
 You can also view the [Mesop Jeopardy Live demo](https://huggingface.co/spaces/richard-to/mesop-jeopardy-live) on [HuggingFace Spaces](https://huggingface.co/spaces).
 
-1 A brief detour
+# 1 A brief detour
 
 It should be noted that I went with a slightly different approach for connecting to the Gemini Multimodal Live API.
 
@@ -24,7 +23,7 @@ Even for Mesop, ideally, you'd want to use a separate server for the web socket 
 
 There are demo cases where you may want to run the Gemini Multimodal Live API on the same Mesop backend server. Primarily, it simplifies the server setup. But generally, for demos, it's probably better to use direct websocket connection to the Gemini Multimodal Live API.
 
-1.1 Old data flow
+## 1.1 Old data flow
 
 ![diagram-2](https://github.com/user-attachments/assets/c0172cb3-8140-4f55-9a1e-0bc60b94c387)
 
@@ -36,7 +35,7 @@ Unfortunately, this approach is not that scalable since the Mesop server will ha
 
 This approach may also not be that reliable since errors with the websocket connection may cause the entire server to crash. Granted I have not verified if this is the case or not. In addition, this issue probably can be resolved with better handling.
 
-1.2 New data flow
+## 1.2 New data flow
 
 ![diagram-1](https://github.com/user-attachments/assets/d734cd9b-dbb5-43b2-8fb5-61a7b71fa41f)
 
@@ -46,7 +45,7 @@ This will be discussed later in this post, but you'll notice that the Audio Play
 
 At the same time, we still need to manage the visual state of the Audio Player and Audio Recorder, so they will still need to communicate with the Mesop server.
 
-2 Custom web components
+# 2 Custom web components
 
 In Mesop, new components can be added by creating custom web components. Mesop uses [Lit](https://lit.dev/) as the framework for this. For more details on how web components work, see the [Mesop docs on web components](https://google.github.io/mesop/web-components/). The Mesop docs also has a blog post [explaining the rationale for using web components](https://google.github.io/mesop/blog/2024/07/12/is-mesop--web-components-the-cure-to-front-end-fatigue/).
 
@@ -56,7 +55,7 @@ This means devs either need to find an existing non-react library and create a w
 
 In the case of the audio recorder, audio player, and gemini live API web components, I just rolled my own with some help from Claude.
 
-2.1 Native Mesop UI elements
+## 2.1 Native Mesop UI elements
 
 One issue with custom web components is that you can't use the native Mesop UI elements (mainly Angular Material components). This means that buttons will look like plain HTML buttons rather than Angular material buttons.
 
@@ -109,7 +108,7 @@ On the javascript side, here is an example of how the events are sent. Notice ho
   }
 ```
 
-2.2 Direct web component communication
+## 2.2 Direct web component communication
 
 This is one of the key implementation details for getting Mesop Jeopardy Live to work well.
 
@@ -191,7 +190,7 @@ disconnectedCallback() {
 }
 ```
 
-2.3 Gemini Live web component
+## 2.3 Gemini Live web component
 
 In [Part 1](https://richard.to/programming/jeopardy-live-part-1.html), we did not need a web component for the Gemini Live API since the websocket connection was being established on the Mesop backend server.
 
@@ -491,7 +490,7 @@ class GeminiLiveConnection extends LitElement {
 }
 ```
 
-3 Custom tool calls
+# 3 Custom tool calls
 
 Custom tool calls were the critical part in getting this demo to work.
 
@@ -533,7 +532,7 @@ _TOOL_DEFINITIONS = {
 }
 ```
 
-3.2 Basic implementation
+## 3.2 Basic implementation
 
 When Gemini makes a tool call, we forward the tool call to the Mesop server processing.
 
@@ -646,7 +645,7 @@ def tool_call_get_clue(category_index, dollar_index) -> str:
   return f"The clue is {response.question}\n\n The answer to the clue is {response.answer}\n\n Please read the clue to the user."
 ```
 
-4 System instructions
+# 4 System instructions
 
 I struggled a lot with the system instructions. During my testing, I got a lot of inconsistent behavior in how the instructions were being interpreted, even when setting the temperature to 0.0.
 
@@ -782,7 +781,7 @@ In the end, I'm not fully happy with the system instructions, but here they are:
 
     Remember to maintain the engaging, professional tone of a game show host while keeping the game moving at a good pace. Focus on making the experience enjoyable while fairly enforcing the rules.
 
-4.1 Inconsistent interpretation of tool call responses
+## 4.1 Inconsistent interpretation of tool call responses
 
 In the original version, the system instructions did not include the JSON dataset of questions for the game board.
 
@@ -817,7 +816,13 @@ if tool_call["name"] == "get_clue":
 
 # 5 Screenshots
 
+Here are some screenshots of the UI.
+
+## 5.1 Starting state
+
 <img width="1312" alt="jeopardy-live-1" src="https://github.com/user-attachments/assets/bdd05263-907e-4908-a806-ac42bef988ad" />
+
+## 5.2 Active game state
 
 <img width="1312" alt="jeopardy-live-2" src="https://github.com/user-attachments/assets/6bf149b7-79a8-47a1-8760-68bf6751fc81" />
 
