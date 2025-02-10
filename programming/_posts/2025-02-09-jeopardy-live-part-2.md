@@ -13,13 +13,13 @@ You can also view the [Mesop Jeopardy Live demo](https://huggingface.co/spaces/r
 
 # 1 A brief detour
 
-It should be noted that I went with a slightly different approach for connecting to the Gemini Multimodal Live API.
+It should be noted that I went with a slightly different approach for connecting to the Gemini Multimodal Live API than was described in [Part 1](https://richard.to/programming/jeopardy-live-part-1.html).
 
-Someone pointed me to the [Gemini Multimodal Live Dev Guide](https://github.com/heiko-hotz/gemini-multimodal-live-dev-guide) which provides example in javascript. Mainly, it showed that it's possible to connect to the API directly from the browswer.
+Someone pointed me to the [Gemini Multimodal Live Dev Guide](https://github.com/heiko-hotz/gemini-multimodal-live-dev-guide) which provides examples in javascript. Mainly, it showed that it's possible to connect to the API directly from the browswer.
 
-This approach is not that secure since it exposes the API key. For demo purposes (and also an API key not associated with a billing account) this is a fine. For production implementations, you'd probably need a proxy web socket server in front of the Gemini Multimodal Live API connection.
+This approach is not that secure since it exposes the API key. For demo purposes this is a fine if the API key is not one that is enabled for billing. For production implementations, you'd probably need a proxy websocket server in front of the Gemini Multimodal Live API connection.
 
-Even for Mesop, ideally, you'd want to use a separate server for the web socket server. This is more scalable since you want the Mesop server to primarily focus on the UI. In addition, this allows you to use the default SSE-based event flow.
+Even for Mesop, ideally, you'd want to use a separate server for the websocket server. This is more scalable since you want the Mesop server to primarily focus on the UI. In addition, this allows you to use the default SSE-based event flow.
 
 There are demo cases where you may want to run the Gemini Multimodal Live API on the same Mesop backend server. Primarily, it simplifies the server setup. But generally, for demos, it's probably better to use direct websocket connection to the Gemini Multimodal Live API.
 
@@ -27,11 +27,11 @@ There are demo cases where you may want to run the Gemini Multimodal Live API on
 
 ![diagram-2](https://github.com/user-attachments/assets/c0172cb3-8140-4f55-9a1e-0bc60b94c387)
 
-This diagram roughly shows the flow of data when creating the websocket connection on the Mesop backend.
+This diagram roughly shows the flow of data when creating the API websocket connection on the Mesop backend.
 
 The data flow is a lot easier to follow for the most part since Mesop acts as the proxy to the API.
 
-Unfortunately, this approach is not that scalable since the Mesop server will have to make a lot of websocket connections and handle all the data that's get sent in both directions.
+Unfortunately, this approach is not that scalable since the Mesop server will have to make a lot of websocket connections and handle all the data that's getting sent in both directions.
 
 This approach may also not be that reliable since errors with the websocket connection may cause the entire server to crash. Granted I have not verified if this is the case or not. In addition, this issue probably can be resolved with better handling.
 
@@ -53,7 +53,7 @@ In general custom web components are easy to make. The main drawback is that it 
 
 This means devs either need to find an existing non-react library and create a wrapper web component or roll their own implementation.
 
-In the case of the audio recorder, audio player, and gemini live API web components, I just rolled my own with some help from Claude.
+In the case of the audio recorder, audio player, and Gemini Live web components, I just rolled my own with some help from Claude.
 
 ## 2.1 Native Mesop UI elements
 
@@ -112,13 +112,13 @@ On the javascript side, here is an example of how the events are sent. Notice ho
 
 This is one of the key implementation details for getting Mesop Jeopardy Live to work well.
 
-Since we're going with a direct websocket connection to the Gemini API on the client, we don't want to provide unecessary latency by routing all incoming and outgoing data from the Gemini Live API web component to the Mesop server and then having Mesop route those events to the audio player and audio recorder web components.
+Since we're going with a direct websocket connection to the Gemini API on the client, we don't want to provide unnecessary latency by routing all incoming and outgoing data from the Gemini Live API web component to the Mesop server and then having Mesop route those events to the audio player and audio recorder web components.
 
 Turns out in Lit that it is possible to send events to other web components.
 
 The drawback is that the current implementation is very hardcoded and heavily couples the custom web components together. I do think, that it would be possible to make this more generic. But for demo purposes, I was OK with the coupling.
 
-So the key is to dispatch a custom event, like this:
+The key is to dispatch a custom event. It looks like this:
 
 ```javascript
 this.onAudioData = (base64Data) => {
@@ -151,7 +151,7 @@ this.onAudioOutputReceived = (e) => {
 
 Overall it is pretty simple to setup.
 
-You also need to make sure to clean up the event handlers. Here you'll see that there are multiple events that the Audio Player component is listening to. I think this also shows heavily coupled it is to the Gemini Live web component.
+You also need to make sure to clean up the event handlers. Here you'll see that there are multiple events that the Audio Player component is listening to. I think this also shows how heavily coupled it is to the Gemini Live web component.
 
 ```javascript
 connectedCallback() {
@@ -496,11 +496,11 @@ Custom tool calls were the critical part in getting this demo to work.
 
 In the end, it sort of works and sort of doesn't. More on that later.
 
-3.1 Tool call definitions
+## 3.1 Tool call definitions
 
 The tool calls are written in JSON Schema. They need to be defined in the API configuration.
 
-You also need to make sure that your system instructions, instruct Gemini on when the tool calls should be used.
+You also need to make sure that your system instructions instruct Gemini on when the tool calls should be used.
 
 ```python
 _TOOL_DEFINITIONS = {
@@ -534,7 +534,7 @@ _TOOL_DEFINITIONS = {
 
 ## 3.2 Basic implementation
 
-When Gemini makes a tool call, we forward the tool call to the Mesop server processing.
+When Gemini makes a tool call, we forward the tool call to the Mesop server for processing.
 
 ```javascript
 this.onToolCall = (toolCalls) => {
@@ -550,7 +550,7 @@ The Mesop server listens for the event and handles it like a normal Mesop event.
 
 For Mesop Jeopardy Live, we have two tool calls.
 
-The first use case is when the user asks for a clue (e.g. "Some category for $400"). In order for the game to work, Gemini now needs to know what clue to ask. We also need to update the UI accordingly based on this change.
+The first use case is when the user asks for a clue (e.g. "Some category for $400"). In order for the game to work, Gemini needs to know what clue to ask. We also need to update the UI accordingly based on this change.
 
 The second use case is when the user answers the clue. Gemini must determine if the user is right or wrong. The UI needs to update the Jeopardy board and score based on this result.
 
@@ -588,7 +588,7 @@ def handle_tool_calls(e: mel.WebEvent):
     state.tool_call_responses = json.dumps(responses)
 ```
 
-Once the tool calls are processed, you'll see that update the Mesop state, which then updates the Gemini Live web component. This is similar to the strategy we used with the Audio Player, notifying it of new audio chunks to play.
+Once the tool calls are processed, you'll see that we update the Mesop state, which then updates the Gemini Live web component. This is similar to the strategy we used with the Audio Player, notifying it of new audio chunks to play.
 
 ```javascript
 updated(changedProperties) {
@@ -604,7 +604,7 @@ updated(changedProperties) {
 }
 ```
 
-Also here are the actual implements of the tool calls. One thing you'll see is that we just return text here and not a JSON object.
+Also here are the actual implementations of the tool calls. One thing you'll see is that we do not return a JSON response.
 
 This is not ideal. It was mainly done to work around inconsistent behavior in the Gemini API from recognizing and handling tool calls. More about this later.
 
