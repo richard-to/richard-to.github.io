@@ -15,7 +15,7 @@ You can also view the [Mesop Jeopardy Live demo](https://huggingface.co/spaces/r
 
 It should be noted that I went with a slightly different approach for connecting to the Gemini Multimodal Live API than was described in [Part 1](https://richard.to/programming/jeopardy-live-part-1.html).
 
-Someone pointed me to the [Gemini Multimodal Live Dev Guide](https://github.com/heiko-hotz/gemini-multimodal-live-dev-guide) which provides examples in javascript. Mainly, it showed that it's possible to connect to the API directly from the browswer.
+Someone pointed me to the [Gemini Multimodal Live Dev Guide](https://github.com/heiko-hotz/gemini-multimodal-live-dev-guide) which provides examples in javascript. Mainly, it showed that it's possible to connect to the API directly from the browser.
 
 This approach is not that secure since it exposes the API key. For demo purposes this is a fine if the API key is not one that is enabled for billing. For production implementations, you'd probably need a proxy websocket server in front of the Gemini Multimodal Live API connection.
 
@@ -61,7 +61,7 @@ One issue with custom web components is that you can't use the native Mesop UI e
 
 The workaround for this is to use slots. Then inside of the slot, you can use native Mesop components.
 
-This allows you to place a click handler on the web component. And inside the web component, a native Mesop button can be rendered. The Mesop button itself does not do anything since just let the event bubbule to the click handler on the web component.
+This allows you to place a click handler on the web component. And inside the web component, a native Mesop button can be rendered. The Mesop button itself does not do anything since we just let the event bubble up to the click handler on the web component.
 
 <img width="243" alt="Screenshot 2025-02-09 at 4 29 47 PM" src="https://github.com/user-attachments/assets/5b82194d-7231-4ce4-b1fa-07230ccbe26b" />
 
