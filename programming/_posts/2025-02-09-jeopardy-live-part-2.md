@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Mesop Jeopardy Live - Part 2: Implementation
+title: "Mesop Jeopardy Live - Part 2: Implementation"
 ---
 
 [Part 1](https://richard.to/programming/jeopardy-live-part-1.html) of this series focused on evaluating the feasibility of using the [Gemini Multimodal Live API](https://ai.google.dev/gemini-api/docs/multimodal-live) with [Mesop](https://github.com/google/mesop).
