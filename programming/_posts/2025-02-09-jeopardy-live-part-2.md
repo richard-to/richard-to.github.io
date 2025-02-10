@@ -3,6 +3,9 @@ layout: post
 title: "Mesop Jeopardy Live - Part 2: Implementation"
 ---
 
+<img width="1312" alt="jeopardy-live-2" src="https://github.com/user-attachments/assets/6bf149b7-79a8-47a1-8760-68bf6751fc81" />
+
+
 [Part 1](https://richard.to/programming/jeopardy-live-part-1.html) of this series focused on evaluating the feasibility of using the [Gemini Multimodal Live API](https://ai.google.dev/gemini-api/docs/multimodal-live) with [Mesop](https://github.com/google/mesop).
 
 This post will focus on the actual implementation of Mesop Jeopardy Live.
@@ -23,6 +26,8 @@ There are demo cases where you may want to run the Gemini Multimodal Live API on
 
 1.1 Old data flow
 
+![diagram-2](https://github.com/user-attachments/assets/c0172cb3-8140-4f55-9a1e-0bc60b94c387)
+
 This diagram roughly shows the flow of data when creating the websocket connection on the Mesop backend.
 
 The data flow is a lot easier to follow for the most part since Mesop acts as the proxy to the API.
@@ -32,6 +37,8 @@ Unfortunately, this approach is not that scalable since the Mesop server will ha
 This approach may also not be that reliable since errors with the websocket connection may cause the entire server to crash. Granted I have not verified if this is the case or not. In addition, this issue probably can be resolved with better handling.
 
 1.2 New data flow
+
+![diagram-1](https://github.com/user-attachments/assets/d734cd9b-dbb5-43b2-8fb5-61a7b71fa41f)
 
 As you can see, it is much harder to follow the data flow in this diagram.
 
@@ -809,6 +816,10 @@ if tool_call["name"] == "get_clue":
 ```
 
 # 5 Screenshots
+
+<img width="1312" alt="jeopardy-live-1" src="https://github.com/user-attachments/assets/bdd05263-907e-4908-a806-ac42bef988ad" />
+
+<img width="1312" alt="jeopardy-live-2" src="https://github.com/user-attachments/assets/6bf149b7-79a8-47a1-8760-68bf6751fc81" />
 
 # 6 Repository
 
