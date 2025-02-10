@@ -7,6 +7,8 @@ After seeing the [Gemini Multimodal Live API](https://ai.google.dev/gemini-api/d
 
 This post covers the initial approach of integrating the Gemini Multimodal Live API with the backend Mesop server.
 
+![diagram-3](https://github.com/user-attachments/assets/4c0d6a76-7d72-4e50-a610-10de05ed7bd1)
+
 ## 1 Websocket connection
 
 The main question was whether [Mesop](https://github.com/google/mesop) would work with the Gemini Multimodal Live API which uses websockets to help achieve lower latency response times. Mesop does have experimental websocket support, but does not support push events, which would be needed to handle responses from the API that
