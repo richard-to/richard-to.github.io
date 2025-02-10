@@ -63,6 +63,8 @@ The workaround for this is to use slots. Then inside of the slot, you can use na
 
 This allows you to place a click handler on the web component. And inside the web component, a native Mesop button can be rendered. The Mesop button itself does not do anything since just let the event bubbule to the click handler on the web component.
 
+<img width="243" alt="Screenshot 2025-02-09 at 4 29 47 PM" src="https://github.com/user-attachments/assets/5b82194d-7231-4ce4-b1fa-07230ccbe26b" />
+
 One drawback of this approach is that you must add extra state code to handle the state changes of the button. Basically it boils down to ensuring the web component sends some extra events and stores some extra properties.
 
 One big limitation of this approach is that web components currently only have one slot, which means you likely can't have multiple native Mesop buttons on your web component.
