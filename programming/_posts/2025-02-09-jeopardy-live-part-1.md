@@ -1004,4 +1004,4 @@ async def receive_audio(self):
 
 # 6 Repository
 
-The code can be found at [https://github.com/richard-to/mesop-gemini-2-experiments](https://github.com/richard-to/mesop-gemini-2-experiments]).
+The code can be found at [https://github.com/richard-to/mesop-gemini-2-experiments](https://github.com/richard-to/mesop-gemini-2-experiments).
