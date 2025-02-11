@@ -9,7 +9,6 @@ show_date: false
 **January**
 
 - *Chemistry* - Weike Wang
-- *How Silicon Valley Unleashed Techno-feudalism* - Cédric Durand
 - *The Poisonwood Bible* - Barbara Kingsolver
 - *Erasure* - Percival Everett
 - *We Solve Murders* - Richard Osman
