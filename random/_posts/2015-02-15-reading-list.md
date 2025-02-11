@@ -4,6 +4,24 @@ title: "Reading list"
 show_date: false
 ---
 
+### 2025
+
+**January**
+
+- *Chemistry* - Weike Wang
+- *How Silicon Valley Unleashed Techno-feudalism* - Cédric Durand
+- *The Poisonwood Bible* - Barbara Kingsolver
+- *Erasure* - Percival Everett
+- *We Solve Murders* - Richard Osman
+- *Augustus* - John Williams
+- *James* - Percival Everett
+- *Our Missing Hearts* - Celeste Ng
+
+**February**
+
+- *Determined* - Robert M. Sapolsky
+- *Disaster Nationalism* - Richard Seymour
+  
 ### 2024
 
 **January**
