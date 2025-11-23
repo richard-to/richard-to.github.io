@@ -20,6 +20,58 @@ show_date: false
 
 - *Determined* - Robert M. Sapolsky
 - *Disaster Nationalism* - Richard Seymour
+- *The Tree* - Percival Everett
+- *The Poppy War* - R.F. Kuang
+- *The Ministry of TIme* - Kaliane Bradley
+- *Private Ciizens* - Tony Tulathimutte
+  
+**March**
+
+- *Mao's Great Famine* - Frank Dikötter
+- *Table for One* - Ko-eun Yun
+- *Mistborn* - Brandon Sanderson
+
+**May**
+
+- *Dungeon Crawler Carl* - Matt Dinniman
+- *Aflame* - Pico Iyer
+- *Carl's Doomsday Scenario* - Matt Dinniman
+- *Moral Ambition* - Rutger Bregman
+- *The Dungeon Anarchist's Cookbook* - Matt Dinniman
+
+**June**
+
+- *The Gate of the Feral Gods* - Matt Dinniman
+- *The Butcher's Masquerade* - Matt Dinniman
+- *The Eye of the Bedlam Bride* - Matt Dinniman
+- *Atavists* - Lydia Millet
+
+**July**
+
+- *This Inevitable Ruin* - Matt Dinniman
+- *The Dragon Republic* - R.F. Kuang
+- *The Blue Latern* - Victor Pelevin
+
+**August**
+
+- *Permutation* - Greg Egan
+- *Byung-Chul Han: A Critical Introduction* - Steven Knepper
+
+**September**
+
+- *Everyone on This Train Is a Suspect* - Benjamin Stevenson
+- *Dr. No* - Percival Everett
+- *Of Sunshine and Bedbugs: Essential Stories* - Isaac Babel
+- *Twilight of Democracy* - Anne Applebaum
+
+**October**
+
+- *Everyone in My Family has Killed Someone* - Benjamin Stevenson
+- *Heart Lamp* - Banu Mushtaq
+
+**November**
+
+- *Recursion* - Blake Couch
   
 ### 2024
 
