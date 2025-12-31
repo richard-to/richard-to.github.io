@@ -72,6 +72,19 @@ show_date: false
 **November**
 
 - *Recursion* - Blake Couch
+- *The Impossible Fortune* - Richard Osman
+- *Vineland* - Thomas Pynchon
+  
+**December**
+
+- *One Day, Everyone Will Have Always Been Against This* - Omar El Akkad
+- *How to Blow Up a Pipeline* - Andreas Malm
+- *Monkey King: Journey to the West* - Wu Cheng'en
+- *Our Strangers: Stories* - Lydia Davis
+- *Service Model* - Adrian Tchaikovsky
+- *The Möbius Book* - Catherine Lacey
+- *The Burning God* - R.F. Kuang
+- *A Philosophy of Walking* - Frédéric Gros
   
 ### 2024
 
