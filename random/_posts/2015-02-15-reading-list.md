@@ -4,6 +4,12 @@ title: "Reading list"
 show_date: false
 ---
 
+### 2026
+
+**January**
+
+- *The Pushcart Prize L: Best of the Small Presses 2026 Edition*
+  
 ### 2025
 
 **January**
@@ -68,6 +74,7 @@ show_date: false
 
 - *Everyone in My Family has Killed Someone* - Benjamin Stevenson
 - *Heart Lamp* - Banu Mushtaq
+- *The Best American Short Stories 2026*
 
 **November**
 
