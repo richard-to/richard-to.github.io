@@ -74,7 +74,7 @@ show_date: false
 
 - *Everyone in My Family has Killed Someone* - Benjamin Stevenson
 - *Heart Lamp* - Banu Mushtaq
-- *The Best American Short Stories 2026*
+- *The Best American Short Stories 2025*
 
 **November**
 
