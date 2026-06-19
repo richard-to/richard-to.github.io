@@ -6,10 +6,46 @@ show_date: false
 
 ### 2026
 
-**January**
+* *Born to Run - Christopher McDougall
+* *Front Street* - Brian Barth
+* *Whalefall* - Daniel Kraus
+* *The Pushcart Prize L: Best of the Small Presses 2026 Edition*
 
-- *The Pushcart Prize L: Best of the Small Presses 2026 Edition*
-  
+**February**
+
+* *Putin's People* - Catherine Belton
+* *Angel Down* - Daniel Kraus
+* *The Rise of the Ultra Runners* - Adharanand Finn
+
+**March**
+
+* *Breakneck* - Dan Wang
+* *There Is No Antimemetics Division* - qntm
+* *Overshoot* - Andreas Malm
+* *On Freedom* - Timothy Snyder
+
+**April**
+
+* *Exact Thinking in Demented Times* - Karl Sigmund
+* *Elantris* - Brandon Sanderson
+* *Red Pyramid: Selected Stories* - Vladimir Sorokin
+
+**May**
+
+* *Training for the Uphill Athlete* - Steve House
+* *Everyone in This Bank Is a Thief* - Benjamin Stevenson
+* *Diaspora* - Greg Egan
+* *The Collected Tales of Nikolai Gogol* - Nikolai Gogol
+* *Gargoyles* - Thomas Bernhard
+
+**June**
+
+* *A Parade of Horribles* - Matt Dinniman
+* *Anxietyland* - Gemma Correll
+* *Hyperbole and a Half* - Allie Brosh
+* *The History of Philosophy* - A.C. Grayling
+* *Zen and the Art of Motorcycle Maintenance - Robert M. Pirsig
+    
 ### 2025
 
 **January**
