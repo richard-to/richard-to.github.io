@@ -6,7 +6,7 @@ show_date: false
 
 ### 2026
 
-* *Born to Run - Christopher McDougall
+* *Born to Run* - Christopher McDougall
 * *Front Street* - Brian Barth
 * *Whalefall* - Daniel Kraus
 * *The Pushcart Prize L: Best of the Small Presses 2026 Edition*
@@ -44,7 +44,7 @@ show_date: false
 * *Anxietyland* - Gemma Correll
 * *Hyperbole and a Half* - Allie Brosh
 * *The History of Philosophy* - A.C. Grayling
-* *Zen and the Art of Motorcycle Maintenance - Robert M. Pirsig
+* *Zen and the Art of Motorcycle Maintenance* - Robert M. Pirsig
     
 ### 2025
 
